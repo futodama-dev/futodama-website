@@ -1,11 +1,14 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>futodama — Small ideas. Better everyday moments.</title>
   <meta name="description" content="futodama is an independent product studio creating simple, thoughtful digital experiences for everyday life.">
   <link rel="canonical" href="https://futodama.app/">
+  <link rel="alternate" hreflang="en" href="https://futodama.app/">
+  <link rel="alternate" hreflang="ja" href="https://futodama.app/ja/">
+  <link rel="alternate" hreflang="x-default" href="https://futodama.app/">
 
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="futodama">
@@ -17,12 +20,13 @@
   <meta name="twitter:title" content="futodama — Small ideas. Better everyday moments.">
   <meta name="twitter:description" content="futodama is an independent product studio creating simple, thoughtful digital experiences for everyday life.">
 
-  <link rel="stylesheet" href="/style.css">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header class="site-header">
     <div class="container header-inner">
-      <a href="/" class="logo" aria-label="futodama home">
+      <a href="index.html" class="logo" aria-label="futodama home">
         <span class="logo-dot" aria-hidden="true"></span>futodama
       </a>
       <nav class="main-nav" aria-label="Main navigation">
@@ -31,8 +35,13 @@
         </button>
         <ul class="nav-menu" id="primary-menu">
           <li><a href="#products">Products</a></li>
-          <li><a href="/about/">About</a></li>
-          <li><a href="/support/">Support</a></li>
+          <li><a href="about/index.html">About</a></li>
+          <li><a href="support/index.html">Support</a></li>
+          <li class="lang-switch">
+            <span class="lang-current">EN</span>
+            <span class="lang-sep">|</span>
+            <a href="ja/index.html">日本語</a>
+          </li>
         </ul>
       </nav>
     </div>
@@ -42,10 +51,8 @@
     <section class="hero">
       <div class="container">
         <h1>Small ideas.<br>Better everyday moments.</h1>
-        <p class="hero-jp">
-          毎日を、少し安心に。<br>
-          少し楽しく。<br>
-          少し軽やかに。
+        <p class="hero-sub">
+          We create simple, thoughtful products that make everyday life a little better.
         </p>
         <a href="#products" class="btn btn-primary">Explore our products</a>
       </div>
@@ -55,26 +62,24 @@
       <div class="container">
         <h2>Our Products</h2>
         <div class="product-grid">
-          <article class="product-card product-card--featured">
-            <h3>ARRVD</h3>
+          <article class="product-card product-card--featured product-card--arrvd">
+            <span class="featured-label">Featured</span>
+            <h3><span class="product-dot" aria-hidden="true"></span>ARRVD</h3>
             <p class="product-copy">Know they arrived.<br>Not everywhere they went.</p>
-            <p class="product-sub">Reassurance through arrival confirmation, without continuous location tracking.</p>
-            <p class="product-jp">ずっと居場所を追跡するのではなく、「到着した」という必要な安心を。</p>
-            <a href="/arrvd/" class="btn btn-outline">Discover ARRVD</a>
+            <p class="product-sub">Arrival reassurance without continuous location tracking.</p>
+            <a href="arrvd/index.html" class="btn btn-outline">Discover ARRVD</a>
           </article>
 
-          <article class="product-card">
-            <h3>もじつなぎ</h3>
-            <p class="product-jp">言葉をつないで、森を育てる。</p>
+          <article class="product-card product-card--mojitsunagi">
+            <h3><span class="product-dot" aria-hidden="true"></span>Mojitsunagi</h3>
             <p class="product-sub">Connect letters, discover words, and grow your forest.</p>
-            <a href="/mojitsunagi/" class="btn btn-outline">Learn more</a>
+            <a href="mojitsunagi/index.html" class="btn btn-outline">Learn more</a>
           </article>
 
-          <article class="product-card">
-            <h3>Celestial Oracle</h3>
+          <article class="product-card product-card--celestial">
+            <h3><span class="product-dot" aria-hidden="true"></span>Celestial Oracle</h3>
             <p class="product-copy">A quiet moment for yourself, once a day.</p>
-            <p class="product-jp">一日一枚のカードから、自分自身と向き合う静かな時間を。</p>
-            <a href="/celestial-oracle/" class="btn btn-outline">Learn more</a>
+            <a href="celestial-oracle/index.html" class="btn btn-outline">Learn more</a>
           </article>
         </div>
       </div>
@@ -84,21 +89,12 @@
       <div class="container">
         <h2>About futodama</h2>
         <p>
-          futodama is an independent product studio creating simple digital experiences that make everyday life
-          a little better.
+          futodama is an independent product studio creating simple, thoughtful digital experiences for
+          everyday life.
         </p>
         <p>
-          From reassurance and convenience to joy and reflection, we turn small everyday ideas into thoughtful
-          products designed around people.
-        </p>
-        <p class="jp">
-          futodamaは、日常を少し良くするプロダクトをつくるインディペンデント・プロダクトブランドです。
-        </p>
-        <p class="jp">
-          安心、楽しさ、気づき、便利さ。
-        </p>
-        <p class="jp">
-          暮らしの中で見つけた小さなアイデアを、人の気持ちに寄り添うシンプルなデジタル体験へ変えていきます。
+          We turn small everyday ideas into products built around reassurance, joy, reflection, and
+          convenience.
         </p>
         <p class="tagline">All is well.</p>
       </div>
@@ -106,20 +102,37 @@
   </main>
 
   <footer class="site-footer">
-    <div class="container footer-inner">
-      <nav aria-label="Footer navigation">
-        <ul>
-          <li><a href="#products">Products</a></li>
-          <li><a href="/about/">About</a></li>
-          <li><a href="/support/">Support</a></li>
-          <li><a href="/privacy/">Privacy</a></li>
-          <li><a href="/terms/">Terms</a></li>
-        </ul>
-      </nav>
-      <p class="copyright">&copy; 2026 futodama</p>
+    <div class="container">
+      <div class="footer-grid">
+        <nav class="footer-col" aria-label="Products">
+          <h4>Products</h4>
+          <ul>
+            <li><a href="arrvd/index.html">ARRVD</a></li>
+            <li><a href="mojitsunagi/index.html">Mojitsunagi</a></li>
+            <li><a href="celestial-oracle/index.html">Celestial Oracle</a></li>
+          </ul>
+        </nav>
+        <nav class="footer-col" aria-label="Company">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about/index.html">About</a></li>
+            <li><a href="support/index.html">Support</a></li>
+          </ul>
+        </nav>
+        <nav class="footer-col" aria-label="Legal">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="privacy/index.html">Privacy</a></li>
+            <li><a href="terms/index.html">Terms</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <p class="copyright">&copy; 2026 futodama</p>
+      </div>
     </div>
   </footer>
 
-  <script src="/script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

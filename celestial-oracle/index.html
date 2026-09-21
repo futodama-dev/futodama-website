@@ -1,17 +1,28 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Celestial Oracle — futodama</title>
-  <meta name="description" content="Celestial Oracle: a quiet moment for yourself, once a day.">
+  <title>Celestial Oracle — A quiet moment for yourself, once a day | futodama</title>
+  <meta name="description" content="Celestial Oracle: a daily oracle experience designed around reflection, calm, and a single card each day.">
   <link rel="canonical" href="https://futodama.app/celestial-oracle/">
-  <link rel="stylesheet" href="/style.css">
+  <link rel="alternate" hreflang="en" href="https://futodama.app/celestial-oracle/">
+  <link rel="alternate" hreflang="ja" href="https://futodama.app/ja/celestial-oracle/">
+  <link rel="alternate" hreflang="x-default" href="https://futodama.app/celestial-oracle/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="futodama">
+  <meta property="og:title" content="Celestial Oracle — A quiet moment for yourself, once a day | futodama">
+  <meta property="og:description" content="Celestial Oracle: a daily oracle experience designed around reflection, calm, and a single card each day.">
+  <meta property="og:url" content="https://futodama.app/celestial-oracle/">
+
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../style.css">
 </head>
 <body>
   <header class="site-header">
     <div class="container header-inner">
-      <a href="/" class="logo" aria-label="futodama home">
+      <a href="../index.html" class="logo" aria-label="futodama home">
         <span class="logo-dot" aria-hidden="true"></span>futodama
       </a>
       <nav class="main-nav" aria-label="Main navigation">
@@ -19,46 +30,67 @@
           <span class="hamburger"></span>
         </button>
         <ul class="nav-menu" id="primary-menu">
-          <li><a href="/#products">Products</a></li>
-          <li><a href="/about/">About</a></li>
-          <li><a href="/support/">Support</a></li>
+          <li><a href="../index.html#products">Products</a></li>
+          <li><a href="../about/index.html">About</a></li>
+          <li><a href="../support/index.html">Support</a></li>
+          <li class="lang-switch">
+            <span class="lang-current">EN</span>
+            <span class="lang-sep">|</span>
+            <a href="../ja/celestial-oracle/index.html">日本語</a>
+          </li>
         </ul>
       </nav>
     </div>
   </header>
 
   <main>
-    <section class="page-hero">
+    <section class="page-hero page-hero--gold">
       <div class="container">
         <span class="eyebrow">Product</span>
-        <h1>Celestial Oracle</h1>
+        <h1><span class="hero-dot hero-dot--gold" aria-hidden="true"></span>Celestial Oracle</h1>
         <p class="product-copy">A quiet moment for yourself, once a day.</p>
-        <p class="jp">一日一枚のカードから、自分自身と向き合う静かな時間を。</p>
       </div>
     </section>
 
-    <section class="content-section">
-      <div class="container">
-        <p class="placeholder-note">More details about Celestial Oracle will be shared here soon.</p>
+    <section class="content-section section-tint">
+      <div class="container text-center">
+        <p>A daily oracle experience designed around reflection, calm, and a single card each day.</p>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="container footer-inner">
-      <nav aria-label="Footer navigation">
-        <ul>
-          <li><a href="/#products">Products</a></li>
-          <li><a href="/about/">About</a></li>
-          <li><a href="/support/">Support</a></li>
-          <li><a href="/privacy/">Privacy</a></li>
-          <li><a href="/terms/">Terms</a></li>
-        </ul>
-      </nav>
-      <p class="copyright">&copy; 2026 futodama</p>
+    <div class="container">
+      <div class="footer-grid">
+        <nav class="footer-col" aria-label="Products">
+          <h4>Products</h4>
+          <ul>
+            <li><a href="../arrvd/index.html">ARRVD</a></li>
+            <li><a href="../mojitsunagi/index.html">Mojitsunagi</a></li>
+            <li><a href="index.html">Celestial Oracle</a></li>
+          </ul>
+        </nav>
+        <nav class="footer-col" aria-label="Company">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="../about/index.html">About</a></li>
+            <li><a href="../support/index.html">Support</a></li>
+          </ul>
+        </nav>
+        <nav class="footer-col" aria-label="Legal">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="../privacy/index.html">Privacy</a></li>
+            <li><a href="../terms/index.html">Terms</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <p class="copyright">&copy; 2026 futodama</p>
+      </div>
     </div>
   </footer>
 
-  <script src="/script.js"></script>
+  <script src="../script.js"></script>
 </body>
 </html>

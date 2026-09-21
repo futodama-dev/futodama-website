@@ -1,17 +1,28 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ARRVD — futodama</title>
-  <meta name="description" content="ARRVD: know when someone arrives where they are expected, without following everywhere they go.">
+  <title>ARRVD — Arrival reassurance without continuous tracking | futodama</title>
+  <meta name="description" content="ARRVD gives reassurance that someone arrived where they were expected, without continuous location tracking.">
   <link rel="canonical" href="https://futodama.app/arrvd/">
-  <link rel="stylesheet" href="/style.css">
+  <link rel="alternate" hreflang="en" href="https://futodama.app/arrvd/">
+  <link rel="alternate" hreflang="ja" href="https://futodama.app/ja/arrvd/">
+  <link rel="alternate" hreflang="x-default" href="https://futodama.app/arrvd/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="futodama">
+  <meta property="og:title" content="ARRVD — Arrival reassurance without continuous tracking | futodama">
+  <meta property="og:description" content="ARRVD gives reassurance that someone arrived where they were expected, without continuous location tracking.">
+  <meta property="og:url" content="https://futodama.app/arrvd/">
+
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../style.css">
 </head>
 <body>
   <header class="site-header">
     <div class="container header-inner">
-      <a href="/" class="logo" aria-label="futodama home">
+      <a href="../index.html" class="logo" aria-label="futodama home">
         <span class="logo-dot" aria-hidden="true"></span>futodama
       </a>
       <nav class="main-nav" aria-label="Main navigation">
@@ -19,9 +30,14 @@
           <span class="hamburger"></span>
         </button>
         <ul class="nav-menu" id="primary-menu">
-          <li><a href="/#products">Products</a></li>
-          <li><a href="/about/">About</a></li>
-          <li><a href="/support/">Support</a></li>
+          <li><a href="../index.html#products">Products</a></li>
+          <li><a href="../about/index.html">About</a></li>
+          <li><a href="../support/index.html">Support</a></li>
+          <li class="lang-switch">
+            <span class="lang-current">EN</span>
+            <span class="lang-sep">|</span>
+            <a href="../ja/arrvd/index.html">日本語</a>
+          </li>
         </ul>
       </nav>
     </div>
@@ -36,47 +52,117 @@
         <p>
           Know when someone arrives where they are expected — without following everywhere they go.
         </p>
-        <p class="jp">
-          大切な人が予定した場所へ到着したことを確認するために、<br>
-          ずっと居場所を追い続ける必要はありません。
-        </p>
         <span class="status-badge">Coming soon</span>
       </div>
     </section>
 
+    <section class="content-section idea-section section-tint">
+      <div class="container">
+        <h2>Reassurance without constant tracking.</h2>
+        <p>
+          ARRVD is designed around a simple idea: families should be able to know that someone arrived
+          safely without needing to continuously follow their location.
+        </p>
+      </div>
+    </section>
+
     <section class="content-section">
-      <div class="container feature-grid">
-        <article class="feature-card">
-          <h3>Arrival, not surveillance</h3>
-          <p class="jp">常時位置追跡ではなく、到着確認にフォーカス。</p>
-        </article>
-        <article class="feature-card">
-          <h3>Reassurance with privacy</h3>
-          <p class="jp">安心とプライバシーの両立。</p>
-        </article>
-        <article class="feature-card">
-          <h3>Simple by design</h3>
-          <p class="jp">余計な機能を増やさず、必要な情報をシンプルに届ける。</p>
-        </article>
+      <div class="container text-center">
+        <h2>How it works</h2>
+        <div class="steps">
+          <article class="step">
+            <span class="step-number" aria-hidden="true">1</span>
+            <h3>Set a place</h3>
+            <p>Choose a place you'd like to confirm arrival at — school, an activity, work, and more.</p>
+          </article>
+          <article class="step">
+            <span class="step-number" aria-hidden="true">2</span>
+            <h3>Set the expected time</h3>
+            <p>Set the day and time someone is expected to arrive.</p>
+          </article>
+          <article class="step">
+            <span class="step-number" aria-hidden="true">3</span>
+            <h3>Get reassurance</h3>
+            <p>Get confirmation on arrival — and a notice if they haven't arrived by the expected time.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section privacy-section section-tint">
+      <div class="container">
+        <h2>Privacy by design</h2>
+        <p>
+          ARRVD isn't built around a live map or continuous location tracking. It's designed to answer
+          one simple question — did they arrive? — rather than showing everywhere someone goes.
+        </p>
+        <p class="disclaimer">
+          Full privacy and data details will be published alongside the app before launch.
+        </p>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <div class="container text-center">
+        <h2>Why ARRVD</h2>
+        <div class="feature-grid">
+          <article class="feature-card">
+            <h3>Arrival, not surveillance</h3>
+            <p>Focused on confirming arrival, not continuous location tracking.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Reassurance with privacy</h3>
+            <p>Reassurance and privacy, together.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Simple by design</h3>
+            <p>No extra features — just the information that matters, simply delivered.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section section-tint text-center">
+      <div class="container">
+        <h2>Coming soon</h2>
+        <p>ARRVD is currently in development and is not yet available to download.</p>
+        <span class="status-badge">Coming soon</span>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="container footer-inner">
-      <nav aria-label="Footer navigation">
-        <ul>
-          <li><a href="/#products">Products</a></li>
-          <li><a href="/about/">About</a></li>
-          <li><a href="/support/">Support</a></li>
-          <li><a href="/privacy/">Privacy</a></li>
-          <li><a href="/terms/">Terms</a></li>
-        </ul>
-      </nav>
-      <p class="copyright">&copy; 2026 futodama</p>
+    <div class="container">
+      <div class="footer-grid">
+        <nav class="footer-col" aria-label="Products">
+          <h4>Products</h4>
+          <ul>
+            <li><a href="index.html">ARRVD</a></li>
+            <li><a href="../mojitsunagi/index.html">Mojitsunagi</a></li>
+            <li><a href="../celestial-oracle/index.html">Celestial Oracle</a></li>
+          </ul>
+        </nav>
+        <nav class="footer-col" aria-label="Company">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="../about/index.html">About</a></li>
+            <li><a href="../support/index.html">Support</a></li>
+          </ul>
+        </nav>
+        <nav class="footer-col" aria-label="Legal">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="../privacy/index.html">Privacy</a></li>
+            <li><a href="../terms/index.html">Terms</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <p class="copyright">&copy; 2026 futodama</p>
+      </div>
     </div>
   </footer>
 
-  <script src="/script.js"></script>
+  <script src="../script.js"></script>
 </body>
 </html>

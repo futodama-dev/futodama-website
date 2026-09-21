@@ -177,10 +177,11 @@ button:focus-visible {
 .logo {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 9px;
   font-size: 1.25rem;
   font-weight: 700;
   color: var(--navy);
+  letter-spacing: -0.01em;
 }
 
 .logo:hover {
@@ -189,8 +190,8 @@ button:focus-visible {
 }
 
 .logo-dot {
-  width: 14px;
-  height: 14px;
+  width: 11px;
+  height: 11px;
   border-radius: 50%;
   background: var(--blue);
   flex-shrink: 0;
@@ -212,6 +213,26 @@ button:focus-visible {
 .nav-menu a {
   color: var(--navy);
   font-weight: 500;
+}
+
+.lang-switch {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.lang-switch .lang-current {
+  color: var(--navy);
+}
+
+.lang-switch a {
+  color: var(--blue);
+}
+
+.lang-switch .lang-sep {
+  color: rgba(31, 42, 55, 0.3);
 }
 
 .nav-toggle {
@@ -274,12 +295,18 @@ button:focus-visible {
   text-align: center;
 }
 
-.hero h1 {
-  margin-bottom: var(--space-3);
+.hero .container {
+  max-width: 720px;
 }
 
-.hero-jp {
+.hero h1 {
+  margin-bottom: var(--space-3);
+  letter-spacing: -0.01em;
+}
+
+.hero-sub {
   font-size: 1.15rem;
+  line-height: 1.9;
   color: var(--charcoal);
   margin-bottom: var(--space-4);
 }
@@ -312,6 +339,44 @@ button:focus-visible {
   border: 1px solid rgba(31, 42, 55, 0.1);
   border-radius: var(--radius);
   padding: var(--space-4);
+}
+
+.product-card h3 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.product-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.product-card--arrvd .product-dot {
+  background: var(--blue);
+}
+
+.product-card--mojitsunagi .product-dot {
+  background: var(--green);
+}
+
+.product-card--celestial .product-dot {
+  background: var(--gold);
+}
+
+.featured-label {
+  display: inline-block;
+  background: rgba(59, 130, 196, 0.12);
+  color: var(--blue);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 999px;
+  margin-bottom: var(--space-2);
 }
 
 .product-card--featured {
@@ -362,8 +427,14 @@ button:focus-visible {
 }
 
 .about .tagline {
-  margin-top: var(--space-3);
-  font-size: 1.1rem;
+  margin-top: var(--space-4);
+  padding-top: var(--space-3);
+  border-top: 1px solid rgba(31, 42, 55, 0.1);
+  font-size: 1.05rem;
+}
+
+.about--standalone {
+  padding-top: var(--space-6);
 }
 
 /* ==========================================================================
@@ -383,6 +454,31 @@ button:focus-visible {
   text-transform: uppercase;
   font-size: 0.85rem;
   margin-bottom: var(--space-1);
+}
+
+.page-hero--green .eyebrow {
+  color: var(--green);
+}
+
+.page-hero--gold .eyebrow {
+  color: var(--gold);
+}
+
+.hero-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+.hero-dot--green {
+  background: var(--green);
+}
+
+.hero-dot--gold {
+  background: var(--gold);
 }
 
 .status-badge {
@@ -428,36 +524,136 @@ button:focus-visible {
   font-style: italic;
 }
 
+.text-center {
+  text-align: center;
+}
+
+/* ==========================================================================
+   ARRVD page — idea / steps / privacy
+   ========================================================================== */
+
+.section-tint {
+  background: #fff;
+}
+
+.idea-section .container,
+.privacy-section .container {
+  max-width: 720px;
+  text-align: center;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-3);
+  margin-top: var(--space-3);
+}
+
+.step {
+  position: relative;
+  background: #fff;
+  border: 1px solid rgba(31, 42, 55, 0.1);
+  border-radius: var(--radius);
+  padding: var(--space-3);
+  padding-top: 56px;
+}
+
+.step-number {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--blue);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.step h3 {
+  font-size: 1.05rem;
+}
+
+.disclaimer {
+  font-size: 0.9rem;
+  color: var(--charcoal);
+  opacity: 0.75;
+}
+
+/* ==========================================================================
+   404
+   ========================================================================== */
+
+.error-page {
+  min-height: 55vh;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  padding: var(--space-6) 0;
+}
+
+.error-page .container {
+  max-width: 560px;
+}
+
+.error-code {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: var(--blue);
+  margin-bottom: var(--space-1);
+}
+
 /* ==========================================================================
    Footer
    ========================================================================== */
 
 .site-footer {
   border-top: 1px solid rgba(31, 42, 55, 0.08);
-  padding: var(--space-4) 0;
+  padding: var(--space-5) 0 var(--space-4);
   background: var(--warm-white);
 }
 
-.footer-inner {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--space-2);
-  text-align: center;
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
 }
 
-.footer-inner ul {
+.footer-col h4 {
+  color: var(--navy);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin: 0 0 var(--space-2);
+}
+
+.footer-col ul {
   list-style: none;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: var(--space-3);
+  flex-direction: column;
+  gap: 10px;
   margin: 0;
   padding: 0;
 }
 
-.footer-inner a {
+.footer-col a {
+  color: var(--charcoal);
+}
+
+.footer-col a:hover {
   color: var(--navy);
+}
+
+.footer-bottom {
+  margin-top: var(--space-4);
+  padding-top: var(--space-3);
+  border-top: 1px solid rgba(31, 42, 55, 0.08);
+  text-align: center;
 }
 
 .copyright {
@@ -472,7 +668,8 @@ button:focus-visible {
    ========================================================================== */
 
 @media (max-width: 900px) {
-  .feature-grid {
+  .feature-grid,
+  .steps {
     grid-template-columns: 1fr;
   }
 }
@@ -480,6 +677,16 @@ button:focus-visible {
 @media (max-width: 768px) {
   .product-grid {
     grid-template-columns: 1fr;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
+    text-align: center;
+  }
+
+  .footer-col ul {
+    align-items: center;
   }
 
   .nav-toggle {

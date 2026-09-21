@@ -1,17 +1,28 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Privacy Policy — futodama</title>
   <meta name="description" content="Privacy policy for futodama products.">
   <link rel="canonical" href="https://futodama.app/privacy/">
-  <link rel="stylesheet" href="/style.css">
+  <link rel="alternate" hreflang="en" href="https://futodama.app/privacy/">
+  <link rel="alternate" hreflang="ja" href="https://futodama.app/ja/privacy/">
+  <link rel="alternate" hreflang="x-default" href="https://futodama.app/privacy/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="futodama">
+  <meta property="og:title" content="Privacy Policy — futodama">
+  <meta property="og:description" content="Privacy policy for futodama products.">
+  <meta property="og:url" content="https://futodama.app/privacy/">
+
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../style.css">
 </head>
 <body>
   <header class="site-header">
     <div class="container header-inner">
-      <a href="/" class="logo" aria-label="futodama home">
+      <a href="../index.html" class="logo" aria-label="futodama home">
         <span class="logo-dot" aria-hidden="true"></span>futodama
       </a>
       <nav class="main-nav" aria-label="Main navigation">
@@ -19,9 +30,14 @@
           <span class="hamburger"></span>
         </button>
         <ul class="nav-menu" id="primary-menu">
-          <li><a href="/#products">Products</a></li>
-          <li><a href="/about/">About</a></li>
-          <li><a href="/support/">Support</a></li>
+          <li><a href="../index.html#products">Products</a></li>
+          <li><a href="../about/index.html">About</a></li>
+          <li><a href="../support/index.html">Support</a></li>
+          <li class="lang-switch">
+            <span class="lang-current">EN</span>
+            <span class="lang-sep">|</span>
+            <a href="../ja/privacy/index.html">日本語</a>
+          </li>
         </ul>
       </nav>
     </div>
@@ -42,20 +58,37 @@
   </main>
 
   <footer class="site-footer">
-    <div class="container footer-inner">
-      <nav aria-label="Footer navigation">
-        <ul>
-          <li><a href="/#products">Products</a></li>
-          <li><a href="/about/">About</a></li>
-          <li><a href="/support/">Support</a></li>
-          <li><a href="/privacy/">Privacy</a></li>
-          <li><a href="/terms/">Terms</a></li>
-        </ul>
-      </nav>
-      <p class="copyright">&copy; 2026 futodama</p>
+    <div class="container">
+      <div class="footer-grid">
+        <nav class="footer-col" aria-label="Products">
+          <h4>Products</h4>
+          <ul>
+            <li><a href="../arrvd/index.html">ARRVD</a></li>
+            <li><a href="../mojitsunagi/index.html">Mojitsunagi</a></li>
+            <li><a href="../celestial-oracle/index.html">Celestial Oracle</a></li>
+          </ul>
+        </nav>
+        <nav class="footer-col" aria-label="Company">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="../about/index.html">About</a></li>
+            <li><a href="../support/index.html">Support</a></li>
+          </ul>
+        </nav>
+        <nav class="footer-col" aria-label="Legal">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="index.html">Privacy</a></li>
+            <li><a href="../terms/index.html">Terms</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <p class="copyright">&copy; 2026 futodama</p>
+      </div>
     </div>
   </footer>
 
-  <script src="/script.js"></script>
+  <script src="../script.js"></script>
 </body>
 </html>
