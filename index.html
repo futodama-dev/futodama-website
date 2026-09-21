@@ -3,16 +3,123 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>futodama</title>
-  <link rel="stylesheet" href="style.css">
+  <title>futodama — Small ideas. Better everyday moments.</title>
+  <meta name="description" content="futodama is an independent product studio creating simple, thoughtful digital experiences for everyday life.">
+  <link rel="canonical" href="https://futodama.app/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="futodama">
+  <meta property="og:title" content="futodama — Small ideas. Better everyday moments.">
+  <meta property="og:description" content="futodama is an independent product studio creating simple, thoughtful digital experiences for everyday life.">
+  <meta property="og:url" content="https://futodama.app/">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="futodama — Small ideas. Better everyday moments.">
+  <meta name="twitter:description" content="futodama is an independent product studio creating simple, thoughtful digital experiences for everyday life.">
+
+  <link rel="stylesheet" href="/style.css">
 </head>
 <body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="logo" aria-label="futodama home">
+        <span class="logo-dot" aria-hidden="true"></span>futodama
+      </a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-menu" aria-label="Toggle menu">
+          <span class="hamburger"></span>
+        </button>
+        <ul class="nav-menu" id="primary-menu">
+          <li><a href="#products">Products</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/support/">Support</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
   <main>
-    <h1>futodama</h1>
-    <p>Small ideas. Better everyday moments.</p>
-    <p>毎日を、少し安心に。少し楽しく。少し軽やかに。</p>
+    <section class="hero">
+      <div class="container">
+        <h1>Small ideas.<br>Better everyday moments.</h1>
+        <p class="hero-jp">
+          毎日を、少し安心に。<br>
+          少し楽しく。<br>
+          少し軽やかに。
+        </p>
+        <a href="#products" class="btn btn-primary">Explore our products</a>
+      </div>
+    </section>
+
+    <section id="products" class="products">
+      <div class="container">
+        <h2>Our Products</h2>
+        <div class="product-grid">
+          <article class="product-card product-card--featured">
+            <h3>ARRVD</h3>
+            <p class="product-copy">Know they arrived.<br>Not everywhere they went.</p>
+            <p class="product-sub">Reassurance through arrival confirmation, without continuous location tracking.</p>
+            <p class="product-jp">ずっと居場所を追跡するのではなく、「到着した」という必要な安心を。</p>
+            <a href="/arrvd/" class="btn btn-outline">Discover ARRVD</a>
+          </article>
+
+          <article class="product-card">
+            <h3>もじつなぎ</h3>
+            <p class="product-jp">言葉をつないで、森を育てる。</p>
+            <p class="product-sub">Connect letters, discover words, and grow your forest.</p>
+            <a href="/mojitsunagi/" class="btn btn-outline">Learn more</a>
+          </article>
+
+          <article class="product-card">
+            <h3>Celestial Oracle</h3>
+            <p class="product-copy">A quiet moment for yourself, once a day.</p>
+            <p class="product-jp">一日一枚のカードから、自分自身と向き合う静かな時間を。</p>
+            <a href="/celestial-oracle/" class="btn btn-outline">Learn more</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <div class="container">
+        <h2>About futodama</h2>
+        <p>
+          futodama is an independent product studio creating simple digital experiences that make everyday life
+          a little better.
+        </p>
+        <p>
+          From reassurance and convenience to joy and reflection, we turn small everyday ideas into thoughtful
+          products designed around people.
+        </p>
+        <p class="jp">
+          futodamaは、日常を少し良くするプロダクトをつくるインディペンデント・プロダクトブランドです。
+        </p>
+        <p class="jp">
+          安心、楽しさ、気づき、便利さ。
+        </p>
+        <p class="jp">
+          暮らしの中で見つけた小さなアイデアを、人の気持ちに寄り添うシンプルなデジタル体験へ変えていきます。
+        </p>
+        <p class="tagline">All is well.</p>
+      </div>
+    </section>
   </main>
 
-  <script src="script.js"></script>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <nav aria-label="Footer navigation">
+        <ul>
+          <li><a href="#products">Products</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/support/">Support</a></li>
+          <li><a href="/privacy/">Privacy</a></li>
+          <li><a href="/terms/">Terms</a></li>
+        </ul>
+      </nav>
+      <p class="copyright">&copy; 2026 futodama</p>
+    </div>
+  </footer>
+
+  <script src="/script.js"></script>
 </body>
 </html>
