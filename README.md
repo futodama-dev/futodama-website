@@ -10,3 +10,9 @@ Cloudflare Pages
 
 Repository:
 futodama-dev/futodama-website
+
+## Brand Guidelines
+
+The canonical futodama brand guidelines are maintained at:
+
+`docs/brand/Futodama_Brand_Guidelines_1.0.md`
