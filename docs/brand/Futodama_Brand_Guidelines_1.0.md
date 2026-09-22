@@ -143,7 +143,7 @@ Basic construction:
 ● futodama
 ```
 
-A simple blue circle combined with a lowercase `futodama` wordmark.
+A simple blue circle combined with a lowercase `futodama` wordmark. The exact, finalized specification is defined in [§9 Official Logo Specification](#9-official-logo-specification).
 
 ---
 
@@ -163,30 +163,81 @@ It must not carry meaning so complex that it requires explanation to be understo
 
 ---
 
-## 9. Dot Size
+## 9. Official Logo Specification
 
-The dot is slightly larger than earlier concept drafts.
+The following values are the finalized, official specification for the Simple Dot logo.
 
-**Goal:** the dot should read as a brand mark that helps people remember futodama — not a small decoration.
+**Basic form:**
 
-**Web header reference values:**
+```
+● futodama
+```
 
-Desktop:
-- Dot diameter: 12–14px
+| Property | Value |
+|---|---|
+| Dot diameter | 12px (reference size) |
+| Gap (dot to wordmark) | 8px |
+| Wordmark | `futodama` |
+| Official wordmark typeface | Inter SemiBold |
+| Wordmark weight | 600 |
+| Dot color | `#3B82C4` |
+| Wordmark color | `#1F2A37` |
 
-Mobile:
-- Dot diameter: 10–12px
+**Official wordmark typeface:** Inter SemiBold (600). This is separate from the Web UI typography system in §18 English Font Stack. The logo wordmark is a fixed brand asset and must render identically in every environment, so it is not left to whatever font a given system happens to have installed — that is a different concern from body/UI text, which intentionally uses the system font stack for performance and stable global rendering.
 
-Gap to wordmark: 8–12px
+**Distribution logo assets:** in the canonical SVG files (`assets/brand/logo/futodama-logo*.svg`), the wordmark is converted to outlined vector paths, not left as editable text. This means the official logo renders identically across environments and does not depend on the Inter font being installed or loaded. Web UI typography (navigation, headings, body copy) remains governed separately by the Futodama typography system in §17–§19, and is unaffected by this rule.
 
-The final ratio should prioritize visual balance against the wordmark's character size.
+**Rules:**
 
-- The dot must never be so small that it reads like a punctuation mark.
-- The dot must never be so large that it dominates over the wordmark.
+- Lowercase only.
+- The dot and wordmark are treated as a single, inseparable unit.
+- Dot diameter is 12px at reference scale.
+- Gap between dot and wordmark is 8px.
+- Wordmark weight is 600.
+- Dot color is `#3B82C4`.
+- Wordmark color is `#1F2A37`.
+- No shadow.
+- No gradient.
+- No multiple dots.
+- No change to the dot's shape.
+- No arbitrary change to the wordmark's letter spacing.
+- No change to the overall logo aspect ratio.
+
+**Why these values:**
+
+- A 12px dot reads as a brand mark rather than a decorative flourish.
+- An 8px gap keeps the dot and wordmark feeling like one unit without feeling cramped.
+- Weight 600 is more visible than 500 and lighter than 700 — it reads as confident without feeling heavy.
+- This combination best balances the Professional × Human brand personality.
+- It holds up consistently across web, mobile, favicon, and print contexts.
 
 ---
 
-## 10. Logo Variants
+## 10. Clear Space
+
+Let **X** = the dot diameter.
+
+Minimum clear space around the logo: **1X** on all sides (top, bottom, left, right).
+
+At the 12px reference size, this is a minimum of 12px of clear space around the full logo.
+
+In practice, using more generous spacing than this minimum is recommended.
+
+Do not place text, rules/lines, icons, or other elements directly against the logo.
+
+---
+
+## 11. Minimum Size
+
+- **Web:** minimum width for the full logo (dot + wordmark) is approximately 80px.
+- **Print:** minimum width is approximately 20mm.
+- **Symbol only:** 16px or larger is recommended.
+
+If the wordmark would become illegible at very small sizes, use the symbol-only mark instead.
+
+---
+
+## 12. Logo Variants
 
 Officially permitted forms:
 
@@ -195,11 +246,11 @@ Officially permitted forms:
 3. White / reversed version
 4. Dark / monochrome version
 
-If an official SVG is produced in the future, it should be based on these four variants.
+Canonical SVG assets for all four variants are maintained at `assets/brand/logo/`. See [assets/brand/logo/README.md](../../assets/brand/logo/README.md).
 
 ---
 
-## 11. Logo Prohibitions
+## 13. Logo Prohibitions
 
 The following are prohibited:
 
@@ -215,10 +266,14 @@ The following are prohibited:
 - Rotating the logo
 - Placing other elements too close to the logo
 - Changing the futodama logo itself per app
+- Changing the dot diameter from the official 12px reference
+- Changing the gap from the official 8px
+- Changing the wordmark weight from 600
+- Changing the dot or wordmark colors from the official values
 
 ---
 
-## 12. Brand Colors
+## 14. Brand Colors
 
 Official brand colors:
 
@@ -234,7 +289,7 @@ Official brand colors:
 
 ---
 
-## 13. Color Roles
+## 15. Color Roles
 
 - **Blue:** Trust / reassurance / primary action
 - **Green:** growth / life / positive support
@@ -246,7 +301,7 @@ Official brand colors:
 
 ---
 
-## 14. Product Colors
+## 16. Product Colors
 
 The parent brand and each product are distinguished by color.
 
@@ -259,7 +314,7 @@ The parent brand's color is not forced across every product uniformly.
 
 ---
 
-## 15. Typography Policy
+## 17. Typography Policy
 
 To preserve visual consistency, fonts, sizes, and weights are not added arbitrarily.
 
@@ -267,7 +322,7 @@ On the web, a system font stack is the baseline, prioritizing performance and st
 
 ---
 
-## 16. English Font Stack
+## 18. English Font Stack
 
 Recommended:
 
@@ -284,7 +339,7 @@ Inter is not currently loaded as a required external network dependency. The bra
 
 ---
 
-## 17. Japanese Font Stack
+## 19. Japanese Font Stack
 
 Recommended:
 
@@ -301,7 +356,7 @@ External web fonts are not made mandatory.
 
 ---
 
-## 18. Type Scale
+## 20. Type Scale
 
 ### Desktop
 
@@ -335,17 +390,17 @@ As a rule, sizes outside this scale are not introduced ad hoc. When using `clamp
 
 ---
 
-## 19. Font Weights
+## 21. Font Weights
 
 - **400 Regular:** body text
 - **500 Medium:** navigation, labels, small emphasis
-- **600 Semibold:** H3, buttons, etc.
+- **600 Semibold:** H3, buttons, the futodama wordmark, etc.
 - **700 Bold:** Hero, H1, key headings
 - **800 / 900:** not used as a rule
 
 ---
 
-## 20. Line Height
+## 22. Line Height
 
 - **Body:** 1.6–1.75
 - **Heading:** approximately 1.1–1.3, depending on content
@@ -354,7 +409,7 @@ Do not cram long text too densely.
 
 ---
 
-## 21. Spacing System
+## 23. Spacing System
 
 Base unit: 4px.
 
@@ -390,7 +445,7 @@ Ad hoc spacing values such as 37px or 57px are not created as a rule.
 
 ---
 
-## 22. Border Radius
+## 24. Border Radius
 
 Official values:
 
@@ -406,7 +461,7 @@ Do not round corners excessively.
 
 ---
 
-## 23. Borders
+## 25. Borders
 
 - **Normal:** 1px
 - **Emphasis:** 2px
@@ -416,7 +471,7 @@ Do not create boundaries with excessive shadow instead of borders.
 
 ---
 
-## 24. Buttons
+## 26. Buttons
 
 There are three official button types:
 
@@ -428,7 +483,7 @@ Do not place a large number of Primary CTAs on one screen.
 
 ---
 
-## 25. Cards
+## 27. Cards
 
 Cards are used to organize content. Do not turn everything into a card.
 
@@ -443,7 +498,7 @@ Do not lift cards excessively on hover either.
 
 ---
 
-## 26. Icons
+## 28. Icons
 
 Baseline:
 
@@ -456,7 +511,7 @@ Emoji are not used as official UI icons.
 
 ---
 
-## 27. Imagery
+## 29. Imagery
 
 Priority order:
 
@@ -468,7 +523,7 @@ Do not use meaningless stock photography in bulk. In particular, do not build th
 
 ---
 
-## 28. Motion
+## 30. Motion
 
 Animation is supportive, not central.
 
@@ -486,7 +541,7 @@ Prohibited:
 
 ---
 
-## 29. Writing Voice
+## 31. Writing Voice
 
 Brand writing should be:
 
@@ -511,7 +566,7 @@ Do not exaggerate.
 
 ---
 
-## 30. Brand Architecture
+## 32. Brand Architecture
 
 Structure:
 
@@ -529,7 +584,7 @@ Relationship to the parent brand is expressed with phrases such as "Created by f
 
 ---
 
-## 31. Web Grid
+## 33. Web Grid
 
 - Normal content max-width: 1120–1200px
 - Long-form text: 680–760px
@@ -539,7 +594,7 @@ Avoid body text that is too wide.
 
 ---
 
-## 32. Accessibility
+## 34. Accessibility
 
 Accessibility is part of brand quality. Required:
 
@@ -555,7 +610,7 @@ Accessibility is part of brand quality. Required:
 
 ---
 
-## 33. Language Policy
+## 35. Language Policy
 
 **Web:**
 
@@ -570,7 +625,7 @@ Proper nouns such as product names retain their official form in both languages.
 
 ---
 
-## 34. Brand Governance
+## 36. Brand Governance
 
 Going forward, all production work — including work done via Claude Code — uses this document as the official standard.
 
@@ -595,7 +650,7 @@ and obtain approval before changing anything.
 
 ---
 
-## 35. Five Brand Review Questions
+## 37. Five Brand Review Questions
 
 Every new piece of work must be reviewed against these five questions:
 
@@ -607,7 +662,7 @@ Every new piece of work must be reviewed against these five questions:
 
 ---
 
-## 36. Version Management
+## 38. Version Management
 
 This document is Version 1.0.
 
@@ -623,8 +678,15 @@ Examples of major changes:
 
 Each update should record its reason for change.
 
+**Change log:**
+
+- **1.0 (2026):** Initial canonical guideline established.
+- **1.0 update (2026):** Added the official Simple Dot logo specification (dot diameter, gap, wordmark weight, and color values), Clear Space rule, and Minimum Size rule. This finalizes exact values within the Simple Dot direction already adopted in 1.0 — it is not a change to the logo system itself, so the version number is unchanged.
+- **1.0 update (2026):** Specified Inter SemiBold (600) as the official wordmark typeface, and required the wordmark in distribution logo SVGs to be outlined vector paths rather than live text, so the official logo renders identically across environments. Web UI typography is unaffected and continues to follow the system font stack in §18–§19.
+
 ---
 
 ## Related documents
 
 - [docs/brand/README.md](README.md) — brand documentation index
+- [assets/brand/logo/README.md](../../assets/brand/logo/README.md) — canonical logo asset files
