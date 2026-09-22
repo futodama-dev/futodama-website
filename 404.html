@@ -35,10 +35,17 @@
   <main>
     <section class="error-page">
       <div class="container">
-        <p class="error-code">404</p>
-        <h1>Looks like this idea wandered off.</h1>
-        <p>We couldn't find that page.</p>
-        <a href="index.html" class="btn btn-primary">Back to home</a>
+        <div id="error-en">
+          <p class="error-code">404</p>
+          <h1>Looks like this idea wandered off.</h1>
+          <p>The page you're looking for isn't here.</p>
+          <a href="index.html" class="btn btn-primary">Back home</a>
+        </div>
+        <div id="error-ja" hidden>
+          <p class="error-code">404</p>
+          <h1>このページは、少し迷子になったようです。</h1>
+          <a href="ja/index.html" class="btn btn-primary">トップへ戻る</a>
+        </div>
       </div>
     </section>
   </main>
@@ -68,13 +75,28 @@
             <li><a href="terms/index.html">Terms</a></li>
           </ul>
         </nav>
+        <nav class="footer-col" aria-label="Language">
+          <h4>Language</h4>
+          <ul>
+            <li><a href="index.html">English</a></li>
+            <li><a href="ja/index.html">日本語</a></li>
+          </ul>
+        </nav>
       </div>
       <div class="footer-bottom">
         <p class="copyright">&copy; 2026 futodama</p>
+        <p class="footer-spirit">All is well.</p>
       </div>
     </div>
   </footer>
 
   <script src="script.js"></script>
+  <script>
+    if (window.location.pathname.indexOf("/ja/") === 0) {
+      document.documentElement.lang = "ja";
+      document.getElementById("error-en").hidden = true;
+      document.getElementById("error-ja").hidden = false;
+    }
+  </script>
 </body>
 </html>

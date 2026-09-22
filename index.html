@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>futodama — Small ideas. Better everyday moments.</title>
-  <meta name="description" content="futodama is an independent product studio creating simple, thoughtful digital experiences for everyday life.">
+  <meta name="description" content="futodama is an independent product studio creating simple, thoughtful digital experiences for everyday life, including ARRVD, a privacy-conscious family arrival app.">
   <link rel="canonical" href="https://futodama.app/">
   <link rel="alternate" hreflang="en" href="https://futodama.app/">
   <link rel="alternate" hreflang="ja" href="https://futodama.app/ja/">
@@ -22,6 +22,15 @@
 
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "futodama",
+    "url": "https://futodama.app"
+  }
+  </script>
 </head>
 <body>
   <header class="site-header">
@@ -51,36 +60,89 @@
     <section class="hero">
       <div class="container">
         <h1>Small ideas.<br>Better everyday moments.</h1>
-        <p class="hero-sub">
-          We create simple, thoughtful products that make everyday life a little better.
+        <p class="hero-sub">Independent product studio creating thoughtful apps for everyday life.</p>
+        <p class="hero-body">
+          We create simple, human-centered digital products designed around reassurance, joy,
+          reflection, and convenience.
         </p>
         <a href="#products" class="btn btn-primary">Explore our products</a>
       </div>
     </section>
 
-    <section id="products" class="products">
+    <section id="products" class="featured">
       <div class="container">
-        <h2>Our Products</h2>
-        <div class="product-grid">
-          <article class="product-card product-card--featured product-card--arrvd">
+        <article class="featured-arrvd product-card--arrvd">
+          <div>
             <span class="featured-label">Featured</span>
             <h3><span class="product-dot" aria-hidden="true"></span>ARRVD</h3>
             <p class="product-copy">Know they arrived.<br>Not everywhere they went.</p>
             <p class="product-sub">Arrival reassurance without continuous location tracking.</p>
+            <p>A privacy-conscious family arrival app focused on confirming the moments that matter.</p>
             <a href="arrvd/index.html" class="btn btn-outline">Discover ARRVD</a>
-          </article>
+          </div>
+          <div class="featured-visual">
+            <svg class="arrival-mark" viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="120" cy="120" r="100" stroke="#3B82C4" stroke-opacity="0.15" stroke-width="2"/>
+              <circle cx="120" cy="120" r="70" stroke="#3B82C4" stroke-opacity="0.3" stroke-width="2"/>
+              <circle cx="120" cy="120" r="40" stroke="#3B82C4" stroke-opacity="0.5" stroke-width="2"/>
+              <circle cx="120" cy="120" r="10" fill="#3B82C4"/>
+            </svg>
+          </div>
+        </article>
+      </div>
+    </section>
 
+    <section class="products">
+      <div class="container">
+        <h2>Other Products</h2>
+        <div class="product-grid">
           <article class="product-card product-card--mojitsunagi">
-            <h3><span class="product-dot" aria-hidden="true"></span>Mojitsunagi</h3>
+            <h3>
+              <svg class="product-icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <rect x="3" y="10" width="12" height="12" rx="3" fill="#6F9275" fill-opacity="0.15" stroke="#6F9275" stroke-width="2"/>
+                <rect x="17" y="10" width="12" height="12" rx="3" fill="#6F9275" fill-opacity="0.15" stroke="#6F9275" stroke-width="2"/>
+                <line x1="15" y1="16" x2="17" y2="16" stroke="#6F9275" stroke-width="2"/>
+              </svg>
+              Mojitsunagi
+            </h3>
             <p class="product-sub">Connect letters, discover words, and grow your forest.</p>
             <a href="mojitsunagi/index.html" class="btn btn-outline">Learn more</a>
           </article>
 
           <article class="product-card product-card--celestial">
-            <h3><span class="product-dot" aria-hidden="true"></span>Celestial Oracle</h3>
+            <h3>
+              <svg class="product-icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <rect x="8" y="4" width="16" height="24" rx="3" stroke="#1F2A37" stroke-width="2"/>
+                <path d="M20 10a5 5 0 1 0 0 8 6 6 0 1 1 0-8Z" fill="#D8B45B"/>
+              </svg>
+              Celestial Oracle
+            </h3>
             <p class="product-copy">A quiet moment for yourself, once a day.</p>
             <a href="celestial-oracle/index.html" class="btn btn-outline">Learn more</a>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="beliefs">
+      <div class="container">
+        <h2>What futodama believes</h2>
+        <div class="belief-grid">
+          <div class="belief-card">
+            <div class="belief-mark" aria-hidden="true"></div>
+            <p class="belief-lede">Reassurance without excess</p>
+            <p>Reassurance doesn't require constant oversight to be meaningful.</p>
+          </div>
+          <div class="belief-card">
+            <div class="belief-mark" aria-hidden="true"></div>
+            <p class="belief-lede">Simple is thoughtful</p>
+            <p>We'd rather make something clear than make it complicated.</p>
+          </div>
+          <div class="belief-card">
+            <div class="belief-mark" aria-hidden="true"></div>
+            <p class="belief-lede">Technology should feel lighter</p>
+            <p>Technology should make everyday life a little lighter, not heavier.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -96,6 +158,7 @@
           We turn small everyday ideas into products built around reassurance, joy, reflection, and
           convenience.
         </p>
+        <a href="about/index.html" class="btn btn-outline">About futodama</a>
         <p class="tagline">All is well.</p>
       </div>
     </section>
@@ -126,9 +189,17 @@
             <li><a href="terms/index.html">Terms</a></li>
           </ul>
         </nav>
+        <nav class="footer-col" aria-label="Language">
+          <h4>Language</h4>
+          <ul>
+            <li><span class="lang-current">English</span></li>
+            <li><a href="ja/index.html">日本語</a></li>
+          </ul>
+        </nav>
       </div>
       <div class="footer-bottom">
         <p class="copyright">&copy; 2026 futodama</p>
+        <p class="footer-spirit">All is well.</p>
       </div>
     </div>
   </footer>

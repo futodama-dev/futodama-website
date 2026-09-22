@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <url>
+    <loc>https://futodama.app/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://futodama.app/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://futodama.app/ja/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://futodama.app/"/>
+  </url>
+  <url>
+    <loc>https://futodama.app/arrvd/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://futodama.app/arrvd/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://futodama.app/ja/arrvd/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://futodama.app/arrvd/"/>
+  </url>
+  <url>
+    <loc>https://futodama.app/mojitsunagi/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://futodama.app/mojitsunagi/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://futodama.app/ja/mojitsunagi/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://futodama.app/mojitsunagi/"/>
+  </url>
+  <url>
+    <loc>https://futodama.app/celestial-oracle/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://futodama.app/celestial-oracle/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://futodama.app/ja/celestial-oracle/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://futodama.app/celestial-oracle/"/>
+  </url>
+  <url>
+    <loc>https://futodama.app/about/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://futodama.app/about/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://futodama.app/ja/about/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://futodama.app/about/"/>
+  </url>
+  <url>
+    <loc>https://futodama.app/support/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://futodama.app/support/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://futodama.app/ja/support/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://futodama.app/support/"/>
+  </url>
+  <url>
+    <loc>https://futodama.app/privacy/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://futodama.app/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://futodama.app/ja/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://futodama.app/privacy/"/>
+  </url>
+  <url>
+    <loc>https://futodama.app/terms/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://futodama.app/terms/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://futodama.app/ja/terms/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://futodama.app/terms/"/>
+  </url>
+
+  <url>
+    <loc>https://futodama.app/ja/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://futodama.app/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://futodama.app/ja/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://futodama.app/"/>
+  </url>
+  <url>
+    <loc>https://futodama.app/ja/arrvd/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://futodama.app/arrvd/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://futodama.app/ja/arrvd/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://futodama.app/arrvd/"/>
+  </url>
+  <url>
+    <loc>https://futodama.app/ja/mojitsunagi/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://futodama.app/mojitsunagi/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://futodama.app/ja/mojitsunagi/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://futodama.app/mojitsunagi/"/>
+  </url>
+  <url>
+    <loc>https://futodama.app/ja/celestial-oracle/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://futodama.app/celestial-oracle/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://futodama.app/ja/celestial-oracle/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://futodama.app/celestial-oracle/"/>
+  </url>
+  <url>
+    <loc>https://futodama.app/ja/about/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://futodama.app/about/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://futodama.app/ja/about/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://futodama.app/about/"/>
+  </url>
+  <url>
+    <loc>https://futodama.app/ja/support/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://futodama.app/support/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://futodama.app/ja/support/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://futodama.app/support/"/>
+  </url>
+  <url>
+    <loc>https://futodama.app/ja/privacy/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://futodama.app/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://futodama.app/ja/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://futodama.app/privacy/"/>
+  </url>
+  <url>
+    <loc>https://futodama.app/ja/terms/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://futodama.app/terms/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://futodama.app/ja/terms/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://futodama.app/terms/"/>
+  </url>
+
+</urlset>

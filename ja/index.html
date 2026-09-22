@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>futodama — 毎日を、少し安心に。少し楽しく。少し軽やかに。</title>
-  <meta name="description" content="futodamaは、日常を少し良くするプロダクトをつくるインディペンデント・プロダクトブランドです。">
+  <meta name="description" content="futodamaは、日常を少し良くするプロダクトをつくるインディペンデント・プロダクトスタジオです。プライバシーに配慮した家族向け到着確認アプリARRVDなど。">
   <link rel="canonical" href="https://futodama.app/ja/">
   <link rel="alternate" hreflang="en" href="https://futodama.app/">
   <link rel="alternate" hreflang="ja" href="https://futodama.app/ja/">
@@ -13,11 +13,20 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="futodama">
   <meta property="og:title" content="futodama — 毎日を、少し安心に。少し楽しく。少し軽やかに。">
-  <meta property="og:description" content="futodamaは、日常を少し良くするプロダクトをつくるインディペンデント・プロダクトブランドです。">
+  <meta property="og:description" content="futodamaは、日常を少し良くするプロダクトをつくるインディペンデント・プロダクトスタジオです。">
   <meta property="og:url" content="https://futodama.app/ja/">
 
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="../style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "futodama",
+    "url": "https://futodama.app"
+  }
+  </script>
 </head>
 <body>
   <header class="site-header">
@@ -47,35 +56,88 @@
     <section class="hero">
       <div class="container">
         <h1>毎日を、少し安心に。<br>少し楽しく。<br>少し軽やかに。</h1>
-        <p class="hero-sub">
-          日常の小さな気づきを、人の気持ちに寄り添うシンプルなプロダクトへ。
+        <p class="hero-sub">日常を少し良くするプロダクトをつくる<br>インディペンデント・プロダクトスタジオ。</p>
+        <p class="hero-body">
+          安心、楽しさ、気づき、便利さ。
+          人の気持ちに寄り添うシンプルなデジタル体験をつくります。
         </p>
         <a href="#products" class="btn btn-primary">プロダクトを見る</a>
       </div>
     </section>
 
-    <section id="products" class="products">
+    <section id="products" class="featured">
       <div class="container">
-        <h2>プロダクト</h2>
-        <div class="product-grid">
-          <article class="product-card product-card--featured product-card--arrvd">
+        <article class="featured-arrvd product-card--arrvd">
+          <div>
             <span class="featured-label">注目</span>
             <h3><span class="product-dot" aria-hidden="true"></span>ARRVD</h3>
             <p class="product-copy">「到着した」という安心を。<br>ずっと居場所を追い続けることなく。</p>
+            <p>必要なときだけ、必要な安心を届ける家族向け到着確認アプリ。</p>
             <a href="arrvd/index.html" class="btn btn-outline">ARRVDを見る</a>
-          </article>
+          </div>
+          <div class="featured-visual">
+            <svg class="arrival-mark" viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="120" cy="120" r="100" stroke="#3B82C4" stroke-opacity="0.15" stroke-width="2"/>
+              <circle cx="120" cy="120" r="70" stroke="#3B82C4" stroke-opacity="0.3" stroke-width="2"/>
+              <circle cx="120" cy="120" r="40" stroke="#3B82C4" stroke-opacity="0.5" stroke-width="2"/>
+              <circle cx="120" cy="120" r="10" fill="#3B82C4"/>
+            </svg>
+          </div>
+        </article>
+      </div>
+    </section>
 
+    <section class="products">
+      <div class="container">
+        <h2>その他のプロダクト</h2>
+        <div class="product-grid">
           <article class="product-card product-card--mojitsunagi">
-            <h3><span class="product-dot" aria-hidden="true"></span>もじつなぎ</h3>
+            <h3>
+              <svg class="product-icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <rect x="3" y="10" width="12" height="12" rx="3" fill="#6F9275" fill-opacity="0.15" stroke="#6F9275" stroke-width="2"/>
+                <rect x="17" y="10" width="12" height="12" rx="3" fill="#6F9275" fill-opacity="0.15" stroke="#6F9275" stroke-width="2"/>
+                <line x1="15" y1="16" x2="17" y2="16" stroke="#6F9275" stroke-width="2"/>
+              </svg>
+              もじつなぎ
+            </h3>
             <p class="product-copy">言葉をつないで、森を育てる。</p>
             <a href="mojitsunagi/index.html" class="btn btn-outline">詳しく見る</a>
           </article>
 
           <article class="product-card product-card--celestial">
-            <h3><span class="product-dot" aria-hidden="true"></span>Celestial Oracle</h3>
+            <h3>
+              <svg class="product-icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <rect x="8" y="4" width="16" height="24" rx="3" stroke="#1F2A37" stroke-width="2"/>
+                <path d="M20 10a5 5 0 1 0 0 8 6 6 0 1 1 0-8Z" fill="#D8B45B"/>
+              </svg>
+              Celestial Oracle
+            </h3>
             <p class="product-copy">一日一枚のカードから、<br>自分自身と向き合う静かな時間を。</p>
             <a href="celestial-oracle/index.html" class="btn btn-outline">詳しく見る</a>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="beliefs">
+      <div class="container">
+        <h2>futodamaが大切にしていること</h2>
+        <div class="belief-grid">
+          <div class="belief-card">
+            <div class="belief-mark" aria-hidden="true"></div>
+            <p class="belief-lede">安心は、監視しすぎなくてもつくれる。</p>
+            <p>常に見張ることなく、安心は生み出せると考えています。</p>
+          </div>
+          <div class="belief-card">
+            <div class="belief-mark" aria-hidden="true"></div>
+            <p class="belief-lede">複雑にするより、わかりやすく。</p>
+            <p>複雑にすることよりも、わかりやすくすることを選びます。</p>
+          </div>
+          <div class="belief-card">
+            <div class="belief-mark" aria-hidden="true"></div>
+            <p class="belief-lede">テクノロジーは、少し軽くするために。</p>
+            <p>生活を重くするのではなく、少し軽くするための技術でありたい。</p>
+          </div>
         </div>
       </div>
     </section>
@@ -87,9 +149,9 @@
           futodamaは、日常を少し良くするプロダクトをつくるインディペンデント・プロダクトブランドです。
         </p>
         <p>
-          安心、楽しさ、気づき、便利さ。
-          暮らしの中で見つけた小さなアイデアを、人の気持ちに寄り添うデジタル体験へ変えていきます。
+          暮らしの中で見つけた小さな気づきを、人の気持ちに寄り添うデジタル体験へ変えていきます。
         </p>
+        <a href="about/index.html" class="btn btn-outline">futodamaについて</a>
         <p class="tagline">All is well.</p>
       </div>
     </section>
@@ -120,9 +182,17 @@
             <li><a href="terms/index.html">利用規約</a></li>
           </ul>
         </nav>
+        <nav class="footer-col" aria-label="言語">
+          <h4>言語</h4>
+          <ul>
+            <li><a href="../index.html">English</a></li>
+            <li><span class="lang-current">日本語</span></li>
+          </ul>
+        </nav>
       </div>
       <div class="footer-bottom">
         <p class="copyright">&copy; 2026 futodama</p>
+        <p class="footer-spirit">All is well.</p>
       </div>
     </div>
   </footer>
