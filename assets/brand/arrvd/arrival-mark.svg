@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" fill="none" role="img" aria-label="ARRVD Arrival Mark">
+  <circle cx="120" cy="120" r="100" stroke="#3B82C4" stroke-opacity="0.15" stroke-width="2"/>
+  <circle cx="120" cy="120" r="56.25" stroke="#3B82C4" stroke-opacity="0.3" stroke-width="2"/>
+  <circle cx="120" cy="120" r="29.21" stroke="#3B82C4" stroke-opacity="0.5" stroke-width="2"/>
+  <circle cx="120" cy="120" r="12.5" fill="#3B82C4"/>
+</svg>
