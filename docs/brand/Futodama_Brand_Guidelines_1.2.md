@@ -1,12 +1,12 @@
-# Futodama Brand Guidelines 1.1
+# Futodama Brand Guidelines 1.2
 
-Version: 1.1
-Status: Superseded — historical reference only. See [Futodama_Brand_Guidelines_1.2.md](Futodama_Brand_Guidelines_1.2.md) for the current canonical brand guideline.
+Version: 1.2
+Status: Current canonical brand guideline
 Brand: futodama
 Primary domain: https://futodama.app
 Established: 2026
 
-This document is retained for historical reference only. It is no longer the official standard — see [Futodama_Brand_Guidelines_1.2.md](Futodama_Brand_Guidelines_1.2.md).
+This document is the current official standard for futodama's design, writing, and brand expression. It applies to the website, apps, App Store materials, social media, press materials, B2B materials, and future internal and external production work.
 
 ---
 
@@ -689,7 +689,124 @@ Relationship to the parent brand is expressed with phrases such as "Created by f
 
 ---
 
-## 34. Web Grid
+## 34. ARRVD Brand Signature
+
+### 34.1 Brand signature — the core idea
+
+**futodama:** One Dot / small idea / beginning.
+
+**ARRVD:** The Dot has arrived. Reassurance spreads outward from that point.
+
+> 「着いた」という一点から、安心が静かに広がる。
+
+ARRVD's entire visual signature — the Arrival Mark and the App Icon — is built from this single idea: a small dot that has *arrived*, from which calm spreads outward.
+
+**This must never be designed, described, or read as surveillance, tracking, radar, targeting, or a crosshair.** Any candidate that evokes those associations is rejected regardless of how visually appealing it is, per the Brand Values (§5 Reassurance, Kindness) and Brand Personality (§6 Professional × Human).
+
+### 34.2 ARRVD Messaging
+
+Three distinct pieces of copy serve three distinct roles. They are not interchangeable and must not be blended into one sentence:
+
+| Role | Copy | Where it is used |
+|---|---|---|
+| **Product Promise** | "Know they arrived. Not everywhere they went." | Hero-level, first introduction to ARRVD |
+| **Product Explanation** | "Arrival reassurance. Without continuous tracking." | Supporting explanation, e.g. Bottom CTA |
+| **Brand Spirit** | "All is well." | Sparingly, in About/footer/brand storytelling — shared with the parent futodama brand (§1), not ARRVD-exclusive |
+
+Do not merge these three into a single new sentence, and do not use the Brand Spirit line as a substitute for ARRVD's own Product Promise or Explanation.
+
+### 34.3 Web Arrival Mark — Official Specification
+
+The officially adopted design is **Comparison B** (concentric rings whose spacing tightens near the center dot and widens toward the outer edge), confirmed through real-browser comparison across Desktop and Mobile.
+
+**Construction** (SVG viewBox `0 0 240 240`, center at `120, 120`):
+
+| Element | Radius | Stroke opacity |
+|---|---|---|
+| Center dot (fill) | 12.5 | — (solid fill) |
+| Ring 1 (innermost) | ≈29.21 | 0.5 |
+| Ring 2 (middle) | ≈56.25 | 0.3 |
+| Ring 3 (outermost) | 100 | 0.15 |
+
+- The center dot keeps the already-approved 1.25× scale (radius 12.5, up from the original radius 10 — see the Brand Guidelines 1.1-era Arrival Mark work).
+- Ring spacing increases from center to edge: the gap between the dot and Ring 1 is the smallest, and the gap between Ring 2 and Ring 3 is the largest. This is what reads as "reassurance spreading calmly outward" from the arrived point, rather than a mechanical, evenly-ticking pattern.
+- Color: `#3B82C4` (Futodama Blue) for both the rings (stroke) and the center dot (fill). No new color is introduced for the Arrival Mark.
+
+**Golden Ratio note:** the design goal for Comparison B was ring spacing that tightens near the center dot and widens toward the outer edge. A golden-ratio-derived series was used as a **reference while designing** that widening progression (each gap set to roughly φ times the previous one). **Formal adoption was not an automatic, formula-driven decision, however:** Comparison B was confirmed as the official Arrival Mark through direct real-browser review (Desktop and Mobile), not by the golden-ratio math alone — consistent with the golden ratio's role as a secondary design aid rather than a decision-maker, per §14.4.
+
+**Prohibited for the Arrival Mark** (in addition to the general Logo Prohibitions in §13, where applicable):
+
+- Radar sweep animation or motif
+- Location pin shape
+- Arrows
+- Crosshair
+- Target-style high-contrast rings
+- Any new color outside the existing Futodama/ARRVD blue system
+- Any element that reads as surveillance or continuous tracking
+
+### 34.4 Small-size Arrival Mark (variant, not a separate mark)
+
+At small sizes (as a guideline, 32px and below) the full 3-ring construction in §34.3 can lose legibility. In these cases, a **2-ring simplification** may be used:
+
+| Element | Radius | Stroke opacity |
+|---|---|---|
+| Center dot (fill) | 12.5 | — (solid fill) |
+| Ring (inner) | ≈45.92 | 0.4 |
+| Ring (outer) | 100 | 0.2 |
+
+This is explicitly a **small-size variant of the same Arrival Mark**, not an alternate or secondary logo. The standard web context (the ARRVD Featured Card, the ARRVD product page, and any other size ≥64px) uses the full 3-ring version from §34.3 by default. The 2-ring variant is reserved for genuinely small contexts where the 3-ring version would visually degrade.
+
+### 34.5 ARRVD App Icon — Official Direction
+
+The officially adopted direction is **Icon A**:
+
+- **Background:** Futodama Blue (`#3B82C4`)
+- **Center dot:** Warm White (`#FAFAF8`), solid fill
+- **Rings:** soft Warm White strokes (lower opacity than the dot)
+- **Corner treatment:** standard iOS rounded-square mask, applied at the platform/container level — not baked into the icon artwork itself
+- **Shares the same DNA as the Web Arrival Mark** (§34.3): a center dot with concentric rings, in the same color family, expressing the same "arrived point, reassurance spreading outward" idea
+
+**The App Icon does not need to be pixel-identical to the Web Arrival Mark.** Their roles differ:
+
+- **Web Arrival Mark:** prioritizes quietness and lightness, at a size and context (a Featured Card, a hero) where detail can be appreciated.
+- **App Icon:** prioritizes recognizability and findability at very small, fixed sizes (a home screen, a search result, a notification). To serve that role, the App Icon may:
+  - simplify the ring count (e.g. two rings rather than three),
+  - use a bolder stroke width than the Web Arrival Mark would use at the same relative scale,
+  - invert the color relationship (a blue background with a white mark, rather than a blue mark on a light background) for maximum contrast at a glance.
+
+This document records the **direction and DNA**, not a pixel-locked production asset. The 1024px master icon file and its production integration are a separate, later step (see §9 of the implementation instructions this document originates from) and are out of scope for this guideline update.
+
+### 34.6 Parent / Product relationship
+
+```
+Futodama → Simple Dot
+ARRVD    → Arrival Mark
+```
+
+**Brand story:**
+
+> A small dot becomes a point of arrival. From that moment, reassurance spreads outward.
+
+> 小さな一つの点が、到着した場所になる。その瞬間から、安心が静かに広がっていく。
+
+The Arrival Mark is a direct descendant of the Futodama Simple Dot (§8): both are, at their core, a single solid-colored circle. ARRVD adds concentric rings around that same dot to express a specific, additional idea — arrival and the calm that follows it — without replacing or contradicting the parent Simple Dot concept.
+
+### 34.7 ARRVD Design Review Rule
+
+Any future change to the Arrival Mark, the App Icon, or other ARRVD brand-signature elements must be checked against all of the following before approval:
+
+- Does it feel like reassurance?
+- Is there any hint of surveillance?
+- Is it simple?
+- Is it human?
+- Is it trustworthy?
+- Does it still feel like a child of futodama's Simple Dot?
+- Does it still hold up at small sizes?
+- Has it been confirmed in a real browser or on a real device (per §14.7), not only as a generated concept image?
+
+---
+
+## 35. Web Grid
 
 - Normal content max-width: 1120–1200px
 - Long-form text: 680–760px
@@ -699,7 +816,7 @@ Avoid body text that is too wide.
 
 ---
 
-## 35. Accessibility
+## 36. Accessibility
 
 Accessibility is part of brand quality. Required:
 
@@ -715,7 +832,7 @@ Accessibility is part of brand quality. Required:
 
 ---
 
-## 36. Language Policy
+## 37. Language Policy
 
 **Web:**
 
@@ -730,7 +847,7 @@ Proper nouns such as product names retain their official form in both languages.
 
 ---
 
-## 37. Brand Governance
+## 38. Brand Governance
 
 Going forward, all production work — including work done via Claude Code — uses this document as the official standard.
 
@@ -755,7 +872,7 @@ and obtain approval before changing anything.
 
 ---
 
-## 38. Five Brand Review Questions
+## 39. Five Brand Review Questions
 
 Every new piece of work must be reviewed against these five questions:
 
@@ -771,11 +888,13 @@ Every new piece of work must be reviewed against these five questions:
 7. **Did golden-ratio thinking stay in its place?** — Was it used only as a secondary refinement, never to override usability, accessibility, or an existing fixed token?
 8. **Would the decision survive without the golden ratio?** — Is the underlying design choice justified on its own visual and usability merits, independent of whether it happens to align with a golden-ratio proportion?
 
+For ARRVD brand-signature work specifically, also see the [ARRVD Design Review Rule](#347-arrvd-design-review-rule) in §34.7.
+
 ---
 
-## 39. Version Management
+## 40. Version Management
 
-This document is Version 1.1.
+This document is Version 1.2.
 
 - **Minor changes:** 1.1, 1.2, 1.3
 - **Major changes:** 2.0
@@ -795,6 +914,7 @@ Each update should record its reason for change.
 - **1.0 update (2026):** Added the official Simple Dot logo specification (dot diameter, gap, wordmark weight, and color values), Clear Space rule, and Minimum Size rule. This finalizes exact values within the Simple Dot direction already adopted in 1.0 — it is not a change to the logo system itself, so the version number is unchanged.
 - **1.0 update (2026):** Specified Inter SemiBold (600) as the official wordmark typeface, and required the wordmark in distribution logo SVGs to be outlined vector paths rather than live text, so the official logo renders identically across environments. Web UI typography is unaffected and continues to follow the system font stack in §18–§20.
 - **1.1 (2026):** Finalized the Simple Dot logo's visible dot diameter (26px) and gap (6px) after a from-scratch, real-browser-only comparison across Desktop and Mobile, replacing the earlier provisional values (12px / 8px, and an intermediate 20px / 9px round) that had never been confirmed as accurately reflecting real, on-screen rendering. Added the Golden Ratio Design Principle as a new, general, optional design aid, including the explicit clarification that the finalized logo values were derived from real-browser comparison first and were not reverse-engineered from the golden ratio. Added three additional Brand Review Questions covering real-environment verification and the proper, secondary role of golden-ratio thinking. This is a refinement of exact values within the already-adopted Simple Dot logo system, not a change to the logo system itself.
+- **1.2 (2026):** Added the new §34 ARRVD Brand Signature: the core brand idea ("the Dot has arrived; reassurance spreads outward"), the three-part ARRVD Messaging system (Product Promise / Product Explanation / Brand Spirit), the official Web Arrival Mark specification (3-ring, center-tight/edge-wide spacing, 1.25× center dot), the small-size 2-ring variant, the official ARRVD App Icon direction (Icon A: Blue background, Warm White dot and rings), the Parent/Product relationship (Simple Dot → Arrival Mark) and brand story, and the ARRVD Design Review Rule. This formalizes design decisions already reached through real-browser comparison; it does not itself change the production Arrival Mark ring spacing or introduce a production App Icon asset — both remain implementation work for a separate, later step. This is a documentation-only addition within the existing brand architecture (§33), not a change to the brand architecture itself, so the version bump is minor.
 
 ---
 
@@ -802,4 +922,5 @@ Each update should record its reason for change.
 
 - [docs/brand/README.md](README.md) — brand documentation index
 - [assets/brand/logo/README.md](../../assets/brand/logo/README.md) — canonical logo asset files
+- [Futodama_Brand_Guidelines_1.1.md](Futodama_Brand_Guidelines_1.1.md) — superseded; kept for historical reference only
 - [Futodama_Brand_Guidelines_1.0.md](Futodama_Brand_Guidelines_1.0.md) — superseded; kept for historical reference only
