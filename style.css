@@ -346,6 +346,19 @@ summary:focus-visible {
   margin-top: var(--space-1);
 }
 
+.hero-cta-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  margin-top: var(--space-1);
+  flex-wrap: wrap;
+}
+
+.hero-cta-group .btn {
+  margin-top: 0;
+}
+
 /* ==========================================================================
    Featured ARRVD (2-column)
    ========================================================================== */
@@ -381,8 +394,33 @@ summary:focus-visible {
   margin-bottom: 8px;
 }
 
-.featured-arrvd .btn {
+.card-cta-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
   margin-top: 8px;
+}
+
+.app-store-badge-link {
+  display: inline-block;
+  line-height: 0;
+}
+
+.app-store-badge {
+  display: block;
+  width: 190px;
+  height: auto;
+}
+
+.link-arrow {
+  color: var(--blue);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.link-arrow:hover {
+  text-decoration: underline;
 }
 
 .featured-visual {
@@ -565,6 +603,32 @@ summary:focus-visible {
 
 .about--standalone {
   padding-top: var(--space-5);
+}
+
+/* ==========================================================================
+   Bottom CTA (homepage)
+   ========================================================================== */
+
+.cta-band {
+  background: var(--warm-white);
+  border-top: 1px solid var(--border-faint);
+  padding: 48px 0;
+  text-align: center;
+}
+
+.cta-band-heading {
+  font-size: 1.5rem;
+  margin-bottom: var(--space-2);
+}
+
+.cta-band .app-store-badge {
+  width: 150px;
+  margin: 0 auto;
+}
+
+.cta-band .link-arrow {
+  display: block;
+  margin-top: var(--space-3);
 }
 
 /* ==========================================================================
@@ -1087,6 +1151,14 @@ summary:focus-visible {
 
   .featured-arrvd .featured-label {
     margin-bottom: var(--space-1);
+  }
+
+  .cta-band {
+    padding: 32px 0;
+  }
+
+  .cta-band-heading {
+    font-size: 1.2rem;
   }
 
   .usecase-grid {
