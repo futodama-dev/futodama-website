@@ -2,14 +2,17 @@
 
 Canonical logo specification:
 
-- Dot: 12px reference diameter
-- Gap: 8px
+- Visible dot diameter: 26px reference
+- Gap: 6px
 - Wordmark: futodama
 - Weight: 600
 - Dot color: #3B82C4
 - Wordmark color: #1F2A37
+- Vertical alignment: center
 
-This specification is defined in [`docs/brand/Futodama_Brand_Guidelines_1.0.md`](../../../docs/brand/Futodama_Brand_Guidelines_1.0.md), §9 "Official Logo Specification".
+This specification is defined in [`docs/brand/Futodama_Brand_Guidelines_1.1.md`](../../../docs/brand/Futodama_Brand_Guidelines_1.1.md), §9 "Official Logo Specification".
+
+The `futodama-symbol*.svg` files use a tight viewBox: the visible circle fills the entire SVG canvas with no internal transparent padding, so an element's declared width/height always equals the visible dot diameter. Clear space around the logo is controlled by CSS/layout (see §10 Clear Space), not baked into the SVG.
 
 ## Files
 
@@ -26,7 +29,7 @@ The official full-logo SVG assets use outlined vector paths for the wordmark. Th
 
 The wordmark typeface is Inter SemiBold (600), licensed under the SIL Open Font License 1.1, which permits converting the typeface to outlines for use in a logo. No font file is included in this repository, and none is distributed to end users — only the resulting vector outlines are shipped, embedded directly in the SVG path data.
 
-This is separate from Web UI typography, which continues to use the system font stack defined in the Brand Guidelines (§18–§19) and is unaffected by this rule.
+This is separate from Web UI typography, which continues to use the system font stack defined in the Brand Guidelines (§18–§20) and is unaffected by this rule.
 
 ## Usage
 
