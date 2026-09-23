@@ -1,12 +1,12 @@
-# Futodama Brand Guidelines 1.0
+# Futodama Brand Guidelines 1.1
 
-Version: 1.0
-Status: Superseded — historical reference only. See [Futodama_Brand_Guidelines_1.1.md](Futodama_Brand_Guidelines_1.1.md) for the current canonical brand guideline.
+Version: 1.1
+Status: Current canonical brand guideline
 Brand: futodama
 Primary domain: https://futodama.app
 Established: 2026
 
-This document is retained for historical reference only. It is no longer the official standard — see [Futodama_Brand_Guidelines_1.1.md](Futodama_Brand_Guidelines_1.1.md).
+This document is the current official standard for futodama's design, writing, and brand expression. It applies to the website, apps, App Store materials, social media, press materials, B2B materials, and future internal and external production work.
 
 ---
 
@@ -165,7 +165,7 @@ It must not carry meaning so complex that it requires explanation to be understo
 
 ## 9. Official Logo Specification
 
-The following values are the finalized, official specification for the Simple Dot logo.
+The following values are the finalized, official specification for the Simple Dot logo, confirmed through direct real-browser comparison (Desktop and Mobile) and superseding all earlier provisional values.
 
 **Basic form:**
 
@@ -175,27 +175,31 @@ The following values are the finalized, official specification for the Simple Do
 
 | Property | Value |
 |---|---|
-| Dot diameter | 12px (reference size) |
-| Gap (dot to wordmark) | 8px |
+| Visible dot diameter | 26px (reference size) |
+| Gap (dot to wordmark) | 6px |
 | Wordmark | `futodama` |
 | Official wordmark typeface | Inter SemiBold |
 | Wordmark weight | 600 |
 | Dot color | `#3B82C4` |
 | Wordmark color | `#1F2A37` |
+| Vertical alignment | Center |
 
-**Official wordmark typeface:** Inter SemiBold (600). This is separate from the Web UI typography system in §18 English Font Stack. The logo wordmark is a fixed brand asset and must render identically in every environment, so it is not left to whatever font a given system happens to have installed — that is a different concern from body/UI text, which intentionally uses the system font stack for performance and stable global rendering.
+**Official wordmark typeface:** Inter SemiBold (600). This is separate from the Web UI typography system in §19 English Font Stack. The logo wordmark is a fixed brand asset and must render identically in every environment, so it is not left to whatever font a given system happens to have installed — that is a different concern from body/UI text, which intentionally uses the system font stack for performance and stable global rendering.
 
-**Distribution logo assets:** in the canonical SVG files (`assets/brand/logo/futodama-logo*.svg`), the wordmark is converted to outlined vector paths, not left as editable text. This means the official logo renders identically across environments and does not depend on the Inter font being installed or loaded. Web UI typography (navigation, headings, body copy) remains governed separately by the Futodama typography system in §17–§19, and is unaffected by this rule.
+**Distribution logo assets:** in the canonical SVG files (`assets/brand/logo/futodama-logo*.svg`), the wordmark is converted to outlined vector paths, not left as editable text. This means the official logo renders identically across environments and does not depend on the Inter font being installed or loaded. Web UI typography (navigation, headings, body copy) remains governed separately by the Futodama typography system in §18–§20, and is unaffected by this rule.
+
+**SVG construction:** the dot symbol is drawn with a tight viewBox (the circle fills its full viewBox with no internal padding); visible clear space around the logo is controlled by CSS/layout (see §10 Clear Space), not baked into the SVG's own geometry. This construction was adopted specifically to prevent a padded-viewBox SVG from rendering its visible circle smaller than the element's declared box size.
 
 **Rules:**
 
 - Lowercase only.
 - The dot and wordmark are treated as a single, inseparable unit.
-- Dot diameter is 12px at reference scale.
-- Gap between dot and wordmark is 8px.
+- Visible dot diameter is 26px at reference scale.
+- Gap between dot and wordmark is 6px.
 - Wordmark weight is 600.
 - Dot color is `#3B82C4`.
 - Wordmark color is `#1F2A37`.
+- Vertical alignment is center.
 - No shadow.
 - No gradient.
 - No multiple dots.
@@ -205,21 +209,21 @@ The following values are the finalized, official specification for the Simple Do
 
 **Why these values:**
 
-- A 12px dot reads as a brand mark rather than a decorative flourish.
-- An 8px gap keeps the dot and wordmark feeling like one unit without feeling cramped.
-- Weight 600 is more visible than 500 and lighter than 700 — it reads as confident without feeling heavy.
-- This combination best balances the Professional × Human brand personality.
-- It holds up consistently across web, mobile, favicon, and print contexts.
+- 26px was confirmed, by directly comparing Desktop and Mobile rendering in a real browser, to be the best-balanced visible dot size.
+- 6px was confirmed, through the same real-browser comparison process, to be the optimal gap between dot and wordmark.
+- Inter SemiBold, weight 600, was reconfirmed as the most suitable typeface and weight; no change was needed.
+- Real-browser comparison showed no vertical correction was needed, so center alignment is formally adopted as-is.
+- These values were decided by prioritizing real-browser visual comparison over any numeric value assumed in advance. See [§14 Golden Ratio Design Principle](#14-golden-ratio-design-principle) for how this decision relates to, but was not derived from, golden-ratio proportions.
 
 ---
 
 ## 10. Clear Space
 
-Let **X** = the dot diameter.
+Let **X** = the visible dot diameter.
 
 Minimum clear space around the logo: **1X** on all sides (top, bottom, left, right).
 
-At the 12px reference size, this is a minimum of 12px of clear space around the full logo.
+At the current 26px reference size, this is a minimum of 26px of clear space around the full logo.
 
 In practice, using more generous spacing than this minimum is recommended.
 
@@ -266,14 +270,115 @@ The following are prohibited:
 - Rotating the logo
 - Placing other elements too close to the logo
 - Changing the futodama logo itself per app
-- Changing the dot diameter from the official 12px reference
-- Changing the gap from the official 8px
+- Changing the visible dot diameter from the official 26px reference
+- Changing the gap from the official 6px
 - Changing the wordmark weight from 600
 - Changing the dot or wordmark colors from the official values
+- Finalizing any future change to these values from a generated concept image, a golden-ratio calculation, or any other non-browser source, without the real-browser/real-device verification required by [§14 Golden Ratio Design Principle](#14-golden-ratio-design-principle) and the Logo Review Rule within it
 
 ---
 
-## 14. Brand Colors
+## 14. Golden Ratio Design Principle
+
+### 14.1 Important caveat — read first
+
+**The futodama logo was not reverse-engineered from the golden ratio.**
+
+> Futodamaロゴは黄金比から逆算して決定したものではない。実ブラウザでの視覚比較により26px / 6pxを選定し、その結果としてgap/dot比が黄金比系列に近いことを確認した。黄金比は「数値を強制する公式」ではなく、視覚的調和を検証・設計するための補助原則として使用する。
+
+**English:** The dot size (26px) and gap (6px) were selected first, through direct real-browser visual comparison on Desktop and Mobile (see §9). Only afterward was it observed that the resulting gap/dot ratio sits close to a golden-ratio-derived value. The golden ratio is not a formula that dictates numbers in advance — it is used only as a secondary, after-the-fact aid for verifying and discussing visual harmony.
+
+### 14.2 The observation
+
+```
+φ (phi)  ≈ 1.618
+1 / φ    ≈ 0.618
+1 / φ²   ≈ 0.382
+1 / φ³   ≈ 0.236
+```
+
+The logo's actual, real-browser-selected proportion:
+
+```
+Gap / Dot = 6 / 26 ≈ 0.231
+```
+
+`0.231` is close to `1 / φ³ ≈ 0.236`, but it is not an exact match, and no value in this document was adjusted to make it match more closely. The proximity is recorded here only as a supporting observation, not as the justification for the 26px / 6px spec — the justification is the real-browser comparison in §9.
+
+### 14.3 Purpose of this section
+
+Beyond the logo, golden-ratio thinking is formalized here as a **general, optional design aid** available across futodama's visual work, including:
+
+- Web layout
+- App UI
+- Marketing materials
+- OGP / social share images
+- App Store creatives
+- Presentations
+- B2B documents
+- Cards and sections
+- Spacing and visual hierarchy
+- Composition of images and layouts
+- Spacing around the logo
+- Typography hierarchy
+
+It is a lens for evaluating and discussing proportion — not a mandatory formula, and not a replacement for any rule already fixed elsewhere in this document.
+
+### 14.4 Priority order
+
+When golden-ratio thinking is considered alongside other design concerns, this is the required priority order:
+
+1. **Usability / actual visual quality** — how it actually looks and works, verified in a real browser or on a real device.
+2. **Brand consistency** — alignment with the values, tokens, and rules already fixed in this document.
+3. **Golden-ratio / proportional harmony** — used only as a secondary refinement once (1) and (2) are satisfied.
+4. **Technical / platform constraints** — what the platform, framework, or format actually allows.
+
+**Explicit meaning of this order:**
+
+- Golden-ratio proportion must never be used to justify breaking usability, accessibility, or platform constraints.
+- Real-device and real-browser verification always outranks a golden-ratio calculation. If a golden-ratio-derived value looks or behaves worse in a real browser or on a real device, the real-browser/real-device result wins.
+- Golden-ratio thinking is a tie-breaker and a refinement tool, not a decision-maker on its own.
+
+### 14.5 Permitted usage
+
+- **Hierarchy:** when establishing relative visual weight between elements, the approximate proportions `100 : 61.8 : 38.2 : 23.6` may be used as a reference scale for relative emphasis (for example, comparing the relative prominence of a hero, a subhead, and a caption).
+- **Spacing:** golden-ratio-derived relationships may inform the relative proportions between "large / medium / small" spacing steps, without replacing the fixed spacing tokens in §24 Spacing System.
+- **Layout:** column splits such as `61.8% / 38.2%` may be evaluated as a *candidate* layout proportion for a given section — never adopted automatically, and always confirmed by real-browser review before use.
+- **Image composition:** golden-ratio-based composition (e.g. golden spiral or golden rectangle framing) may be used as a compositional aid for original illustrations, diagrams, or marketing imagery.
+- **Typography hierarchy:** golden-ratio relationships may inform how much visual weight difference should exist between heading levels, without overwriting the existing official Type Scale in §21.
+
+### 14.6 Prohibited usage
+
+- Do not multiply every size, spacing, or dimension in the product by 1.618 as a blanket rule.
+- Do not sacrifice readability, tap target size, or mobile usability for the sake of a golden-ratio proportion.
+- Do not arbitrarily change existing fixed tokens (color, spacing scale, type scale, radius, etc.) to force a golden-ratio relationship.
+- Do not finalize any design decision from golden-ratio math alone, without a real-device or real-browser check.
+
+### 14.7 Real browser / real device priority rule
+
+Generated concept images, mockups, and calculated proportions are **reference-only**. They may be used to explore ideas and communicate intent, but they are never sufficient on their own to finalize an official value.
+
+Any value that becomes part of this document's official specification — logo, spacing, layout, or otherwise — must be confirmed through verification in an actual browser or on an actual device before being adopted as canonical.
+
+### 14.8 Logo Review Rule
+
+Any future proposal to change the logo's official values (§9) must be reviewed against all of the following before it can be approved, regardless of how the new values were derived (including if derived from golden-ratio math):
+
+- Visible size, as rendered, not as declared in a viewBox or attribute
+- Rendered gap, as actually laid out
+- Optical (not just mathematical) vertical alignment
+- Appearance on desktop
+- Appearance on mobile
+- Appearance on a dark background
+- Appearance on a light background
+- Appearance at small sizes
+- Appearance in the favicon context
+
+Matching CSS or SVG values to a calculation, on its own, is **not sufficient approval** — the checks above must be confirmed by direct observation in a real browser or on a real device.
+
+---
+
+## 15. Brand Colors
 
 Official brand colors:
 
@@ -289,7 +394,7 @@ Official brand colors:
 
 ---
 
-## 15. Color Roles
+## 16. Color Roles
 
 - **Blue:** Trust / reassurance / primary action
 - **Green:** growth / life / positive support
@@ -301,7 +406,7 @@ Official brand colors:
 
 ---
 
-## 16. Product Colors
+## 17. Product Colors
 
 The parent brand and each product are distinguished by color.
 
@@ -314,7 +419,7 @@ The parent brand's color is not forced across every product uniformly.
 
 ---
 
-## 17. Typography Policy
+## 18. Typography Policy
 
 To preserve visual consistency, fonts, sizes, and weights are not added arbitrarily.
 
@@ -322,7 +427,7 @@ On the web, a system font stack is the baseline, prioritizing performance and st
 
 ---
 
-## 18. English Font Stack
+## 19. English Font Stack
 
 Recommended:
 
@@ -339,7 +444,7 @@ Inter is not currently loaded as a required external network dependency. The bra
 
 ---
 
-## 19. Japanese Font Stack
+## 20. Japanese Font Stack
 
 Recommended:
 
@@ -356,7 +461,7 @@ External web fonts are not made mandatory.
 
 ---
 
-## 20. Type Scale
+## 21. Type Scale
 
 ### Desktop
 
@@ -390,7 +495,7 @@ As a rule, sizes outside this scale are not introduced ad hoc. When using `clamp
 
 ---
 
-## 21. Font Weights
+## 22. Font Weights
 
 - **400 Regular:** body text
 - **500 Medium:** navigation, labels, small emphasis
@@ -400,7 +505,7 @@ As a rule, sizes outside this scale are not introduced ad hoc. When using `clamp
 
 ---
 
-## 22. Line Height
+## 23. Line Height
 
 - **Body:** 1.6–1.75
 - **Heading:** approximately 1.1–1.3, depending on content
@@ -409,7 +514,7 @@ Do not cram long text too densely.
 
 ---
 
-## 23. Spacing System
+## 24. Spacing System
 
 Base unit: 4px.
 
@@ -445,7 +550,7 @@ Ad hoc spacing values such as 37px or 57px are not created as a rule.
 
 ---
 
-## 24. Border Radius
+## 25. Border Radius
 
 Official values:
 
@@ -461,7 +566,7 @@ Do not round corners excessively.
 
 ---
 
-## 25. Borders
+## 26. Borders
 
 - **Normal:** 1px
 - **Emphasis:** 2px
@@ -471,7 +576,7 @@ Do not create boundaries with excessive shadow instead of borders.
 
 ---
 
-## 26. Buttons
+## 27. Buttons
 
 There are three official button types:
 
@@ -483,7 +588,7 @@ Do not place a large number of Primary CTAs on one screen.
 
 ---
 
-## 27. Cards
+## 28. Cards
 
 Cards are used to organize content. Do not turn everything into a card.
 
@@ -498,7 +603,7 @@ Do not lift cards excessively on hover either.
 
 ---
 
-## 28. Icons
+## 29. Icons
 
 Baseline:
 
@@ -511,7 +616,7 @@ Emoji are not used as official UI icons.
 
 ---
 
-## 29. Imagery
+## 30. Imagery
 
 Priority order:
 
@@ -523,7 +628,7 @@ Do not use meaningless stock photography in bulk. In particular, do not build th
 
 ---
 
-## 30. Motion
+## 31. Motion
 
 Animation is supportive, not central.
 
@@ -541,7 +646,7 @@ Prohibited:
 
 ---
 
-## 31. Writing Voice
+## 32. Writing Voice
 
 Brand writing should be:
 
@@ -566,7 +671,7 @@ Do not exaggerate.
 
 ---
 
-## 32. Brand Architecture
+## 33. Brand Architecture
 
 Structure:
 
@@ -584,7 +689,7 @@ Relationship to the parent brand is expressed with phrases such as "Created by f
 
 ---
 
-## 33. Web Grid
+## 34. Web Grid
 
 - Normal content max-width: 1120–1200px
 - Long-form text: 680–760px
@@ -594,7 +699,7 @@ Avoid body text that is too wide.
 
 ---
 
-## 34. Accessibility
+## 35. Accessibility
 
 Accessibility is part of brand quality. Required:
 
@@ -610,7 +715,7 @@ Accessibility is part of brand quality. Required:
 
 ---
 
-## 35. Language Policy
+## 36. Language Policy
 
 **Web:**
 
@@ -625,7 +730,7 @@ Proper nouns such as product names retain their official form in both languages.
 
 ---
 
-## 36. Brand Governance
+## 37. Brand Governance
 
 Going forward, all production work — including work done via Claude Code — uses this document as the official standard.
 
@@ -650,7 +755,7 @@ and obtain approval before changing anything.
 
 ---
 
-## 37. Five Brand Review Questions
+## 38. Five Brand Review Questions
 
 Every new piece of work must be reviewed against these five questions:
 
@@ -660,11 +765,17 @@ Every new piece of work must be reviewed against these five questions:
 4. **Is it recognizably futodama?** — Has it become a generic template that could belong to anyone?
 5. **Does it make life lighter?** — Are we increasing the user's cognitive load?
 
+**Additional questions (introduced in 1.1), for work that involves proportion or golden-ratio thinking:**
+
+6. **Was it verified in a real browser or on a real device?** — Has a proportion, size, or layout been finalized from a calculation or a generated image alone, without real-environment confirmation?
+7. **Did golden-ratio thinking stay in its place?** — Was it used only as a secondary refinement, never to override usability, accessibility, or an existing fixed token?
+8. **Would the decision survive without the golden ratio?** — Is the underlying design choice justified on its own visual and usability merits, independent of whether it happens to align with a golden-ratio proportion?
+
 ---
 
-## 38. Version Management
+## 39. Version Management
 
-This document is Version 1.0.
+This document is Version 1.1.
 
 - **Minor changes:** 1.1, 1.2, 1.3
 - **Major changes:** 2.0
@@ -682,7 +793,8 @@ Each update should record its reason for change.
 
 - **1.0 (2026):** Initial canonical guideline established.
 - **1.0 update (2026):** Added the official Simple Dot logo specification (dot diameter, gap, wordmark weight, and color values), Clear Space rule, and Minimum Size rule. This finalizes exact values within the Simple Dot direction already adopted in 1.0 — it is not a change to the logo system itself, so the version number is unchanged.
-- **1.0 update (2026):** Specified Inter SemiBold (600) as the official wordmark typeface, and required the wordmark in distribution logo SVGs to be outlined vector paths rather than live text, so the official logo renders identically across environments. Web UI typography is unaffected and continues to follow the system font stack in §18–§19.
+- **1.0 update (2026):** Specified Inter SemiBold (600) as the official wordmark typeface, and required the wordmark in distribution logo SVGs to be outlined vector paths rather than live text, so the official logo renders identically across environments. Web UI typography is unaffected and continues to follow the system font stack in §18–§20.
+- **1.1 (2026):** Finalized the Simple Dot logo's visible dot diameter (26px) and gap (6px) after a from-scratch, real-browser-only comparison across Desktop and Mobile, replacing the earlier provisional values (12px / 8px, and an intermediate 20px / 9px round) that had never been confirmed as accurately reflecting real, on-screen rendering. Added the Golden Ratio Design Principle as a new, general, optional design aid, including the explicit clarification that the finalized logo values were derived from real-browser comparison first and were not reverse-engineered from the golden ratio. Added three additional Brand Review Questions covering real-environment verification and the proper, secondary role of golden-ratio thinking. This is a refinement of exact values within the already-adopted Simple Dot logo system, not a change to the logo system itself.
 
 ---
 
@@ -690,3 +802,4 @@ Each update should record its reason for change.
 
 - [docs/brand/README.md](README.md) — brand documentation index
 - [assets/brand/logo/README.md](../../assets/brand/logo/README.md) — canonical logo asset files
+- [Futodama_Brand_Guidelines_1.0.md](Futodama_Brand_Guidelines_1.0.md) — superseded; kept for historical reference only

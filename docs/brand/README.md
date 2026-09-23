@@ -2,7 +2,9 @@
 
 The current canonical brand guideline is:
 
-[Futodama_Brand_Guidelines_1.0.md](Futodama_Brand_Guidelines_1.0.md)
+[Futodama_Brand_Guidelines_1.1.md](Futodama_Brand_Guidelines_1.1.md)
+
+The previous [Futodama_Brand_Guidelines_1.0.md](Futodama_Brand_Guidelines_1.0.md) is superseded and kept for historical reference only.
 
 This document governs:
 
