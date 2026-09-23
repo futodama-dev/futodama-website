@@ -90,6 +90,39 @@ p {
   max-width: 68ch;
 }
 
+/* ==========================================================================
+   Japanese line-break control
+
+   Scoped utilities only — never applied page-wide. Used to keep specific
+   semantic units (e.g. "プロダクトをつくる", "インディペンデント") from
+   splitting mid-word/mid-phrase at narrow widths, without word-break: keep-all
+   and without reducing font size.
+   ========================================================================== */
+
+.jp-nowrap {
+  white-space: nowrap;
+}
+
+.jp-break-narrow {
+  display: none;
+}
+
+@media (max-width: 340px) {
+  .jp-break-narrow {
+    display: inline;
+  }
+}
+
+.about-break-desktop {
+  display: inline;
+}
+
+@media (max-width: 480px) {
+  .about-break-desktop {
+    display: none;
+  }
+}
+
 .container {
   width: 100%;
   max-width: var(--container-width);
@@ -407,16 +440,30 @@ summary:focus-visible {
   line-height: 0;
 }
 
+.app-store-badge-link--disabled {
+  cursor: default;
+  pointer-events: none;
+  opacity: 0.88;
+}
+
 .app-store-badge {
   display: block;
   width: 190px;
   height: auto;
 }
 
+.badge-coming-soon {
+  display: block;
+  margin-top: 6px;
+  font-size: 0.8rem;
+  color: var(--charcoal);
+}
+
 .link-arrow {
   color: var(--blue);
   font-weight: 600;
   text-decoration: none;
+  white-space: nowrap;
 }
 
 .link-arrow:hover {
