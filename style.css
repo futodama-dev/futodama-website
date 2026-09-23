@@ -1011,6 +1011,10 @@ summary:focus-visible {
     grid-template-columns: 1fr;
   }
 
+  .featured-arrvd {
+    row-gap: 24px;
+  }
+
   .arrival-mark {
     max-width: 180px;
   }
