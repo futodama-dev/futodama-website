@@ -313,7 +313,7 @@ summary:focus-visible {
    ========================================================================== */
 
 .hero {
-  padding: var(--space-5) 0 var(--space-4);
+  padding: 48px 0 32px;
   text-align: center;
 }
 
@@ -351,7 +351,7 @@ summary:focus-visible {
    ========================================================================== */
 
 .featured {
-  padding: var(--space-4) 0 var(--space-5);
+  padding: 32px 0 var(--space-5);
 }
 
 .featured-arrvd {
@@ -362,7 +362,7 @@ summary:focus-visible {
   background: #fff;
   border: 1px solid rgba(59, 130, 196, 0.3);
   border-radius: var(--radius);
-  padding: var(--space-4);
+  padding: 48px;
 }
 
 .featured-arrvd h3 {
@@ -374,7 +374,15 @@ summary:focus-visible {
 }
 
 .featured-arrvd .featured-label {
-  margin-bottom: var(--space-2);
+  margin-bottom: 12px;
+}
+
+.featured-arrvd .product-copy {
+  margin-bottom: 8px;
+}
+
+.featured-arrvd .btn {
+  margin-top: 8px;
 }
 
 .featured-visual {
@@ -1062,11 +1070,19 @@ summary:focus-visible {
 
 @media (max-width: 480px) {
   .hero {
-    padding: var(--space-4) 0 var(--space-3);
+    padding: 32px 0 var(--space-3);
+  }
+
+  .featured {
+    padding-top: var(--space-3);
   }
 
   .featured-arrvd {
-    padding: var(--space-3);
+    padding: 32px;
+  }
+
+  .featured-arrvd .featured-label {
+    margin-bottom: var(--space-1);
   }
 
   .usecase-grid {
