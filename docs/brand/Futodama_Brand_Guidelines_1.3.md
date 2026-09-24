@@ -1,12 +1,13 @@
-# Futodama Brand Guidelines 1.2
+# Futodama Brand Guidelines 1.3
 
-Version: 1.2
-Status: Superseded — historical reference only. See [Futodama_Brand_Guidelines_1.3.md](Futodama_Brand_Guidelines_1.3.md) for the current canonical brand guideline.
+Version: 1.3
+Status: Current canonical brand guideline
 Brand: futodama
 Primary domain: https://futodama.app
 Established: 2026
+Canonicalized: 2026-09-24
 
-This document is retained for historical reference only. It is no longer the official standard — see [Futodama_Brand_Guidelines_1.3.md](Futodama_Brand_Guidelines_1.3.md).
+This document is the current official standard for futodama's design, writing, and brand expression. It applies to the website, apps, App Store materials, social media, press materials, B2B materials, and future internal and external production work.
 
 ---
 
@@ -756,31 +757,121 @@ At small sizes (as a guideline, 32px and below) the full 3-ring construction in 
 
 This is explicitly a **small-size variant of the same Arrival Mark**, not an alternate or secondary logo. The standard web context (the ARRVD Featured Card, the ARRVD product page, and any other size ≥64px) uses the full 3-ring version from §34.3 by default. The 2-ring variant is reserved for genuinely small contexts where the 3-ring version would visually degrade.
 
-### 34.5 ARRVD App Icon — Official Direction
+### 34.5 ARRVD App Icon — Official Specification
 
-The officially adopted direction is **Icon A**:
+#### 34.5.1 Official direction
 
-- **Background:** Futodama Blue (`#3B82C4`)
-- **Center dot:** Warm White (`#FAFAF8`), solid fill
-- **Rings:** soft Warm White strokes (lower opacity than the dot)
-- **Corner treatment:** standard iOS rounded-square mask, applied at the platform/container level — not baked into the icon artwork itself
-- **Shares the same DNA as the Web Arrival Mark** (§34.3): a center dot with concentric rings, in the same color family, expressing the same "arrived point, reassurance spreading outward" idea
+The officially adopted App Icon design is **Icon A ("Balanced Golden")**, confirmed through real-size visual comparison against two alternative candidates (a softer/larger-dot variant and a bolder/stronger-recognition variant) and against a from-scratch small-size optical-correction pass. It consists of two locked components:
+
+- **Master (A0):** the single official 1024×1024 asset, used at 128px and above.
+- **Small-size optical correction (A1):** the *same* icon, with only ring stroke width and opacity nudged upward, used at 32px and 64px rendering contexts only.
+
+**A1 is not a separate icon or alternate logo.** It is a small-size rendering correction of the exact same design, in the same sense that a typeface may carry small-size-specific hinting without becoming a different typeface.
+
+#### 34.5.2 Master (A0) specification
+
+| Property | Value |
+|---|---|
+| Canvas | 1024 × 1024px |
+| File format | PNG, RGB, no alpha channel, no transparency |
+| Background | Futodama Blue `#3B82C4`, full-bleed |
+| Center dot | Warm White `#FAFAF8`, solid fill, radius 33 |
+| Outer ring | radius 316, stroke width 24, stroke opacity 0.35 |
+| Inner ring | radius 142, stroke width 32, stroke opacity 0.55 |
+| Center alignment | Dot and both rings share the exact canvas center (512, 512) |
+| Corner treatment | None baked into the artwork — the OS applies the rounded-square mask at the platform/container level |
+| Shadow / glow / gradient | None |
+
+**Geometry ratios (Golden-Ratio-informed reference):**
+
+| Ratio | Value | φ reference |
+|---|---|---|
+| Mark diameter / canvas | ≈ 0.617 | 1/φ ≈ 0.618 |
+| Dot diameter / inner ring diameter | ≈ 0.232 | 1/φ³ ≈ 0.236 |
+| Ring gap ratio (outer−inner gap ÷ inner−dot gap) | ≈ 1.596 | φ ≈ 1.618 |
+
+These geometry values (radii, stroke widths at A0, and the ratios above) are locked. They are not changed by the A1 optical correction (§34.5.3) and must not be changed by any future revision without going through the ARRVD Design Review Rule (§34.7).
+
+#### 34.5.3 Small-size optical correction (A1)
+
+Applied **only** when the icon is rendered at 32px or 64px. At 128px and above, A0 is used unchanged.
+
+| Property | A0 (128px+) | A1 (32px / 64px only) |
+|---|---|---|
+| Outer ring stroke width | 24 | 27 |
+| Inner ring stroke width | 32 | 36 |
+| Outer ring opacity | 0.35 | 0.42 |
+| Inner ring opacity | 0.55 | 0.62 |
+| Center dot | Warm White solid fill, radius 33 | Unchanged (already maximum contrast; no correction was needed) |
+| All radii (outer ring, inner ring, dot) | 316 / 142 / 33 | Unchanged — geometry is identical to A0 |
+
+**Prohibited for the optical correction:**
+
+- Changing any ring radius or the dot radius
+- Changing the overall mark size relative to the canvas
+- Enlarging the center dot
+- Introducing any new color
+- Adding a shadow, glow, or gradient
+- Strengthening the strokes as far as the rejected "Strong Recognition" candidate
+- Any change that increases a radar, target, or surveillance impression
+
+The goal of A1 is narrow and specific: keep A0's quietness intact while preventing the mark from visually disappearing at the smallest real-world render sizes.
+
+#### 34.5.4 Master asset technical requirements
+
+- 1024×1024px, RGB, no alpha channel — verified with no transparency and no embedded ICC/alpha metadata.
+- Full-bleed Futodama Blue background — no padding, no letterboxing.
+- No rounded corners baked into the artwork; the platform (iOS/Android) applies its own mask shape at render time.
+- No drop shadow, inner shadow, or glow anywhere in the file.
+- Center alignment of the dot and both rings must land on the exact canvas center, verified by pixel measurement, not by eye.
+- A vector source (`arrvd-app-icon-master.svg`) may be kept for production/design management, but the file submitted to App Store Connect and any other platform is the rasterized 1024px PNG master — the SVG is not a submission format.
+
+#### 34.5.5 App Icon vs. Web Arrival Mark (role difference)
 
 **The App Icon does not need to be pixel-identical to the Web Arrival Mark.** Their roles differ:
 
-- **Web Arrival Mark:** prioritizes quietness and lightness, at a size and context (a Featured Card, a hero) where detail can be appreciated.
-- **App Icon:** prioritizes recognizability and findability at very small, fixed sizes (a home screen, a search result, a notification). To serve that role, the App Icon may:
-  - simplify the ring count (e.g. two rings rather than three),
-  - use a bolder stroke width than the Web Arrival Mark would use at the same relative scale,
-  - invert the color relationship (a blue background with a white mark, rather than a blue mark on a light background) for maximum contrast at a glance.
+- **Web Arrival Mark (§34.3):** prioritizes quietness and lightness, at a size and context (a Featured Card, a hero) where detail can be appreciated. Three rings, tight-viewBox, no small-size optical correction needed at typical web sizes.
+- **App Icon (this section):** prioritizes recognizability and findability at very small, fixed sizes (a home screen, a search result, a notification). To serve that role, the App Icon:
+  - uses two rings rather than three,
+  - uses a bolder stroke-to-canvas ratio than the Web Arrival Mark would at the same relative scale,
+  - inverts the color relationship (a Blue background with a Warm White mark, rather than a Blue mark on a light background) for maximum contrast at a glance,
+  - carries its own small-size optical correction (A1), a concept that does not apply to the Web Arrival Mark.
 
-This document records the **direction and DNA**, not a pixel-locked production asset. The 1024px master icon file and its production integration are a separate, later step (see §9 of the implementation instructions this document originates from) and are out of scope for this guideline update.
+Both share the same DNA: a center dot with concentric rings, in the same Futodama/ARRVD blue-and-white color family, expressing the same "arrived point, reassurance spreading outward" idea (§34.1).
+
+#### 34.5.6 Real-size visual priority rule (App Icon)
+
+The golden-ratio reference values in §34.5.2 describe the geometry that was used while *designing* Icon A. **They are not the reason it was adopted.** Icon A, its A0 master, and its A1 small-size correction were each confirmed through direct real-size rendering comparison — at 1024, 256, 128, 64, and 32px, and in an iPhone home-screen mock alongside generic surrounding icons — not by their proximity to φ. This is consistent with §14.7 Real Browser / Real Device Priority Rule.
+
+#### 34.5.7 iOS real-pixel slot mapping
+
+§34.5.3 describes the A0/A1 split in general terms (128px+ vs. 32px/64px). When applied to an actual iOS `AppIcon.appiconset`, the real slot sizes iOS renders are not 32px/64px — they are the specific pixel sizes below, confirmed by direct real-size and pixel-zoom comparison of the shipped asset:
+
+| Slot (px) | Usage | Variant |
+|---|---|---|
+| 20 | Notification @1x / iPad Settings @1x | A1 |
+| 29 | Settings @1x | A1 |
+| 40 | Spotlight @1x / Notification @2x | A1 |
+| 58 | Settings @2x | A1 |
+| 60 | Notification @3x | A1 |
+| 76 | iPad Home @1x | A0 |
+| 80 | Spotlight @2x | A0 |
+| 87 | Settings @3x | A0 |
+| 120 | iPhone Home @2x / Spotlight @3x | A0 |
+| 152 | iPad Home @2x | A0 |
+| 167 | iPad Pro Home @2x | A0 |
+| 180 | iPhone Home @3x | A0 |
+| 1024 | App Store marketing | A0 |
+
+**Handoff boundary: between 60px and 76px.** At 58px and 60px, A0 alone reads as faint; A1 is needed to keep both rings visible. At 76px and above, A0 already reads cleanly on its own, and applying A1 there would add unnecessary weight without a legibility benefit. This boundary was decided by direct real-pixel-size rendering comparison of the actual candidate slot sizes, not by calculation or by proximity to the golden ratio.
+
+Each slot is rendered directly at its own exact pixel size from the A0 or A1 geometry — never produced by downscaling the 1024px master — so that stroke widths remain crisp at every size. Where a single PNG file is referenced by more than one `Contents.json` entry (for example, an iPhone and iPad entry sharing the same point size and scale), all such shared references resolve to the same real pixel size and therefore always receive the same A0/A1 assignment; this mapping introduces no conflicting assignment for any shared file.
 
 ### 34.6 Parent / Product relationship
 
 ```
 Futodama → Simple Dot
-ARRVD    → Arrival Mark
+ARRVD    → Arrival Mark / App Icon
 ```
 
 **Brand story:**
@@ -789,7 +880,7 @@ ARRVD    → Arrival Mark
 
 > 小さな一つの点が、到着した場所になる。その瞬間から、安心が静かに広がっていく。
 
-The Arrival Mark is a direct descendant of the Futodama Simple Dot (§8): both are, at their core, a single solid-colored circle. ARRVD adds concentric rings around that same dot to express a specific, additional idea — arrival and the calm that follows it — without replacing or contradicting the parent Simple Dot concept.
+The Arrival Mark and the App Icon are both direct descendants of the Futodama Simple Dot (§8): at their core, each is a single solid-colored circle. ARRVD adds concentric rings around that same dot to express a specific, additional idea — arrival and the calm that follows it — without replacing or contradicting the parent Simple Dot concept.
 
 ### 34.7 ARRVD Design Review Rule
 
@@ -894,7 +985,7 @@ For ARRVD brand-signature work specifically, also see the [ARRVD Design Review R
 
 ## 40. Version Management
 
-This document is Version 1.2.
+This document is Version 1.3.
 
 - **Minor changes:** 1.1, 1.2, 1.3
 - **Major changes:** 2.0
@@ -915,6 +1006,7 @@ Each update should record its reason for change.
 - **1.0 update (2026):** Specified Inter SemiBold (600) as the official wordmark typeface, and required the wordmark in distribution logo SVGs to be outlined vector paths rather than live text, so the official logo renders identically across environments. Web UI typography is unaffected and continues to follow the system font stack in §18–§20.
 - **1.1 (2026):** Finalized the Simple Dot logo's visible dot diameter (26px) and gap (6px) after a from-scratch, real-browser-only comparison across Desktop and Mobile, replacing the earlier provisional values (12px / 8px, and an intermediate 20px / 9px round) that had never been confirmed as accurately reflecting real, on-screen rendering. Added the Golden Ratio Design Principle as a new, general, optional design aid, including the explicit clarification that the finalized logo values were derived from real-browser comparison first and were not reverse-engineered from the golden ratio. Added three additional Brand Review Questions covering real-environment verification and the proper, secondary role of golden-ratio thinking. This is a refinement of exact values within the already-adopted Simple Dot logo system, not a change to the logo system itself.
 - **1.2 (2026):** Added the new §34 ARRVD Brand Signature: the core brand idea ("the Dot has arrived; reassurance spreads outward"), the three-part ARRVD Messaging system (Product Promise / Product Explanation / Brand Spirit), the official Web Arrival Mark specification (3-ring, center-tight/edge-wide spacing, 1.25× center dot), the small-size 2-ring variant, the official ARRVD App Icon direction (Icon A: Blue background, Warm White dot and rings), the Parent/Product relationship (Simple Dot → Arrival Mark) and brand story, and the ARRVD Design Review Rule. This formalizes design decisions already reached through real-browser comparison; it does not itself change the production Arrival Mark ring spacing or introduce a production App Icon asset — both remain implementation work for a separate, later step. This is a documentation-only addition within the existing brand architecture (§33), not a change to the brand architecture itself, so the version bump is minor.
+- **1.3 (2026-09-24):** Adopted the ARRVD App Icon as an official, real-device-verified futodama brand asset. Expanded §34.5 into the full official specification: the locked 1024px master (A0) geometry and color values, the small-size optical correction (A1, explicitly not a separate icon), the master asset technical requirements (1024×1024 RGB, no alpha, full-bleed, no baked corner radius, center-aligned), the App Icon vs. Web Arrival Mark role distinction, the real-size visual priority rule, and (new in this version) the real-pixel iOS slot mapping confirmed against the actual `AppIcon.appiconset` sizes (A1 at 20/29/40/58/60px, A0 at 76/80/87/120/152/167/180/1024px, handoff between 60px and 76px). The App Icon has been verified on-device at its primary display sizes, including the iPhone home screen. The golden-ratio geometry references remain a supporting design aid, not the basis for adoption — see §34.5.6. This is a documentation-only addition within the existing ARRVD Brand Signature (§34), not a change to the brand architecture itself, so the version bump is minor. **This version is now the current canonical brand guideline, superseding 1.2.**
 
 ---
 
@@ -922,5 +1014,6 @@ Each update should record its reason for change.
 
 - [docs/brand/README.md](README.md) — brand documentation index
 - [assets/brand/logo/README.md](../../assets/brand/logo/README.md) — canonical logo asset files
+- [Futodama_Brand_Guidelines_1.2.md](Futodama_Brand_Guidelines_1.2.md) — superseded; kept for historical reference only
 - [Futodama_Brand_Guidelines_1.1.md](Futodama_Brand_Guidelines_1.1.md) — superseded; kept for historical reference only
 - [Futodama_Brand_Guidelines_1.0.md](Futodama_Brand_Guidelines_1.0.md) — superseded; kept for historical reference only
