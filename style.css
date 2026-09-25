@@ -539,6 +539,29 @@ summary:focus-visible {
   background: var(--gold);
 }
 
+.product-app-icon {
+  display: block;
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 22%;
+}
+
+.product-status {
+  display: block;
+  margin: 4px 0 0;
+  font-size: 0.8rem;
+  color: var(--charcoal);
+}
+
+.card-cta-group .product-status {
+  margin-top: 0;
+}
+
+.product-card .app-store-badge {
+  width: 150px;
+}
+
 .featured-label {
   display: inline-block;
   background: rgba(59, 130, 196, 0.12);
