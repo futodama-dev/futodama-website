@@ -1,0 +1,8 @@
+# ARRVD invitation links (https://futodama.app/arrvd/invite/<id>#<token>)
+# open the app directly via iOS Universal Links when it is installed —
+# this rule only ever applies to a browser that did NOT hand the link to
+# the app (not installed, or opened via Safari/an in-app browser that
+# skipped Universal Link handling). 200 (rewrite, not a redirect) so the
+# URL — and therefore the token in its fragment, which is never sent to
+# this or any server — stays exactly as the user opened it.
+/arrvd/invite/*  /arrvd/invite/fallback.html  200
