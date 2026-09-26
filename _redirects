@@ -5,4 +5,4 @@
 # skipped Universal Link handling). 200 (rewrite, not a redirect) so the
 # URL — and therefore the token in its fragment, which is never sent to
 # this or any server — stays exactly as the user opened it.
-/arrvd/invite/*  /arrvd/invite/fallback.html  200
+/arrvd/invite/*  /arrvd/invite-fallback.html  200
