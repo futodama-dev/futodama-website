@@ -15,6 +15,24 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://futodama.app/arrvd/"/>
   </url>
   <url>
+    <loc>https://futodama.app/arrvd/privacy/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://futodama.app/arrvd/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://futodama.app/ja/arrvd/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://futodama.app/arrvd/privacy/"/>
+  </url>
+  <url>
+    <loc>https://futodama.app/arrvd/terms/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://futodama.app/arrvd/terms/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://futodama.app/ja/arrvd/terms/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://futodama.app/arrvd/terms/"/>
+  </url>
+  <url>
+    <loc>https://futodama.app/arrvd/support/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://futodama.app/arrvd/support/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://futodama.app/ja/arrvd/support/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://futodama.app/arrvd/support/"/>
+  </url>
+  <url>
     <loc>https://futodama.app/mojitsunagi/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://futodama.app/mojitsunagi/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://futodama.app/ja/mojitsunagi/"/>
@@ -62,6 +80,24 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://futodama.app/arrvd/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://futodama.app/ja/arrvd/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://futodama.app/arrvd/"/>
+  </url>
+  <url>
+    <loc>https://futodama.app/ja/arrvd/privacy/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://futodama.app/arrvd/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://futodama.app/ja/arrvd/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://futodama.app/arrvd/privacy/"/>
+  </url>
+  <url>
+    <loc>https://futodama.app/ja/arrvd/terms/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://futodama.app/arrvd/terms/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://futodama.app/ja/arrvd/terms/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://futodama.app/arrvd/terms/"/>
+  </url>
+  <url>
+    <loc>https://futodama.app/ja/arrvd/support/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://futodama.app/arrvd/support/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://futodama.app/ja/arrvd/support/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://futodama.app/arrvd/support/"/>
   </url>
   <url>
     <loc>https://futodama.app/ja/mojitsunagi/</loc>

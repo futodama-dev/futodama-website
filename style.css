@@ -1033,8 +1033,66 @@ summary:focus-visible {
   margin-bottom: 0;
 }
 
+.support-contact p + p {
+  margin-top: var(--space-1);
+}
+
 .faq-link {
   margin-top: var(--space-4);
+}
+
+/* ==========================================================================
+   Legal / support documents (ARRVD privacy, terms, support)
+   ========================================================================== */
+
+.legal-content {
+  overflow-wrap: break-word;
+}
+
+.legal-content h2 {
+  font-size: 1.3rem;
+  margin-top: var(--space-4);
+}
+
+.legal-content h3 {
+  font-size: 1.05rem;
+  margin-top: var(--space-3);
+  margin-bottom: var(--space-1);
+}
+
+.legal-meta {
+  font-size: 0.9rem;
+  color: var(--charcoal);
+  opacity: 0.8;
+}
+
+.legal-list {
+  margin: 0 0 var(--space-2);
+  padding-left: 1.4em;
+}
+
+.legal-list li {
+  margin-bottom: var(--space-1);
+}
+
+.legal-links {
+  margin-top: var(--space-5);
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--border-soft);
+}
+
+.legal-links ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1) var(--space-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.legal-links [aria-current="page"] {
+  font-weight: 600;
+  color: var(--navy);
 }
 
 /* ==========================================================================

@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ARRVD Privacy Policy | futodama</title>
+  <meta name="description" content="How ARRVD handles account, family, place, location-related, arrival and device information — and what it does not do.">
+  <link rel="canonical" href="https://futodama.app/arrvd/privacy/">
+  <link rel="alternate" hreflang="en" href="https://futodama.app/arrvd/privacy/">
+  <link rel="alternate" hreflang="ja" href="https://futodama.app/ja/arrvd/privacy/">
+  <link rel="alternate" hreflang="x-default" href="https://futodama.app/arrvd/privacy/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="futodama">
+  <meta property="og:title" content="ARRVD Privacy Policy | futodama">
+  <meta property="og:description" content="How ARRVD handles account, family, place, location-related, arrival and device information — and what it does not do.">
+  <meta property="og:url" content="https://futodama.app/arrvd/privacy/">
+
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../../index.html" class="logo" aria-label="futodama home">
+        <img src="../../assets/brand/logo/futodama-symbol.svg" alt="" width="26" height="26" class="logo-dot">futodama
+      </a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-menu" aria-label="Toggle menu">
+          <span class="hamburger"></span>
+        </button>
+        <ul class="nav-menu" id="primary-menu">
+          <li><a href="../../index.html#products">Products</a></li>
+          <li><a href="../../about/index.html">About</a></li>
+          <li><a href="../../support/index.html">Support</a></li>
+          <li class="lang-switch">
+            <span class="lang-current">EN</span>
+            <span class="lang-sep">|</span>
+            <a href="../../ja/arrvd/privacy/index.html">日本語</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow">ARRVD</span>
+        <h1>ARRVD Privacy Policy</h1>
+        <p>Know they arrived. Not everywhere they went. This policy explains what information ARRVD uses to confirm arrivals, and what it doesn’t.</p>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <div class="container legal-content">
+        <p class="legal-meta">Last updated: October 4, 2026</p>
+
+        <h2>1. About this policy</h2>
+        <p>
+          This Privacy Policy applies to ARRVD, the family arrival app for iOS, and the services that
+          support it (together, “ARRVD”). ARRVD is provided by futodama (“we”, “us”). The
+          <a href="../../privacy/index.html">futodama privacy page</a> covers this website in general;
+          this page is the policy for ARRVD.
+        </p>
+        <p>
+          ARRVD is designed to confirm that a family member arrived at a place your family has set
+          up. It is not a live-location or tracking service: it does not show anyone’s position on a
+          map or keep a history of where they went. It does, however, use location information to
+          detect arrivals, and this policy describes exactly how.
+        </p>
+        <p>Questions: <a href="mailto:futodama0610@gmail.com">futodama0610@gmail.com</a></p>
+
+        <h2>2. Information ARRVD processes</h2>
+
+        <h3>Account information</h3>
+        <p>
+          You sign in with Sign in with Apple, through Firebase Authentication. We receive an
+          identifier for your Apple account, and Firebase assigns your ARRVD account an internal
+          user ID. ARRVD does not ask Apple for your name or email address.
+        </p>
+
+        <h3>Family and membership information</h3>
+        <ul class="legal-list">
+          <li>The family’s name, chosen by the person who creates the family (the Organizer).</li>
+          <li>Each person’s role in the family (Organizer or Member), membership status, the date they joined, and their internal user ID.</li>
+          <li>Which family your account belongs to.</li>
+        </ul>
+
+        <h3>Display names</h3>
+        <p>
+          A Member can set the name the family sees for them, and an Organizer can set or change a
+          Member’s name. If no name is set, ARRVD shows a default label such as “Member 2”. Display
+          names are only used to show who is who inside the family.
+        </p>
+
+        <h3>Invitations</h3>
+        <p>
+          When an Organizer invites someone, we create an invitation record containing the family’s
+          name, the invited role, who created it, when it expires, its status and — once accepted —
+          who accepted it. The invitation link contains a secret code; we store only a one-way
+          (hashed) version of that code, never the code itself. If the Organizer types a name while
+          sharing an invitation, that name is used only in the message they share and is not stored.
+          To prevent misuse, we keep a short-lived count of failed invitation attempts per account.
+        </p>
+
+        <h3>Place information</h3>
+        <p>For each place an Organizer adds, ARRVD stores:</p>
+        <ul class="legal-list">
+          <li>its name and address, and its latitude and longitude;</li>
+          <li>the arrival area size (radius);</li>
+          <li>the expected arrival time and days, the related alert settings (for example, whether to be told when arrival isn’t confirmed, the waiting time before that, and whether to be told about departures) and the place’s time zone;</li>
+          <li>which Members the place checks arrival for; and</li>
+          <li>who created it, and when it was created and last changed.</li>
+        </ul>
+
+        <h3>Location-related information</h3>
+        <p>See section 3, which explains how location is used.</p>
+
+        <h3>Arrival and activity information</h3>
+        <p>
+          When a Member’s device confirms an arrival (or a departure, if that place has departure
+          notices turned on), ARRVD records an event containing the Member’s internal user ID, the
+          place and its name, whether it was an arrival or a departure, and when it happened. When a
+          Member’s arrival hasn’t been confirmed by the expected time, our server records a “not yet
+          confirmed” event for that Member and place. These events do not contain map coordinates.
+        </p>
+
+        <h3>Device and notification information</h3>
+        <ul class="legal-list">
+          <li>
+            To send notifications to an Organizer’s device, we store a device identifier created by
+            the app, a push notification token (Firebase Cloud Messaging), the platform, whether
+            notifications are enabled, the app version, the device’s language setting and related
+            timestamps. Firebase may use an installation identifier to deliver these messages. We
+            also record which notifications have already been delivered to which device, so they
+            aren’t sent twice.
+          </li>
+          <li>
+            To check that requests come from a genuine copy of ARRVD, we use Firebase App Check
+            with Apple’s App Attest service.
+          </li>
+          <li>
+            On your own device, ARRVD keeps the places it is watching, recent arrival status, a
+            local activity log, your role and the app-generated device identifier.
+          </li>
+        </ul>
+
+        <h3>Purchase information (ARRVD Plus)</h3>
+        <p>See section 7.</p>
+
+        <h3>Support communications</h3>
+        <p>If you email us, we receive your email address and whatever you include in your message.</p>
+
+        <h3>Service logs</h3>
+        <p>
+          Our servers keep limited technical logs — such as internal identifiers and the outcome of
+          automated checks — to run the service, keep it secure and fix problems. Push tokens are not
+          written to these logs.
+        </p>
+
+        <h3>What ARRVD does not do</h3>
+        <ul class="legal-list">
+          <li>No advertising, and no advertising or analytics SDKs.</li>
+          <li>No selling of personal information.</li>
+          <li>No tracking of you across other companies’ apps or websites.</li>
+        </ul>
+
+        <h2>3. Location</h2>
+        <ul class="legal-list">
+          <li>
+            ARRVD uses iOS Location Services — mainly region monitoring (often called geofencing) —
+            so that a Member’s iPhone can notice when it arrives at, or leaves, a place assigned to
+            that Member. iOS checks this on the device, including while the app isn’t open, if the
+            Member has allowed it. Background checks generally need location access set to
+            “Always”.
+          </li>
+          <li>
+            A Member’s device only watches the places that Member is assigned to.
+          </li>
+          <li>
+            What ARRVD sends from a Member’s device is the arrival or departure event described in
+            section 2 — which place, which kind of event and when. It does not send the device’s
+            coordinates or a history of its movements, and it does not show the Member’s position
+            to anyone on a live map.
+          </li>
+          <li>
+            Places themselves do include an address and coordinates (see section 2). These are
+            stored on our servers and are available to the family.
+          </li>
+          <li>
+            When an Organizer chooses “Use Current Location” while adding a place, the device
+            determines its location once to fill in that place.
+          </li>
+          <li>
+            Place search, map previews and address lookups use Apple Maps services. The search text
+            or the place’s coordinates are sent to Apple to return results.
+          </li>
+          <li>
+            If Location Services or ARRVD’s location permission is turned off or limited, arrivals
+            may be detected late or not at all.
+          </li>
+        </ul>
+
+        <h2>4. What is shared within your family</h2>
+        <ul class="legal-list">
+          <li>Everyone in the family can see the family’s name and its members, with their display names (or default labels) and roles.</li>
+          <li>Place information, including names, addresses and coordinates, is available to everyone in the family. The app shows each Member the places they are assigned to.</li>
+          <li>Arrival, departure and “not yet confirmed” activity is available to the family, and the app shows it to Organizers.</li>
+          <li>Organizers receive notifications about a Member’s arrivals, departures (when turned on for that place) and arrivals that haven’t been confirmed by the expected time. These notifications include the Member’s display name and the place’s name.</li>
+          <li>Not shared with other family members: a Member’s live location or movement history (ARRVD doesn’t create either), push tokens or other device information.</li>
+        </ul>
+
+        <h2>5. How we use information</h2>
+        <ul class="legal-list">
+          <li>To create and sign in to your account.</li>
+          <li>To set up and run your family, including invitations and roles.</li>
+          <li>To create and manage places and decide which Members each place checks.</li>
+          <li>To detect arrivals and departures, and to determine when an arrival hasn’t been confirmed by the expected time.</li>
+          <li>To send arrival, departure and “not yet confirmed” notifications.</li>
+          <li>To provide ARRVD Plus and keep track of which plan applies to your family.</li>
+          <li>To operate, secure and troubleshoot ARRVD, and to prevent misuse.</li>
+          <li>To answer support requests.</li>
+        </ul>
+
+        <h2>6. Service providers</h2>
+        <p>ARRVD relies on a small number of providers, which process information on our behalf or under their own terms:</p>
+        <ul class="legal-list">
+          <li><strong>Apple</strong> — Sign in with Apple, the App Store and in-app purchases, Apple Push Notification service, iOS Location Services, Apple Maps services (place search, map previews and address lookups) and App Attest.</li>
+          <li><strong>Google Firebase</strong> (running on Google Cloud) — Firebase Authentication, Cloud Firestore (our database), Cloud Functions (server-side checks and notifications), Firebase Cloud Messaging, Firebase App Check and Firebase Installations.</li>
+        </ul>
+        <p>
+          We may also disclose information if required by law, or where reasonably necessary to
+          protect the safety, rights or security of our users, the public or ARRVD.
+        </p>
+
+        <h2>7. ARRVD Plus and purchases</h2>
+        <p>
+          ARRVD is available as a free plan and as ARRVD Plus, a paid plan purchased through the
+          App Store. Payments are handled by Apple using your Apple Account; we never receive or
+          store your card number or other payment details. To provide ARRVD Plus and to restore
+          purchases, the app uses the information Apple makes available about your purchase — for
+          example, which product was purchased, whether it is currently active, and transaction
+          identifiers or status. You manage or cancel subscriptions in your Apple Account settings.
+        </p>
+        <!-- Phase 4E final legal audit: align this section with the implemented StoreKit flow (products, entitlement data actually read/stored, restore, downgrade). -->
+
+        <h2>8. How long we keep information, and deletion</h2>
+        <ul class="legal-list">
+          <li>We keep account, family, place and activity information while your account and family are in use, because ARRVD needs it to work.</li>
+          <li>Invitation records and failed-attempt counts are kept for the purposes described above.</li>
+          <li>Information stored on your device is removed when you delete the app. Signing out on a Member’s device also stops that device from watching the family’s places.</li>
+          <li>Deleting the app does not delete information stored on our servers.</li>
+          <li>
+            We are adding a way to delete your ARRVD account from within the app. Until it is
+            available, you can ask us to delete your account and the information associated with it
+            by emailing <a href="mailto:futodama0610@gmail.com">futodama0610@gmail.com</a> from the address you’d like us to
+            reply to; we’ll respond within a reasonable time.
+          </li>
+        </ul>
+        <!-- Phase 4D-5 (account deletion): replace the item above with the actual in-app deletion steps and re-check every retention statement in this section. -->
+
+        <h2>9. Your choices</h2>
+        <ul class="legal-list">
+          <li><strong>Location access</strong> — change it at any time in iOS Settings. Without it, arrivals can’t be detected.</li>
+          <li><strong>Notifications</strong> — turn them on or off in iOS Settings.</li>
+          <li><strong>Display name</strong> — change your own name in the app; Organizers can change Members’ names.</li>
+          <li><strong>Sign in with Apple</strong> — you can manage which apps use your Apple Account in your Apple Account settings.</li>
+          <li><strong>ARRVD Plus</strong> — manage or cancel your subscription in your Apple Account settings.</li>
+          <li><strong>Questions or requests</strong> — email <a href="mailto:futodama0610@gmail.com">futodama0610@gmail.com</a>.</li>
+        </ul>
+
+        <h2>10. Security</h2>
+        <p>
+          We take reasonable measures to protect information, including encrypted connections,
+          database rules that limit each family’s information to that family, app integrity checks
+          and storing invitation codes only in hashed form. No method of transmission or storage is
+          completely secure, so we can’t guarantee absolute security.
+        </p>
+
+        <h2>11. Families and members</h2>
+        <p>
+          ARRVD is meant to be used within a family. An Organizer invites the people they want to
+          include. If you add someone to your family, you are responsible for having the appropriate
+          authority or consent to do so — for example, as a parent or guardian — and for letting them
+          know how ARRVD works. If you believe someone’s information has been added without
+          appropriate permission, please contact us.
+        </p>
+
+        <h2>12. International processing</h2>
+        <p>
+          Apple and Google may process and store information in countries other than the one you
+          live in, including the United States. Where they do, information is handled under their
+          own safeguards and terms.
+        </p>
+
+        <h2>13. Changes to this policy</h2>
+        <p>
+          We may update this policy as ARRVD changes. When we do, we’ll update the date at the top
+          of this page, and we’ll let you know about significant changes in the app or on this page.
+        </p>
+
+        <h2>14. Contact</h2>
+        <p>futodama — <a href="mailto:futodama0610@gmail.com">futodama0610@gmail.com</a></p>
+
+        <nav class="legal-links" aria-label="ARRVD legal and support">
+          <ul>
+          <li><span aria-current="page">Privacy Policy</span></li>
+          <li><a href="../terms/index.html">Terms of Use</a></li>
+          <li><a href="../support/index.html">Support</a></li>
+          <li><a href="../index.html">About ARRVD</a></li>
+          </ul>
+        </nav>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <nav class="footer-col" aria-label="Products">
+          <h4>Products</h4>
+          <ul>
+            <li><a href="../index.html">ARRVD</a></li>
+            <li><a href="../../mojitsunagi/index.html">Mojitsunagi</a></li>
+            <li><a href="../../celestial-oracle/index.html">Celestial Oracle</a></li>
+          </ul>
+        </nav>
+        <nav class="footer-col" aria-label="Company">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="../../about/index.html">About</a></li>
+            <li><a href="../../support/index.html">Support</a></li>
+          </ul>
+        </nav>
+        <nav class="footer-col" aria-label="Legal">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="../../privacy/index.html">Privacy</a></li>
+            <li><a href="../../terms/index.html">Terms</a></li>
+          </ul>
+        </nav>
+        <nav class="footer-col" aria-label="Language">
+          <h4>Language</h4>
+          <ul>
+            <li><span class="lang-current">English</span></li>
+            <li><a href="../../ja/arrvd/privacy/index.html">日本語</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <p class="copyright">&copy; 2026 futodama</p>
+        <p class="footer-spirit">All is well.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../script.js"></script>
+</body>
+</html>
