@@ -99,8 +99,10 @@
           When an Organizer invites someone, we create an invitation record containing the family’s
           name, the invited role, who created it, when it expires, its status and — once accepted —
           who accepted it. The invitation link contains a secret code; we store only a one-way
-          (hashed) version of that code, never the code itself. If the Organizer types a name while
-          sharing an invitation, that name is used only in the message they share and is not stored.
+          (hashed) version of that code, never the code itself. If the Organizer enters a name for the
+          person they invite, it is stored with the invitation and becomes that Member’s initial
+          display name when they join (they or an Organizer can change it later); it is then
+          removed from the invitation.
           To prevent misuse, we keep a short-lived count of failed invitation attempts per account.
         </p>
 
