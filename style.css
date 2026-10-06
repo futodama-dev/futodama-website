@@ -816,6 +816,19 @@ summary:focus-visible {
   background: var(--gold);
 }
 
+/* Product app icon to the left of a product page title (same rounding as
+   .product-app-icon on the home page). Scales with the title (28-36px) and
+   centres on its capital letters. */
+.product-title-icon {
+  --title-icon-size: clamp(28px, 0.75em, 36px);
+  display: inline-block;
+  width: var(--title-icon-size);
+  height: var(--title-icon-size);
+  border-radius: 22%;
+  margin-right: 0.25em;
+  vertical-align: calc(0.36em - var(--title-icon-size) / 2);
+}
+
 .status-badge {
   display: inline-block;
   margin-top: var(--space-2);
@@ -996,6 +1009,13 @@ summary:focus-visible {
 .cta-section {
   padding: var(--space-5) 0;
   text-align: center;
+}
+
+/* Paragraphs keep the global max-width (68ch) but sit on the section's
+   centre axis instead of its left edge. */
+.cta-section--centered p {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* ==========================================================================
