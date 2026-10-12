@@ -70,6 +70,13 @@
   </url>
 
   <url>
+    <loc>https://futodama.app/legal/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://futodama.app/legal/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://futodama.app/ja/legal/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://futodama.app/legal/"/>
+  </url>
+
+  <url>
     <loc>https://futodama.app/ja/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://futodama.app/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://futodama.app/ja/"/>
@@ -134,6 +141,13 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://futodama.app/terms/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://futodama.app/ja/terms/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://futodama.app/terms/"/>
+  </url>
+
+  <url>
+    <loc>https://futodama.app/ja/legal/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://futodama.app/legal/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://futodama.app/ja/legal/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://futodama.app/legal/"/>
   </url>
 
 </urlset>
