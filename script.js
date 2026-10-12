@@ -29,4 +29,13 @@
       toggle.setAttribute("aria-expanded", "false");
     }
   });
+
+  document.addEventListener("keydown", function (event) {
+    if (event.key !== "Escape" || !menu.classList.contains("is-open")) {
+      return;
+    }
+    menu.classList.remove("is-open");
+    toggle.setAttribute("aria-expanded", "false");
+    toggle.focus();
+  });
 })();

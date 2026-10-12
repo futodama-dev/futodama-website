@@ -9,6 +9,9 @@
   --charcoal: #222222;
   --green: #6F9275;
   --gold: #D8B45B;
+  /* Text-safe blue (WCAG AA on warm white and white) for links, text and
+     buttons. --blue stays the brand color for the logo, icons and graphics. */
+  --blue-text: #2C6FAE;
   --border-soft: rgba(31, 42, 55, 0.1);
   --border-faint: rgba(31, 42, 55, 0.08);
   --surface-muted: #F3F1EC;
@@ -56,7 +59,7 @@ svg {
 }
 
 a {
-  color: var(--blue);
+  color: var(--blue-text);
   text-decoration: none;
 }
 
@@ -138,7 +141,7 @@ p {
 
 .eyebrow {
   display: inline-block;
-  color: var(--blue);
+  color: var(--blue-text);
   font-weight: 600;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -172,7 +175,7 @@ summary:focus-visible {
 }
 
 .btn-primary {
-  background: var(--blue);
+  background: var(--blue-text);
   color: #fff;
 }
 
@@ -267,7 +270,7 @@ summary:focus-visible {
 
 .nav-menu a:hover,
 .nav-menu a:focus-visible {
-  color: var(--blue);
+  color: var(--blue-text);
 }
 
 .lang-switch {
@@ -283,7 +286,7 @@ summary:focus-visible {
 }
 
 .lang-switch a {
-  color: var(--blue);
+  color: var(--blue-text);
 }
 
 .lang-switch .lang-sep {
@@ -460,7 +463,7 @@ summary:focus-visible {
 }
 
 .link-arrow {
-  color: var(--blue);
+  color: var(--blue-text);
   font-weight: 600;
   text-decoration: none;
   white-space: nowrap;
@@ -565,7 +568,7 @@ summary:focus-visible {
 .featured-label {
   display: inline-block;
   background: rgba(59, 130, 196, 0.12);
-  color: var(--blue);
+  color: var(--blue-text);
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.05em;
@@ -791,12 +794,36 @@ summary:focus-visible {
   max-width: 640px;
 }
 
-.page-hero--green .eyebrow {
-  color: var(--green);
+/* Product label (all three product pages): Deep Navy text for legibility;
+   the product color stays as a small accent dot before the label. */
+.arrvd-hero .eyebrow,
+.page-hero--green .eyebrow,
+.page-hero--gold .eyebrow {
+  color: var(--navy);
 }
 
-.page-hero--gold .eyebrow {
-  color: var(--gold);
+.arrvd-hero .eyebrow::before,
+.page-hero--green .eyebrow::before,
+.page-hero--gold .eyebrow::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 8px;
+  vertical-align: 0.02em;
+}
+
+.arrvd-hero .eyebrow::before {
+  background: var(--blue);
+}
+
+.page-hero--green .eyebrow::before {
+  background: var(--green);
+}
+
+.page-hero--gold .eyebrow::before {
+  background: var(--gold);
 }
 
 .hero-dot {
@@ -921,7 +948,7 @@ summary:focus-visible {
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  background: var(--blue);
+  background: var(--blue-text);
   color: #fff;
   display: flex;
   align-items: center;
