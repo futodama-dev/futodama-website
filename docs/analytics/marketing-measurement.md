@@ -20,9 +20,13 @@ Cloudflare Web Analytics (injected by Cloudflare, not part of this repository) s
 | Collector | Cloudflare Pages Function `functions/api/analytics/event.js` → `POST /api/analytics/event` |
 | Storage | Cloudflare Workers Analytics Engine, binding **`SITE_ANALYTICS`**, dataset **`futodama_site_events`** |
 
-The binding is configured in the Cloudflare Pages project (Settings → Functions → Analytics Engine bindings), not in code. If the binding is missing, the collector still answers `204` and writes nothing.
+The binding is configured in the Cloudflare Pages project (Settings → Bindings), not in code; there is no `wrangler.toml`. If the binding is missing, the collector still answers `204` (`X-Analytics-Status: unavailable`) and writes nothing.
 
 Only the production host `futodama.app` records events. The browser script does nothing on any other host (preview `*.pages.dev`, `localhost`, `127.0.0.1`), and the Function stores nothing for requests whose hostname is not `futodama.app`.
+
+`_routes.json` limits Pages Functions to `/api/analytics/event`. Every other request (all pages and assets) is served as a static asset without invoking a Function, so the site keeps working even if the Function fails or the daily Functions allowance is used up.
+
+The browser script also stays silent for automated browsers and crawlers that execute JavaScript (`navigator.webdriver`, or a User-Agent matching `bot|crawl|spider|slurp|headless|lighthouse` — tested in the browser only, never sent), and a prerendered page sends its page view only when the visitor actually opens it.
 
 ## Event dictionary
 
@@ -81,12 +85,37 @@ No `doubles` are written; every data point represents one event.
 
 ### Collector validation
 
-- `POST` only (`405` otherwise); request body at most 4 KB (`413`).
-- Requests with an `Origin` header other than `https://futodama.app` are refused (`403`).
+- `POST` only (`405` otherwise); request body at most 4 KB (`413`), enforced while reading the stream, so an oversized body without `Content-Length` is cut off too.
+- The `Origin` header must be exactly `https://futodama.app`; requests without it or with another origin are refused (`403`). Browsers always send `Origin` on these POSTs. This keeps out casual cross-site and header-less requests, but it is **not** authentication — see [Abuse and limits](#abuse-and-limits).
 - Body must be a JSON object. Only the nine fields above are read; any other field is ignored and can never be stored.
 - `event`, `product` and `target` must be in their allowlists, and `target` must match the event (`product_interest` → `product_page` with a non-`site` product; `outbound_cta` → `app_store` or `web_app`; all other events → empty). Otherwise `400` and nothing is written.
 - All strings have control characters removed and are length-limited. `page_path` must match the canonical path pattern (else `other`); campaign values must be URL-safe tokens of at most 64 characters (`A–Z a–z 0–9 . _ ~ -`), otherwise they are stored empty — so values containing `@`, spaces or free text are dropped.
 - The collector does not log requests.
+- Every response carries `X-Analytics-Status` (no request data in it):
+
+  | Value | Meaning |
+  |---|---|
+  | `stored` | Data point handed to Analytics Engine (`204`) |
+  | `skipped` | Not the production host — intentionally not recorded (`204`) |
+  | `unavailable` | `SITE_ANALYTICS` binding missing in this deployment (`204`) |
+  | `error` | `writeDataPoint` threw (`204`) |
+  | `rejected` | Request refused (`400` / `403` / `405` / `413`) |
+
+  `writeDataPoint` does not wait for storage, so `stored` means "accepted by the runtime"; confirm arrival with the SQL checks below.
+
+## Abuse and limits
+
+There is no way to authenticate an anonymous browser without identifiers, so anyone can send well-formed events to the endpoint (any client can set an `Origin` header). Consequences and mitigations:
+
+- **Data quality, not safety, is at stake.** Forged events can only contain allowlisted values; they cannot inject personal data, HTML or arbitrary strings, and they cannot affect the website (static assets do not go through the Function).
+- **No de-duplication by design.** Each page load sends one page view and at most one of each engagement event; reloads count again, like a normal page view. Without IDs, repeated or scripted submissions cannot be de-duplicated.
+- **Volume.** A normal page view causes 1–5 Function requests (page view, up to three engagement events, clicks). On the Workers Free plan, Pages Functions share the daily request allowance; if it is exhausted only `/api/analytics/event` stops (keep the Pages Functions failure mode on *fail open*).
+- **Recommended (Cloudflare dashboard, optional):** a rate-limiting rule for `POST /api/analytics/event` (for example 30 requests / 10 s per IP → block for 10 s). This runs at the edge and stores nothing in the dataset.
+- **Detection:** use the per-minute spike query below; treat sudden bursts with a single `page_path` and no campaign as suspect.
+
+## Operational rule for campaign links
+
+Campaign values are stored verbatim (when they are short URL-safe tokens). Never put anything that identifies a person into `utm_*` / `src·med·cmp·cnt` values — no email addresses, customer numbers, recipient IDs or per-person codes. Use shared labels such as `utm_source=x&utm_campaign=launch_2026`.
 
 ## Privacy model
 
@@ -161,8 +190,66 @@ Divide in the reporting layer (or wrap these in an outer query) to get the rates
 - **GA4, Google Tag Manager, the Google tag, new cookies or a consent banner are not used.** GA4 would only be considered in a separate phase, if session- or path-level analysis turns out to be necessary, and then only with Basic Consent Mode.
 - **App Store campaign links.** App Store links currently use the plain product URL. Once official Campaign Links (provider token `pt`, campaign token `ct`) are issued in App Store Connect, they can replace the link URLs in the HTML as a separate change; the `outbound_cta` attribution keys on the app ID in the path, so it keeps working.
 
-## Setup checklist (before the first production deploy)
+## Deployment, verification and rollback
 
-1. Cloudflare dashboard → Workers & Pages → the futodama-website Pages project → Settings → Functions → **Analytics Engine bindings**: add variable name `SITE_ANALYTICS`, dataset `futodama_site_events` (Production environment).
-2. Deploy, then confirm that a production page view produces a row:
-   `SELECT COUNT() FROM futodama_site_events WHERE timestamp > NOW() - INTERVAL '1' HOUR`.
+The site deploys through the Cloudflare Pages GitHub integration: a push to `main` builds and publishes production (`futodama.app`); other branches only get preview deployments, which never record events.
+
+### Before the first production deploy
+
+1. Cloudflare dashboard → Workers & Pages → `futodama-website` → Settings → Bindings: **Analytics Engine** binding `SITE_ANALYTICS` → dataset `futodama_site_events`, in the **Production** environment. Bindings only apply to deployments created after they were added.
+2. Pages Functions failure mode on the Free plan: keep *fail open*.
+
+### Right after deploying
+
+1. Open `https://futodama.app/` in a normal browser window. In DevTools → Network, the `POST /api/analytics/event` request must answer `204` with `X-Analytics-Status: stored`.
+   - `unavailable` → the binding is not active in this deployment (check step 1 above, then redeploy).
+   - `error` → the runtime refused the write; check the Functions real-time logs of the deployment.
+   - `skipped` → you are not on `futodama.app` (preview URL).
+   - No request at all → the page is not on `futodama.app`, the browser is automated, or `script.js` failed (Console).
+2. Wait a few minutes, then confirm arrival with the SQL API:
+
+```sql
+-- Rows in the last hour, by event (sampling-aware)
+SELECT blob1 AS event, SUM(_sample_interval) AS events
+FROM futodama_site_events
+WHERE timestamp > NOW() - INTERVAL '1' HOUR
+GROUP BY event;
+
+-- Layout sanity check: every stored value should be from the allowlists
+SELECT blob1 AS event, blob2 AS page_path, blob3 AS lang, blob4 AS product, blob5 AS target, SUM(_sample_interval) AS events
+FROM futodama_site_events
+WHERE timestamp > NOW() - INTERVAL '1' DAY
+GROUP BY event, page_path, lang, product, target
+ORDER BY events DESC;
+
+-- Campaign values seen (check for anything that looks personal)
+SELECT blob6 AS source, blob7 AS medium, blob8 AS campaign, blob9 AS content, SUM(_sample_interval) AS events
+FROM futodama_site_events
+WHERE timestamp > NOW() - INTERVAL '7' DAY AND (blob6 != '' OR blob7 != '' OR blob8 != '' OR blob9 != '')
+GROUP BY source, medium, campaign, content
+ORDER BY events DESC;
+
+-- Per-minute volume (spikes / abuse)
+SELECT toStartOfInterval(timestamp, INTERVAL '1' MINUTE) AS minute, SUM(_sample_interval) AS events
+FROM futodama_site_events
+WHERE timestamp > NOW() - INTERVAL '1' DAY
+GROUP BY minute
+ORDER BY events DESC
+LIMIT 20;
+```
+
+Expected shape: `site_page_view` ≥ `engagement_15s` ≥ `engagement_60s` ≥ `engagement_180s`. Compare the daily `site_page_view` total with Cloudflare Web Analytics page views: it should be the same order of magnitude (it will be lower — automated browsers are excluded and blocked scripts send nothing).
+
+### Rollback
+
+Pick the lightest step that solves the problem:
+
+1. **Stop storing, keep everything else:** remove the `SITE_ANALYTICS` binding (Settings → Bindings) and redeploy. The endpoint then answers `204 unavailable` and writes nothing; the site is unaffected.
+2. **Return to the previous site instantly:** Workers & Pages → `futodama-website` → Deployments → the last deployment before this change → *Rollback to this deployment*. No Git change needed.
+3. **Remove the change from the code:** `git revert <merge commit>` on `main`, push; Pages redeploys without the Function and the client script. Revert the Privacy Policy wording in the same step only if the measurement is being discontinued.
+
+Data already stored cannot be deleted selectively; it expires after 3 months.
+
+## Repository files on the website
+
+The Pages project publishes the repository root, so `_redirects` sends `/README.md`, `/docs/*` and `/functions/*` to `/` (`302`): this document and the brand guidelines are kept in Git but are not served on futodama.app.

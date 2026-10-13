@@ -35,8 +35,43 @@ const PAGE_PATH =
 // Campaign values (utm_* / src·med·cmp·cnt): short, URL-safe tokens only — no "@", spaces or free text.
 const CAMPAIGN_VALUE = /^[A-Za-z0-9._~-]{1,64}$/;
 
-function noContent(status = 204) {
-  return new Response(null, { status, headers: { "Cache-Control": "no-store" } });
+// X-Analytics-Status tells whether the event was handed to Analytics Engine
+// (stored), not recorded on purpose (skipped), the binding is missing
+// (unavailable) or the write threw (error). It carries no request data.
+function noContent(status = 204, analyticsStatus = "rejected") {
+  return new Response(null, {
+    status,
+    headers: { "Cache-Control": "no-store", "X-Analytics-Status": analyticsStatus },
+  });
+}
+
+// Reads at most MAX_BODY_BYTES; returns null when the body is larger.
+async function readBody(request) {
+  if (!request.body) {
+    return new Uint8Array(0);
+  }
+  const reader = request.body.getReader();
+  const chunks = [];
+  let size = 0;
+  for (;;) {
+    const { done, value } = await reader.read();
+    if (done) {
+      break;
+    }
+    size += value.byteLength;
+    if (size > MAX_BODY_BYTES) {
+      await reader.cancel();
+      return null;
+    }
+    chunks.push(value);
+  }
+  const body = new Uint8Array(size);
+  let offset = 0;
+  for (const chunk of chunks) {
+    body.set(chunk, offset);
+    offset += chunk.byteLength;
+  }
+  return body;
 }
 
 function clean(value, maxLength) {
@@ -98,17 +133,21 @@ export async function onRequest(context) {
   const { request, env } = context;
 
   if (request.method !== "POST") {
-    return new Response(null, { status: 405, headers: { Allow: "POST", "Cache-Control": "no-store" } });
+    return new Response(null, {
+      status: 405,
+      headers: { Allow: "POST", "Cache-Control": "no-store", "X-Analytics-Status": "rejected" },
+    });
   }
 
   // Record production traffic only; preview deployments and local runs are accepted but not stored.
   const url = new URL(request.url);
   if (url.hostname !== PRODUCTION_HOST) {
-    return noContent();
+    return noContent(204, "skipped");
   }
 
-  const origin = request.headers.get("Origin");
-  if (origin !== null && origin !== PRODUCTION_ORIGIN) {
+  // Browsers always send Origin on a POST from the site itself. This only keeps
+  // out casual cross-site and header-less requests; it is not authentication.
+  if (request.headers.get("Origin") !== PRODUCTION_ORIGIN) {
     return noContent(403);
   }
 
@@ -119,11 +158,11 @@ export async function onRequest(context) {
 
   let body;
   try {
-    body = await request.arrayBuffer();
+    body = await readBody(request);
   } catch {
     return noContent(400);
   }
-  if (body.byteLength > MAX_BODY_BYTES) {
+  if (body === null) {
     return noContent(413);
   }
 
@@ -140,14 +179,14 @@ export async function onRequest(context) {
   }
 
   // Analytics must never get in the way of the site: a missing binding or a
-  // failed write is ignored.
-  try {
-    if (env && env.SITE_ANALYTICS) {
-      env.SITE_ANALYTICS.writeDataPoint({ indexes: [blobs[0]], blobs });
-    }
-  } catch {
-    // ignore
+  // failed write is answered with 204 as well.
+  if (!env || !env.SITE_ANALYTICS) {
+    return noContent(204, "unavailable");
   }
-
-  return noContent();
+  try {
+    env.SITE_ANALYTICS.writeDataPoint({ indexes: [blobs[0]], blobs });
+  } catch {
+    return noContent(204, "error");
+  }
+  return noContent(204, "stored");
 }

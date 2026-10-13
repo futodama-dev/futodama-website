@@ -1,3 +1,9 @@
+# Repository files that are not part of the website (brand and analytics
+# docs, the README and Pages Functions source) are never served.
+/README.md    /  302
+/docs/*       /  302
+/functions/*  /  302
+
 # ARRVD invitation links (https://futodama.app/arrvd/invite/<id>#<token>)
 # open the app directly via iOS Universal Links when it is installed —
 # this rule only ever applies to a browser that did NOT hand the link to

@@ -46,10 +46,17 @@
   var ENDPOINT = "/api/analytics/event";
   var PRODUCTION_HOST = "futodama.app";
 
+  // Automated browsers and crawlers that run JavaScript are not counted. The
+  // User-Agent is only tested here in the browser; it is never sent.
+  var isAutomated =
+    navigator.webdriver === true ||
+    /bot|crawl|spider|slurp|headless|lighthouse/i.test(navigator.userAgent || "");
+
   if (
     location.hostname !== PRODUCTION_HOST ||
     location.pathname.indexOf("/arrvd/invite") === 0 ||
-    typeof window.fetch !== "function"
+    typeof window.fetch !== "function" ||
+    isAutomated
   ) {
     return;
   }
@@ -106,7 +113,18 @@
     }
   }
 
-  track("site_page_view", pageProduct);
+  // A prerendered page counts only once the visitor actually opens it.
+  if (document.prerendering) {
+    document.addEventListener(
+      "prerenderingchange",
+      function () {
+        track("site_page_view", pageProduct);
+      },
+      { once: true }
+    );
+  } else {
+    track("site_page_view", pageProduct);
+  }
 
   // Clicks: internal links into another product's page, and outbound CTAs.
   var APP_STORE_PRODUCTS = { id6801533488: "mojitsunagi" };
