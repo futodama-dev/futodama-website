@@ -61,13 +61,62 @@
     return;
   }
 
-  // Product section of a site path ("/ja/arrvd/terms/" → "arrvd").
+  // Products come from the futodama product registry (futodama-analytics). The block below is
+  // generated — never edit it by hand: npm run registry -- site-config --site <this repo> --write
+  // BEGIN GENERATED SITE PRODUCTS — npm run registry -- site-config (futodama-analytics). Do not edit by hand.
+  var SITE_SECTIONS = ["","about","legal","privacy","support","terms"]; // brand pages (first path segment; "" = top)
+  var SITE_PRODUCTS = {"arrvd":"arrvd","celestial-oracle":"celestial_oracle","mojitsunagi":"mojitsunagi"}; // site slug → product_id
+  var STORE_PRODUCTS = {"app_store:6801533488":"mojitsunagi","web:celestial.futodama.app":"celestial_oracle"}; // store:app id → product_id
+  // END GENERATED SITE PRODUCTS
+
+  // First path segment after the optional /ja/ ("/ja/arrvd/terms/" → "arrvd"), or null.
+  function sectionOf(path) {
+    var match = /^\/(?:ja\/)?([a-z0-9][a-z0-9-]{0,39})\//.exec(path);
+    return match && match[1] !== "ja" ? match[1] : null;
+  }
+
+  // Product of a site path: a registered product's slug → its product_id; the top page and brand
+  // sections → "site". A section the registry does not know yet is sent as its own product token
+  // (kept and reported as unregistered — never dropped, never guessed onto another product).
   function productOfPath(path) {
-    var match = /^\/(?:ja\/)?(arrvd|mojitsunagi|celestial-oracle)\//.exec(path);
-    if (!match) {
+    var section = sectionOf(path);
+    if (section === null || SITE_SECTIONS.indexOf(section) >= 0) {
       return "site";
     }
-    return match[1] === "celestial-oracle" ? "celestial_oracle" : match[1];
+    if (Object.prototype.hasOwnProperty.call(SITE_PRODUCTS, section)) {
+      return SITE_PRODUCTS[section];
+    }
+    var token = section.replace(/-/g, "_");
+    return /^[a-z][a-z0-9_]{1,31}$/.test(token) && token !== "site" ? token : "site";
+  }
+
+  // A product's top page ("/arrvd/", "/ja/arrvd/"): the target of product_interest.
+  function isProductPage(path) {
+    return /^\/(?:ja\/)?[a-z0-9][a-z0-9-]{0,39}\/$/.test(path) && productOfPath(path) !== "site";
+  }
+
+  // Store / web app of an outbound link: App Store (id…), Google Play (details?id=…) or a
+  // registered web app host. The product comes from the registry; an unregistered store app counts
+  // for the page's product.
+  function outboundOf(url) {
+    var key = null;
+    var target = null;
+    if (url.hostname === "apps.apple.com") {
+      var appId = /\/id(\d+)/.exec(url.pathname);
+      key = appId ? "app_store:" + appId[1] : null;
+      target = "app_store";
+    } else if (url.hostname === "play.google.com" && url.pathname === "/store/apps/details") {
+      key = url.searchParams.get("id") ? "google_play:" + url.searchParams.get("id") : null;
+      target = "play_store";
+    } else if (Object.prototype.hasOwnProperty.call(STORE_PRODUCTS, "web:" + url.hostname)) {
+      key = "web:" + url.hostname;
+      target = "web_app";
+    }
+    if (!target) {
+      return null;
+    }
+    var known = key !== null && Object.prototype.hasOwnProperty.call(STORE_PRODUCTS, key);
+    return { target: target, product: known ? STORE_PRODUCTS[key] : null };
   }
 
   // Campaign of the landing URL: utm_* first, then the src/med/cmp/cnt form.
@@ -127,8 +176,6 @@
   }
 
   // Clicks: internal links into another product's page, and outbound CTAs.
-  var APP_STORE_PRODUCTS = { id6801533488: "mojitsunagi" };
-
   document.addEventListener("click", function (event) {
     var link = event.target && event.target.closest ? event.target.closest("a[href]") : null;
     if (!link) {
@@ -143,19 +190,15 @@
 
     if (url.hostname === PRODUCTION_HOST) {
       var linkProduct = productOfPath(url.pathname);
-      var isProductPage = /^\/(?:ja\/)?(?:arrvd|mojitsunagi|celestial-oracle)\/$/.test(url.pathname);
-      if (isProductPage && !url.hash && linkProduct !== pageProduct) {
+      if (isProductPage(url.pathname) && !url.hash && linkProduct !== pageProduct) {
         track("product_interest", linkProduct, "product_page");
       }
       return;
     }
 
-    if (url.hostname === "apps.apple.com") {
-      var appId = /\/(id\d+)/.exec(url.pathname);
-      var storeProduct = (appId && APP_STORE_PRODUCTS[appId[1]]) || pageProduct;
-      track("outbound_cta", storeProduct, "app_store");
-    } else if (url.hostname === "celestial.futodama.app") {
-      track("outbound_cta", "celestial_oracle", "web_app");
+    var outbound = outboundOf(url);
+    if (outbound) {
+      track("outbound_cta", outbound.product || pageProduct, outbound.target);
     }
   });
 

@@ -33,9 +33,10 @@ The browser script also stays silent for automated browsers and crawlers that ex
 | Event | When | `product` | `target` |
 |---|---|---|---|
 | `site_page_view` | Once per page load | Product of the current page | *(empty)* |
-| `product_interest` | Click on an internal link to another product's main page (`/arrvd/`, `/mojitsunagi/`, `/celestial-oracle/`, or the `/ja/` equivalent, without a `#fragment`) | Product of the **destination** | `product_page` |
-| `outbound_cta` | Click on an App Store link | Product of the App Store app (by app ID; falls back to the current page's product) | `app_store` |
-| `outbound_cta` | Click on a `celestial.futodama.app` link | `celestial_oracle` | `web_app` |
+| `product_interest` | Click on an internal link to another product's main page (`/<slug>/` or `/ja/<slug>/`, without a `#fragment`) | Product of the **destination** | `product_page` |
+| `outbound_cta` | Click on an App Store link (`apps.apple.com/…/id<n>`) | Product registered for that Apple ID; otherwise the current page's product | `app_store` |
+| `outbound_cta` | Click on a Google Play link (`play.google.com/store/apps/details?id=<package>`) | Product registered for that package; otherwise the current page's product | `play_store` |
+| `outbound_cta` | Click on a registered web app host (e.g. `celestial.futodama.app`) | Product registered for that host | `web_app` |
 | `engagement_15s` | The page has been **visible** for 15 s in total | Product of the current page | *(empty)* |
 | `engagement_60s` | … 60 s in total | Product of the current page | *(empty)* |
 | `engagement_180s` | … 180 s in total | Product of the current page | *(empty)* |
@@ -49,7 +50,12 @@ Notes:
 
 ### Product values
 
-`arrvd` · `mojitsunagi` · `celestial_oracle` · `site` (everything that is not a product section: Home, About, Support, Privacy, Terms, Legal).
+Products come from the **product registry** in futodama-analytics (D1 `products` / `product_platforms`), never from a list in this repository:
+
+- `script.js` contains a generated block (`// BEGIN GENERATED SITE PRODUCTS` … `// END …`) with the registry's site slugs (`/arrvd/` → `arrvd`, `/celestial-oracle/` → `celestial_oracle`, …), brand sections and store IDs. It is written by `npm run registry -- site-config --site <this repo> --write` in futodama-analytics and checked by `npm run registry -- check-site --site <this repo>` — never edit it by hand. The site does not read D1 at runtime (no D1 binding on the Pages project).
+- `site` = the top page and brand sections (About, Support, Privacy, Terms, Legal).
+- A section the registry does not know yet (a new product page published before its registration) sends its slug as a product token (`/moji-kids/` → `moji_kids`). The event is **kept**: the collector accepts product_id-shaped tokens, the rollup stores them, and D1 reports them in `v_site_unregistered_daily` until the product is registered — registering it then counts the kept events with no code change. Nothing is guessed onto another product.
+- iOS / Android / web are platforms of one product: store links resolve to the product registered for that Apple ID, Google Play package or web host (`target` tells the store).
 
 ### Campaign values
 
@@ -72,10 +78,10 @@ Every accepted event is written as one data point. **This layout is fixed; queri
 |---|---|---|
 | `index1` | `event` | the six events above |
 | `blob1` | `event` | the six events above |
-| `blob2` | `page_path` | a canonical site path (`/`, `/ja/`, `/arrvd/`, `/ja/arrvd/terms/`, …); anything else is stored as `other` |
+| `blob2` | `page_path` | a canonical site path — the top page, `/<section>/` or `/<section>/privacy/`, `terms/`, `support/`, optionally after `/ja/` (`/`, `/ja/`, `/arrvd/`, `/ja/arrvd/terms/`, …); anything else is stored as `other` |
 | `blob3` | `lang` | `en`, `ja` or empty |
-| `blob4` | `product` | `arrvd`, `mojitsunagi`, `celestial_oracle`, `site` |
-| `blob5` | `target` | `product_page`, `app_store`, `web_app` or empty |
+| `blob4` | `product` | `site` or a product_id-shaped token (lower-case letter, then up to 31 lower-case letters, digits or `_`): registered products (`arrvd`, `mojitsunagi`, `celestial_oracle`, …) or a not-yet-registered section |
+| `blob5` | `target` | `product_page`, `app_store`, `play_store`, `web_app` or empty |
 | `blob6` | `source` | campaign token or empty |
 | `blob7` | `medium` | campaign token or empty |
 | `blob8` | `campaign` | campaign token or empty |
@@ -88,7 +94,7 @@ No `doubles` are written; every data point represents one event.
 - `POST` only (`405` otherwise); request body at most 4 KB (`413`), enforced while reading the stream, so an oversized body without `Content-Length` is cut off too.
 - The `Origin` header must be exactly `https://futodama.app`; requests without it or with another origin are refused (`403`). Browsers always send `Origin` on these POSTs. This keeps out casual cross-site and header-less requests, but it is **not** authentication — see [Abuse and limits](#abuse-and-limits).
 - Body must be a JSON object. Only the nine fields above are read; any other field is ignored and can never be stored.
-- `event`, `product` and `target` must be in their allowlists, and `target` must match the event (`product_interest` → `product_page` with a non-`site` product; `outbound_cta` → `app_store` or `web_app`; all other events → empty). Otherwise `400` and nothing is written.
+- `event` and `target` must be in their allowlists and `product` must be `site` or a product_id-shaped token of at most 32 characters (longer values are refused, not truncated); `target` must match the event (`product_interest` → `product_page` with a non-`site` product; `outbound_cta` → `app_store`, `play_store` or `web_app`; all other events → empty). Otherwise `400` and nothing is written. Whether a product is registered is decided downstream (D1 views), so a new product page is never dropped here.
 - All strings have control characters removed and are length-limited. `page_path` must match the canonical path pattern (else `other`); campaign values must be URL-safe tokens of at most 64 characters (`A–Z a–z 0–9 . _ ~ -`), otherwise they are stored empty — so values containing `@`, spaces or free text are dropped.
 - The collector does not log requests.
 - Every response carries `X-Analytics-Status` (no request data in it):
@@ -107,7 +113,7 @@ No `doubles` are written; every data point represents one event.
 
 There is no way to authenticate an anonymous browser without identifiers, so anyone can send well-formed events to the endpoint (any client can set an `Origin` header). Consequences and mitigations:
 
-- **Data quality, not safety, is at stake.** Forged events can only contain allowlisted values; they cannot inject personal data, HTML or arbitrary strings, and they cannot affect the website (static assets do not go through the Function).
+- **Data quality, not safety, is at stake.** Forged events can only contain allowlisted values and short tokens (product, campaign); forged product tokens appear in `v_site_unregistered_daily`, never in the registered products' numbers; they cannot inject personal data, HTML or arbitrary strings, and they cannot affect the website (static assets do not go through the Function).
 - **No de-duplication by design.** Each page load sends one page view and at most one of each engagement event; reloads count again, like a normal page view. Without IDs, repeated or scripted submissions cannot be de-duplicated.
 - **Volume.** A normal page view causes 1–5 Function requests (page view, up to three engagement events, clicks). On the Workers Free plan, Pages Functions share the daily request allowance; if it is exhausted only `/api/analytics/event` stops (keep the Pages Functions failure mode on *fail open*).
 - **Recommended (Cloudflare dashboard, optional):** a rate-limiting rule for `POST /api/analytics/event` (for example 30 requests / 10 s per IP → block for 10 s). This runs at the edge and stores nothing in the dataset.

@@ -25,13 +25,17 @@ const EVENTS = new Set([
   "engagement_60s",
   "engagement_180s",
 ]);
-const PRODUCTS = new Set(["arrvd", "mojitsunagi", "celestial_oracle", "site"]);
-const OUTBOUND_TARGETS = new Set(["app_store", "web_app"]);
+// "site" (brand pages) or a product_id-shaped token. The product registry (futodama-analytics) decides
+// downstream whether a product is registered; an unregistered product is kept and reported, never
+// dropped here. The format check keeps out free text and over-long values.
+const PRODUCT = /^(?:site|[a-z][a-z0-9_]{1,31})$/;
+const OUTBOUND_TARGETS = new Set(["app_store", "play_store", "web_app"]);
 const LANGS = new Set(["en", "ja"]);
 
-// Canonical site paths; anything else (404s, invitation links, …) is stored as "other".
-const PAGE_PATH =
-  /^\/(?:ja\/)?(?:(?:arrvd\/(?:privacy\/|terms\/|support\/)?)|mojitsunagi\/|celestial-oracle\/|about\/|support\/|privacy\/|terms\/|legal\/)?$/;
+// Canonical site paths — the top page, a section ("/about/", "/arrvd/") and a section's privacy /
+// terms / support page, with an optional "/ja/" prefix; anything else (404s, invitation links,
+// files, …) is stored as "other".
+const PAGE_PATH = /^\/(?:ja\/)?(?:[a-z0-9][a-z0-9-]{0,39}\/(?:privacy\/|terms\/|support\/)?)?$/;
 // Campaign values (utm_* / src·med·cmp·cnt): short, URL-safe tokens only — no "@", spaces or free text.
 const CAMPAIGN_VALUE = /^[A-Za-z0-9._~-]{1,64}$/;
 
@@ -94,9 +98,9 @@ function toDataPoint(payload) {
   }
 
   const event = clean(payload.event, 32);
-  const product = clean(payload.product, 32);
+  const product = clean(payload.product, 64); // the format check rejects more than 32 characters (no truncation)
   const target = clean(payload.target, 32);
-  if (!EVENTS.has(event) || !PRODUCTS.has(product)) {
+  if (!EVENTS.has(event) || !PRODUCT.test(product)) {
     return null;
   }
 
