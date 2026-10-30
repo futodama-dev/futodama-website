@@ -397,32 +397,50 @@ summary:focus-visible {
 
 /* ==========================================================================
    Today's card (Celestial Oracle entry on the home page)
-   Deep Navy + Gold product colors; gold only as the border and label dot.
+   A compact strip between the hero and Featured ARRVD. Deep Navy + Gold product
+   colors; gold only as the border and the label dot. Sizes from the type scale:
+   H3 24px / 20px (mobile) for the heading, Caption 12px for the image note.
    ========================================================================== */
 
 .today-card {
-  padding: 0 0 var(--space-2);
+  padding: 0 0 var(--space-1);
 }
 
 .today-card-inner {
   display: grid;
-  grid-template-columns: 120px 1fr;
-  column-gap: var(--space-4);
-  align-items: start;
+  grid-template-columns: 96px 1fr auto;
+  column-gap: var(--space-3);
+  align-items: center;
   max-width: 760px;
   margin: 0 auto;
   background: #fff;
   border: 1px solid rgba(216, 180, 91, 0.55);
   border-radius: var(--radius);
-  padding: var(--space-4);
+  padding: var(--space-3);
 }
 
-.today-card-image {
-  grid-row: 1 / span 4;
-  align-self: center;
-  width: 120px;
+.today-card-figure {
+  grid-row: 1 / span 2;
+  margin: 0;
+}
+
+.today-card-figure img {
+  display: block;
+  width: 100%;
   height: auto;
   border-radius: 8px;
+}
+
+.today-card-figure figcaption {
+  margin-top: 4px;
+  font-size: 0.75rem;
+  line-height: 1.3;
+  color: var(--charcoal);
+  text-align: center;
+}
+
+.today-card-head {
+  align-self: end;
 }
 
 .today-card .eyebrow {
@@ -442,34 +460,39 @@ summary:focus-visible {
 
 .today-card h2 {
   font-size: 1.5rem;
-  margin-bottom: var(--space-1);
+  margin-bottom: 4px;
 }
 
 .today-card-body {
-  margin-bottom: var(--space-2);
+  grid-column: 2;
+  align-self: start;
+  margin: 0;
 }
 
 .today-card-cta {
+  grid-column: 3;
+  grid-row: 1 / span 2;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   align-items: center;
-  gap: 12px 24px;
+  gap: 8px;
+  max-width: 220px;
+  text-align: center;
 }
 
 .today-card .product-status {
-  margin-top: 12px;
+  margin: 0;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 640px) {
   .today-card-inner {
-    grid-template-columns: 72px 1fr;
+    grid-template-columns: 56px 1fr;
     column-gap: var(--space-2);
-    padding: var(--space-3);
+    padding: var(--space-2);
   }
 
-  .today-card-image {
+  .today-card-figure {
     grid-row: 1;
-    width: 72px;
   }
 
   .today-card-head {
@@ -482,19 +505,19 @@ summary:focus-visible {
   }
 
   .today-card-body,
-  .today-card-cta,
-  .today-card .product-status {
+  .today-card-cta {
     grid-column: 1 / -1;
   }
 
   .today-card-body {
-    margin-top: var(--space-2);
+    margin-top: 12px;
   }
 
   .today-card-cta {
-    flex-direction: column;
+    grid-row: auto;
     align-items: stretch;
-    text-align: center;
+    max-width: none;
+    margin-top: 12px;
   }
 }
 

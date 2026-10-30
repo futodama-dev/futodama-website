@@ -7,8 +7,8 @@ import { test } from "node:test";
 
 const ROOT = new URL("../", import.meta.url);
 const PAGES = [
-  { path: "index.html", lang: "en", cnt: "home_today_card_en", about: "/celestial-oracle/", assets: "assets/" },
-  { path: "ja/index.html", lang: "ja", cnt: "home_today_card_ja", about: "/ja/celestial-oracle/", assets: "../assets/" },
+  { path: "index.html", lang: "en", cnt: "home_today_card_en", caption: "Example card", assets: "assets/" },
+  { path: "ja/index.html", lang: "ja", cnt: "home_today_card_ja", caption: "カードの一例", assets: "../assets/" },
 ];
 // The web app accepts a campaign value only in this form (celestial_oracle functions/api/analytics/event.js);
 // qa_ campaigns are excluded from every report (futodama-analytics qa_rules).
@@ -28,7 +28,8 @@ test("one entry per home page, right after the hero, linking to the web app with
     assert.ok(s.indexOf('<section class="hero">') < s.indexOf('<section class="today-card"'), page.path);
     assert.ok(s.indexOf('<section class="today-card"') < s.indexOf('<section id="products"'), page.path);
     const links = [...block.matchAll(/href="([^"]+)"/g)].map((m) => m[1].replace(/&amp;/g, "&"));
-    assert.deepEqual(links, [`https://celestial.futodama.app/?src=futodama&med=website&cmp=a1_home_today_card&cnt=${page.cnt}`, page.about], page.path);
+    assert.deepEqual(links, [`https://celestial.futodama.app/?src=futodama&med=website&cmp=a1_home_today_card&cnt=${page.cnt}`], page.path);
+    assert.ok(!/target=|javascript:|on[a-z]+=/i.test(block), "same-tab link, no inline script");
     const params = new URL(links[0]).searchParams;
     for (const key of ["src", "med", "cmp", "cnt"]) {
       assert.match(params.get(key), CAMPAIGN_VALUE, `${page.path} ${key}`);
@@ -39,15 +40,18 @@ test("one entry per home page, right after the hero, linking to the web app with
   }
 });
 
-test("the card image is local, sized, decorative and light", () => {
+test("the card image is local, sized, decorative, light and marked as an example", () => {
   for (const page of PAGES) {
-    const img = section(html(page.path)).match(/<img [^>]*>/)[0];
+    const block = section(html(page.path));
+    const img = block.match(/<img [^>]*>/)[0];
     assert.match(img, /alt=""/);
-    assert.match(img, /width="120" height="180"/);
+    assert.match(img, /width="96" height="144"/);
+    // The fixed image is one example card, not the visitor’s card of the day.
+    assert.match(block, new RegExp(String.raw`<figure class="today-card-figure">\s*<img [^>]*>\s*<figcaption>${page.caption}</figcaption>\s*</figure>`));
     for (const [, src] of img.matchAll(/(assets\/brand\/celestial-oracle\/cards\/[a-z0-9-]+\.webp)/g)) {
       const file = new URL(src, ROOT);
       assert.ok(existsSync(file), src);
-      assert.ok(readFileSync(file).length < 40000, `${src} under 40 KB`);
+      assert.ok(readFileSync(file).length < 25000, `${src} under 25 KB`);
     }
     assert.ok(img.includes(`src="${page.assets}assets/`.replace("assets/assets/", "assets/")), page.path);
   }
@@ -58,7 +62,7 @@ test("one language per page; reflection, not prediction", () => {
   assert.ok(!/[A-Za-z]{2,}/.test(ja), `English words in the JA entry: ${ja.match(/[A-Za-z]{2,}/g)}`);
   const en = section(html("index.html")).replace(/<[^>]+>/g, " ");
   assert.ok(!/[぀-ヿ一-鿿]/.test(en), "Japanese in the EN entry");
-  assert.match(en, /doesn’t predict anything/);
-  assert.match(ja, /未来を占うのではなく/);
+  assert.match(en, /not a prediction/);
+  assert.match(ja, /占いではなく/);
   for (const text of [en, ja]) assert.ok(!/fortune|destiny|運勢|的中/i.test(text), "no fortune-telling claims");
 });

@@ -11,6 +11,10 @@ import { test } from "node:test";
 const load = (source) => import(`data:text/javascript;base64,${Buffer.from(source).toString("base64")}#${Math.random()}`);
 const current = await load(readFileSync(new URL("../functions/api/analytics/event.js", import.meta.url), "utf8"));
 const main = await load(execFileSync("git", ["show", "main:functions/api/analytics/event.js"], { encoding: "utf8" }));
+// The collector before the product registry change (R3, 2df7f4e): the fixed baseline for what R3 added.
+// Not `main`: once R3 was on main, main and the current version were the same and the comparison was void.
+const BEFORE_REGISTRY = "ba8046d";
+const beforeRegistry = await load(execFileSync("git", ["show", `${BEFORE_REGISTRY}:functions/api/analytics/event.js`], { encoding: "utf8" }));
 
 async function send(mod, payload) {
   const points = [];
@@ -68,7 +72,7 @@ test("a new product page is kept (not dropped): unregistered token and its secti
   const r = await send(current, { ...base, event: "site_page_view", page_path: "/moji-kids/", product: "moji_kids", target: "" });
   assert.deepEqual([r.status, r.analytics], [204, "stored"]);
   assert.deepEqual(r.point.blobs.slice(0, 5), ["site_page_view", "/moji-kids/", "ja", "moji_kids", ""]);
-  assert.equal((await send(main, { ...base, event: "site_page_view", page_path: "/moji-kids/", product: "moji_kids", target: "" })).status, 400, "main dropped it");
+  assert.equal((await send(beforeRegistry, { ...base, event: "site_page_view", page_path: "/moji-kids/", product: "moji_kids", target: "" })).status, 400, "the collector before R3 dropped it");
   const sub = await send(current, { ...base, event: "site_page_view", page_path: "/ja/moji-kids/privacy/", product: "moji_kids", target: "" });
   assert.equal(sub.point.blobs[1], "/ja/moji-kids/privacy/");
   const odd = await send(current, { ...base, event: "site_page_view", page_path: "/Moji_Kids/../", product: "moji_kids", target: "" });
