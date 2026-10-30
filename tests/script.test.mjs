@@ -95,3 +95,16 @@ test("Google Play and registered web apps map through the registry; unknown stor
     ["outbound_cta", "celestial_oracle", "web_app"],
   ]);
 });
+
+test("home page Celestial Oracle entry (A1): a web_app click for celestial_oracle from / and /ja/", () => {
+  for (const [page, lang, cnt] of [["/", "en", "home_today_card_en"], ["/ja/", "ja", "home_today_card_ja"]]) {
+    const href = `https://celestial.futodama.app/?src=futodama&med=website&cmp=a1_home_today_card&cnt=${cnt}`;
+    const sent = run(CURRENT, page, { lang, clicks: [href] });
+    assert.deepEqual(sent.map((e) => [e.event, e.product, e.target, e.page_path]), [
+      ["site_page_view", "site", "", page],
+      ["outbound_cta", "celestial_oracle", "web_app", page],
+    ]);
+    // The click carries the campaign the site page was opened with, never the link's own values.
+    assert.deepEqual([sent[1].source, sent[1].campaign, sent[1].content], ["", "", ""]);
+  }
+});

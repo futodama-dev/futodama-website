@@ -396,6 +396,109 @@ summary:focus-visible {
 }
 
 /* ==========================================================================
+   Today's card (Celestial Oracle entry on the home page)
+   Deep Navy + Gold product colors; gold only as the border and label dot.
+   ========================================================================== */
+
+.today-card {
+  padding: 0 0 var(--space-2);
+}
+
+.today-card-inner {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  column-gap: var(--space-4);
+  align-items: start;
+  max-width: 760px;
+  margin: 0 auto;
+  background: #fff;
+  border: 1px solid rgba(216, 180, 91, 0.55);
+  border-radius: var(--radius);
+  padding: var(--space-4);
+}
+
+.today-card-image {
+  grid-row: 1 / span 4;
+  align-self: center;
+  width: 120px;
+  height: auto;
+  border-radius: 8px;
+}
+
+.today-card .eyebrow {
+  color: var(--navy);
+}
+
+.today-card .eyebrow::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 8px;
+  vertical-align: 0.02em;
+  background: var(--gold);
+}
+
+.today-card h2 {
+  font-size: 1.5rem;
+  margin-bottom: var(--space-1);
+}
+
+.today-card-body {
+  margin-bottom: var(--space-2);
+}
+
+.today-card-cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 24px;
+}
+
+.today-card .product-status {
+  margin-top: 12px;
+}
+
+@media (max-width: 480px) {
+  .today-card-inner {
+    grid-template-columns: 72px 1fr;
+    column-gap: var(--space-2);
+    padding: var(--space-3);
+  }
+
+  .today-card-image {
+    grid-row: 1;
+    width: 72px;
+  }
+
+  .today-card-head {
+    align-self: center;
+  }
+
+  .today-card h2 {
+    font-size: 1.25rem;
+    margin-bottom: 0;
+  }
+
+  .today-card-body,
+  .today-card-cta,
+  .today-card .product-status {
+    grid-column: 1 / -1;
+  }
+
+  .today-card-body {
+    margin-top: var(--space-2);
+  }
+
+  .today-card-cta {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
+}
+
+/* ==========================================================================
    Featured ARRVD (2-column)
    ========================================================================== */
 
