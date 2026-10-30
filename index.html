@@ -69,7 +69,7 @@
     </div>
   </header>
 
-  <main>
+  <main data-home-phase="prelaunch">
     <section class="hero">
       <div class="container">
         <h1>Small ideas.<br>Better everyday moments.</h1>
@@ -79,32 +79,43 @@
           reflection, and convenience.
         </p>
         <div class="hero-cta-group">
-          <a href="#products" class="btn btn-primary">Explore ARRVD</a>
+          <!-- arrvd-cta:hero -->
+          <a href="#products" class="btn btn-outline">Explore ARRVD</a>
+          <!-- /arrvd-cta -->
           <a href="#other-products" class="link-arrow">See all products</a>
         </div>
       </div>
     </section>
 
-    <section class="today-card" aria-labelledby="today-card-heading">
+    <!-- home-block:available-now — before ARRVD until the ARRVD launch, then after it (docs/home-phases.md) -->
+    <section class="available-now" aria-label="Available now">
       <div class="container">
-        <div class="today-card-inner">
-          <figure class="today-card-figure">
-            <img src="assets/brand/celestial-oracle/cards/celestial-card-001-96.webp" srcset="assets/brand/celestial-oracle/cards/celestial-card-001-96.webp 96w, assets/brand/celestial-oracle/cards/celestial-card-001-192.webp 192w" sizes="(max-width: 640px) 56px, 96px" alt="" width="96" height="144" decoding="async">
-            <figcaption>Example card</figcaption>
-          </figure>
-          <div class="today-card-head">
-            <span class="eyebrow">Celestial Oracle</span>
-            <h2 id="today-card-heading">Today’s card is ready.</h2>
+        <article class="today-card" aria-labelledby="today-card-heading">
+          <div class="today-card-inner">
+            <figure class="today-card-figure">
+              <img src="assets/brand/celestial-oracle/cards/celestial-card-001-96.webp" srcset="assets/brand/celestial-oracle/cards/celestial-card-001-96.webp 96w, assets/brand/celestial-oracle/cards/celestial-card-001-192.webp 192w" sizes="(max-width: 640px) 56px, 96px" alt="" width="96" height="144" decoding="async">
+              <figcaption>Example card</figcaption>
+            </figure>
+            <div class="today-card-head">
+              <span class="eyebrow">Celestial Oracle</span>
+              <h2 id="today-card-heading">Today’s card is ready.</h2>
+            </div>
+            <p class="today-card-body">One card and one quiet question a day. A small pause to reflect, not a prediction.</p>
+            <div class="today-card-cta">
+              <a href="https://celestial.futodama.app/?src=futodama&amp;med=website&amp;cmp=a1_home_today_card&amp;cnt=home_today_card_en" class="btn btn-primary">Draw today’s card</a>
+              <p class="product-status">Available on the web — no download needed.</p>
+            </div>
           </div>
-          <p class="today-card-body">One card and one quiet question a day. A small pause to reflect, not a prediction.</p>
-          <div class="today-card-cta">
-            <a href="https://celestial.futodama.app/?src=futodama&amp;med=website&amp;cmp=a1_home_today_card&amp;cnt=home_today_card_en" class="btn btn-primary">Draw today’s card</a>
-            <p class="product-status">Available on the web — no download needed.</p>
-          </div>
-        </div>
+        </article>
+        <p class="available-more">
+          <img src="assets/brand/mojitsunagi/app-icon/web/mojitsunagi-app-icon-64.png" srcset="assets/brand/mojitsunagi/app-icon/web/mojitsunagi-app-icon-32.png 32w, assets/brand/mojitsunagi/app-icon/web/mojitsunagi-app-icon-64.png 64w, assets/brand/mojitsunagi/app-icon/web/mojitsunagi-app-icon-128.png 128w" sizes="20px" alt="" class="product-app-icon" width="20" height="20">
+          <span class="available-more-text"><strong>Mojitsunagi</strong> A Japanese word puzzle that grows a forest as you find words. On the App Store. <a href="/mojitsunagi/" class="link-arrow">Learn more &rarr;</a></span>
+        </p>
       </div>
     </section>
+    <!-- /home-block -->
 
+    <!-- home-block:arrvd -->
     <section id="products" class="featured">
       <div class="container">
         <article class="featured-arrvd product-card--arrvd">
@@ -115,8 +126,10 @@
             <p class="product-sub">Arrival reassurance without continuous location tracking.</p>
             <p>A privacy-conscious family arrival app focused on confirming the moments that matter.</p>
             <div class="card-cta-group">
+              <!-- arrvd-cta:featured -->
               <span class="badge-coming-soon">Coming soon</span>
               <a href="/arrvd/" class="link-arrow">Learn more about ARRVD &rarr;</a>
+              <!-- /arrvd-cta -->
             </div>
           </div>
           <div class="featured-visual">
@@ -125,6 +138,7 @@
         </article>
       </div>
     </section>
+    <!-- /home-block -->
 
     <section id="other-products" class="products">
       <div class="container">
@@ -201,8 +215,10 @@
     <section class="cta-band">
       <div class="container">
         <h2 class="cta-band-heading">Arrival reassurance.<br>Without continuous tracking.</h2>
+        <!-- arrvd-cta:band -->
         <span class="badge-coming-soon">Coming soon</span>
         <a href="/arrvd/" class="link-arrow">Learn more about ARRVD &rarr;</a>
+        <!-- /arrvd-cta -->
       </div>
     </section>
   </main>

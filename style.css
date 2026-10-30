@@ -396,13 +396,14 @@ summary:focus-visible {
 }
 
 /* ==========================================================================
-   Today's card (Celestial Oracle entry on the home page)
-   A compact strip between the hero and Featured ARRVD. Deep Navy + Gold product
+   Available now (home page): the Celestial Oracle entry (today's card) and a
+   one-line Mojitsunagi row. Before the ARRVD launch this block sits between the
+   hero and Featured ARRVD; after it, below Featured ARRVD (docs/home-phases.md). Deep Navy + Gold product
    colors; gold only as the border and the label dot. Sizes from the type scale:
    H3 24px / 20px (mobile) for the heading, Caption 12px for the image note.
    ========================================================================== */
 
-.today-card {
+.available-now {
   padding: 0 0 var(--space-1);
 }
 
@@ -518,6 +519,33 @@ summary:focus-visible {
     align-items: stretch;
     max-width: none;
     margin-top: 12px;
+  }
+}
+
+.available-more {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  max-width: 760px;
+  margin: 12px auto 0;
+  padding: 12px var(--space-3);
+  background: #fff;
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius);
+}
+
+.available-more .product-app-icon {
+  margin-top: 4px;
+}
+
+.available-more strong {
+  color: var(--navy);
+  margin-right: 4px;
+}
+
+@media (max-width: 640px) {
+  .available-more {
+    padding: 12px var(--space-2);
   }
 }
 

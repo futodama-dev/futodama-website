@@ -16,17 +16,17 @@ const CAMPAIGN_VALUE = /^[A-Za-z0-9_-]{1,64}$/;
 
 const html = (p) => readFileSync(new URL(p, ROOT), "utf8");
 const section = (s) => {
-  const found = s.match(/<section class="today-card"[\s\S]*?<\/section>/g) || [];
-  assert.equal(found.length, 1, "exactly one today-card section");
+  const found = s.match(/<article class="today-card"[\s\S]*?<\/article>/g) || [];
+  assert.equal(found.length, 1, "exactly one today-card entry");
   return found[0];
 };
 
-test("one entry per home page, right after the hero, linking to the web app with a fixed campaign", () => {
+test("one entry per home page, in the Available now block, linking to the web app with a fixed campaign", () => {
   for (const page of PAGES) {
     const s = html(page.path);
     const block = section(s);
-    assert.ok(s.indexOf('<section class="hero">') < s.indexOf('<section class="today-card"'), page.path);
-    assert.ok(s.indexOf('<section class="today-card"') < s.indexOf('<section id="products"'), page.path);
+    const now = s.indexOf('<section class="available-now"');
+    assert.ok(now > s.indexOf('<section class="hero">') && now < s.indexOf('<article class="today-card"'), page.path);
     const links = [...block.matchAll(/href="([^"]+)"/g)].map((m) => m[1].replace(/&amp;/g, "&"));
     assert.deepEqual(links, [`https://celestial.futodama.app/?src=futodama&med=website&cmp=a1_home_today_card&cnt=${page.cnt}`], page.path);
     assert.ok(!/target=|javascript:|on[a-z]+=/i.test(block), "same-tab link, no inline script");

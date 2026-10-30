@@ -67,7 +67,7 @@
     </div>
   </header>
 
-  <main>
+  <main data-home-phase="prelaunch">
     <section class="hero">
       <div class="container">
         <h1>毎日を、<br class="jp-break-narrow">少し安心に。<br>少し楽しく。<br>少し軽やかに。</h1>
@@ -77,32 +77,43 @@
           <span class="jp-nowrap">人の気持ちに寄り添う</span><span class="jp-nowrap">シンプルなデジタル体験</span>を<span class="jp-nowrap">つくります。</span>
         </p>
         <div class="hero-cta-group">
-          <a href="#products" class="btn btn-primary">ARRVDを見る</a>
+          <!-- arrvd-cta:hero -->
+          <a href="#products" class="btn btn-outline">ARRVDを見る</a>
+          <!-- /arrvd-cta -->
           <a href="#other-products" class="link-arrow">プロダクト一覧</a>
         </div>
       </div>
     </section>
 
-    <section class="today-card" aria-labelledby="today-card-heading">
+    <!-- home-block:available-now — before ARRVD until the ARRVD launch, then after it (docs/home-phases.md) -->
+    <section class="available-now" aria-label="公開中のプロダクト">
       <div class="container">
-        <div class="today-card-inner">
-          <figure class="today-card-figure">
-            <img src="../assets/brand/celestial-oracle/cards/celestial-card-001-96.webp" srcset="../assets/brand/celestial-oracle/cards/celestial-card-001-96.webp 96w, ../assets/brand/celestial-oracle/cards/celestial-card-001-192.webp 192w" sizes="(max-width: 640px) 56px, 96px" alt="" width="96" height="144" decoding="async">
-            <figcaption>カードの一例</figcaption>
-          </figure>
-          <div class="today-card-head">
-            <span class="eyebrow">Celestial Oracle</span>
-            <h2 id="today-card-heading"><span class="jp-nowrap">今日の一枚を、</span><span class="jp-nowrap">どうぞ。</span></h2>
+        <article class="today-card" aria-labelledby="today-card-heading">
+          <div class="today-card-inner">
+            <figure class="today-card-figure">
+              <img src="../assets/brand/celestial-oracle/cards/celestial-card-001-96.webp" srcset="../assets/brand/celestial-oracle/cards/celestial-card-001-96.webp 96w, ../assets/brand/celestial-oracle/cards/celestial-card-001-192.webp 192w" sizes="(max-width: 640px) 56px, 96px" alt="" width="96" height="144" decoding="async">
+              <figcaption>カードの一例</figcaption>
+            </figure>
+            <div class="today-card-head">
+              <span class="eyebrow">Celestial Oracle</span>
+              <h2 id="today-card-heading"><span class="jp-nowrap">今日の一枚を、</span><span class="jp-nowrap">どうぞ。</span></h2>
+            </div>
+            <p class="today-card-body"><span class="jp-nowrap">一日一枚のカードと、</span><span class="jp-nowrap">ひとつの問い。</span><span class="jp-nowrap">占いではなく、</span><span class="jp-nowrap">自分を振り返るための</span><span class="jp-nowrap">小さなひと休みです。</span></p>
+            <div class="today-card-cta">
+              <a href="https://celestial.futodama.app/?src=futodama&amp;med=website&amp;cmp=a1_home_today_card&amp;cnt=home_today_card_ja" class="btn btn-primary">今日の一枚を引く</a>
+              <p class="product-status"><span class="jp-nowrap">Webですぐに使えます。</span><span class="jp-nowrap">ダウンロードは不要です。</span></p>
+            </div>
           </div>
-          <p class="today-card-body"><span class="jp-nowrap">一日一枚のカードと、</span><span class="jp-nowrap">ひとつの問い。</span><span class="jp-nowrap">占いではなく、</span><span class="jp-nowrap">自分を振り返るための</span><span class="jp-nowrap">小さなひと休みです。</span></p>
-          <div class="today-card-cta">
-            <a href="https://celestial.futodama.app/?src=futodama&amp;med=website&amp;cmp=a1_home_today_card&amp;cnt=home_today_card_ja" class="btn btn-primary">今日の一枚を引く</a>
-            <p class="product-status"><span class="jp-nowrap">Webですぐに使えます。</span><span class="jp-nowrap">ダウンロードは不要です。</span></p>
-          </div>
-        </div>
+        </article>
+        <p class="available-more">
+          <img src="../assets/brand/mojitsunagi/app-icon/web/mojitsunagi-app-icon-64.png" srcset="../assets/brand/mojitsunagi/app-icon/web/mojitsunagi-app-icon-32.png 32w, ../assets/brand/mojitsunagi/app-icon/web/mojitsunagi-app-icon-64.png 64w, ../assets/brand/mojitsunagi/app-icon/web/mojitsunagi-app-icon-128.png 128w" sizes="20px" alt="" class="product-app-icon" width="20" height="20">
+          <span class="available-more-text"><strong>もじつなぎ</strong> <span class="jp-nowrap">言葉を見つけて</span><span class="jp-nowrap">森を育てる言葉パズル。</span><span class="jp-nowrap">App Storeで配信中。</span> <a href="/ja/mojitsunagi/" class="link-arrow">詳しく見る &rarr;</a></span>
+        </p>
       </div>
     </section>
+    <!-- /home-block -->
 
+    <!-- home-block:arrvd -->
     <section id="products" class="featured">
       <div class="container">
         <article class="featured-arrvd product-card--arrvd">
@@ -112,8 +123,10 @@
             <p class="product-copy"><span class="jp-nowrap">「到着した」という安心を。</span><br><span class="jp-nowrap">居場所は追い続けない。</span></p>
             <p>必要なときだけ、必要な安心を届ける家族向け到着確認アプリ。</p>
             <div class="card-cta-group">
+              <!-- arrvd-cta:featured -->
               <span class="badge-coming-soon">近日公開</span>
               <a href="/ja/arrvd/" class="link-arrow">ARRVDを詳しく見る &rarr;</a>
+              <!-- /arrvd-cta -->
             </div>
           </div>
           <div class="featured-visual">
@@ -122,6 +135,7 @@
         </article>
       </div>
     </section>
+    <!-- /home-block -->
 
     <section id="other-products" class="products">
       <div class="container">
@@ -196,8 +210,10 @@
     <section class="cta-band">
       <div class="container">
         <h2 class="cta-band-heading">到着の安心を。<br>常時追跡なしで。</h2>
+        <!-- arrvd-cta:band -->
         <span class="badge-coming-soon">近日公開</span>
         <a href="/ja/arrvd/" class="link-arrow">ARRVDを詳しく見る &rarr;</a>
+        <!-- /arrvd-cta -->
       </div>
     </section>
   </main>
