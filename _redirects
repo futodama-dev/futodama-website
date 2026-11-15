@@ -19,7 +19,7 @@
 # opened in a browser they land here. 200 (rewrite) for the same reason as
 # above: the token after "#" stays only in the visitor's address bar. The
 # page reads nothing from the address and checks nothing (STEP 110-10AA).
-# Not /arrvd/guardians/ (the published guardians page) — a different path.
+# Not /arrvd/guardians/ (the guardians page, a draft published with this) — a different path.
 # The target has no ".html": Pages redirects a "*.html" address to its
 # extension-less form, which turned the rewrite into a redirect (seen on the
 # preview of 33ac07d).
