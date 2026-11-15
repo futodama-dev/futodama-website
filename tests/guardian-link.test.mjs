@@ -31,9 +31,9 @@ function route(path) {
   return null;
 }
 
-test("a guardian link path is rewritten (200, not a redirect) to the guidance page, with or without an id", () => {
+test("a guardian link path is rewritten (200, not a redirect) to the guidance page, with or without an id; the target has no .html (Pages would redirect it)", () => {
   for (const path of ["/arrvd/guardian/AbC123_-x", "/arrvd/guardian/", "/arrvd/guardian"]) {
-    assert.deepEqual(route(path), { to: "/arrvd/guardian-link.html", status: "200" }, path);
+    assert.deepEqual(route(path), { to: "/arrvd/guardian-link", status: "200" }, path);
   }
   assert.ok(existsSync(new URL("arrvd/guardian-link.html", ROOT)));
 });
