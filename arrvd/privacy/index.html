@@ -8,6 +8,7 @@
   <link rel="canonical" href="https://futodama.app/arrvd/privacy/">
   <link rel="alternate" hreflang="en" href="https://futodama.app/arrvd/privacy/">
   <link rel="alternate" hreflang="ja" href="https://futodama.app/ja/arrvd/privacy/">
+  <link rel="alternate" hreflang="ms" href="https://futodama.app/ms/arrvd/privacy/">
   <link rel="alternate" hreflang="x-default" href="https://futodama.app/arrvd/privacy/">
 
   <meta property="og:type" content="website">
@@ -17,6 +18,7 @@
   <meta property="og:url" content="https://futodama.app/arrvd/privacy/">
   <meta property="og:locale" content="en_US">
   <meta property="og:locale:alternate" content="ja_JP">
+  <meta property="og:locale:alternate" content="ms_MY">
   <meta property="og:image" content="https://futodama.app/assets/brand/og/arrvd-og.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -52,6 +54,8 @@
             <span class="lang-current">EN</span>
             <span class="lang-sep">|</span>
             <a href="/ja/arrvd/privacy/">日本語</a>
+            <span class="lang-sep">|</span>
+            <a href="/ms/arrvd/privacy/" lang="ms">BM</a>
           </li>
         </ul>
       </nav>
@@ -69,7 +73,8 @@
 
     <section class="content-section">
       <div class="container legal-content">
-        <p class="legal-meta">Last updated: October 5, 2026</p>
+        <!-- STEP 110-10K draft for review: publish only together with the Firebase activation (see legal-2026-11-14/14_*.md). Set the date on publication. -->
+        <p class="legal-meta">Last updated: [set on publication] · Bahasa Melayu: <a href="/ms/arrvd/privacy/" lang="ms">Dasar Privasi</a></p>
 
         <h2>1. About this policy</h2>
         <p>
@@ -143,15 +148,33 @@
           confirmed” event for that Member and place. These events do not contain map coordinates.
         </p>
 
+        <h3>Sharing choice and watching status</h3>
+        <p>
+          We record whether a Member has allowed their arrivals and departures to be shared (the
+          choice, the version and language of the explanation shown, and when). A Member’s device
+          also reports to our servers whether it can watch the places assigned to it (each place’s
+          registration status and the type of location permission). This report does not contain
+          the device’s location.
+        </p>
+
+        <h3>Age range, guardian consent and country of residence</h3>
+        <p>
+          We record your age range (18 or over, or 13 to 17 — never your date of birth), and, for a
+          Member aged 13 to 17, the guardian’s consent (see section 4). We also record the country
+          you state you usually live in (see section 6).
+        </p>
+
         <h3>Device and notification information</h3>
         <ul class="legal-list">
           <li>
-            To send notifications to an Organizer’s device, we store a device identifier created by
-            the app, a push notification token (Firebase Cloud Messaging), the platform, whether
-            notifications are enabled, the app version, the device’s language setting and related
-            timestamps. Firebase may use an installation identifier to deliver these messages. We
-            also record which notifications have already been delivered to which device, so they
-            aren’t sent twice.
+            To send notifications and to check that watching is working, we store, for Organizers’
+            and Members’ devices, a device identifier created by the app, a push notification token
+            (Firebase Cloud Messaging), the platform, whether notifications are enabled, the app
+            version, the device’s language setting and related timestamps. For Members’ devices we
+            also store how watching is working, such as the location permission status and the
+            number of records waiting to be sent (never the location). Firebase may use an
+            installation identifier to deliver these messages. We also record which notifications
+            have already been delivered to which device, so they aren’t sent twice.
           </li>
           <li>
             To check that requests come from a genuine copy of ARRVD, we use Firebase App Check
@@ -164,7 +187,7 @@
         </ul>
 
         <h3>Purchase information (ARRVD Plus)</h3>
-        <p>See section 7.</p>
+        <p>See section 9.</p>
 
         <h3>Support communications</h3>
         <p>If you email us, we receive your email address and whatever you include in your message.</p>
@@ -185,6 +208,12 @@
 
         <h2>3. Location</h2>
         <ul class="legal-list">
+          <li>
+            A Member’s device starts detecting and sharing arrivals and departures only after the
+            Member chooses “Allow” in the app themselves. An Organizer cannot allow it on a Member’s
+            behalf. A Member can stop sharing at any time from the home screen; their device then
+            stops watching places, and no new arrivals or departures are sent or notified.
+          </li>
           <li>
             ARRVD uses iOS Location Services — mainly region monitoring (often called geofencing) —
             so that a Member’s iPhone can notice when it arrives at, or leaves, a place assigned to
@@ -221,16 +250,53 @@
           </li>
         </ul>
 
-        <h2>4. What is shared within your family</h2>
+        <h2>4. Age, guardians and turning 18</h2>
+        <p>
+          Organizers must be 18 or over and Members 13 or over. Before joining you choose your birth
+          year and month; they are used only on your device to decide an age range and are never sent
+          or stored. We record only the range — 18 or over, or 13 to 17. People under 13 can’t use
+          ARRVD (the device keeps a note that “under 13” was answered for 24 hours; nothing is sent
+          to us).
+        </p>
+        <p>
+          A Member aged 13 to 17 shares nothing until both a parent, guardian or person with parental
+          responsibility (a guardian) and the Member themselves have agreed. The guardian uses their
+          own Apple account to declare that they are 18 or over, that they are the legal guardian, and
+          that they understand and agree. We record who the consent covers, the version and language
+          of the explanation, the date, and the relationship and name given. Organizers and the Member
+          are told when a consent takes effect, and an Organizer can object if they don’t recognise
+          the guardian (sharing then stops). This declaration is not an official identity check.
+          The explanation a guardian agrees to is on the <a href="/arrvd/guardians/">page for
+          guardians</a>.
+        </p>
+        <p>
+          When a Member who joined under 18 turns 18, the guardian who consented can confirm it; the
+          guardian’s consent then ends and only the Member’s own consent decides what is shared. We
+          never ask for a date of birth or ID. Past records are not changed or deleted.
+        </p>
+
+        <h2>5. What is shared within your family</h2>
         <ul class="legal-list">
           <li>Everyone in the family can see the family’s name and its members, with their display names (or default labels) and roles.</li>
           <li>Organizers can see and manage all of the family’s places, including names, addresses and coordinates. Each Member can access only the places assigned to them, not the family’s other places.</li>
-          <li>Organizers can see the family’s arrival, departure and “not yet confirmed” activity. Each Member can access only the activity about themselves, not other Members’ activity.</li>
+          <li>Organizers can see the family’s arrival, departure and “not yet confirmed” activity. For a Member under 18, only the Organizers their guardian allows can see their records, and only from when they were allowed; the guardian can stop this at any time. Each Member can access only the activity about themselves, not other Members’ activity.</li>
+          <li>Organizers can see each Member’s watching status (for example, watching, not sharing, or waiting to sync) — never a location.</li>
           <li>Organizers receive notifications about a Member’s arrivals, departures (when turned on for that place) and arrivals that haven’t been confirmed by the expected time. These notifications include the Member’s display name and the place’s name.</li>
           <li>Not shared with other family members: a Member’s live location or movement history (ARRVD doesn’t create either), push tokens or other device information.</li>
         </ul>
 
-        <h2>5. How we use information</h2>
+        <h2>6. Country of residence</h2>
+        <p>
+          When you join, you choose the country you usually live in — not a country you are visiting
+          (change it in the app if you move). We never infer it from your location, IP address or App
+          Store country. ARRVD serves people living in [the countries listed on publication]. If you
+          choose another country, you can’t newly join; a Member already in a family stops sharing
+          arrivals and departures, and an Organizer stops receiving and seeing Members’ arrivals and
+          departures (other Organizers and the Member’s own sharing are unchanged). It resumes when
+          you state a served country again or when ARRVD starts serving yours.
+        </p>
+
+        <h2>7. How we use information</h2>
         <ul class="legal-list">
           <li>To create and sign in to your account.</li>
           <li>To set up and run your family, including invitations and roles.</li>
@@ -242,7 +308,7 @@
           <li>To answer support requests.</li>
         </ul>
 
-        <h2>6. Service providers</h2>
+        <h2>8. Service providers</h2>
         <p>ARRVD relies on a small number of providers, which process information on our behalf or under their own terms:</p>
         <ul class="legal-list">
           <li><strong>Apple</strong> — Sign in with Apple, the App Store and in-app purchases, Apple Push Notification service, iOS Location Services, Apple Maps services (place search, map previews and address lookups) and App Attest.</li>
@@ -253,7 +319,7 @@
           protect the safety, rights or security of our users, the public or ARRVD.
         </p>
 
-        <h2>7. ARRVD Plus and purchases</h2>
+        <h2>9. ARRVD Plus and purchases</h2>
         <p>
           ARRVD is available as a free plan and as ARRVD Plus, a paid plan purchased through the
           App Store. Payments are handled by Apple using your Apple Account; we never receive or
@@ -264,9 +330,15 @@
         </p>
         <!-- Phase 4E final legal audit: align this section with the implemented StoreKit flow (products, entitlement data actually read/stored, restore, downgrade). -->
 
-        <h2>8. How long we keep information, and deletion</h2>
+        <h2>10. How long we keep information, and deletion</h2>
         <ul class="legal-list">
-          <li>We keep account, family, place and activity information while your account and family are in use, because ARRVD needs it to work.</li>
+          <li>We keep account, family and place information while your account and family are in use, because ARRVD needs it to work.</li>
+          <li>Arrival, departure and “not yet confirmed” activity is deleted automatically once 168 hours (7 days) have passed since it happened, or since our servers received it if that is later. Deletion runs every hour. Records of which notifications were delivered to which device are deleted together with the activity.</li>
+          <li>Consent records (a Member’s own choice, a guardian’s consent, withdrawals and objections) are kept while the consent is valid and for 3 years after it ends, then deleted. They don’t contain names; a guardian’s name is erased when the guardian’s account is deleted.</li>
+          <li>Your age range and country of residence are kept while you belong to a family. A record that someone declared they are under 18 is kept until their move to adult or the deletion of their account, so a minor can’t rejoin as an adult.</li>
+          <li>Device registrations are deleted when you sign out, when a Member stops sharing, or when you delete your account (the next time the device is online, if it is offline at the time).</li>
+          <li>Service logs are normally deleted automatically after 30 days. Some audit logs kept by Google Cloud (such as records of configuration changes) are kept for up to 400 days.</li>
+          <li>To recover from mistakes or outages, we can restore the database to any point within the past 7 days. Deleted information therefore remains in recovery data for up to 7 days and is then erased automatically; it is used only for recovery and can’t be seen in the app.</li>
           <li>Invitation records and failed-attempt counts are kept for the purposes described above.</li>
           <li>Information stored on your device is removed when you delete the app. Signing out on a Member’s device also stops that device from watching the family’s places.</li>
           <li>Deleting the app does not delete your account or the information stored on our servers.</li>
@@ -285,7 +357,8 @@
           <li>If you’re an Organizer and another Organizer remains, the family and its shared information stay with them.</li>
           <li>If you’re the family’s last Organizer, the family is deleted too, including its places, activity and invitations. Other members’ ARRVD accounts are not deleted; they are removed from the family.</li>
           <li>On the device you delete from, places being watched, the local activity log and ARRVD’s notifications are removed.</li>
-          <li>Limited technical logs may remain for a short period until they are deleted automatically.</li>
+          <li>Consent records are kept as described above, without your name.</li>
+          <li>Limited technical logs and recovery data remain for a short period (see above) until they are deleted automatically.</li>
           <li>Deleting your account does not cancel an ARRVD Plus subscription. Manage or cancel subscriptions in your Apple Account settings.</li>
         </ul>
         <p>
@@ -293,18 +366,19 @@
           <!--email_off--><a href="mailto:futodama0610@gmail.com">futodama0610@gmail.com</a><!--/email_off--> and we’ll help.
         </p>
 
-        <h2>9. Your choices</h2>
+        <h2>11. Your choices</h2>
         <ul class="legal-list">
           <li><strong>Location access</strong> — change it at any time in iOS Settings. Without it, arrivals can’t be detected.</li>
           <li><strong>Notifications</strong> — turn them on or off in iOS Settings.</li>
           <li><strong>Display name</strong> — change your own name in the app; Organizers can change Members’ names.</li>
           <li><strong>Sign in with Apple</strong> — you can manage which apps use your Apple Account in your Apple Account settings.</li>
           <li><strong>ARRVD Plus</strong> — manage or cancel your subscription in your Apple Account settings.</li>
-          <li><strong>Delete your account</strong> — in the app, as described in section 8.</li>
-          <li><strong>Questions or requests</strong> — email <!--email_off--><a href="mailto:futodama0610@gmail.com">futodama0610@gmail.com</a><!--/email_off-->.</li>
+          <li><strong>Stop sharing or withdraw consent</strong> — Members can stop sharing at any time from the home screen, and guardians can withdraw their consent in Settings › Guardian requests and consents. If you can’t use the app, you can also withdraw in writing by email to <!--email_off--><a href="mailto:futodama0610@gmail.com">futodama0610@gmail.com</a><!--/email_off--> (tell us the family name, the Member’s display name and your role). Sharing stops as soon as we receive it, and records arriving afterwards are refused by our servers.</li>
+          <li><strong>Delete your account</strong> — in the app, as described in section 10.</li>
+          <li><strong>Questions or requests</strong> — including requests to see, correct or delete information — email <!--email_off--><a href="mailto:futodama0610@gmail.com">futodama0610@gmail.com</a><!--/email_off-->.</li>
         </ul>
 
-        <h2>10. Security</h2>
+        <h2>12. Security</h2>
         <p>
           We take reasonable measures to protect information, including encrypted connections,
           database rules that limit each family’s information to that family, app integrity checks
@@ -312,29 +386,36 @@
           completely secure, so we can’t guarantee absolute security.
         </p>
 
-        <h2>11. Families and members</h2>
+        <h2>13. Families and members</h2>
         <p>
-          ARRVD is meant to be used within a family. An Organizer invites the people they want to
-          include. If you add someone to your family, you are responsible for having the appropriate
-          authority or consent to do so — for example, as a parent or guardian — and for letting them
-          know how ARRVD works. If you believe someone’s information has been added without
-          appropriate permission, please contact us.
+          ARRVD is meant for use among family members. “Organizer” and “Member” are roles in the
+          app; they don’t indicate a family relationship or any legal status as a guardian. An
+          Organizer invites the people they want in the family and should explain how ARRVD works
+          (only arrivals at and departures from registered places are shared — never a live location
+          or a movement history). A Member’s arrivals and departures are shared only if the Member
+          allows it on their own device, and, for a Member under 18, only with a guardian’s consent
+          as well (section 4). If you believe information was added without proper permission, or
+          you are a guardian who wants to review or delete a child’s information, please contact us.
         </p>
 
-        <h2>12. International processing</h2>
+        <h2>14. International processing</h2>
         <p>
-          Apple and Google may process and store information in countries other than the one you
-          live in, including the United States. Where they do, information is handled under their
-          own safeguards and terms.
+          futodama operates ARRVD from Malaysia. Database and server processing run in Google
+          Cloud’s Singapore region; sign-in is processed on Google’s facilities in the United States;
+          notification delivery and misuse protection (App Check) run on Google’s and Apple’s
+          facilities in various countries. Service logs may be stored on Google’s facilities
+          worldwide. The purposes are providing watching, sending notifications and preventing
+          misuse. Processing abroad is covered by each provider’s safeguards and terms, and we keep a
+          record of where information goes and why.
         </p>
 
-        <h2>13. Changes to this policy</h2>
+        <h2>15. Changes to this policy</h2>
         <p>
           We may update this policy as ARRVD changes. When we do, we’ll update the date at the top
           of this page, and we’ll let you know about significant changes in the app or on this page.
         </p>
 
-        <h2>14. Contact</h2>
+        <h2>16. Contact</h2>
         <p>futodama — <!--email_off--><a href="mailto:futodama0610@gmail.com">futodama0610@gmail.com</a><!--/email_off--></p>
 
         <nav class="legal-links" aria-label="ARRVD legal and support">
@@ -342,6 +423,7 @@
           <li><span aria-current="page">Privacy Policy</span></li>
           <li><a href="/arrvd/terms/">Terms of Use</a></li>
           <li><a href="/arrvd/support/">Support</a></li>
+          <li><a href="/arrvd/guardians/">For guardians</a></li>
           <li><a href="/arrvd/">About ARRVD</a></li>
           </ul>
         </nav>
