@@ -133,7 +133,7 @@
         <ul class="legal-list">
           <li>nama dan alamatnya, serta latitud dan longitudnya;</li>
           <li>saiz kawasan ketibaan (jejari);</li>
-          <li>masa dan hari ketibaan yang dijangka, tetapan amaran berkaitan (contohnya, sama ada untuk dimaklumkan apabila ketibaan belum disahkan, masa menunggu sebelum itu, dan sama ada untuk dimaklumkan tentang perlepasan) dan zon waktu tempat itu;</li>
+          <li>masa dan hari ketibaan yang dijangka, tetapan amaran berkaitan (contohnya, sama ada untuk dimaklumkan apabila ketibaan belum disahkan, masa menunggu sebelum itu, dan sama ada untuk dimaklumkan apabila Ahli meninggalkan tempat itu) dan zon waktu tempat itu;</li>
           <li>Ahli yang ketibaannya disemak di tempat itu; dan</li>
           <li>siapa yang menciptanya, serta bila ia dicipta dan terakhir diubah.</li>
         </ul>
@@ -143,18 +143,17 @@
 
         <h3>Maklumat ketibaan dan aktiviti</h3>
         <p>
-          Apabila peranti Ahli mengesahkan ketibaan (atau perlepasan, jika notis perlepasan
-          dihidupkan bagi tempat itu), ARRVD merekodkan peristiwa yang mengandungi ID pengguna dalaman
-          Ahli, tempat dan namanya, sama ada ia ketibaan atau perlepasan, dan bila ia berlaku. Apabila
+          Apabila peranti Ahli mengesahkan ketibaan (atau peristiwa meninggalkan tempat, jika notis meninggalkan tempat dihidupkan bagi tempat itu), ARRVD merekodkan peristiwa yang mengandungi ID pengguna dalaman
+          Ahli, tempat dan namanya, sama ada ia ketibaan atau peristiwa meninggalkan tempat, dan bila ia berlaku. Apabila
           ketibaan Ahli belum disahkan pada masa yang dijangka, pelayan kami merekodkan peristiwa
           “belum disahkan” bagi Ahli dan tempat itu. Peristiwa ini tidak mengandungi koordinat peta.
         </p>
 
-        <h3>Pilihan perkongsian dan status pemantauan</h3>
+        <h3>Pilihan perkongsian dan status semakan tempat</h3>
         <p>
-          Kami merekodkan sama ada Ahli telah membenarkan ketibaan dan perlepasan mereka dikongsi
+          Kami merekodkan sama ada Ahli telah membenarkan maklumat apabila mereka tiba di atau meninggalkan tempat dikongsi
           (pilihan itu, versi penerangan yang ditunjukkan, dan bila). Peranti Ahli juga
-          melaporkan kepada pelayan kami sama ada ia dapat memantau tempat yang diberikan kepadanya
+          melaporkan kepada pelayan kami sama ada ia dapat menyemak tempat yang diberikan kepadanya
           (status pendaftaran setiap tempat dan jenis kebenaran lokasi). Laporan ini tidak
           mengandungi lokasi peranti.
         </p>
@@ -170,11 +169,11 @@
         <h3>Maklumat peranti dan pemberitahuan</h3>
         <ul class="legal-list">
           <li>
-            Untuk menghantar pemberitahuan dan menyemak bahawa pemantauan berfungsi, kami menyimpan,
+            Untuk menghantar pemberitahuan dan menyemak bahawa semakan tempat berfungsi, kami menyimpan,
             bagi peranti Penganjur dan Ahli, pengecam peranti yang dicipta oleh aplikasi, token
             pemberitahuan tolak (Firebase Cloud Messaging), platform, sama ada pemberitahuan
             dihidupkan, versi aplikasi, tetapan bahasa peranti dan cap masa berkaitan. Bagi peranti
-            Ahli, kami juga menyimpan keadaan pemantauan, seperti status kebenaran lokasi dan bilangan
+            Ahli, kami juga menyimpan keadaan semakan tempat, seperti status kebenaran lokasi dan bilangan
             rekod yang menunggu untuk dihantar (tidak sekali-kali lokasi). Firebase mungkin
             menggunakan pengecam pemasangan untuk menghantar mesej ini. Kami juga merekodkan
             pemberitahuan yang telah dihantar ke peranti mana, supaya ia tidak dihantar dua kali.
@@ -184,7 +183,7 @@
             menggunakan Firebase App Check dengan perkhidmatan App Attest Apple.
           </li>
           <li>
-            Pada peranti anda sendiri, ARRVD menyimpan tempat yang sedang dipantau, status ketibaan
+            Pada peranti anda sendiri, ARRVD menyimpan tempat yang sedang disemak, status ketibaan
             terkini, log aktiviti tempatan, peranan anda dan pengecam peranti yang dicipta oleh
             aplikasi.
           </li>
@@ -213,10 +212,10 @@
         <h2>3. Lokasi</h2>
         <ul class="legal-list">
           <li>
-            Peranti Ahli mula mengesan dan berkongsi ketibaan dan perlepasan hanya selepas Ahli itu
-            sendiri memilih “Allow” dalam aplikasi (“Benarkan” apabila penjelasan itu dipaparkan dalam bahasa Melayu). Penganjur tidak boleh membenarkannya bagi
+            Peranti Ahli mula mengesan dan berkongsi maklumat apabila Ahli tiba di atau meninggalkan tempat hanya selepas Ahli itu
+            sendiri memilih “Allow” dalam aplikasi (“Benarkan” apabila penerangan itu dipaparkan dalam bahasa Melayu). Penganjur tidak boleh membenarkannya bagi
             pihak Ahli. Ahli boleh berhenti berkongsi pada bila-bila masa dari skrin utama; peranti
-            mereka kemudian berhenti memantau tempat, dan tiada ketibaan atau perlepasan baharu
+            mereka kemudian berhenti menyemak tempat, dan tiada ketibaan atau peristiwa meninggalkan tempat yang baharu
             dihantar atau dimaklumkan.
           </li>
           <li>
@@ -227,11 +226,10 @@
             latar belakang biasanya memerlukan akses lokasi ditetapkan kepada “Sentiasa”.
           </li>
           <li>
-            Peranti Ahli hanya memantau tempat yang diberikan kepada Ahli itu. Peranti Penganjur
-            tidak memantau tempat.
+            Peranti Ahli hanya menyemak tempat yang diberikan kepada Ahli itu. Peranti Penganjur tidak menyemak tempat.
           </li>
           <li>
-            Apa yang dihantar oleh ARRVD dari peranti Ahli ialah peristiwa ketibaan atau perlepasan
+            Apa yang dihantar oleh ARRVD dari peranti Ahli ialah peristiwa ketibaan atau meninggalkan tempat
             yang diterangkan dalam seksyen 2 — tempat mana, jenis peristiwa dan bila. Ia tidak
             menghantar koordinat peranti atau sejarah pergerakannya, dan tidak menunjukkan kedudukan
             Ahli kepada sesiapa pada peta masa nyata.
@@ -287,9 +285,9 @@
         <ul class="legal-list">
           <li>Semua orang dalam keluarga boleh melihat nama keluarga dan ahlinya, dengan nama paparan (atau label lalai) dan peranan mereka.</li>
           <li>Penganjur boleh melihat dan mengurus semua tempat keluarga, termasuk nama, alamat dan koordinat. Setiap Ahli hanya boleh mengakses tempat yang diberikan kepada mereka, bukan tempat lain keluarga.</li>
-          <li>Penganjur boleh melihat aktiviti ketibaan, perlepasan dan “belum disahkan” keluarga. Bagi Ahli berumur bawah 18 tahun, hanya Penganjur yang dibenarkan oleh penjaga mereka boleh melihat rekod mereka, dan hanya sejak mereka dibenarkan; penjaga boleh menghentikannya pada bila-bila masa. Setiap Ahli hanya boleh mengakses aktiviti tentang diri mereka sendiri, bukan aktiviti Ahli lain.</li>
-          <li>Penganjur boleh melihat status pemantauan setiap Ahli (contohnya, sedang dipantau, tidak berkongsi, atau menunggu penyegerakan) — tidak sekali-kali lokasi.</li>
-          <li>Penganjur menerima pemberitahuan tentang ketibaan Ahli, perlepasan (apabila dihidupkan bagi tempat itu) dan ketibaan yang belum disahkan pada masa yang dijangka. Pemberitahuan ini mengandungi nama paparan Ahli dan nama tempat.</li>
+          <li>Penganjur boleh melihat aktiviti ketibaan, meninggalkan tempat dan “belum disahkan” keluarga. Bagi Ahli berumur bawah 18 tahun, hanya Penganjur yang dibenarkan oleh penjaga mereka boleh melihat rekod mereka, dan hanya sejak mereka dibenarkan; penjaga boleh menghentikannya pada bila-bila masa. Setiap Ahli hanya boleh mengakses aktiviti tentang diri mereka sendiri, bukan aktiviti Ahli lain.</li>
+          <li>Penganjur boleh melihat status semakan tempat setiap Ahli (contohnya, sedang menyemak, tidak berkongsi, atau menunggu penyegerakan) — tidak sekali-kali lokasi.</li>
+          <li>Penganjur menerima pemberitahuan tentang ketibaan Ahli, peristiwa meninggalkan tempat (apabila dihidupkan bagi tempat itu) dan ketibaan yang belum disahkan pada masa yang dijangka. Pemberitahuan ini mengandungi nama paparan Ahli dan nama tempat.</li>
           <li>Tidak dikongsi dengan ahli keluarga lain: lokasi masa nyata atau sejarah pergerakan Ahli (ARRVD tidak mencipta kedua-duanya), token pemberitahuan tolak atau maklumat peranti lain.</li>
         </ul>
 
@@ -300,8 +298,8 @@
           menentukannya daripada lokasi, alamat IP atau negara App Store anda. ARRVD berkhidmat
           kepada orang yang tinggal di [negara yang disenaraikan semasa penerbitan]. Jika anda memilih
           negara lain, anda tidak boleh menyertai sebagai pengguna baharu; jika anda Ahli yang sudah berada
-          dalam keluarga, anda berhenti berkongsi ketibaan dan perlepasan, dan jika anda Penganjur, anda berhenti menerima
-          dan melihat ketibaan dan perlepasan Ahli (Penganjur lain dan perkongsian Ahli itu sendiri
+          dalam keluarga, anda berhenti berkongsi maklumat apabila anda tiba di atau meninggalkan tempat, dan jika anda Penganjur, anda berhenti menerima
+          dan melihat maklumat apabila Ahli tiba di atau meninggalkan tempat (Penganjur lain dan perkongsian Ahli itu sendiri
           tidak berubah). Ia bersambung semula apabila anda menyatakan negara yang dilayani sekali
           lagi atau apabila ARRVD mula berkhidmat di negara anda.
         </p>
@@ -311,8 +309,8 @@
           <li>Untuk mencipta dan log masuk ke akaun anda.</li>
           <li>Untuk menyediakan dan menjalankan keluarga anda, termasuk jemputan dan peranan.</li>
           <li>Untuk mencipta dan mengurus tempat serta menentukan Ahli yang disemak oleh setiap tempat.</li>
-          <li>Untuk mengesan ketibaan dan perlepasan, dan menentukan bila ketibaan belum disahkan pada masa yang dijangka.</li>
-          <li>Untuk menghantar pemberitahuan ketibaan, perlepasan dan “belum disahkan”.</li>
+          <li>Untuk mengesan apabila Ahli tiba di atau meninggalkan tempat, dan menentukan bila ketibaan belum disahkan pada masa yang dijangka.</li>
+          <li>Untuk menghantar pemberitahuan ketibaan, meninggalkan tempat dan “belum disahkan”.</li>
           <li>Untuk menyediakan ARRVD Plus dan menjejaki pelan yang terpakai kepada keluarga anda.</li>
           <li>Untuk mengendalikan, melindungi dan menyelesaikan masalah ARRVD, serta mencegah penyalahgunaan.</li>
           <li>Untuk menjawab permintaan sokongan.</li>
@@ -344,14 +342,14 @@
         <h2>10. Tempoh kami menyimpan maklumat, dan pemadaman</h2>
         <ul class="legal-list">
           <li>Kami menyimpan maklumat akaun, keluarga dan tempat selagi akaun dan keluarga anda digunakan, kerana ARRVD memerlukannya untuk berfungsi.</li>
-          <li>Aktiviti ketibaan, perlepasan dan “belum disahkan” dipadam secara automatik apabila 168 jam (7 hari) telah berlalu sejak ia berlaku atau sejak pelayan kami menerimanya, yang mana lebih awal. Pemadaman dijalankan setiap jam. Rekod pemberitahuan yang dihantar ke peranti mana dipadam bersama aktiviti itu.</li>
+          <li>Aktiviti ketibaan, meninggalkan tempat dan “belum disahkan” dipadam secara automatik apabila 168 jam (7 hari) telah berlalu sejak ia berlaku atau sejak pelayan kami menerimanya, yang mana lebih awal. Pemadaman dijalankan setiap jam. Rekod pemberitahuan yang dihantar ke peranti mana dipadam bersama aktiviti itu.</li>
           <li>Rekod persetujuan (pilihan Ahli sendiri, persetujuan penjaga, penarikan balik dan bantahan) disimpan selagi persetujuan itu sah dan selama 3 tahun selepas ia tamat, kemudian dipadam. Selain nama yang diberikan oleh penjaga (seksyen 4), yang dipadam apabila akaun penjaga dipadam, rekod ini tidak mengandungi nama atau lokasi.</li>
           <li>Julat umur dan negara kediaman anda disimpan selagi anda berada dalam keluarga. Rekod bahawa seseorang telah mengisytiharkan mereka berumur bawah 18 tahun disimpan sehingga peralihan mereka kepada dewasa atau pemadaman akaun mereka, supaya seorang bawah umur tidak boleh menyertai semula sebagai dewasa.</li>
           <li>Pendaftaran peranti dipadam apabila anda log keluar, apabila Ahli berhenti berkongsi, atau apabila anda memadam akaun anda (pada kali seterusnya peranti dalam talian, jika ia luar talian pada masa itu).</li>
           <li>Log perkhidmatan biasanya dipadam secara automatik selepas 30 hari. Sesetengah log audit yang disimpan oleh Google Cloud (seperti rekod perubahan konfigurasi) disimpan sehingga 400 hari.</li>
           <li>Untuk pulih daripada kesilapan atau gangguan, kami boleh memulihkan pangkalan data kepada mana-mana titik dalam tempoh 7 hari yang lalu. Oleh itu, maklumat yang dipadam kekal dalam data pemulihan sehingga 7 hari dan kemudian dipadam secara automatik; ia hanya digunakan untuk pemulihan dan tidak boleh dilihat dalam aplikasi.</li>
           <li>Rekod jemputan dan kiraan percubaan yang gagal disimpan untuk tujuan yang diterangkan di atas.</li>
-          <li>Maklumat yang disimpan pada peranti anda dibuang apabila anda memadam aplikasi. Log keluar pada peranti Ahli juga menghentikan peranti itu daripada memantau tempat keluarga.</li>
+          <li>Maklumat yang disimpan pada peranti anda dibuang apabila anda memadam aplikasi. Log keluar pada peranti Ahli juga menghentikan peranti itu daripada menyemak tempat keluarga.</li>
           <li>Memadam aplikasi tidak memadam akaun anda atau maklumat yang disimpan pada pelayan kami.</li>
         </ul>
 
@@ -364,10 +362,10 @@
         <p>Apabila anda memadam akaun anda:</p>
         <ul class="legal-list">
           <li>Akaun ARRVD dan log masuk anda dipadam, dan kebenaran Sign in with Apple bagi ARRVD dibatalkan.</li>
-          <li>Maklumat yang disimpan oleh ARRVD tentang anda dipadam: keahlian keluarga dan nama paparan anda, pendaftaran peranti dan pemberitahuan anda, aktiviti ketibaan, perlepasan dan “belum disahkan” anda, tempat yang diberikan kepada anda, dan jemputan yang anda cipta atau terima.</li>
+          <li>Maklumat yang disimpan oleh ARRVD tentang anda dipadam: keahlian keluarga dan nama paparan anda, pendaftaran peranti dan pemberitahuan anda, aktiviti ketibaan, meninggalkan tempat dan “belum disahkan” anda, tempat yang diberikan kepada anda, dan jemputan yang anda cipta atau terima.</li>
           <li>Jika anda Penganjur dan masih ada Penganjur lain, keluarga dan maklumat yang dikongsinya kekal bersama mereka.</li>
           <li>Jika anda Penganjur terakhir keluarga, keluarga itu juga dipadam, termasuk tempat, aktiviti dan jemputannya. Akaun ARRVD ahli lain tidak dipadam; mereka dikeluarkan daripada keluarga.</li>
-          <li>Pada peranti tempat anda memadam akaun, tempat yang dipantau, log aktiviti tempatan dan pemberitahuan ARRVD dibuang.</li>
+          <li>Pada peranti tempat anda memadam akaun, tempat yang disemak, log aktiviti tempatan dan pemberitahuan ARRVD dibuang.</li>
           <li>Rekod persetujuan disimpan seperti yang diterangkan di atas, tanpa nama anda.</li>
           <li>Log teknikal yang terhad dan data pemulihan kekal untuk tempoh yang singkat (lihat di atas) sehingga dipadam secara automatik.</li>
           <li>Memadam akaun anda tidak membatalkan langganan ARRVD Plus. Urus atau batalkan langganan dalam tetapan Akaun Apple anda.</li>
@@ -400,9 +398,8 @@
           ARRVD bertujuan untuk digunakan dalam kalangan ahli keluarga. “Penganjur” dan “Ahli” ialah
           peranan dalam aplikasi; ia tidak menunjukkan hubungan keluarga atau apa-apa status sah
           sebagai penjaga. Penganjur menjemput orang yang mereka mahu dalam keluarga dan patut
-          menerangkan cara ARRVD berfungsi (hanya ketibaan di dan perlepasan dari tempat yang
-          didaftarkan dikongsi — tidak sekali-kali lokasi masa nyata atau sejarah pergerakan).
-          Ketibaan dan perlepasan Ahli hanya dikongsi jika Ahli membenarkannya pada peranti mereka
+          menerangkan cara ARRVD berfungsi (hanya maklumat apabila ahli tiba di atau meninggalkan tempat yang didaftarkan dikongsi — tidak sekali-kali lokasi masa nyata atau sejarah pergerakan).
+          Maklumat apabila Ahli tiba di atau meninggalkan tempat hanya dikongsi jika Ahli membenarkannya pada peranti mereka
           sendiri, dan, bagi Ahli berumur bawah 18 tahun, hanya dengan persetujuan penjaga juga
           (seksyen 4). Jika anda percaya maklumat telah ditambah tanpa kebenaran yang sewajarnya,
           atau anda penjaga yang ingin menyemak atau memadam maklumat anak, sila hubungi kami.
@@ -414,7 +411,7 @@
           dijalankan di rantau Singapura Google Cloud; log masuk diproses di kemudahan Google di
           Amerika Syarikat; penghantaran pemberitahuan dan perlindungan penyalahgunaan (App Check)
           dijalankan di kemudahan Google dan Apple di pelbagai negara. Log perkhidmatan mungkin
-          disimpan di kemudahan Google di seluruh dunia. Bagi penghantaran pemberitahuan, perlindungan penyalahgunaan dan log, negaranya tidak dapat dinyatakan terlebih dahulu kerana pembekal memilih antara kemudahan mereka di seluruh dunia. Tujuannya ialah menyediakan pemantauan,
+          disimpan di kemudahan Google di seluruh dunia. Bagi penghantaran pemberitahuan, perlindungan penyalahgunaan dan log, negaranya tidak dapat dinyatakan terlebih dahulu kerana pembekal memilih antara kemudahan mereka di seluruh dunia. Tujuannya ialah menyediakan perkhidmatan semakan ketibaan,
           menghantar pemberitahuan dan mencegah penyalahgunaan. Pemprosesan di luar negara dilindungi
           oleh langkah perlindungan dan terma setiap pembekal, dan kami menyimpan rekod ke mana
           maklumat pergi dan sebabnya.
