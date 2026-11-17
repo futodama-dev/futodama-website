@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dasar Privasi ARRVD — futodama</title>
+  <meta name="description" content="Cara ARRVD mengendalikan maklumat akaun, keluarga, tempat, lokasi, ketibaan dan peranti — dan apa yang tidak dilakukannya.">
+  <link rel="canonical" href="https://futodama.app/ms/arrvd/privacy/">
+  <link rel="alternate" hreflang="en" href="https://futodama.app/arrvd/privacy/">
+  <link rel="alternate" hreflang="ja" href="https://futodama.app/ja/arrvd/privacy/">
+  <link rel="alternate" hreflang="ms" href="https://futodama.app/ms/arrvd/privacy/">
+  <link rel="alternate" hreflang="x-default" href="https://futodama.app/arrvd/privacy/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="futodama">
+  <meta property="og:title" content="Dasar Privasi ARRVD — futodama">
+  <meta property="og:description" content="Cara ARRVD mengendalikan maklumat akaun, keluarga, tempat, lokasi, ketibaan dan peranti — dan apa yang tidak dilakukannya.">
+  <meta property="og:url" content="https://futodama.app/ms/arrvd/privacy/">
+  <meta property="og:locale" content="ms_MY">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:locale:alternate" content="ja_JP">
+  <meta property="og:image" content="https://futodama.app/assets/brand/og/arrvd-og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:alt" content="ARRVD product card">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Dasar Privasi ARRVD — futodama">
+  <meta name="twitter:description" content="Cara ARRVD mengendalikan maklumat akaun, keluarga, tempat, lokasi, ketibaan dan peranti — dan apa yang tidak dilakukannya.">
+  <meta name="twitter:image" content="https://futodama.app/assets/brand/og/arrvd-og.png">
+  <meta name="twitter:image:alt" content="ARRVD product card">
+
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="../../../style.css">
+</head>
+<body>
+  <header class="site-header" lang="en">
+    <div class="container header-inner">
+      <a href="/" class="logo" aria-label="futodama home">
+        <img src="../../../assets/brand/logo/futodama-symbol.svg" alt="" width="26" height="26" class="logo-dot">futodama
+      </a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-menu" aria-label="Toggle menu">
+          <span class="hamburger"></span>
+        </button>
+        <ul class="nav-menu" id="primary-menu">
+          <li><a href="/#products">Products</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/support/">Support</a></li>
+          <li class="lang-switch">
+            <a href="/arrvd/privacy/" lang="en">EN</a>
+            <span class="lang-sep">|</span>
+            <a href="/ja/arrvd/privacy/" lang="ja">日本語</a>
+            <span class="lang-sep">|</span>
+            <span class="lang-current">BM</span>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow">ARRVD</span>
+        <h1>Dasar Privasi ARRVD</h1>
+        <p>Tahu mereka sudah tiba — bukan setiap tempat yang mereka pergi. Dasar ini menerangkan maklumat yang digunakan oleh ARRVD untuk mengesahkan ketibaan, dan apa yang tidak digunakan.</p>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <div class="container legal-content">
+        <!-- STEP 110-10K draft for review (Bahasa Melayu; translator review pending): publish only together with the Firebase activation. Set the date on publication. -->
+        <p class="legal-meta">Kemas kini terakhir: <!--ARRVD_LAST_UPDATED-->[ditetapkan semasa penerbitan]</p>
+
+        <h2>1. Tentang dasar ini</h2>
+        <p>
+          Dasar Privasi ini terpakai kepada ARRVD, aplikasi ketibaan keluarga untuk iOS, dan
+          perkhidmatan yang menyokongnya (bersama-sama, “ARRVD”). ARRVD disediakan oleh <!--ARRVD_OPERATOR-->futodama
+          (“kami”). <a href="/privacy/" lang="en">Halaman privasi futodama</a> meliputi laman web ini
+          secara umum; halaman ini ialah dasar untuk ARRVD.
+        </p>
+        <p>
+          ARRVD direka untuk mengesahkan bahawa ahli keluarga telah tiba di tempat yang ditetapkan
+          oleh keluarga anda. Ia bukan perkhidmatan lokasi masa nyata atau penjejakan: ia tidak
+          menunjukkan kedudukan sesiapa pada peta dan tidak menyimpan sejarah tempat yang dilawati.
+          Walau bagaimanapun, ia menggunakan maklumat lokasi untuk mengesan ketibaan, dan dasar ini
+          menerangkan caranya dengan tepat.
+        </p>
+        <p>Pertanyaan: <!--email_off--><a href="mailto:futodama0610@gmail.com">futodama0610@gmail.com</a><!--/email_off--></p>
+
+        <h2>2. Maklumat yang diproses oleh ARRVD</h2>
+
+        <h3>Maklumat akaun</h3>
+        <p>
+          Anda log masuk dengan Sign in with Apple melalui Firebase Authentication. Kami menerima
+          pengecam bagi akaun Apple anda, dan Firebase memberikan ID pengguna dalaman kepada akaun
+          ARRVD anda. ARRVD tidak meminta nama atau alamat e-mel anda daripada Apple.
+        </p>
+
+        <h3>Maklumat keluarga dan keahlian</h3>
+        <ul class="legal-list">
+          <li>Nama keluarga, yang dipilih oleh orang yang mencipta keluarga (Penganjur).</li>
+          <li>Peranan setiap orang dalam keluarga (Penganjur atau Ahli), status keahlian, tarikh menyertai dan ID pengguna dalaman mereka.</li>
+          <li>Keluarga yang disertai oleh akaun anda.</li>
+        </ul>
+
+        <h3>Nama paparan</h3>
+        <p>
+          Ahli boleh menetapkan nama yang dilihat oleh keluarga, dan Penganjur boleh menetapkan atau
+          menukar nama Ahli. Jika tiada nama ditetapkan, ARRVD menunjukkan label lalai seperti
+          “Ahli 2”. Nama paparan hanya digunakan untuk menunjukkan siapa dalam keluarga.
+        </p>
+
+        <h3>Jemputan</h3>
+        <p>
+          Apabila Penganjur menjemput seseorang, kami mencipta rekod jemputan yang mengandungi nama
+          keluarga, peranan yang dijemput, siapa yang menciptanya, bila ia tamat tempoh, statusnya
+          dan — setelah diterima — siapa yang menerimanya. Pautan jemputan mengandungi kod rahsia;
+          kami hanya menyimpan versi sehala (cincang) kod itu, tidak sekali-kali kod itu sendiri. Jika
+          Penganjur memasukkan nama orang yang dijemput, nama itu disimpan bersama jemputan dan
+          menjadi nama paparan awal Ahli tersebut apabila menyertai (mereka atau Penganjur boleh
+          menukarnya kemudian); nama itu kemudian dibuang daripada jemputan. Untuk mencegah
+          penyalahgunaan, kami menyimpan kiraan jangka pendek bagi percubaan jemputan yang gagal
+          bagi setiap akaun.
+        </p>
+
+        <h3>Maklumat tempat</h3>
+        <p>Bagi setiap tempat yang ditambah oleh Penganjur, ARRVD menyimpan:</p>
+        <ul class="legal-list">
+          <li>nama dan alamatnya, serta latitud dan longitudnya;</li>
+          <li>saiz kawasan ketibaan (jejari);</li>
+          <li>masa dan hari ketibaan yang dijangka, tetapan amaran berkaitan (contohnya, sama ada untuk dimaklumkan apabila ketibaan belum disahkan, masa menunggu sebelum itu, dan sama ada untuk dimaklumkan apabila Ahli meninggalkan tempat itu) dan zon waktu tempat itu;</li>
+          <li>Ahli yang ketibaannya disemak di tempat itu; dan</li>
+          <li>siapa yang menciptanya, serta bila ia dicipta dan terakhir diubah.</li>
+        </ul>
+
+        <h3>Maklumat berkaitan lokasi</h3>
+        <p>Lihat seksyen 3, yang menerangkan cara lokasi digunakan.</p>
+
+        <h3>Maklumat ketibaan dan aktiviti</h3>
+        <p>
+          Apabila peranti Ahli mengesahkan ketibaan (atau peristiwa meninggalkan tempat, jika notis meninggalkan tempat dihidupkan bagi tempat itu), ARRVD merekodkan peristiwa yang mengandungi ID pengguna dalaman
+          Ahli, tempat dan namanya, sama ada ia ketibaan atau peristiwa meninggalkan tempat, dan bila ia berlaku. Apabila
+          ketibaan Ahli belum disahkan pada masa yang dijangka, pelayan kami merekodkan peristiwa
+          “belum disahkan” bagi Ahli dan tempat itu. Peristiwa ini tidak mengandungi koordinat peta.
+        </p>
+
+        <h3>Pilihan perkongsian dan status semakan tempat</h3>
+        <p>
+          Kami merekodkan sama ada Ahli telah membenarkan maklumat apabila mereka tiba di atau meninggalkan tempat dikongsi
+          (pilihan itu, versi penerangan yang ditunjukkan, dan bila). Kami menggunakan rekod ini
+          untuk menghormati pilihan itu dan untuk menunjukkan bahawa pilihan itu telah dibuat; rekod
+          ini tidak mengandungi nama, lokasi atau nama tempat. Peranti Ahli juga
+          melaporkan kepada pelayan kami sama ada ia dapat menyemak tempat yang diberikan kepadanya
+          (status pendaftaran setiap tempat dan jenis kebenaran lokasi). Laporan ini tidak
+          mengandungi lokasi peranti.
+        </p>
+
+        <h3>Julat umur, persetujuan penjaga dan negara kediaman</h3>
+        <p>
+          Kami merekodkan julat umur anda (18 tahun ke atas, atau 13 hingga 17 tahun — tidak
+          sekali-kali tarikh lahir anda), dan, bagi Ahli berumur 13 hingga 17 tahun, persetujuan
+          penjaga (lihat seksyen 4). Kami juga merekodkan negara yang anda nyatakan sebagai tempat
+          anda biasanya tinggal (lihat seksyen 6).
+        </p>
+
+        <h3>Maklumat peranti dan pemberitahuan</h3>
+        <ul class="legal-list">
+          <li>
+            Untuk menghantar pemberitahuan dan menyemak bahawa semakan tempat berfungsi, kami menyimpan,
+            bagi peranti Penganjur dan Ahli, pengecam peranti yang dicipta oleh aplikasi, token
+            pemberitahuan tolak (Firebase Cloud Messaging), platform, sama ada pemberitahuan
+            dihidupkan, versi aplikasi, tetapan bahasa peranti dan cap masa berkaitan. Bagi peranti
+            Ahli, kami juga menyimpan keadaan semakan tempat, seperti status kebenaran lokasi dan bilangan
+            rekod yang menunggu untuk dihantar (tidak sekali-kali lokasi). Firebase mungkin
+            menggunakan pengecam pemasangan untuk menghantar mesej ini. Kami juga merekodkan
+            pemberitahuan yang telah dihantar ke peranti mana, supaya ia tidak dihantar dua kali.
+          </li>
+          <li>
+            Untuk menyemak bahawa permintaan datang daripada salinan ARRVD yang tulen, kami
+            menggunakan Firebase App Check dengan perkhidmatan App Attest Apple.
+          </li>
+          <li>
+            Pada peranti anda sendiri, ARRVD menyimpan tempat yang sedang disemak, status ketibaan
+            terkini, log aktiviti tempatan, peranan anda dan pengecam peranti yang dicipta oleh
+            aplikasi.
+          </li>
+        </ul>
+
+        <h3>Maklumat pembelian (ARRVD Plus)</h3>
+        <p>Lihat seksyen 9.</p>
+
+        <h3>Komunikasi sokongan</h3>
+        <p>Jika anda menghantar e-mel kepada kami, kami menerima alamat e-mel anda dan apa sahaja yang anda sertakan dalam mesej.</p>
+
+        <h3>Log perkhidmatan</h3>
+        <p>
+          Pelayan kami menyimpan log teknikal yang terhad — seperti pengecam dalaman dan hasil
+          semakan automatik — untuk menjalankan perkhidmatan, memastikan keselamatannya dan
+          membetulkan masalah. Rekod permintaan kepada pelayan kami juga mengandungi alamat IP serta
+          maklumat aplikasi dan peranti yang dihantar bersama permintaan itu. Token pemberitahuan
+          tolak, nama tempat, alamat dan lokasi tidak ditulis ke dalam log ini.
+        </p>
+
+        <h3>Apa yang tidak dilakukan oleh ARRVD</h3>
+        <ul class="legal-list">
+          <li>Tiada pengiklanan, dan tiada SDK pengiklanan atau analitik.</li>
+          <li>Tiada penjualan maklumat peribadi.</li>
+          <li>Tiada penjejakan anda merentasi aplikasi atau laman web syarikat lain.</li>
+        </ul>
+
+        <h2>3. Lokasi</h2>
+        <ul class="legal-list">
+          <li>
+            Peranti Ahli mula mengesan dan berkongsi maklumat apabila Ahli tiba di atau meninggalkan tempat hanya selepas Ahli itu
+            sendiri memilih “Allow” dalam aplikasi (“Benarkan” apabila penerangan itu dipaparkan dalam bahasa Melayu). Penganjur tidak boleh membenarkannya bagi
+            pihak Ahli. Ahli boleh berhenti berkongsi pada bila-bila masa dari skrin utama; peranti
+            mereka kemudian berhenti menyemak tempat, dan tiada ketibaan atau peristiwa meninggalkan tempat yang baharu
+            dihantar atau dimaklumkan.
+          </li>
+          <li>
+            ARRVD menggunakan Perkhidmatan Lokasi iOS — terutamanya pemantauan kawasan (sering
+            dipanggil geofencing) — supaya iPhone Ahli dapat mengesan apabila ia tiba di, atau
+            meninggalkan, tempat yang diberikan kepada Ahli itu. iOS menyemak perkara ini pada
+            peranti, termasuk semasa aplikasi tidak dibuka, jika Ahli telah membenarkannya. Semakan
+            latar belakang biasanya memerlukan akses lokasi ditetapkan kepada “Sentiasa”.
+          </li>
+          <li>
+            Peranti Ahli hanya menyemak tempat yang diberikan kepada Ahli itu. Peranti Penganjur tidak menyemak tempat.
+          </li>
+          <li>
+            Apa yang dihantar oleh ARRVD dari peranti Ahli ialah peristiwa ketibaan atau meninggalkan tempat
+            yang diterangkan dalam seksyen 2 — tempat mana, jenis peristiwa dan bila. Ia tidak
+            menghantar koordinat peranti atau sejarah pergerakannya, dan tidak menunjukkan kedudukan
+            Ahli kepada sesiapa pada peta masa nyata.
+          </li>
+          <li>
+            Tempat itu sendiri mengandungi alamat dan koordinat (lihat seksyen 2). Ini disimpan pada
+            pelayan kami. Penganjur keluarga boleh melihat dan mengurus setiap tempat; peranti Ahli
+            hanya menerima tempat yang diberikan kepada Ahli itu.
+          </li>
+          <li>
+            Apabila Penganjur memilih “Use Current Location” semasa menambah tempat, peranti
+            menentukan lokasinya sekali untuk mengisi tempat itu.
+          </li>
+          <li>
+            Carian tempat, pratonton peta dan carian alamat menggunakan perkhidmatan Apple Maps.
+            Teks carian atau koordinat tempat dihantar kepada Apple untuk mendapatkan hasil.
+          </li>
+          <li>
+            Jika Perkhidmatan Lokasi atau kebenaran lokasi ARRVD dimatikan atau dihadkan, ketibaan
+            mungkin dikesan lewat atau tidak dikesan langsung.
+          </li>
+        </ul>
+
+        <h2>4. Umur, penjaga dan apabila berumur 18 tahun</h2>
+        <p>
+          Penganjur mestilah berumur 18 tahun ke atas dan Ahli 13 tahun ke atas. Sebelum menyertai,
+          anda memilih tahun dan bulan lahir anda; ia hanya digunakan pada peranti anda untuk
+          menentukan julat umur dan tidak sekali-kali dihantar atau disimpan. Kami hanya merekodkan
+          julat itu — 18 tahun ke atas, atau 13 hingga 17 tahun. Mereka yang berumur bawah 13 tahun
+          tidak boleh menggunakan ARRVD (peranti menyimpan catatan bahawa “bawah 13 tahun” telah
+          dijawab supaya soalan itu tidak ditanya semula selama 24 jam; catatan itu kekal pada peranti itu sahaja dan tiada apa-apa dihantar kepada kami).
+        </p>
+        <p>
+          Ahli berumur 13 hingga 17 tahun tidak berkongsi apa-apa sehingga ibu bapa, penjaga atau
+          orang yang mempunyai tanggungjawab keibubapaan (penjaga) dan Ahli itu sendiri telah bersetuju.
+          Penjaga menggunakan akaun Apple mereka sendiri untuk mengisytiharkan bahawa mereka berumur
+          18 tahun ke atas, bahawa mereka ialah penjaga yang sah, dan bahawa mereka memahami dan
+          bersetuju. Kami merekodkan siapa yang diliputi oleh persetujuan itu, versi dan bahasa
+          penerangan, tarikh, serta hubungan dan nama yang diberikan. Penganjur dan Ahli dimaklumkan
+          apabila persetujuan berkuat kuasa, dan Penganjur boleh membantah jika mereka tidak mengenali
+          penjaga itu (perkongsian kemudian berhenti). Pengisytiharan ini bukan semakan identiti
+          rasmi. Penerangan yang dipersetujui oleh penjaga terdapat di
+          <a href="/ms/arrvd/guardians/">halaman untuk penjaga</a>.
+        </p>
+        <p>
+          Apabila Ahli yang menyertai semasa berumur bawah 18 tahun mencapai umur 18 tahun dan memintanya dalam aplikasi, penjaga
+          yang memberi persetujuan boleh mengesahkannya; persetujuan penjaga kemudian tamat dan hanya
+          persetujuan Ahli itu sendiri yang menentukan apa yang dikongsi. Pengesahan ini tidak
+          meminta tarikh lahir atau dokumen pengenalan dan tidak mengubah rekod lalu (rekod tetap dipadam selepas 7 hari).
+        </p>
+
+        <h2>5. Apa yang dikongsi dalam keluarga anda</h2>
+        <ul class="legal-list">
+          <li>Semua orang dalam keluarga boleh melihat nama keluarga dan ahlinya, dengan nama paparan (atau label lalai) dan peranan mereka.</li>
+          <li>Penganjur boleh melihat dan mengurus semua tempat keluarga, termasuk nama, alamat dan koordinat. Setiap Ahli hanya boleh mengakses tempat yang diberikan kepada mereka, bukan tempat lain keluarga.</li>
+          <li>Penganjur boleh melihat aktiviti ketibaan, meninggalkan tempat dan “belum disahkan” keluarga. Bagi Ahli berumur bawah 18 tahun, hanya Penganjur yang dibenarkan oleh penjaga mereka boleh melihat rekod mereka, dan hanya sejak mereka dibenarkan; penjaga boleh menghentikannya pada bila-bila masa. Jika penjaga itu juga Penganjur keluarga, mereka boleh melihat rekod itu mulai saat persetujuan mereka; ini hanya berhenti apabila mereka menarik balik persetujuan. Setiap Ahli hanya boleh mengakses aktiviti tentang diri mereka sendiri, bukan aktiviti Ahli lain.</li>
+          <li>Penganjur boleh melihat status semakan tempat setiap Ahli (contohnya, sedang menyemak, tidak berkongsi, atau menunggu penyegerakan) — tidak sekali-kali lokasi.</li>
+          <li>Penganjur menerima pemberitahuan tentang ketibaan Ahli, peristiwa meninggalkan tempat (apabila dihidupkan bagi tempat itu) dan ketibaan yang belum disahkan pada masa yang dijangka. Pemberitahuan ini mengandungi nama paparan Ahli dan nama tempat.</li>
+          <li>Tidak dikongsi dengan ahli keluarga lain: lokasi masa nyata atau sejarah pergerakan Ahli (ARRVD tidak mencipta kedua-duanya), token pemberitahuan tolak atau maklumat peranti lain.</li>
+        </ul>
+
+        <h2>6. Negara kediaman</h2>
+        <p>
+          Apabila menyertai, anda memilih negara tempat anda biasanya tinggal — bukan negara yang
+          sedang anda lawati (tukar dalam aplikasi jika anda berpindah). Kami tidak sekali-kali
+          menentukannya daripada lokasi, alamat IP atau negara App Store anda. ARRVD berkhidmat
+          kepada orang yang tinggal di <!--ARRVD_COUNTRIES-->Malaysia dan Jepun. Jika anda memilih
+          negara lain, anda tidak boleh menyertai sebagai pengguna baharu; jika anda Ahli yang sudah berada
+          dalam keluarga, anda berhenti berkongsi maklumat apabila anda tiba di atau meninggalkan tempat, dan jika anda Penganjur, anda berhenti menerima
+          dan melihat maklumat apabila Ahli tiba di atau meninggalkan tempat (Penganjur lain dan perkongsian Ahli itu sendiri
+          tidak berubah). Ia bersambung semula apabila anda menyatakan negara yang dilayani sekali
+          lagi atau apabila ARRVD mula berkhidmat di negara anda.
+        </p>
+
+        <h2>7. Cara kami menggunakan maklumat</h2>
+        <ul class="legal-list">
+          <li>Untuk mencipta dan log masuk ke akaun anda.</li>
+          <li>Untuk menyediakan dan menjalankan keluarga anda, termasuk jemputan dan peranan.</li>
+          <li>Untuk mencipta dan mengurus tempat serta menentukan Ahli yang disemak oleh setiap tempat.</li>
+          <li>Untuk mengesan apabila Ahli tiba di atau meninggalkan tempat, dan menentukan bila ketibaan belum disahkan pada masa yang dijangka.</li>
+          <li>Untuk menghantar pemberitahuan ketibaan, meninggalkan tempat dan “belum disahkan”.</li>
+          <li>Untuk menyediakan ARRVD Plus dan menjejaki pelan yang terpakai kepada keluarga anda.</li>
+          <li>Untuk mengendalikan, melindungi dan menyelesaikan masalah ARRVD, serta mencegah penyalahgunaan.</li>
+          <li>Untuk menjawab permintaan sokongan.</li>
+        </ul>
+
+        <h2>8. Pembekal perkhidmatan</h2>
+        <p>ARRVD bergantung pada sebilangan kecil pembekal, yang memproses maklumat bagi pihak kami atau di bawah terma mereka sendiri:</p>
+        <ul class="legal-list">
+          <li><strong>Apple</strong> — Sign in with Apple, App Store dan pembelian dalam aplikasi, Apple Push Notification service, Perkhidmatan Lokasi iOS, perkhidmatan Apple Maps (carian tempat, pratonton peta dan carian alamat) dan App Attest.</li>
+          <li><strong>Google Firebase</strong> (berjalan di Google Cloud) — Firebase Authentication, Cloud Firestore (pangkalan data kami), Cloud Functions (semakan dan pemberitahuan di pelayan), Firebase Cloud Messaging, Firebase App Check dan Firebase Installations.</li>
+        </ul>
+        <p>
+          Kami juga boleh mendedahkan maklumat jika dikehendaki oleh undang-undang, atau jika
+          perlu secara munasabah untuk melindungi keselamatan, hak atau sekuriti pengguna kami,
+          orang awam atau ARRVD.
+        </p>
+
+        <h2>9. ARRVD Plus dan pembelian</h2>
+        <p>
+          ARRVD tersedia sebagai pelan percuma dan sebagai ARRVD Plus, pelan berbayar yang dibeli
+          melalui App Store. Pembayaran dikendalikan oleh Apple menggunakan Akaun Apple anda; kami
+          tidak sekali-kali menerima atau menyimpan nombor kad atau butiran pembayaran lain anda.
+          Untuk menyediakan ARRVD Plus dan memulihkan pembelian, aplikasi menggunakan maklumat yang
+          disediakan oleh Apple tentang pembelian anda — contohnya, produk yang dibeli, sama ada ia
+          aktif pada masa ini, serta pengecam atau status transaksi. Anda mengurus atau membatalkan
+          langganan dalam tetapan Akaun Apple anda.
+        </p>
+
+        <h2>10. Tempoh kami menyimpan maklumat, dan pemadaman</h2>
+        <ul class="legal-list">
+          <li>Kami menyimpan maklumat akaun, keluarga dan tempat selagi akaun dan keluarga anda digunakan, kerana ARRVD memerlukannya untuk berfungsi.</li>
+          <li>Aktiviti ketibaan, meninggalkan tempat dan “belum disahkan” dipadam secara automatik apabila 168 jam (7 hari) telah berlalu sejak ia berlaku atau sejak pelayan kami menerimanya, yang mana lebih awal. Pemadaman dijalankan setiap jam. Rekod pemberitahuan yang dihantar ke peranti mana dipadam bersama aktiviti itu.</li>
+          <li>Rekod persetujuan — pilihan perkongsian Ahli sendiri (seksyen 2), persetujuan penjaga, penarikan balik, bantahan dan julat umur yang dinyatakan oleh setiap orang — disimpan seperti berikut: yang masih berkuat kuasa atau terkini, selagi ia begitu; yang telah tamat (ditarik balik, digantikan, atau orang itu meninggalkan keluarga), selama 3 tahun dari tarikh ia tamat; penolakan, penarikan balik atau bantahan, selama 3 tahun dari tarikh ia dibuat. Setiap bulan kami memadam rekod yang telah melebihi 3 tahun; rekod yang diperlukan untuk aduan atau prosiding undang-undang disimpan sehingga perkara itu selesai, kemudian dipadam. Selain nama yang diberikan oleh penjaga (seksyen 4), yang dipadam apabila akaun penjaga dipadam, rekod ini tidak mengandungi nama atau lokasi.</li>
+          <li>Julat umur dan negara kediaman anda disimpan selagi anda berada dalam keluarga. Rekod bahawa seseorang telah mengisytiharkan mereka berumur bawah 18 tahun disimpan sehingga peralihan mereka kepada dewasa atau pemadaman akaun mereka, supaya seorang bawah umur tidak boleh menyertai semula sebagai dewasa.</li>
+          <li>Pendaftaran peranti dipadam apabila anda log keluar, apabila Ahli berhenti berkongsi, atau apabila anda memadam akaun anda (pada kali seterusnya peranti dalam talian, jika ia luar talian pada masa itu).</li>
+          <li>Log perkhidmatan, termasuk rekod permintaan yang mengandungi alamat IP (seksyen 2), dipadam secara automatik selepas 30 hari. Log audit yang disimpan oleh Google Cloud bagi perubahan pentadbiran yang kami buat pada pelayan kami (seperti perubahan konfigurasi), yang tidak merekodkan penggunaan ARRVD anda, disimpan sehingga 400 hari.</li>
+          <li>Untuk pulih daripada kesilapan atau gangguan, kami boleh memulihkan pangkalan data kepada mana-mana titik dalam tempoh 7 hari yang lalu. Oleh itu, maklumat yang dipadam kekal dalam data pemulihan sehingga 7 hari dan kemudian dipadam secara automatik; ia hanya digunakan untuk pemulihan dan tidak boleh dilihat dalam aplikasi.</li>
+          <li>Rekod jemputan dan kiraan percubaan yang gagal disimpan untuk tujuan yang diterangkan di atas.</li>
+          <li>Maklumat yang disimpan pada peranti anda dibuang apabila anda memadam aplikasi. Log keluar pada peranti Ahli juga menghentikan peranti itu daripada menyemak tempat keluarga.</li>
+          <li>Memadam aplikasi tidak memadam akaun anda atau maklumat yang disimpan pada pelayan kami.</li>
+        </ul>
+
+        <h3>Memadam akaun anda</h3>
+        <p>Anda boleh memadam akaun ARRVD anda pada bila-bila masa dalam aplikasi, dan mengesahkannya dengan Sign in with Apple:</p>
+        <ul class="legal-list">
+          <li><strong>Penganjur</strong> — Settings › Account › Delete Account.</li>
+          <li><strong>Ahli</strong> — bahagian Account di bahagian bawah skrin utama › Delete Account.</li>
+        </ul>
+        <p>Apabila anda memadam akaun anda:</p>
+        <ul class="legal-list">
+          <li>Akaun ARRVD dan log masuk anda dipadam, dan kebenaran Sign in with Apple bagi ARRVD dibatalkan.</li>
+          <li>Maklumat yang disimpan oleh ARRVD tentang anda dipadam: keahlian keluarga dan nama paparan anda, pendaftaran peranti dan pemberitahuan anda, aktiviti ketibaan, meninggalkan tempat dan “belum disahkan” anda, tempat yang diberikan kepada anda, pilihan perkongsian anda, dan jemputan yang anda cipta atau terima.</li>
+          <li>Jika anda Penganjur dan masih ada Penganjur lain, keluarga dan maklumat yang dikongsinya kekal bersama mereka.</li>
+          <li>Jika anda Penganjur terakhir keluarga, keluarga itu juga dipadam, termasuk tempat, aktiviti dan jemputannya. Akaun ARRVD ahli lain tidak dipadam; mereka dikeluarkan daripada keluarga.</li>
+          <li>Pada peranti tempat anda memadam akaun, tempat yang disemak, log aktiviti tempatan dan pemberitahuan ARRVD dibuang.</li>
+          <li>Rekod persetujuan, termasuk rekod pilihan perkongsian anda, disimpan seperti yang diterangkan di atas, tanpa nama anda.</li>
+          <li>Log teknikal, termasuk rekod permintaan yang mengandungi alamat IP (seksyen 2), dipadam secara automatik selepas 30 hari, dan data pemulihan selepas 7 hari (lihat di atas). Log audit perubahan pentadbiran yang kami buat pada pelayan kami, yang tidak merekodkan penggunaan ARRVD anda, disimpan sehingga 400 hari.</li>
+          <li>Memadam akaun anda tidak membatalkan langganan ARRVD Plus. Urus atau batalkan langganan dalam tetapan Akaun Apple anda.</li>
+        </ul>
+        <p>Jika anda tidak dapat menggunakan aplikasi untuk memadam akaun anda, hantar e-mel kepada <!--email_off--><a href="mailto:futodama0610@gmail.com">futodama0610@gmail.com</a><!--/email_off--> dan kami akan membantu.</p>
+
+        <h2>11. Pilihan anda</h2>
+        <ul class="legal-list">
+          <li><strong>Akses lokasi</strong> — tukar pada bila-bila masa dalam Tetapan iOS. Tanpanya, ketibaan tidak dapat dikesan.</li>
+          <li><strong>Pemberitahuan</strong> — hidupkan atau matikan dalam Tetapan iOS.</li>
+          <li><strong>Perkongsian ketibaan (Ahli)</strong> — buat atau tukar pilihan anda dalam aplikasi di bawah “Arrival sharing”.</li>
+          <li><strong>Nama paparan</strong> — tukar nama anda sendiri dalam aplikasi; Penganjur boleh menukar nama Ahli.</li>
+          <li><strong>Sign in with Apple</strong> — anda boleh mengurus aplikasi yang menggunakan Akaun Apple anda dalam tetapan Akaun Apple anda.</li>
+          <li><strong>ARRVD Plus</strong> — urus atau batalkan langganan anda dalam tetapan Akaun Apple anda.</li>
+          <li><strong>Berhenti berkongsi atau menarik balik persetujuan</strong> — Ahli boleh berhenti berkongsi pada bila-bila masa dari skrin utama, dan penjaga boleh menarik balik persetujuan mereka dalam Settings › Guardian requests and consents; dalam aplikasi, ini berkuat kuasa serta-merta. Jika anda tidak dapat menggunakan aplikasi, anda juga boleh menarik balik secara bertulis melalui e-mel kepada <!--email_off--><a href="mailto:futodama0610@gmail.com">futodama0610@gmail.com</a><!--/email_off--> (nyatakan nama keluarga, nama paparan Ahli dan peranan anda). E-mel tidak menghentikan perkongsian dengan sendirinya: kami membacanya, menghentikan perkongsian secara manual dengan segera dan membalas untuk mengesahkan (jika kami tidak dapat mengenal pasti akaun itu daripada e-mel anda, kami akan membalas untuk bertanya). Rekod yang tiba selepas perkongsian dihentikan ditolak oleh pelayan kami.</li>
+          <li><strong>Padam akaun anda</strong> — dalam aplikasi, seperti yang diterangkan dalam seksyen 10.</li>
+          <li><strong>Pertanyaan atau permintaan</strong> — termasuk permintaan untuk melihat, membetulkan atau memadam maklumat — hantar e-mel kepada <!--email_off--><a href="mailto:futodama0610@gmail.com">futodama0610@gmail.com</a><!--/email_off-->.</li>
+        </ul>
+
+        <h2>12. Keselamatan</h2>
+        <p>
+          Kami mengambil langkah yang munasabah untuk melindungi maklumat, termasuk sambungan yang
+          disulitkan, peraturan pangkalan data yang mengehadkan maklumat setiap keluarga kepada
+          keluarga itu, semakan integriti aplikasi dan menyimpan kod jemputan hanya dalam bentuk
+          cincang. Tiada kaedah penghantaran atau penyimpanan yang benar-benar selamat, jadi kami
+          tidak dapat menjamin keselamatan mutlak.
+        </p>
+
+        <h2>13. Keluarga dan ahli</h2>
+        <p>
+          ARRVD bertujuan untuk digunakan dalam kalangan ahli keluarga. “Penganjur” dan “Ahli” ialah
+          peranan dalam aplikasi; ia tidak menunjukkan hubungan keluarga atau apa-apa status sah
+          sebagai penjaga. Penganjur menjemput orang yang mereka mahu dalam keluarga dan patut
+          menerangkan cara ARRVD berfungsi (hanya maklumat apabila ahli tiba di atau meninggalkan tempat yang didaftarkan dikongsi — tidak sekali-kali lokasi masa nyata atau sejarah pergerakan).
+          Maklumat apabila Ahli tiba di atau meninggalkan tempat hanya dikongsi jika Ahli membenarkannya pada peranti mereka
+          sendiri, dan, bagi Ahli berumur bawah 18 tahun, hanya dengan persetujuan penjaga juga
+          (seksyen 4). Jika anda percaya maklumat telah ditambah tanpa kebenaran yang sewajarnya,
+          atau anda penjaga yang ingin menyemak atau memadam maklumat anak, sila hubungi kami.
+        </p>
+
+        <h2>14. Pemprosesan di luar negara</h2>
+        <p>
+          <!--ARRVD_OPERATOR-->futodama mengendalikan ARRVD dari Malaysia. Pemprosesan pangkalan data dan pelayan
+          dijalankan di rantau Singapura Google Cloud; log masuk diproses di kemudahan Google di
+          Amerika Syarikat; penghantaran pemberitahuan dan perlindungan penyalahgunaan (App Check)
+          dijalankan di kemudahan Google dan Apple di pelbagai negara. Log perkhidmatan mungkin
+          disimpan di kemudahan Google di seluruh dunia. Bagi penghantaran pemberitahuan, perlindungan penyalahgunaan dan log, negaranya tidak dapat dinyatakan terlebih dahulu kerana pembekal memilih antara kemudahan mereka di seluruh dunia. Tujuannya ialah menyediakan perkhidmatan semakan ketibaan,
+          menghantar pemberitahuan dan mencegah penyalahgunaan. Pemprosesan di luar negara dilindungi
+          oleh langkah perlindungan dan terma setiap pembekal, dan kami menyimpan rekod ke mana
+          maklumat pergi dan sebabnya.
+        </p>
+
+        <h2>15. Perubahan kepada dasar ini</h2>
+        <p>
+          Kami mungkin mengemas kini dasar ini apabila ARRVD berubah. Apabila kami berbuat demikian,
+          kami akan mengemas kini tarikh di bahagian atas halaman ini, dan kami akan memaklumkan anda
+          tentang perubahan penting dalam aplikasi atau di halaman ini.
+        </p>
+
+        <h2>16. Hubungi kami</h2>
+        <p><!--ARRVD_OPERATOR-->futodama — <!--email_off--><a href="mailto:futodama0610@gmail.com">futodama0610@gmail.com</a><!--/email_off--></p>
+
+        <nav class="legal-links" aria-label="Undang-undang dan sokongan ARRVD">
+          <ul>
+          <li><span aria-current="page">Dasar Privasi</span></li>
+          <li><a href="/ms/arrvd/guardians/">Untuk penjaga</a></li>
+          <li><a href="/ms/arrvd/terms/">Terma Penggunaan</a></li>
+          <li><a href="/ms/arrvd/support/">Sokongan</a></li>
+          <li><a href="/arrvd/" lang="en">About ARRVD</a></li>
+          </ul>
+        </nav>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" lang="en">
+    <div class="container">
+      <div class="footer-grid">
+        <nav class="footer-col" aria-label="Products">
+          <h4>Products</h4>
+          <ul>
+            <li><a href="/arrvd/">ARRVD</a></li>
+            <li><a href="/mojitsunagi/">Mojitsunagi</a></li>
+            <li><a href="/celestial-oracle/">Celestial Oracle</a></li>
+          </ul>
+        </nav>
+        <nav class="footer-col" aria-label="Company">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="/about/">About</a></li>
+            <li><a href="/support/">Support</a></li>
+          </ul>
+        </nav>
+        <nav class="footer-col" aria-label="Legal">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="/legal/">Overview</a></li>
+            <li><a href="/privacy/">Privacy</a></li>
+            <li><a href="/terms/">Terms</a></li>
+          </ul>
+        </nav>
+        <nav class="footer-col" aria-label="Language">
+          <h4>Language</h4>
+          <ul>
+            <li><a href="/arrvd/privacy/">English</a></li>
+            <li><a href="/ja/arrvd/privacy/" lang="ja">日本語</a></li>
+            <li><span class="lang-current" lang="ms">Bahasa Melayu</span></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <p class="copyright">&copy; 2026 futodama</p>
+        <p class="footer-spirit">All is well.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../../script.js"></script>
+</body>
+</html>

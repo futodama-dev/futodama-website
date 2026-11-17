@@ -13,3 +13,16 @@
 # URL — and therefore the token in its fragment, which is never sent to
 # this or any server — stays exactly as the user opened it.
 /arrvd/invite/*  /arrvd/invite-fallback.html  200
+
+# ARRVD guardian links (https://futodama.app/arrvd/guardian/<requestId>#<token>)
+# are pasted into the app ("For guardians"); they are not Universal Links, so
+# opened in a browser they land here. 200 (rewrite) for the same reason as
+# above: the token after "#" stays only in the visitor's address bar. The
+# page reads nothing from the address and checks nothing (STEP 110-10AA).
+# Not /arrvd/guardians/ (the guardians page, a draft published with this) — a different path.
+# The target has no ".html": Pages redirects a "*.html" address to its
+# extension-less form, which turned the rewrite into a redirect (seen on the
+# preview of 33ac07d).
+/arrvd/guardian    /arrvd/guardian-link  200
+/arrvd/guardian/   /arrvd/guardian-link  200
+/arrvd/guardian/*  /arrvd/guardian-link  200

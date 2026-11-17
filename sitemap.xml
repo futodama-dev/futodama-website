@@ -18,18 +18,21 @@
     <loc>https://futodama.app/arrvd/privacy/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://futodama.app/arrvd/privacy/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://futodama.app/ja/arrvd/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://futodama.app/ms/arrvd/privacy/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://futodama.app/arrvd/privacy/"/>
   </url>
   <url>
     <loc>https://futodama.app/arrvd/terms/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://futodama.app/arrvd/terms/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://futodama.app/ja/arrvd/terms/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://futodama.app/ms/arrvd/terms/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://futodama.app/arrvd/terms/"/>
   </url>
   <url>
     <loc>https://futodama.app/arrvd/support/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://futodama.app/arrvd/support/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://futodama.app/ja/arrvd/support/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://futodama.app/ms/arrvd/support/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://futodama.app/arrvd/support/"/>
   </url>
   <url>
@@ -92,18 +95,21 @@
     <loc>https://futodama.app/ja/arrvd/privacy/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://futodama.app/arrvd/privacy/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://futodama.app/ja/arrvd/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://futodama.app/ms/arrvd/privacy/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://futodama.app/arrvd/privacy/"/>
   </url>
   <url>
     <loc>https://futodama.app/ja/arrvd/terms/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://futodama.app/arrvd/terms/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://futodama.app/ja/arrvd/terms/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://futodama.app/ms/arrvd/terms/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://futodama.app/arrvd/terms/"/>
   </url>
   <url>
     <loc>https://futodama.app/ja/arrvd/support/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://futodama.app/arrvd/support/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://futodama.app/ja/arrvd/support/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://futodama.app/ms/arrvd/support/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://futodama.app/arrvd/support/"/>
   </url>
   <url>
@@ -148,6 +154,49 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://futodama.app/legal/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://futodama.app/ja/legal/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://futodama.app/legal/"/>
+  </url>
+
+  <url>
+    <loc>https://futodama.app/ms/arrvd/privacy/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://futodama.app/arrvd/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://futodama.app/ja/arrvd/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://futodama.app/ms/arrvd/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://futodama.app/arrvd/privacy/"/>
+  </url>
+  <url>
+    <loc>https://futodama.app/arrvd/guardians/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://futodama.app/arrvd/guardians/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://futodama.app/ja/arrvd/guardians/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://futodama.app/ms/arrvd/guardians/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://futodama.app/arrvd/guardians/"/>
+  </url>
+  <url>
+    <loc>https://futodama.app/ja/arrvd/guardians/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://futodama.app/arrvd/guardians/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://futodama.app/ja/arrvd/guardians/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://futodama.app/ms/arrvd/guardians/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://futodama.app/arrvd/guardians/"/>
+  </url>
+  <url>
+    <loc>https://futodama.app/ms/arrvd/guardians/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://futodama.app/arrvd/guardians/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://futodama.app/ja/arrvd/guardians/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://futodama.app/ms/arrvd/guardians/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://futodama.app/arrvd/guardians/"/>
+  </url>
+  <url>
+    <loc>https://futodama.app/ms/arrvd/terms/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://futodama.app/arrvd/terms/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://futodama.app/ja/arrvd/terms/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://futodama.app/ms/arrvd/terms/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://futodama.app/arrvd/terms/"/>
+  </url>
+  <url>
+    <loc>https://futodama.app/ms/arrvd/support/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://futodama.app/arrvd/support/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://futodama.app/ja/arrvd/support/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://futodama.app/ms/arrvd/support/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://futodama.app/arrvd/support/"/>
   </url>
 
 </urlset>

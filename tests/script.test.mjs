@@ -108,3 +108,12 @@ test("home page Celestial Oracle entry (A1): a web_app click for celestial_oracl
     assert.deepEqual([sent[1].source, sent[1].campaign, sent[1].content], ["", "", ""]);
   }
 });
+
+test("STEP 110-10K: the guardian link and Malay pages are never counted; the guardians page is", () => {
+  assert.deepEqual(run(CURRENT, "/arrvd/guardian/abc123", { clicks: ["https://futodama.app/arrvd/"] }), []);
+  assert.deepEqual(run(CURRENT, "/ms/arrvd/privacy/", { lang: "ms", clicks: ["https://futodama.app/arrvd/"] }), []);
+  assert.deepEqual(run(CURRENT, "/ms/arrvd/guardians/", { lang: "ms" }), []);
+  const guardians = run(CURRENT, "/arrvd/guardians/");
+  assert.deepEqual(guardians.map((e) => [e.event, e.product]), [["site_page_view", "arrvd"]]);
+  assert.deepEqual(run(CURRENT, "/arrvd/guardians/"), run(MAIN, "/arrvd/guardians/"), "same as before for a page main already counted");
+});
