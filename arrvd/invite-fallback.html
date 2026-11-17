@@ -5,39 +5,208 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ARRVD Invitation | futodama</title>
   <meta name="robots" content="noindex">
+  <!-- The address of this page is an invitation link (/arrvd/invite/<id>#<token>): no part of it is passed on to another page or site. -->
+  <meta name="referrer" content="no-referrer">
   <link rel="icon" href="/favicon.ico" sizes="32x32">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/arrvd/invite-fallback.css">
 </head>
 <body>
+  <!-- STEP 110-INVITE-LINK-FIX (legal-2026-11-14/75): shown for every /arrvd/invite/* address that a browser
+       opened instead of the ARRVD app (_redirects, 200 rewrite to "/arrvd/invite-fallback" — no ".html", so the
+       address and the token after "#" stay exactly as opened; the "#" part is never sent to any server).
+       /arrvd/invite-fallback.js only reads the address on this device to offer "Copy invitation link" (the
+       link the app's "Paste invitation link" accepts). It sends nothing anywhere, and it checks nothing:
+       whether an invitation is valid (48 hours, one use) is decided only by the ARRVD app and its server.
+       No site script (/script.js, analytics) on this page; _headers forbids any network request from it
+       (connect-src 'none'). Language buttons are buttons, never "#..." links, which would replace the
+       token in the address bar. -->
   <header class="site-header">
     <div class="container header-inner">
       <a href="/" class="logo" aria-label="futodama home">
         <img src="/assets/brand/logo/futodama-symbol.svg" alt="" width="26" height="26" class="logo-dot">futodama
       </a>
-      <nav class="main-nav" aria-label="Main navigation">
-        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-menu" aria-label="Toggle menu">
-          <span class="hamburger"></span>
-        </button>
-        <ul class="nav-menu" id="primary-menu">
-          <li><a href="/#products">Products</a></li>
-          <li><a href="/about/">About</a></li>
-          <li><a href="/support/">Support</a></li>
-        </ul>
-      </nav>
     </div>
   </header>
 
   <main>
-    <section class="error-page">
+    <section class="page-hero">
       <div class="container">
-        <p class="error-code">ARRVD</p>
-        <h1>ARRVD Invitation</h1>
-        <p>You&rsquo;ve received an invitation to join a family on ARRVD.</p>
-        <p>If ARRVD is installed, open this invitation again from the original message.</p>
-        <p>If you don&rsquo;t have ARRVD yet, install it first, then return to the invitation link.</p>
-        <a href="/arrvd/" class="btn btn-primary">About ARRVD</a>
+        <span class="eyebrow">ARRVD</span>
+        <h1>Invitation <span lang="ja">招待</span> <span lang="ms">Jemputan</span></h1>
+        <div class="invite-langs" data-invite-langs hidden>
+          <button type="button" class="invite-lang" data-invite-lang-button="en" lang="en">English</button>
+          <button type="button" class="invite-lang" data-invite-lang-button="ja" lang="ja">日本語</button>
+          <button type="button" class="invite-lang" data-invite-lang-button="ms" lang="ms">Bahasa Melayu</button>
+        </div>
+        <p data-invite-langs-static>English · <span lang="ja">日本語</span> · <span lang="ms">Bahasa Melayu</span> — below</p>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <div class="container legal-content">
+
+        <section lang="en" data-invite-lang="en" class="invite-section">
+          <h2>You’ve been invited to ARRVD</h2>
+          <p>Someone in your family invited you to join them on ARRVD, an iPhone app for sharing arrivals and departures at places you choose together.</p>
+
+          <div data-invite-when="ok" hidden>
+            <p>If this page opened instead of the app, you can still join in 3 steps:</p>
+            <ol class="legal-list">
+              <li>Tap “Copy invitation link” below.</li>
+              <li>Open ARRVD and tap “Join with an invitation”, then “Paste invitation link”.</li>
+              <li>Paste the link and follow the steps in the app.</li>
+            </ol>
+            <p class="invite-actions">
+              <button type="button" class="btn btn-primary" data-invite-copy>Copy invitation link</button>
+              <a class="btn btn-outline" data-invite-line-safari hidden>Open in Safari</a>
+            </p>
+            <p class="invite-status" data-invite-status="copied" role="status" hidden>Copied. Now open ARRVD and paste it.</p>
+            <div data-invite-manual hidden>
+              <p class="invite-status" role="status">Couldn’t copy automatically. Press and hold the link below, choose “Select All”, then “Copy”.</p>
+              <textarea class="invite-manual" data-invite-manual-text readonly rows="3" aria-label="Invitation link"></textarea>
+            </div>
+          </div>
+
+          <div data-invite-when="incomplete" hidden>
+            <p class="invite-status">This link is incomplete, so it can’t be used from this page. Go back to the original message and open or copy the whole link. If that doesn’t work, ask the person who invited you to send a new invitation.</p>
+          </div>
+
+          <noscript>
+            <p>To join: open ARRVD, tap “Join with an invitation”, then “Paste invitation link”, and paste the whole link from the message you received (in LINE or WhatsApp you can also use “Copy link” in the browser menu).</p>
+          </noscript>
+
+          <h3>Open it in Safari instead</h3>
+          <ul class="legal-list">
+            <li>LINE: tap the menu (“⋯” or the share icon) and choose “Open in browser” or “Open in Safari”.</li>
+            <li>WhatsApp: tap the Safari icon or the share icon and choose “Open in Safari”.</li>
+            <li>In Safari: if a banner at the top of the page offers to open ARRVD, tap “Open”. If not, go back to the message, press and hold the link and choose “Open in ARRVD”.</li>
+          </ul>
+
+          <h3>Don’t have ARRVD yet?</h3>
+          <ul class="legal-list">
+            <li>ARRVD is an iPhone app. Install it from the App Store — or, if ARRVD isn’t in the App Store in your country yet, from the TestFlight invitation you received.</li>
+            <li>Then come back to this page (or the message) and follow the steps above.</li>
+            <li>On a computer: ARRVD doesn’t work there. Open the invitation message on your iPhone.</li>
+          </ul>
+
+          <h3>About invitations</h3>
+          <ul class="legal-list">
+            <li>An invitation can be used once and expires after 48 hours. If it has expired or was already used, ask for a new invitation.</li>
+            <li>Only the person it was sent to should use it. Please don’t forward it.</li>
+            <li>This page doesn’t check or store the link. ARRVD checks it when you paste it.</li>
+          </ul>
+          <p><a href="/arrvd/">About ARRVD</a> · Questions: <a href="mailto:futodama0610@gmail.com">futodama0610@gmail.com</a></p>
+        </section>
+
+        <section lang="ja" data-invite-lang="ja" class="invite-section">
+          <h2>ARRVD への招待</h2>
+          <p>家族から ARRVD への招待が届いています。ARRVD は、一緒に決めた場所への到着・出発を家族と共有する iPhone アプリです。</p>
+
+          <div data-invite-when="ok" hidden>
+            <p>アプリが開かずにこのページが表示された場合も、次の3ステップで参加できます。</p>
+            <ol class="legal-list">
+              <li>下の「招待リンクをコピー」をタップします。</li>
+              <li>ARRVD を開き、「招待されて参加する」→「招待リンクを貼り付け」をタップします。</li>
+              <li>リンクを貼り付けて、アプリの案内に従います。</li>
+            </ol>
+            <p class="invite-actions">
+              <button type="button" class="btn btn-primary" data-invite-copy>招待リンクをコピー</button>
+              <a class="btn btn-outline" data-invite-line-safari hidden>Safari で開く</a>
+            </p>
+            <p class="invite-status" data-invite-status="copied" role="status" hidden>コピーしました。ARRVD を開いて貼り付けてください。</p>
+            <div data-invite-manual hidden>
+              <p class="invite-status" role="status">自動でコピーできませんでした。下のリンクを長押しし、「すべてを選択」→「コピー」を選んでください。</p>
+              <textarea class="invite-manual" data-invite-manual-text readonly rows="3" aria-label="招待リンク"></textarea>
+            </div>
+          </div>
+
+          <div data-invite-when="incomplete" hidden>
+            <p class="invite-status">このリンクは一部が欠けているため、このページからは使えません。元のメッセージに戻り、リンク全体を開くかコピーしてください。それでも使えない場合は、招待した人に新しい招待を送ってもらってください。</p>
+          </div>
+
+          <noscript>
+            <p>参加するには、ARRVD を開いて「招待されて参加する」→「招待リンクを貼り付け」をタップし、届いたメッセージのリンクを全部貼り付けてください（LINE や WhatsApp では、ブラウザのメニューの「リンクをコピー」も使えます）。</p>
+          </noscript>
+
+          <h3>Safari で開くには</h3>
+          <ul class="legal-list">
+            <li>LINE：画面のメニュー（「…」や共有のアイコン）から「ブラウザで開く」または「Safariで開く」を選びます。</li>
+            <li>WhatsApp：Safari のアイコンか共有のアイコンをタップし、「Safariで開く」を選びます。</li>
+            <li>Safari で表示しているとき：ページの上部に ARRVD を開く表示が出たら「開く」をタップします。出ないときは、元のメッセージのリンクを長押しし、「“ARRVD”で開く」を選びます。</li>
+          </ul>
+
+          <h3>ARRVD をまだ入れていない場合</h3>
+          <ul class="legal-list">
+            <li>ARRVD は iPhone のアプリです。App Store から入れてください。お住まいの国の App Store にまだない場合は、届いている TestFlight の招待から入れてください。</li>
+            <li>入れた後、このページ（または元のメッセージ）に戻って、上の手順を行ってください。</li>
+            <li>パソコンでは使えません。iPhone で招待のメッセージを開いてください。</li>
+          </ul>
+
+          <h3>招待について</h3>
+          <ul class="legal-list">
+            <li>招待は1回限り・48時間有効です。期限が切れたときや、すでに使われたときは、新しい招待を送ってもらってください。</li>
+            <li>招待は送られた方だけが使ってください。転送しないでください。</li>
+            <li>このページはリンクの確認も保存もしません。確認は、貼り付けたときに ARRVD が行います。</li>
+          </ul>
+          <p><a href="/ja/arrvd/">ARRVD について</a> · お問い合わせ：<a href="mailto:futodama0610@gmail.com">futodama0610@gmail.com</a></p>
+        </section>
+
+        <section lang="ms" data-invite-lang="ms" class="invite-section">
+          <h2>Jemputan ke ARRVD</h2>
+          <p>Ahli keluarga anda menjemput anda menyertai mereka di ARRVD, aplikasi iPhone untuk berkongsi maklumat apabila anda tiba di atau meninggalkan tempat yang dipilih bersama.</p>
+
+          <div data-invite-when="ok" hidden>
+            <p>Jika halaman ini dibuka dan bukan aplikasi, anda masih boleh menyertai dalam 3 langkah:</p>
+            <ol class="legal-list">
+              <li>Ketik “Salin pautan jemputan” di bawah.</li>
+              <li>Buka ARRVD, ketik “Join with an invitation”, kemudian “Paste invitation link” (butang dalam aplikasi dipaparkan dalam bahasa Inggeris).</li>
+              <li>Tampal pautan dan ikut langkah dalam aplikasi.</li>
+            </ol>
+            <p class="invite-actions">
+              <button type="button" class="btn btn-primary" data-invite-copy>Salin pautan jemputan</button>
+              <a class="btn btn-outline" data-invite-line-safari hidden>Buka dalam Safari</a>
+            </p>
+            <p class="invite-status" data-invite-status="copied" role="status" hidden>Disalin. Sekarang buka ARRVD dan tampalkannya.</p>
+            <div data-invite-manual hidden>
+              <p class="invite-status" role="status">Tidak dapat menyalin secara automatik. Tekan lama pautan di bawah, pilih “Pilih Semua” (Select All), kemudian “Salin” (Copy).</p>
+              <textarea class="invite-manual" data-invite-manual-text readonly rows="3" aria-label="Pautan jemputan"></textarea>
+            </div>
+          </div>
+
+          <div data-invite-when="incomplete" hidden>
+            <p class="invite-status">Pautan ini tidak lengkap, jadi tidak boleh digunakan dari halaman ini. Kembali ke mesej asal dan buka atau salin keseluruhan pautan. Jika masih tidak berfungsi, minta orang yang menjemput anda menghantar jemputan baharu.</p>
+          </div>
+
+          <noscript>
+            <p>Untuk menyertai: buka ARRVD, ketik “Join with an invitation”, kemudian “Paste invitation link”, dan tampal keseluruhan pautan daripada mesej yang anda terima (dalam LINE atau WhatsApp, anda juga boleh menggunakan “Salin pautan” / “Copy link” dalam menu pelayar).</p>
+          </noscript>
+
+          <h3>Buka dalam Safari</h3>
+          <ul class="legal-list">
+            <li>LINE: ketik menu (“⋯” atau ikon kongsi) dan pilih “Open in browser” atau “Open in Safari”.</li>
+            <li>WhatsApp: ketik ikon Safari atau ikon kongsi dan pilih “Buka dalam Safari” (Open in Safari).</li>
+            <li>Dalam Safari: jika sepanduk di bahagian atas halaman menawarkan untuk membuka ARRVD, ketik “Buka”. Jika tiada, kembali ke mesej, tekan lama pautan dan pilih “Buka dalam ARRVD”.</li>
+          </ul>
+
+          <h3>Belum ada ARRVD?</h3>
+          <ul class="legal-list">
+            <li>ARRVD ialah aplikasi iPhone. Pasangnya dari App Store — atau, jika ARRVD belum ada di App Store negara anda, daripada jemputan TestFlight yang anda terima.</li>
+            <li>Selepas itu, kembali ke halaman ini (atau mesej tersebut) dan ikut langkah di atas.</li>
+            <li>Pada komputer: ARRVD tidak berfungsi di situ. Buka mesej jemputan pada iPhone anda.</li>
+          </ul>
+
+          <h3>Tentang jemputan</h3>
+          <ul class="legal-list">
+            <li>Jemputan boleh digunakan sekali sahaja dan tamat tempoh selepas 48 jam. Jika sudah tamat tempoh atau sudah digunakan, minta jemputan baharu.</li>
+            <li>Hanya orang yang menerimanya patut menggunakannya. Sila jangan majukan jemputan ini.</li>
+            <li>Halaman ini tidak menyemak atau menyimpan pautan. ARRVD menyemaknya apabila anda menampalnya.</li>
+          </ul>
+          <p><a href="/arrvd/">Tentang ARRVD</a> (bahasa Inggeris) · Pertanyaan: <a href="mailto:futodama0610@gmail.com">futodama0610@gmail.com</a></p>
+        </section>
+
       </div>
     </section>
   </main>
@@ -76,6 +245,6 @@
     </div>
   </footer>
 
-  <script src="/script.js"></script>
+  <script src="/arrvd/invite-fallback.js"></script>
 </body>
 </html>

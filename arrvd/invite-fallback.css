@@ -1,0 +1,72 @@
+/* ARRVD invitation fallback page (/arrvd/invite/*). Kept apart from style.css so no other page changes. */
+
+.invite-langs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.invite-lang {
+  font: inherit;
+  font-size: 0.95rem;
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--border-soft);
+  background: transparent;
+  color: var(--navy);
+  cursor: pointer;
+}
+
+.invite-lang[aria-pressed="true"] {
+  background: var(--navy);
+  border-color: var(--navy);
+  color: #fff;
+}
+
+.invite-section + .invite-section {
+  margin-top: 48px;
+}
+
+.invite-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 20px 0 12px;
+}
+
+.invite-actions .btn {
+  font: inherit;
+  font-weight: 600;
+}
+
+.invite-status {
+  font-weight: 600;
+}
+
+.invite-manual {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px 12px;
+  font: inherit;
+  font-size: 0.9rem;
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius);
+  background: var(--surface-muted);
+  color: var(--charcoal);
+  word-break: break-all;
+  resize: none;
+}
+
+/* Used for a moment while copying, never visible. */
+.invite-offscreen {
+  position: fixed;
+  top: 0;
+  left: -9999px;
+  opacity: 0;
+}
+
+[hidden] {
+  display: none !important;
+}

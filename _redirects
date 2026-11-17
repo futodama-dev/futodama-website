@@ -12,4 +12,10 @@
 # skipped Universal Link handling). 200 (rewrite, not a redirect) so the
 # URL — and therefore the token in its fragment, which is never sent to
 # this or any server — stays exactly as the user opened it.
-/arrvd/invite/*  /arrvd/invite-fallback.html  200
+# The target has no ".html": Pages redirects a "*.html" address to its
+# extension-less form, which turned this rewrite into a redirect to
+# /arrvd/invite-fallback and dropped the invitation id from the address
+# (legal-2026-11-14/75). The target is outside /arrvd/invite/, so no loop.
+/arrvd/invite    /arrvd/invite-fallback  200
+/arrvd/invite/   /arrvd/invite-fallback  200
+/arrvd/invite/*  /arrvd/invite-fallback  200

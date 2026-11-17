@@ -1,2 +1,21 @@
 /.well-known/apple-app-site-association
   Content-Type: application/json
+
+# ARRVD invitation fallback (/arrvd/invite/<id>#<token>, legal-2026-11-14/75): the page may load only
+# its own files and may not send anything anywhere (connect-src 'none'); no referrer leaves it.
+/arrvd/invite
+  Content-Security-Policy: default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'none'; form-action 'none'; base-uri 'none'; frame-ancestors 'none'
+  Referrer-Policy: no-referrer
+  X-Robots-Tag: noindex
+/arrvd/invite/*
+  Content-Security-Policy: default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'none'; form-action 'none'; base-uri 'none'; frame-ancestors 'none'
+  Referrer-Policy: no-referrer
+  X-Robots-Tag: noindex
+/arrvd/invite-fallback
+  Content-Security-Policy: default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'none'; form-action 'none'; base-uri 'none'; frame-ancestors 'none'
+  Referrer-Policy: no-referrer
+  X-Robots-Tag: noindex
+/arrvd/invite-fallback.html
+  Content-Security-Policy: default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'none'; form-action 'none'; base-uri 'none'; frame-ancestors 'none'
+  Referrer-Policy: no-referrer
+  X-Robots-Tag: noindex
