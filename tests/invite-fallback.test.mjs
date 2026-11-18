@@ -15,7 +15,9 @@ const REDIRECTS = read("_redirects");
 const HEADERS = read("_headers");
 const PAGE = read("arrvd/invite-fallback.html");
 const SCRIPT = read("arrvd/invite-fallback.js");
-const MAIN_REDIRECTS = execFileSync("git", ["show", "main:_redirects"], { encoding: "utf8" });
+// Production before the invitation fix (4329dd7): the rules this fix started from. A fixed commit, not the
+// "main" branch name, which moves (and may be stale in a local clone).
+const MAIN_REDIRECTS = execFileSync("git", ["show", "4329dd7:_redirects"], { encoding: "utf8" });
 
 const rules = (text) =>
   text
@@ -45,7 +47,10 @@ test("every other rule on main is kept unchanged", () => {
     if (rule[0] === "/arrvd/invite/*") continue;
     assert.ok(current.includes(rule.join(" ")), `missing rule: ${rule.join(" ")}`);
   }
-  assert.equal(rules(REDIRECTS).length, rules(MAIN_REDIRECTS).length + 2);
+  // The one old invitation rule became three; the only other additions are the guardian link rules
+  // (tests/guardian-link.test.mjs checks those).
+  const others = rules(REDIRECTS).filter(([from]) => !from.startsWith("/arrvd/guardian"));
+  assert.equal(others.length, rules(MAIN_REDIRECTS).length + 2);
 });
 
 // --- _headers ------------------------------------------------------------------------------------

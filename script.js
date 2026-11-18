@@ -55,6 +55,10 @@
   if (
     location.hostname !== PRODUCTION_HOST ||
     location.pathname.indexOf("/arrvd/invite") === 0 ||
+    // STEP 110-10K: the guardian link (/arrvd/guardian/<id>#<token>) is never counted (its path
+    // carries a request id), nor are Malay pages (/ms/), which the collector doesn't know yet.
+    location.pathname.indexOf("/arrvd/guardian/") === 0 ||
+    location.pathname.indexOf("/ms/") === 0 ||
     typeof window.fetch !== "function" ||
     isAutomated
   ) {

@@ -8,6 +8,7 @@
   <link rel="canonical" href="https://futodama.app/ja/arrvd/support/">
   <link rel="alternate" hreflang="en" href="https://futodama.app/arrvd/support/">
   <link rel="alternate" hreflang="ja" href="https://futodama.app/ja/arrvd/support/">
+  <link rel="alternate" hreflang="ms" href="https://futodama.app/ms/arrvd/support/">
   <link rel="alternate" hreflang="x-default" href="https://futodama.app/arrvd/support/">
 
   <meta property="og:type" content="website">
@@ -17,6 +18,7 @@
   <meta property="og:url" content="https://futodama.app/ja/arrvd/support/">
   <meta property="og:locale" content="ja_JP">
   <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:locale:alternate" content="ms_MY">
   <meta property="og:image" content="https://futodama.app/assets/brand/og/arrvd-og.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -52,6 +54,8 @@
             <a href="/arrvd/support/">EN</a>
             <span class="lang-sep">|</span>
             <span class="lang-current">日本語</span>
+            <span class="lang-sep">|</span>
+            <a href="/ms/arrvd/support/" lang="ms">BM</a>
           </li>
         </ul>
       </nav>
@@ -69,13 +73,17 @@
 
     <section class="content-section">
       <div class="container legal-content">
+        <!-- STEP 110-LEGAL-P0B 確認用の草案：ほかの ARRVD の法務ページと同時にだけ公開する。日付は公開時に入れる。 -->
+        <p class="legal-meta">最終更新日：<!--ARRVD_LAST_UPDATED-->［公開時に記入］</p>
+
         <h2>お問い合わせ</h2>
+        <p>ARRVDは<!--ARRVD_OPERATOR-->futodamaが提供しています。</p>
         <p>メール：<!--email_off--><a href="mailto:futodama0610@gmail.com?subject=ARRVD%20Support">futodama0610@gmail.com</a><!--/email_off--></p>
         <p>状況の確認のため、次の情報をお書き添えください。</p>
         <ul class="legal-list">
           <li>iPhoneの機種とiOSのバージョン</li>
           <li>ARRVDのバージョン（アプリの設定画面に表示されます）</li>
-          <li>管理者とメンバーのどちらか</li>
+          <li>オーガナイザーとメンバーのどちらか</li>
           <li>起きたことと、そのおおよその日時</li>
         </ul>
         <p>
@@ -87,7 +95,7 @@
         <ul class="legal-list">
           <li>設定 › プライバシーとセキュリティ › 位置情報サービス がオンになっている。</li>
           <li>ARRVDの位置情報へのアクセスが<strong>「常に」</strong>で、<strong>「正確な位置情報」</strong>がオンになっている。</li>
-          <li>ARRVDにサインインしていて、その場所に割り当てられている（管理者が場所の画面で確認できます）。</li>
+          <li>ARRVDにサインインしていて、その場所に割り当てられている（オーガナイザーが場所の画面で確認できます）。</li>
           <li>低電力モード、電波の弱い場所、とても小さい到着エリアでは、検知が遅れることがあります。</li>
         </ul>
         <p>
@@ -96,14 +104,14 @@
 
         <h2>通知が届かない</h2>
         <ul class="legal-list">
-          <li>管理者のiPhoneで、設定 › 通知 からARRVDの通知が許可されている。</li>
+          <li>オーガナイザーのiPhoneで、設定 › 通知 からARRVDの通知が許可されている。</li>
           <li>集中モードや時刻指定要約により、通知が後回しになることがあります。</li>
-          <li>通知を受け取るには、管理者のiPhoneがネットワークに接続されている必要があります。</li>
+          <li>通知を受け取るには、オーガナイザーのiPhoneがネットワークに接続されている必要があります。</li>
         </ul>
 
         <h2>招待について</h2>
         <ul class="legal-list">
-          <li>招待リンクには有効期限があり、1回のみ使えます。リンクが使えない場合は、管理者に新しい招待を送ってもらってください。</li>
+          <li>招待リンクには有効期限があり、1回のみ使えます。リンクが使えない場合は、オーガナイザーに新しい招待を送ってもらってください。</li>
           <li>リンクは、ARRVDをインストールしたiPhoneで開いてください。</li>
         </ul>
 
@@ -119,16 +127,25 @@
         <h2>アカウントの削除</h2>
         <p>ARRVDのアカウントは、アプリ内から削除できます。</p>
         <ul class="legal-list">
-          <li><strong>管理者</strong>：設定 › アカウント › アカウントを削除</li>
+          <li><strong>オーガナイザー</strong>：設定 › アカウント › アカウントを削除</li>
           <li><strong>メンバー</strong>：ホーム画面下部の「アカウント」 › アカウントを削除</li>
         </ul>
         <p>
-          削除の際は、Sign in with Appleでご本人確認を行います。削除すると、アカウントと、ARRVDが保存しているあなたに関する情報が削除されます。あなたがファミリーの最後の管理者の場合は、ファミリーとその共有情報も削除されますが、他のメンバーのアカウントは削除されません。詳しくは<a href="/ja/arrvd/privacy/">プライバシーポリシー</a>をご覧ください。
+          削除の際は、Sign in with Appleでご本人確認を行います。削除すると、アカウントと、ARRVDが保存しているあなたに関する情報が削除されます（同意の記録など一部の記録は、プライバシーポリシー第10条のとおり一定期間保存します）。あなたがファミリーの最後のオーガナイザーの場合は、ファミリーとその共有情報も削除されますが、他のメンバーのアカウントは削除されません。詳しくは<a href="/ja/arrvd/privacy/">プライバシーポリシー</a>をご覧ください。
         </p>
         <ul class="legal-list">
           <li>アプリを削除するだけでは、アカウントやサーバーに保存された情報は削除されません。</li>
           <li>アカウントを削除しても、ARRVD Plusは解約されません。サブスクリプションの管理はAppleアカウントの設定から行ってください。</li>
           <li>アプリからアカウントを削除できない場合は、<!--email_off--><a href="mailto:futodama0610@gmail.com?subject=ARRVD%20account%20deletion">futodama0610@gmail.com</a><!--/email_off-->までご連絡ください。</li>
+        </ul>
+
+        <h2>共有の停止・同意の撤回</h2>
+        <!-- STEP 110-10K 確認用の草案：Firebase の有効化と同時にだけ公開する。 -->
+        <ul class="legal-list">
+          <li><strong>メンバー</strong>：ホーム画面から、いつでも共有をやめられます。</li>
+          <li><strong>保護者</strong>：アプリの「設定」→「保護者確認と同意」→「同意を撤回」（アプリでの操作はすぐに反映されます）。詳しくは<a href="/ja/arrvd/guardians/">保護者の方へ</a>をご覧ください。</li>
+          <li>アプリが使えない場合は、<!--email_off--><a href="mailto:futodama0610@gmail.com?subject=ARRVD%20consent%20withdrawal">futodama0610@gmail.com</a><!--/email_off-->への書面（メール）でも撤回できます（ファミリー名、メンバーの表示名、ご自身の立場をお知らせください）。メールは届いただけでは共有を止めません。当方が内容を確認し、速やかに停止の操作をして、確認のご返信をします（内容から対象を特定できない場合は、確認のためにご返信します）。止まった後に届いた記録はサーバーが受け付けません。</li>
+          <li>情報の確認・訂正・削除のご依頼も、同じ連絡先で受け付けます。</li>
         </ul>
 
         <h2>緊急時</h2>
@@ -139,8 +156,9 @@
         <h2>関連情報</h2>
         <ul class="legal-list">
           <li><a href="/ja/arrvd/">ARRVDについて</a>・<a href="/ja/arrvd/#faq">よくある質問</a></li>
-          <li><a href="/ja/arrvd/privacy/">ARRVD プライバシーポリシー</a></li>
+          <li><a href="/ja/arrvd/privacy/">ARRVD プライバシーポリシー</a>（<a href="/arrvd/privacy/" lang="en">English</a>・<a href="/ms/arrvd/privacy/" lang="ms">Bahasa Melayu</a>）</li>
           <li><a href="/ja/arrvd/terms/">ARRVD 利用規約</a></li>
+          <li><a href="/ja/arrvd/guardians/">保護者の方へ</a></li>
         </ul>
 
         <nav class="legal-links" aria-label="ARRVDの規約とサポート">
@@ -148,6 +166,7 @@
           <li><a href="/ja/arrvd/privacy/">プライバシーポリシー</a></li>
           <li><a href="/ja/arrvd/terms/">利用規約</a></li>
           <li><span aria-current="page">サポート</span></li>
+          <li><a href="/ja/arrvd/guardians/">保護者の方へ</a></li>
           <li><a href="/ja/arrvd/">ARRVDについて</a></li>
           </ul>
         </nav>
@@ -186,6 +205,7 @@
           <ul>
             <li><a href="/arrvd/support/">English</a></li>
             <li><span class="lang-current">日本語</span></li>
+            <li><a href="/ms/arrvd/support/" lang="ms">Bahasa Melayu</a></li>
           </ul>
         </nav>
       </div>
