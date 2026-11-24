@@ -73,7 +73,7 @@
 
     <section class="content-section">
       <div class="container legal-content">
-        <p class="legal-meta">Last updated: <!--ARRVD_LAST_UPDATED-->November 18, 2026 · Bahasa Melayu: <a href="/ms/arrvd/privacy/" lang="ms">Dasar Privasi</a></p>
+        <p class="legal-meta">Last updated: <!--ARRVD_LAST_UPDATED-->November 24, 2026 · Bahasa Melayu: <a href="/ms/arrvd/privacy/" lang="ms">Dasar Privasi</a></p>
 
         <h2>1. About this policy</h2>
         <p>
@@ -144,7 +144,18 @@
           notices turned on), ARRVD records an event containing the Member’s internal user ID, the
           place and its name, whether it was an arrival or a departure, and when it happened. When a
           Member’s arrival hasn’t been confirmed by the expected time, our server records a “not yet
-          confirmed” event for that Member and place. These events do not contain map coordinates.
+          confirmed” event for that Member and place.
+        </p>
+        <p>
+          Events may also contain technical information that we use to check that detection and
+          delivery are working: when the Member’s iPhone confirmed the event; how many attempts it
+          took to send it and how long after that confirmation they were made (with a short code if
+          an attempt failed); a one-way (hashed) identifier of the place’s arrival area that the
+          iPhone was watching, made from the place’s own saved coordinates and radius — never from
+          the device’s location; and our server’s check of whether that area matched the place’s
+          current settings. If an arrival or departure could only be confirmed later, the event notes
+          that the actual time is unknown, and the time recorded is when it was confirmed. These
+          events do not contain map coordinates or the device’s location.
         </p>
 
         <h3>Sharing choice and watching status</h3>
@@ -229,7 +240,8 @@
           </li>
           <li>
             What ARRVD sends from a Member’s device is the arrival or departure event described in
-            section 2 — which place, which kind of event and when. It does not send the device’s
+            section 2 — which place, which kind of event and when, with the technical information
+            described there. It does not send the device’s
             coordinates or a history of its movements, and it does not show the Member’s position
             to anyone on a live map.
           </li>
@@ -281,7 +293,8 @@
         <ul class="legal-list">
           <li>Everyone in the family can see the family’s name and its members, with their display names (or default labels) and roles.</li>
           <li>Organizers can see and manage all of the family’s places, including names, addresses and coordinates. Each Member can access only the places assigned to them, not the family’s other places.</li>
-          <li>Organizers can see the family’s arrival, departure and “not yet confirmed” activity. For a Member under 18, only the Organizers their guardian allows can see their records, and only from when they were allowed; the guardian can stop this at any time. If the guardian is also an Organizer of the family, they can see the records from their consent on; this stops only when they withdraw their consent. Each Member can access only the activity about themselves, not other Members’ activity.</li>
+          <li>Organizers can see the family’s arrival, departure and “not yet confirmed” activity. For a Member under 18, only the Organizers their guardian allows can see their records, and only from when they were allowed; the guardian can stop this at any time. If the guardian is also an Organizer of the family, they can see the records from their consent on; this stops only when they withdraw their consent. These records include the technical information described in section 2; the app doesn’t show it, except to say that a time is unknown or that the latest place settings couldn’t be confirmed.</li>
+          <li>Members can’t see other Members’ activity. The app doesn’t currently show Members their own activity. A Member — or, for a Member under 18, their guardian — can ask for a copy of the records about them by emailing <!--email_off--><a href="mailto:futodama0610@gmail.com">futodama0610@gmail.com</a><!--/email_off--> (see “Requests about your information” in section 11). Because activity is deleted after 7 days (section 10), a copy can include only the records that still exist when we prepare it.</li>
           <li>Organizers can see each Member’s watching status (for example, watching, not sharing, or waiting to sync) — never a location.</li>
           <li>Organizers receive notifications about a Member’s arrivals, departures (when turned on for that place) and arrivals that haven’t been confirmed by the expected time. These notifications include the Member’s display name and the place’s name.</li>
           <li>Not shared with other family members: a Member’s live location or movement history (ARRVD doesn’t create either), push tokens or other device information.</li>
