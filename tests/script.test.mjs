@@ -12,10 +12,10 @@ const CURRENT = readFileSync(new URL("../script.js", import.meta.url), "utf8");
 const MAIN = execFileSync("git", ["show", "main:script.js"], { encoding: "utf8" });
 
 // Runs script.js on `path`, then clicks each href; returns the JSON bodies sent to the collector.
-function run(source, path, { lang = "en", clicks = [], search = "" } = {}) {
+function run(source, path, { lang = "en", clicks = [], search = "", host = "futodama.app" } = {}) {
   const sent = [];
   const handlers = {};
-  const location = new URL(`https://futodama.app${path}${search}`);
+  const location = new URL(`https://${host}${path}${search}`);
   const document = {
     querySelector: () => null,
     getElementById: () => null,
@@ -116,4 +116,24 @@ test("STEP 110-10K: the guardian link and Malay pages are never counted; the gua
   const guardians = run(CURRENT, "/arrvd/guardians/");
   assert.deepEqual(guardians.map((e) => [e.event, e.product]), [["site_page_view", "arrvd"]]);
   assert.deepEqual(run(CURRENT, "/arrvd/guardians/"), run(MAIN, "/arrvd/guardians/"), "same as before for a page main already counted");
+});
+
+test("ARRVD App Store calls to action: one outbound_cta per click, product from the registry, nothing off futodama.app", () => {
+  const JP = "https://apps.apple.com/jp/app/arrvd/id6813303271";
+  const MY = "https://apps.apple.com/my/app/arrvd/id6813303271";
+  const registered = /"app_store:6813303271":"arrvd"/.test(CURRENT);
+  for (const [page, lang, href, pageProduct] of [["/", "en", MY, "site"], ["/ja/", "ja", JP, "site"], ["/arrvd/", "en", MY, "arrvd"], ["/ja/arrvd/", "ja", JP, "arrvd"]]) {
+    const sent = run(CURRENT, page, { lang, clicks: [href] });
+    // Until `registry link app_store 6813303271 --product arrvd` is applied, a click counts for the page's product
+    // (the top page is "site"); after it, for arrvd on every page. Either way exactly one event per click.
+    assert.deepEqual(sent.map((e) => [e.event, e.product, e.target]), [
+      ["site_page_view", pageProduct, ""],
+      ["outbound_cta", registered ? "arrvd" : pageProduct, "app_store"],
+    ], page);
+    // With the registry entry the same click counts for arrvd (the planned registry change, simulated).
+    const linked = CURRENT.replace(/var STORE_PRODUCTS = \{/, 'var STORE_PRODUCTS = {"app_store:6813303271":"arrvd",');
+    assert.deepEqual(run(linked, page, { lang, clicks: [href] })[1].product, "arrvd", page);
+    // Preview and QA hosts send nothing.
+    assert.deepEqual(run(CURRENT, page, { lang, clicks: [href], host: "feature-arrvd-flagship-home.futodama-website.pages.dev" }), [], page);
+  }
 });

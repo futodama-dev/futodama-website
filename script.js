@@ -70,7 +70,7 @@
   // BEGIN GENERATED SITE PRODUCTS — npm run registry -- site-config (futodama-analytics). Do not edit by hand.
   var SITE_SECTIONS = ["","about","legal","privacy","support","terms"]; // brand pages (first path segment; "" = top)
   var SITE_PRODUCTS = {"arrvd":"arrvd","celestial-oracle":"celestial_oracle","mojitsunagi":"mojitsunagi"}; // site slug → product_id
-  var STORE_PRODUCTS = {"app_store:6801533488":"mojitsunagi","app_store:6813303271":"arrvd","web:celestial.futodama.app":"celestial_oracle"}; // store:app id → product_id
+  var STORE_PRODUCTS = {"app_store:6801533488":"mojitsunagi","web:celestial.futodama.app":"celestial_oracle"}; // store:app id → product_id
   // END GENERATED SITE PRODUCTS
 
   // First path segment after the optional /ja/ ("/ja/arrvd/terms/" → "arrvd"), or null.

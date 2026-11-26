@@ -44,9 +44,18 @@ test("ARRVD leads the home page in every phase, in the same order in both langua
     // The footer lists ARRVD first.
     const products = s.match(/<nav class="footer-col"[^>]*>[\s\S]*?<\/nav>/)[0];
     assert.match(products, new RegExp(`<ul>\\s*<li><a href="${PREFIX[lang]}/arrvd/">ARRVD</a></li>`), `${lang} footer`);
-    // The ARRVD hero's primary button is the first primary button on the page.
-    const firstPrimary = s.indexOf('class="btn btn-primary"');
-    assert.ok(firstPrimary > s.indexOf('<section id="arrvd"') && firstPrimary < s.indexOf('<section id="arrvd-values"'), `${lang}: ARRVD is the main action`);
+    // The first call to action on the page (primary button before the launch, App Store badge after it) is ARRVD's.
+    const first = Math.min(...['class="btn btn-primary"', 'class="app-store-badge-link"'].map((c) => s.indexOf(c)).filter((i) => i >= 0));
+    assert.ok(first > s.indexOf('<section id="arrvd"') && first < s.indexOf('<section id="arrvd-values"'), `${lang}: ARRVD is the main action`);
+  }
+});
+
+test("one App Store badge per page (Apple App Store marketing guidelines)", () => {
+  for (const [path, s] of Object.entries({ "index.html": HOME.en, "ja/index.html": HOME.ja, "arrvd/index.html": LP.en, "ja/arrvd/index.html": LP.ja })) {
+    const badges = [...s.matchAll(/<img [^>]*class="app-store-badge"[^>]*>/g)].map((m) => m[0]);
+    assert.ok(badges.length <= 1, `${path}: ${badges.length} badges`);
+    // Apple's own badge artwork in the page's language, unmodified (no CSS transforms on it).
+    for (const img of badges) assert.match(img, path.startsWith("ja/") ? /black\/ja-jp\?size=250x83" alt="App Storeからダウンロード"/ : /black\/en-us\?size=250x83" alt="Download on the App Store"/, path);
   }
 });
 
@@ -74,12 +83,17 @@ test("the ARRVD calls to action match the phase", () => {
       assert.equal(ids.size, 1, `${lang}: one ARRVD App Store id on all ARRVD calls to action`);
       const [id] = ids;
       assert.notEqual(id, MOJITSUNAGI_APP_ID);
-      assert.match(home.hero, /class="btn btn-primary"/, `${lang}: ARRVD is the primary action`);
       for (const [name, html] of Object.entries(all)) {
         assert.equal(appStoreIds(html).length, 1, `${lang} ${name}: App Store link`);
         assert.doesNotMatch(html, /arrvd-status|Preparing for release|リリース準備中/, `${lang} ${name}: no pre-launch wording`);
       }
-      for (const name of ["closing", "lp-hero", "lp-closing"]) assert.match(all[name], /class="app-store-badge"/, `${lang} ${name}: badge`);
+      // The App Store badge leads both heroes; the closing calls to action are the text button
+      // "Download on the App Store" / 「App Storeで入手」 (one badge per page).
+      for (const name of ["hero", "lp-hero"]) assert.match(all[name], /class="app-store-badge"/, `${lang} ${name}: badge`);
+      const label = lang === "en" ? "Download on the App Store" : "App Storeで入手";
+      for (const name of ["closing", "lp-closing"]) {
+        assert.match(all[name], new RegExp(`class="btn btn-primary" target="_blank" rel="noopener noreferrer">${label}</a>`), `${lang} ${name}: download button`);
+      }
       // ARRVD is sold only in Japan and Malaysia: the country-less URL (US storefront) is a 404, so each page
       // links to a storefront that has the app — JP on the Japanese pages, MY on the English pages.
       const storefront = lang === "ja" ? "jp" : "my";

@@ -1,6 +1,6 @@
 # ARRVD pages — before and after the App Store launch
 
-ARRVD is futodama's flagship. From before its App Store launch, the home page (`/` and `/ja/`) leads with
+ARRVD is futodama's flagship. Since before its App Store launch, the home page (`/` and `/ja/`) leads with
 ARRVD, and the order of the page never changes with the launch. The launch changes only the ARRVD calls to
 action, on four pages at once: the two home pages and the two ARRVD product pages (`/arrvd/`, `/ja/arrvd/`).
 
@@ -24,71 +24,55 @@ The footer lists ARRVD first.
 
 ## The two phases
 
-| | `prelaunch` (now) | `arrvd-live` (after the launch) |
+The pages are in `arrvd-live` since ARRVD went on sale on 2026-11-26 (App Store id `6813303271`, JP and MY).
+
+| | `prelaunch` (until 2026-11-26) | `arrvd-live` (now) |
 |---|---|---|
-| Home hero (`arrvd-cta:hero`) | Primary "Explore ARRVD" → `/arrvd/` + "Preparing for release on the App Store" | Primary "Get ARRVD" → App Store |
-| Home closing (`arrvd-cta:closing`) | "Learn more about ARRVD →" + status | App Store badge + "Learn more about ARRVD →" |
-| ARRVD page hero (`arrvd-cta:lp-hero`) | Status | App Store badge |
+| Home hero (`arrvd-cta:hero`) | Primary "Explore ARRVD" → `/arrvd/` + "Preparing for release on the App Store" | Apple's App Store badge + "Free · iPhone · Japan and Malaysia" |
+| Home closing (`arrvd-cta:closing`) | "Learn more about ARRVD →" + status | Button "Download on the App Store" / 「App Storeで入手」 + "Learn more about ARRVD →" |
+| ARRVD page hero (`arrvd-cta:lp-hero`) | Status | Apple's App Store badge + "Free · iPhone (iOS 15 or later) · Japan and Malaysia" |
 | ARRVD page FAQ "Is ARRVD available yet?" (`arrvd-cta:lp-faq`) | "Not yet…" | "Yes…" + App Store link |
-| ARRVD page closing (`arrvd-cta:lp-closing`) | "Preparing for release" + status | "Get ARRVD" + App Store badge |
+| ARRVD page closing (`arrvd-cta:lp-closing`) | "Preparing for release" + status | "Get ARRVD" + button "Download on the App Store" / 「App Storeで入手」 |
 
-Each marker is `<!-- arrvd-cta:NAME -->` … `<!-- /arrvd-cta -->`; the switch replaces only what is between them.
-No App Store id or URL is written anywhere before the App Store page is live.
+Each marker is `<!-- arrvd-cta:NAME -->` … `<!-- /arrvd-cta -->`; a switch replaces only what is between them.
 
-## Switching to `arrvd-live`
+Rules the tests check (`tests/home-phase.test.mjs`):
 
-Do this only after the ARRVD App Store page is live: open it in the App Store (JP and MY storefronts) and copy
-its URL and app id from that page — never from an email, a draft or memory.
+- **One App Store badge per page** (Apple's App Store marketing guidelines: "Use one App Store badge per layout"),
+  Apple's own artwork in the page's language, unmodified, shown at one height (53 px) in both languages.
+  Other App Store links on the same page are text — including Mojitsunagi's on the home page.
+- **Storefront URLs**: ARRVD is sold only in Japan and Malaysia, and the country-less
+  `https://apps.apple.com/app/arrvd/id6813303271` (US storefront) is a 404. Japanese pages link
+  `https://apps.apple.com/jp/app/arrvd/id6813303271`, English pages `https://apps.apple.com/my/app/arrvd/id6813303271`
+  (same app id; the iPhone App Store opens the visitor's own storefront either way).
+- **Registry first**: ARRVD's App Store id must be in the generated registry block of `script.js`, so App Store
+  clicks count for `arrvd` (`outbound_cta`, target `app_store`). The block is written only by
+  `npm run registry -- site-config --site <this repo> --write` from the production registry; never by hand.
 
-Use the storefront URLs, not the country-less one: ARRVD is sold only in Japan and Malaysia, and
-`https://apps.apple.com/app/arrvd/id<APP_ID>` (US storefront) returns 404 in a browser. `APP_STORE_URL` below is
-`https://apps.apple.com/jp/app/arrvd/id<APP_ID>` on the Japanese pages and
-`https://apps.apple.com/my/app/arrvd/id<APP_ID>` on the English pages (same app id; the iPhone App Store opens
-the visitor's own storefront either way). Confirmed live on 2026-11-26: id `6813303271` on both storefronts.
+## Before this goes to production
 
-1. **Measurement first (futodama-analytics, separate approval).** Add ARRVD's App Store platform to the
-   product registry and regenerate the generated block in `script.js`
-   (`npm run registry -- site-config --site <this repo> --write`), so ARRVD App Store clicks count for
-   `arrvd`. Until then they would count for the page (`site`). Never edit the generated block by hand.
-   The test below fails without it.
-2. **All four pages, in the same commit:**
-   1. `index.html`, `ja/index.html`: `<main id="main" data-home-phase="arrvd-live">`.
-      `arrvd/index.html`, `ja/arrvd/index.html`: `<main id="main" data-arrvd-phase="arrvd-live">`.
-   2. Replace the contents of the markers (keep the markers). English:
+1. **Registry (futodama-analytics, production D1 — needs the owner's approval).** Dry run checked on 2026-11-26:
 
-      ```html
-      <!-- arrvd-cta:hero -->
-      <a href="APP_STORE_URL" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Get ARRVD</a>
-      <!-- /arrvd-cta -->
+   ```
+   npm run registry -- link app_store 6813303271 --product arrvd --platform ios --release-date 2026-11-26 \
+     --bundle-id com.futodama.arrvd --store-url https://apps.apple.com/jp/app/arrvd/id6813303271 \
+     --sources asc_sales,asc_analytics --apply
+   npm run registry -- site-config --site ../futodama-website --write    # adds "app_store:6813303271":"arrvd"
+   npm run registry -- check-site --site ../futodama-website             # must report 0 errors
+   ```
 
-      <!-- arrvd-cta:closing -->
-      <a href="APP_STORE_URL" class="app-store-badge-link" target="_blank" rel="noopener noreferrer" aria-label="Download ARRVD on the App Store"><img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" alt="Download on the App Store" class="app-store-badge" width="160" height="53"></a>
-      <a href="/arrvd/" class="link-arrow">Learn more about ARRVD &rarr;</a>
-      <!-- /arrvd-cta -->
-
-      <!-- arrvd-cta:lp-hero -->
-      <a href="APP_STORE_URL" class="app-store-badge-link" target="_blank" rel="noopener noreferrer" aria-label="Download ARRVD on the App Store"><img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" alt="Download on the App Store" class="app-store-badge" width="160" height="53"></a>
-      <!-- /arrvd-cta -->
-
-      <!-- arrvd-cta:lp-faq -->
-      <p>Yes. ARRVD is available on the App Store for iPhone. <a href="APP_STORE_URL" target="_blank" rel="noopener noreferrer">Open ARRVD on the App Store</a>.</p>
-      <!-- /arrvd-cta -->
-
-      <!-- arrvd-cta:lp-closing -->
-      <h2>Get ARRVD</h2>
-      <p>ARRVD is available on the App Store for iPhone.</p>
-      <a href="APP_STORE_URL" class="app-store-badge-link" target="_blank" rel="noopener noreferrer" aria-label="Download ARRVD on the App Store"><img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" alt="Download on the App Store" class="app-store-badge" width="160" height="53"></a>
-      <!-- /arrvd-cta -->
-      ```
-
-      Japanese pages: "ARRVDを入手", `aria-label="ARRVDをApp Storeでダウンロード"`, badge `…/black/ja-jp?size=250x83`,
-      `alt="App Storeからダウンロード"`, link `/ja/arrvd/` "ARRVDを詳しく見る &rarr;",
-      FAQ「はい。ARRVDはiPhone向けにApp Storeで配信中です。<a …>App Storeで見る</a>」,
-      closing 見出し「ARRVDを入手」・本文「ARRVDはiPhone向けにApp Storeで配信中です。」.
-3. Read the four pages once more for any other pre-launch wording ("preparing for release", 「リリース準備中」).
-4. `node --test tests/*.test.mjs` — all tests must pass.
-5. Check `/`, `/ja/`, `/arrvd/` and `/ja/arrvd/` at 1280 px, 375 px and 320 px, and that the App Store links open
+   It also starts the daily ARRVD download import from the App Store sales reports (first-time downloads and
+   redownloads by country). Rollback: `npm run registry -- set-status arrvd:ios retired`, then `site-config --write`.
+2. Commit the regenerated `script.js` on this branch; `node --test tests/*.test.mjs` must pass with no failures.
+3. Check `/`, `/ja/`, `/arrvd/` and `/ja/arrvd/` at 1280 px, 375 px and 320 px, and that the App Store links open
    the ARRVD page.
+
+Until step 1 is done, `tests/home-phase.test.mjs` fails with "register ARRVD's App Store app first" — on purpose.
+
+## Switching back to `prelaunch`
+
+Not expected. If ARRVD is ever removed from sale, restore the `prelaunch` contents of the five markers from Git
+history (`git show 1c6fe85:index.html` etc.) and set both phase attributes back.
 
 ## Facts the copy relies on
 

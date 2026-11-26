@@ -1316,9 +1316,17 @@ html[lang="ja"] .home-hero h1 {
   flex-shrink: 0;
 }
 
+/* App Store badge: Apple's artwork at one height in both languages (EN 3:1, JA narrower) */
 .home-cta .app-store-badge,
-.home-closing .app-store-badge {
-  width: 160px;
+.home-closing .app-store-badge,
+.arrvd-hero-cta .app-store-badge,
+.cta-section .app-store-badge {
+  width: auto;
+  height: 53px;
+}
+
+.mini-card-cta .link-arrow {
+  white-space: normal;
 }
 
 .home-hero-visual,
@@ -1666,10 +1674,6 @@ html[lang="ja"] .home-hero h1 {
   margin-top: var(--space-3);
 }
 
-.arrvd-hero-cta .app-store-badge {
-  width: 160px;
-}
-
 .arrvd-meta {
   margin: 0;
   font-size: 0.9rem;
@@ -1683,11 +1687,6 @@ html[lang="ja"] .home-hero h1 {
 
 .arrvd-status--center {
   justify-content: center;
-}
-
-.cta-section .app-store-badge {
-  width: 160px;
-  margin: 0 auto;
 }
 
 @media (max-width: 640px) {
@@ -1786,6 +1785,10 @@ html[lang="ja"] .home-hero h1 {
 @media (max-width: 360px) {
   .home-hero {
     padding-top: 16px;
+  }
+
+  .arrvd-hero {
+    padding-top: var(--space-3);
   }
 
   .home-hero h1,
