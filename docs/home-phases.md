@@ -68,7 +68,8 @@ Rules the tests check (`tests/home-phase.test.mjs`):
    Rollback that keeps history: `npm run registry -- set-status arrvd:ios retired --apply` (stops new fetches,
    keeps stored rows and the audit trail), then `site-config --write`. `paused` stops fetching but keeps the
    site mapping. Deleting the rows instead would also drop fetched data — not equivalent, not recommended.
-2. Commit the regenerated `script.js` on this branch; `node --test tests/*.test.mjs` must pass with no failures.
+2. Run `node tools/asset-version.mjs --write` (the regenerated `script.js` gets a new content hash), commit,
+   and `node --test tests/*.test.mjs` must pass with no failures.
 3. Check `/`, `/ja/`, `/arrvd/` and `/ja/arrvd/` at 1280 px, 375 px and 320 px, and that the App Store links open
    the ARRVD page.
 
