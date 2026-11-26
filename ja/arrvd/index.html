@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ARRVD：家族の到着確認アプリ — futodama</title>
-  <meta name="description" content="ARRVDは、常時位置追跡をすることなく、大切な人が予定した場所へ到着したことを確認できる、プライバシーに配慮した家族向けアプリです。">
+  <title>ARRVD — 大切な人の「着いた」がわかる安心を。 | futodama</title>
+  <meta name="description" content="ARRVDはiPhone向けの家族の到着確認アプリです。家族で登録した場所への到着や、予定の時刻までに到着が確認できないことをお知らせします。現在地の地図も、移動の履歴もありません。">
   <link rel="canonical" href="https://futodama.app/ja/arrvd/">
   <link rel="alternate" hreflang="en" href="https://futodama.app/arrvd/">
   <link rel="alternate" hreflang="ja" href="https://futodama.app/ja/arrvd/">
@@ -12,8 +12,8 @@
 
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="futodama">
-  <meta property="og:title" content="ARRVD：家族の到着確認アプリ — futodama">
-  <meta property="og:description" content="ARRVDは、常時位置追跡をすることなく、大切な人が予定した場所へ到着したことを確認できる、プライバシーに配慮した家族向けアプリです。">
+  <meta property="og:title" content="ARRVD — 大切な人の「着いた」がわかる安心を。 | futodama">
+  <meta property="og:description" content="ARRVDはiPhone向けの家族の到着確認アプリです。家族で登録した場所への到着や、予定の時刻までに到着が確認できないことをお知らせします。現在地の地図も、移動の履歴もありません。">
   <meta property="og:url" content="https://futodama.app/ja/arrvd/">
   <meta property="og:locale" content="ja_JP">
   <meta property="og:locale:alternate" content="en_US">
@@ -24,17 +24,19 @@
   <meta property="og:image:alt" content="ARRVD product card">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="ARRVD：家族の到着確認アプリ — futodama">
-  <meta name="twitter:description" content="ARRVDは、常時位置追跡をすることなく、大切な人が予定した場所へ到着したことを確認できる、プライバシーに配慮した家族向けアプリです。">
+  <meta name="twitter:title" content="ARRVD — 大切な人の「着いた」がわかる安心を。 | futodama">
+  <meta name="twitter:description" content="ARRVDはiPhone向けの家族の到着確認アプリです。家族で登録した場所への到着や、予定の時刻までに到着が確認できないことをお知らせします。現在地の地図も、移動の履歴もありません。">
   <meta name="twitter:image" content="https://futodama.app/assets/brand/og/arrvd-og.png">
   <meta name="twitter:image:alt" content="ARRVD product card">
 
   <link rel="icon" href="/favicon.ico" sizes="32x32">
   <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preload" as="image" href="../../assets/brand/arrvd/screens/arrvd-home-ja-640.webp" imagesrcset="../../assets/brand/arrvd/screens/arrvd-home-ja-320.webp 320w, ../../assets/brand/arrvd/screens/arrvd-home-ja-640.webp 640w" imagesizes="(max-width: 900px) 240px, 280px" type="image/webp">
   <link rel="stylesheet" href="../../style.css">
 </head>
 <body>
+  <a href="#main" class="skip-link">本文へ移動</a>
   <header class="site-header">
     <div class="container header-inner">
       <a href="/ja/" class="logo" aria-label="futodama ホーム">
@@ -58,54 +60,64 @@
     </div>
   </header>
 
-  <main>
+  <main id="main" data-arrvd-phase="prelaunch">
+    <!-- The ARRVD calls to action switch with the home page: docs/home-phases.md -->
     <section class="arrvd-hero">
       <div class="container hero-grid">
         <div class="hero-text">
-          <span class="eyebrow">プロダクト</span>
-          <h1>ARRVD</h1>
-          <p class="product-copy">「到着した」という安心を。<br>ずっと居場所を追い続けることなく。</p>
+          <span class="eyebrow">iPhone向け 家族の到着確認アプリ</span>
+          <h1><img src="../../assets/brand/arrvd/app-icon/web/arrvd-app-icon-64.png" srcset="../../assets/brand/arrvd/app-icon/web/arrvd-app-icon-32.png 32w, ../../assets/brand/arrvd/app-icon/web/arrvd-app-icon-64.png 64w, ../../assets/brand/arrvd/app-icon/web/arrvd-app-icon-128.png 128w" sizes="36px" alt="" class="product-title-icon" width="32" height="32">ARRVD</h1>
+          <p class="product-copy"><span class="jp-nowrap">大切な人の</span><span class="jp-nowrap">『着いた』がわかる</span><span class="jp-nowrap">安心を。</span><br><span class="jp-nowrap">ずっと居場所を</span><span class="jp-nowrap">追い続けることなく。</span></p>
           <p>
-            必要な到着を、必要なときだけ確認する。プライバシーに配慮した家族向け到着確認アプリ。
+            <span class="jp-nowrap">家族で登録した場所への</span><span class="jp-nowrap">到着をお知らせし、</span><span class="jp-nowrap">予定の時刻までに</span><span class="jp-nowrap">到着が確認できないときも</span><span class="jp-nowrap">知らせます。</span><span class="jp-nowrap">現在地の地図も、</span><span class="jp-nowrap">移動の履歴もありません。</span>
           </p>
-          <span class="status-badge">近日公開</span>
+          <div class="arrvd-hero-cta">
+            <!-- arrvd-cta:lp-hero -->
+            <p class="arrvd-status"><span class="arrvd-status-dot" aria-hidden="true"></span>App Storeでのリリース準備中</p>
+            <!-- /arrvd-cta -->
+            <a href="#how-it-works" class="link-arrow">使い方を見る</a>
+          </div>
         </div>
-        <div class="hero-visual">
-          <img src="../../assets/brand/arrvd/arrival-mark.svg" alt="" class="arrival-mark" width="220" height="220">
-        </div>
+        <figure class="hero-visual home-hero-visual">
+          <div class="device">
+            <img src="../../assets/brand/arrvd/screens/arrvd-home-ja-640.webp" srcset="../../assets/brand/arrvd/screens/arrvd-home-ja-320.webp 320w, ../../assets/brand/arrvd/screens/arrvd-home-ja-640.webp 640w" sizes="(max-width: 900px) 240px, 280px" width="640" height="1101" alt="ARRVDのホーム画面。ゆい：最後の記録 今日16:21、自宅に到着。そら：最後の記録 今日15:40、自宅を出発。" fetchpriority="high" decoding="async">
+          </div>
+          <figcaption>ARRVDのアプリ画面（名前は例です）</figcaption>
+        </figure>
       </div>
     </section>
 
     <section class="content-section idea-section section-tint">
       <div class="container">
-        <h2>知りたいのは、「着いた？」だけかもしれない。</h2>
+        <h2><span class="jp-nowrap">知りたいのは、</span><span class="jp-nowrap">「着いた？」だけかもしれない。</span></h2>
         <p>
           家族の居場所をずっと追い続けたいわけではなく、「予定した場所に無事着いたか」だけ知りたい。
-          ARRVDは、その瞬間にフォーカスしたアプリです。
+          ARRVDは、その瞬間にフォーカスしたアプリです。いつも居場所を表示するのではなく、家族で登録した場所への到着を確認し、予定の到着が確認できないときにお知らせします。
         </p>
       </div>
     </section>
 
-    <section class="content-section section-wide">
+    <section class="content-section section-wide" id="how-it-works">
       <div class="container">
         <h2 class="text-center">使い方</h2>
         <div class="steps">
           <article class="step">
             <span class="step-number" aria-hidden="true">1</span>
-            <h3>場所を設定</h3>
-            <p>学校、習い事、職場など、到着を確認したい場所を設定。</p>
+            <h3>場所を登録</h3>
+            <p>オーガナイザーが自宅や学校などの場所を登録し、その場所でどのメンバーの到着を確認するかを選びます。</p>
           </article>
           <article class="step">
             <span class="step-number" aria-hidden="true">2</span>
             <h3>到着予定を設定</h3>
-            <p>到着予定の曜日・時間を設定。</p>
+            <p>その場所に到着する予定の曜日と時刻を設定します。</p>
           </article>
           <article class="step">
             <span class="step-number" aria-hidden="true">3</span>
-            <h3>到着を確認</h3>
-            <p>到着を確認。予定時刻までに到着しない場合は知らせる。</p>
+            <h3>到着や未到着を確認</h3>
+            <p>メンバーのiPhoneが到着を検知すると、オーガナイザーに通知されます。予定の時刻までに確認できないときは「まだ確認できていません」とお知らせします。</p>
           </article>
         </div>
+        <p class="home-how-note">家族は1回限りの招待リンクで参加し、共有するかどうかを本人が選びます。出発のお知らせは場所ごとにオンにできます。</p>
       </div>
     </section>
 
@@ -115,25 +127,28 @@
         <div class="feature-grid">
           <article class="feature-card">
             <h3>到着確認にフォーカス</h3>
-            <p>常時位置追跡ではなく、到着確認にフォーカス。</p>
+            <p>登録した場所への到着に絞った設計。現在地の地図も、移動の履歴もありません。</p>
           </article>
           <article class="feature-card">
             <h3>プライバシーへの配慮</h3>
-            <p>設計の初期段階からプライバシーに配慮しています。</p>
+            <p>到着・出発・まだ確認できていない到着の記録は、7日で自動的に削除されます。</p>
           </article>
           <article class="feature-card">
             <h3>必要な情報をシンプルに</h3>
-            <p>余計な機能を増やさず、必要な情報をシンプルに届ける。</p>
+            <p>余計な機能を増やさず、必要な到着とお知らせだけをシンプルに届けます。</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="content-section privacy-section">
+    <section class="content-section privacy-section" id="privacy">
       <div class="container">
         <h2>プライバシーを大切にした設計</h2>
         <p>
-          ARRVDは、必要以上に位置情報を見せ続ける体験ではなく、到着確認を中心にした設計を目指しています。
+          ARRVDは位置情報を使います。メンバーのiPhoneで、iOSの位置情報サービス（主に領域の監視）が、そのメンバーに割り当てられた場所への到着と出発を検知します（位置情報の許可を「常に」にすると、アプリを開いていなくても検知します）。iPhoneが送るのは到着・出発の記録で、座標や経路は送りません。誰かの現在地を表示することもありません。
+        </p>
+        <p>
+          メンバーは、アプリで共有を選んだときだけ共有し、いつでもやめられます。オーガナイザーは18歳以上、メンバーは13歳以上の方が利用でき、13〜17歳のメンバーは、保護者とご本人の両方が同意するまで何も共有されません（<a href="/ja/arrvd/guardians/">保護者の方へ</a>）。
         </p>
         <p class="disclaimer">
           ARRVDが扱う情報と扱わない情報は、<a href="/ja/arrvd/privacy/">ARRVD プライバシーポリシー</a>に記載しています。
@@ -148,8 +163,8 @@
         <div class="usecase-grid">
           <div class="usecase-item">学校</div>
           <div class="usecase-item">習い事・活動</div>
-          <div class="usecase-item">職場</div>
-          <div class="usecase-item">よく行く場所</div>
+          <div class="usecase-item">自宅</div>
+          <div class="usecase-item">職場・よく行く場所</div>
         </div>
       </div>
     </section>
@@ -160,19 +175,33 @@
         <div class="faq-list">
           <details class="faq-item">
             <summary>ARRVDは常時ライブで居場所を表示しますか？</summary>
-            <p>いいえ。ARRVDは、常時のリアルタイム表示ではなく、到着確認を中心に設計しています。</p>
+            <p>いいえ。ARRVDは、常時のリアルタイム表示ではなく、到着確認を中心に設計しています。移動の履歴も作りません。</p>
+          </details>
+          <details class="faq-item">
+            <summary>ARRVDは位置情報を使いますか？</summary>
+            <p>はい。メンバーのiPhoneが、iOSの位置情報サービスで登録した場所への到着と出発を検知します（位置情報の許可が「常に」の場合はバックグラウンドでも検知します）。家族に共有されるのは、到着・出発の記録だけです。</p>
           </details>
           <details class="faq-item">
             <summary>ARRVDはもう利用できますか？</summary>
-            <p>まだご利用いただけません。ARRVDは現在開発中です。</p>
+            <!-- arrvd-cta:lp-faq -->
+            <p>まだご利用いただけません。ARRVDは現在、App Storeでのリリースを準備しています。</p>
+            <!-- /arrvd-cta -->
           </details>
           <details class="faq-item">
             <summary>ARRVDはどんな方向けですか？</summary>
-            <p>学校や習い事、職場など、予定した場所へ大切な人が到着したという安心を求める家族向けです。</p>
+            <p>学校や習い事、職場など、予定した場所へ大切な人が到着したという安心を求める家族向けです。マレーシアと日本にお住まいの方を対象にしています。オーガナイザーは18歳以上、メンバーは13歳以上の方が利用できます。</p>
+          </details>
+          <details class="faq-item">
+            <summary>無料で使えますか？</summary>
+            <p>ARRVDには無料のプランがあります。有料のプランのARRVD Plusは、提供を始めた後にアプリ内で購入できます。各プランの今の上限はアプリ内に表示されます。</p>
+          </details>
+          <details class="faq-item">
+            <summary>すべての到着を検知できますか？</summary>
+            <p>いいえ、保証はできません。検知はiOSやiPhoneの設定、電波の状況に左右されるため、到着の検知が遅れたり、検知できなかったりすることがあり、到着していても「まだ確認できていません」と届くことがあります。ARRVDは緊急サービスではありません。検知を助ける設定は<a href="/ja/arrvd/support/">サポート</a>をご覧ください。</p>
           </details>
           <details class="faq-item">
             <summary>Androidにも対応しますか？</summary>
-            <p>初回公開以降の対応プラットフォームは検討中で、まだ発表しておりません。</p>
+            <p>ARRVDはiPhone向けのアプリです。初回公開以降の対応プラットフォームは検討中で、まだ発表しておりません。</p>
           </details>
           <details class="faq-item">
             <summary>プライバシーはどのように配慮されていますか？</summary>
@@ -184,9 +213,11 @@
 
     <section class="cta-section section-tint">
       <div class="container">
-        <h2>近日公開</h2>
-        <p>ARRVDは現在開発中です。まだダウンロードいただけません。</p>
-        <span class="status-badge">近日公開</span>
+        <!-- arrvd-cta:lp-closing -->
+        <h2>リリース準備中</h2>
+        <p>ARRVDは現在、App Storeでのリリースを準備しています。まだダウンロードいただけません。</p>
+        <p class="arrvd-status arrvd-status--center"><span class="arrvd-status-dot" aria-hidden="true"></span>App Storeでのリリース準備中</p>
+        <!-- /arrvd-cta -->
       </div>
     </section>
 

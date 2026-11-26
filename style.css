@@ -345,42 +345,8 @@ summary:focus-visible {
 }
 
 /* ==========================================================================
-   Hero
+   Hero call-to-action group (Celestial Oracle product pages)
    ========================================================================== */
-
-.hero {
-  padding: 48px 0 32px;
-  text-align: center;
-}
-
-.hero .container {
-  max-width: 700px;
-}
-
-.hero h1 {
-  margin-bottom: var(--space-2);
-  letter-spacing: -0.01em;
-}
-
-.hero-sub {
-  font-size: 1.05rem;
-  color: var(--navy);
-  font-weight: 600;
-  margin: 0 auto var(--space-1);
-  max-width: 30em;
-}
-
-.hero-body {
-  font-size: 1rem;
-  line-height: 1.85;
-  color: var(--charcoal);
-  margin: 0 auto var(--space-3);
-  max-width: 52ch;
-}
-
-.hero .btn {
-  margin-top: var(--space-1);
-}
 
 .hero-cta-group {
   display: flex;
@@ -396,16 +362,11 @@ summary:focus-visible {
 }
 
 /* ==========================================================================
-   Available now (home page): the Celestial Oracle entry (today's card) and a
-   one-line Mojitsunagi row. Before the ARRVD launch this block sits between the
-   hero and Featured ARRVD; after it, below Featured ARRVD (docs/home-phases.md). Deep Navy + Gold product
+   Celestial Oracle entry on the home page (today's card, PDCA 2026-10-19-A1),
+   in "More from futodama" below the ARRVD sections (docs/home-phases.md). Deep Navy + Gold product
    colors; gold only as the border and the label dot. Sizes from the type scale:
    H3 24px / 20px (mobile) for the heading, Caption 12px for the image note.
    ========================================================================== */
-
-.available-now {
-  padding: 0 0 var(--space-1);
-}
 
 .today-card-inner {
   display: grid;
@@ -459,8 +420,8 @@ summary:focus-visible {
   background: var(--gold);
 }
 
-.today-card h2 {
-  font-size: 1.5rem;
+.today-card h3 {
+  font-size: 1.3rem;
   margin-bottom: 4px;
 }
 
@@ -500,7 +461,7 @@ summary:focus-visible {
     align-self: center;
   }
 
-  .today-card h2 {
+  .today-card h3 {
     font-size: 1.25rem;
     margin-bottom: 0;
   }
@@ -522,98 +483,19 @@ summary:focus-visible {
   }
 }
 
-.available-more {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  max-width: 760px;
-  margin: 12px auto 0;
-  padding: 12px var(--space-3);
-  background: #fff;
-  border: 1px solid var(--border-soft);
-  border-radius: var(--radius);
-}
-
-.available-more .product-app-icon {
-  margin-top: 4px;
-}
-
-.available-more strong {
-  color: var(--navy);
-  margin-right: 4px;
-}
-
-@media (max-width: 640px) {
-  .available-more {
-    padding: 12px var(--space-2);
-  }
-}
-
 /* ==========================================================================
-   Featured ARRVD (2-column)
+   Shared links, App Store badge, ARRVD mark
    ========================================================================== */
-
-.featured {
-  padding: 32px 0 var(--space-5);
-}
-
-.featured-arrvd {
-  display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  gap: var(--space-4);
-  align-items: center;
-  background: #fff;
-  border: 1px solid rgba(59, 130, 196, 0.3);
-  border-radius: var(--radius);
-  padding: 48px;
-}
-
-.featured-arrvd h3 {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 1.9rem;
-  margin-bottom: var(--space-2);
-}
-
-.featured-arrvd .featured-label {
-  margin-bottom: 12px;
-}
-
-.featured-arrvd .product-copy {
-  margin-bottom: 8px;
-}
-
-.card-cta-group {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 12px;
-  margin-top: 8px;
-}
 
 .app-store-badge-link {
   display: inline-block;
   line-height: 0;
 }
 
-.app-store-badge-link--disabled {
-  cursor: default;
-  pointer-events: none;
-  opacity: 0.88;
-}
-
 .app-store-badge {
   display: block;
   width: 190px;
   height: auto;
-}
-
-.badge-coming-soon {
-  display: block;
-  margin-top: 6px;
-  font-size: 0.8rem;
-  color: var(--charcoal);
 }
 
 .link-arrow {
@@ -627,12 +509,6 @@ summary:focus-visible {
   text-decoration: underline;
 }
 
-.featured-visual {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .arrival-mark {
   width: 100%;
   max-width: 260px;
@@ -640,69 +516,8 @@ summary:focus-visible {
 }
 
 /* ==========================================================================
-   Products
+   Product status and copy
    ========================================================================== */
-
-.products {
-  padding: var(--space-5) 0;
-}
-
-.products h2 {
-  text-align: center;
-  margin-bottom: var(--space-4);
-}
-
-.product-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-3);
-}
-
-.product-card {
-  background: #fff;
-  border: 1px solid var(--border-soft);
-  border-radius: var(--radius);
-  padding: var(--space-4);
-}
-
-.product-card h3 {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.product-icon {
-  width: 32px;
-  height: 32px;
-  flex-shrink: 0;
-}
-
-.product-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  flex-shrink: 0;
-}
-
-.product-card--arrvd .product-dot {
-  background: var(--blue);
-}
-
-.product-card--mojitsunagi .product-dot {
-  background: var(--green);
-}
-
-.product-card--celestial .product-dot {
-  background: var(--gold);
-}
-
-.product-app-icon {
-  display: block;
-  flex-shrink: 0;
-  width: 20px;
-  height: 20px;
-  border-radius: 22%;
-}
 
 .product-status {
   display: block;
@@ -711,52 +526,15 @@ summary:focus-visible {
   color: var(--charcoal);
 }
 
-.card-cta-group .product-status {
-  margin-top: 0;
-}
-
-.product-card .app-store-badge {
-  width: 150px;
-}
-
-.featured-label {
-  display: inline-block;
-  background: rgba(59, 130, 196, 0.12);
-  color: var(--blue-text);
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  padding: 4px 12px;
-  border-radius: 999px;
-  margin-bottom: var(--space-2);
-}
-
 .product-copy {
   font-size: 1.1rem;
   font-weight: 600;
   color: var(--navy);
 }
 
-.product-sub {
-  color: var(--charcoal);
-}
-
 /* ==========================================================================
    What we believe
    ========================================================================== */
-
-.beliefs {
-  padding: var(--space-5) 0;
-  background: #fff;
-  border-top: 1px solid var(--border-faint);
-  border-bottom: 1px solid var(--border-faint);
-}
-
-.beliefs h2 {
-  text-align: center;
-  margin-bottom: var(--space-4);
-}
 
 .belief-grid {
   display: grid;
@@ -830,32 +608,6 @@ summary:focus-visible {
 
 .about--standalone {
   padding-top: var(--space-5);
-}
-
-/* ==========================================================================
-   Bottom CTA (homepage)
-   ========================================================================== */
-
-.cta-band {
-  background: var(--warm-white);
-  border-top: 1px solid var(--border-faint);
-  padding: 48px 0;
-  text-align: center;
-}
-
-.cta-band-heading {
-  font-size: 1.5rem;
-  margin-bottom: var(--space-2);
-}
-
-.cta-band .app-store-badge {
-  width: 150px;
-  margin: 0 auto;
-}
-
-.cta-band .link-arrow {
-  display: block;
-  margin-top: var(--space-3);
 }
 
 /* ==========================================================================
@@ -1414,6 +1166,650 @@ summary:focus-visible {
 }
 
 /* ==========================================================================
+   Home page — ARRVD first (docs/home-phases.md)
+   Order: ARRVD hero → values → how it works → privacy and consent → more
+   products → beliefs. Simple Dot: blue only as the dot, icons and accents;
+   text stays Deep Navy / Charcoal; one primary button per block.
+   ========================================================================== */
+
+.skip-link {
+  position: absolute;
+  left: var(--space-2);
+  top: -60px;
+  z-index: 100;
+  padding: 8px 16px;
+  background: var(--navy);
+  color: #fff;
+  border-radius: var(--radius);
+  font-weight: 600;
+}
+
+.skip-link:focus {
+  top: var(--space-1);
+  color: #fff;
+}
+
+.nav-arrvd {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-right: var(--space-4);
+  padding: 6px 14px;
+  border: 1px solid rgba(59, 130, 196, 0.45);
+  border-radius: 999px;
+  color: var(--navy);
+  font-weight: 600;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.nav-arrvd::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--blue);
+}
+
+.nav-arrvd:hover,
+.nav-arrvd:focus-visible {
+  background: rgba(59, 130, 196, 0.08);
+  text-decoration: none;
+}
+
+.home-hero {
+  padding: 56px 0 64px;
+  background: linear-gradient(180deg, var(--warm-white) 0%, #EEF4FA 100%);
+  border-bottom: 1px solid var(--border-faint);
+}
+
+.home-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  gap: var(--space-5);
+  align-items: center;
+}
+
+.home-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 var(--space-2);
+  color: var(--navy);
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.home-eyebrow-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 22%;
+  flex-shrink: 0;
+}
+
+.home-eyebrow strong {
+  font-weight: 700;
+  margin-right: 6px;
+}
+
+.home-eyebrow-note {
+  color: var(--charcoal);
+}
+
+.home-hero h1 {
+  font-size: clamp(2rem, 4.2vw, 2.75rem);
+  letter-spacing: -0.015em;
+  line-height: 1.18;
+  margin-bottom: var(--space-2);
+}
+
+html[lang="ja"] .home-hero h1 {
+  font-size: clamp(1.85rem, 4.1vw, 2.7rem);
+  letter-spacing: 0;
+  line-height: 1.3;
+}
+
+.home-hero-sub {
+  margin: 0 0 var(--space-2);
+  color: var(--navy);
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.home-hero-lead {
+  margin: 0 0 var(--space-3);
+  max-width: 34em;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.home-cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 24px;
+}
+
+.home-cta .arrvd-status {
+  flex-basis: 100%;
+  order: 3;
+}
+
+.home-cta-secondary {
+  order: 2;
+}
+
+.arrvd-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--charcoal);
+}
+
+.arrvd-status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 2px solid var(--blue);
+  flex-shrink: 0;
+}
+
+.home-cta .app-store-badge,
+.home-closing .app-store-badge {
+  width: 160px;
+}
+
+.home-hero-visual,
+.home-values-visual {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.device {
+  width: 100%;
+  max-width: 280px;
+  padding: 10px;
+  background: var(--navy);
+  border-radius: 40px;
+  box-shadow: 0 24px 48px rgba(31, 42, 55, 0.18), 0 4px 12px rgba(31, 42, 55, 0.1);
+}
+
+.device img {
+  width: 100%;
+  height: auto;
+  border-radius: 30px;
+  background: #F8FAFC;
+}
+
+.device--small {
+  max-width: 240px;
+}
+
+.home-hero-visual figcaption,
+.home-values-visual figcaption {
+  margin-top: 12px;
+  font-size: 0.8rem;
+  color: var(--charcoal);
+  text-align: center;
+}
+
+.home-values,
+.home-how,
+.home-trust,
+.home-products,
+.home-beliefs {
+  padding: var(--space-6) 0;
+}
+
+.home-values {
+  background: #fff;
+}
+
+.home-values-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: var(--space-5);
+  align-items: center;
+}
+
+.value-list {
+  list-style: none;
+  margin: var(--space-3) 0 0;
+  padding: 0;
+  display: grid;
+  gap: var(--space-3);
+}
+
+.value-row {
+  position: relative;
+  padding-left: 28px;
+}
+
+.value-row::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--blue);
+}
+
+.value-row h3 {
+  font-size: 1.2rem;
+  margin-bottom: 4px;
+}
+
+.value-row p {
+  margin: 0;
+}
+
+.home-how {
+  background: var(--warm-white);
+  border-top: 1px solid var(--border-faint);
+}
+
+.home-steps {
+  list-style: none;
+  margin: var(--space-4) 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-3);
+}
+
+.home-step {
+  position: relative;
+  background: #fff;
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius);
+  padding: 60px var(--space-3) var(--space-3);
+}
+
+.home-step .step-number {
+  top: var(--space-3);
+  left: var(--space-3);
+}
+
+.home-step h3 {
+  font-size: 1.15rem;
+  margin-bottom: 6px;
+}
+
+.home-step p {
+  margin: 0;
+}
+
+.home-how-note {
+  margin: var(--space-3) auto 0;
+  max-width: 40em;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+.home-trust {
+  background: #fff;
+  border-top: 1px solid var(--border-faint);
+}
+
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+}
+
+.trust-card {
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius);
+  padding: var(--space-3);
+  background: var(--warm-white);
+}
+
+.trust-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+}
+
+.trust-card p {
+  margin: 0;
+  font-size: 0.97rem;
+}
+
+.trust-links ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 28px;
+  margin: var(--space-3) 0 0;
+  padding: 0;
+}
+
+.trust-links a {
+  font-weight: 600;
+}
+
+.home-closing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-top: var(--space-5);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--border-faint);
+  text-align: center;
+}
+
+.home-closing-heading {
+  margin: 0;
+  color: var(--navy);
+  font-size: 1.4rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.home-products {
+  background: var(--warm-white);
+  border-top: 1px solid var(--border-faint);
+}
+
+.home-product-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+  align-items: stretch;
+}
+
+.home-product-grid .today-card-inner {
+  grid-template-columns: 72px minmax(0, 1fr);
+  max-width: none;
+  height: 100%;
+  align-content: start;
+}
+
+.home-product-grid .today-card-figure {
+  grid-row: 1 / span 2;
+}
+
+.home-product-grid .today-card-cta {
+  grid-column: 1 / -1;
+  grid-row: auto;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 16px;
+  max-width: none;
+  margin-top: var(--space-2);
+  text-align: left;
+}
+
+.mini-card {
+  background: #fff;
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius);
+  padding: var(--space-3);
+}
+
+.mini-card--mojitsunagi {
+  border-color: rgba(111, 146, 117, 0.5);
+}
+
+.mini-card-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.mini-card-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 22%;
+  flex-shrink: 0;
+}
+
+.mini-card .eyebrow {
+  margin-bottom: 0;
+  color: var(--navy);
+}
+
+.mini-card--mojitsunagi .eyebrow::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 8px;
+  vertical-align: 0.02em;
+  background: var(--green);
+}
+
+.mini-card h3 {
+  font-size: 1.3rem;
+  margin: 0;
+}
+
+.mini-card > p {
+  margin: 0 0 var(--space-2);
+}
+
+.mini-card-cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 16px;
+}
+
+.mini-card-cta .product-status {
+  margin: 0;
+}
+
+.mini-card .app-store-badge {
+  width: 150px;
+}
+
+.home-product-links {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 32px;
+  margin: var(--space-3) 0 0;
+  padding: 0;
+}
+
+.home-beliefs {
+  background: #fff;
+  border-top: 1px solid var(--border-faint);
+}
+
+.home-beliefs-lead {
+  max-width: 40em;
+  margin: 0 auto var(--space-4);
+  text-align: center;
+}
+
+.home-about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: var(--space-4);
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--border-soft);
+}
+
+.home-about .tagline {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+/* ARRVD product page: the label names iPhone, so keep its case */
+.arrvd-hero .eyebrow {
+  text-transform: none;
+  letter-spacing: 0.02em;
+}
+
+/* ARRVD product page: status and the App Store badge after the launch */
+.arrvd-hero-cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 24px;
+  margin-top: var(--space-3);
+}
+
+.arrvd-hero-cta .app-store-badge {
+  width: 160px;
+}
+
+.arrvd-status--center {
+  justify-content: center;
+}
+
+.cta-section .app-store-badge {
+  width: 160px;
+  margin: 0 auto;
+}
+
+@media (max-width: 640px) {
+  .home-product-grid .today-card-inner {
+    grid-template-columns: 56px minmax(0, 1fr);
+  }
+
+  .home-product-grid .today-card-figure {
+    grid-row: 1;
+  }
+}
+
+@media (max-width: 900px) {
+  .home-hero {
+    padding: 32px 0 48px;
+  }
+
+  .home-hero-grid,
+  .home-values-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-4);
+  }
+
+  .home-values-visual {
+    order: 2;
+  }
+
+  .device {
+    max-width: 240px;
+  }
+
+  .home-steps,
+  .home-product-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .home-values,
+  .home-how,
+  .home-trust,
+  .home-products,
+  .home-beliefs {
+    padding: var(--space-5) 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-arrvd {
+    margin-right: 8px;
+  }
+
+  .trust-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .home-hero {
+    padding: 24px 0 40px;
+  }
+
+  .home-eyebrow {
+    font-size: 0.85rem;
+    margin-bottom: 12px;
+  }
+
+  .home-hero-lead {
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+
+  .home-cta .btn {
+    flex: 1 1 100%;
+    text-align: center;
+  }
+
+  .home-cta .arrvd-status {
+    order: 2;
+    justify-content: center;
+  }
+
+  .home-cta-secondary {
+    order: 3;
+  }
+
+  .home-closing-heading {
+    font-size: 1.2rem;
+  }
+
+  .home-product-grid .today-card-cta {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
+}
+
+@media (max-width: 360px) {
+  .home-hero {
+    padding-top: 16px;
+  }
+
+  .home-hero h1,
+  html[lang="ja"] .home-hero h1 {
+    font-size: 1.7rem;
+  }
+
+  .home-hero-sub {
+    font-size: 1.05rem;
+    margin-bottom: 12px;
+  }
+
+  .home-hero-lead {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: var(--space-2);
+  }
+}
+
+@media (max-width: 340px) {
+  .header-inner {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .logo {
+    font-size: 1.1rem;
+  }
+
+  .nav-arrvd {
+    padding: 5px 10px;
+  }
+}
+
+/* ==========================================================================
    Responsive
    ========================================================================== */
 
@@ -1424,13 +1820,8 @@ summary:focus-visible {
     grid-template-columns: 1fr;
   }
 
-  .featured-arrvd,
   .arrvd-hero .hero-grid {
     grid-template-columns: 1fr;
-  }
-
-  .featured-arrvd {
-    row-gap: 24px;
   }
 
   .arrival-mark {
@@ -1447,10 +1838,6 @@ summary:focus-visible {
 }
 
 @media (max-width: 768px) {
-  .product-grid {
-    grid-template-columns: 1fr;
-  }
-
   .values-grid {
     grid-template-columns: 1fr;
   }
@@ -1491,30 +1878,6 @@ summary:focus-visible {
 }
 
 @media (max-width: 480px) {
-  .hero {
-    padding: 32px 0 var(--space-3);
-  }
-
-  .featured {
-    padding-top: var(--space-3);
-  }
-
-  .featured-arrvd {
-    padding: 32px;
-  }
-
-  .featured-arrvd .featured-label {
-    margin-bottom: var(--space-1);
-  }
-
-  .cta-band {
-    padding: 32px 0;
-  }
-
-  .cta-band-heading {
-    font-size: 1.2rem;
-  }
-
   .usecase-grid {
     grid-template-columns: 1fr 1fr;
   }
@@ -1526,10 +1889,6 @@ summary:focus-visible {
 
   .footer-col ul {
     align-items: center;
-  }
-
-  .beliefs {
-    padding: var(--space-4) 0;
   }
 
   .belief-grid {

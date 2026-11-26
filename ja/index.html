@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>futodama — 毎日を、少し安心に。少し楽しく。少し軽やかに。</title>
-  <meta name="description" content="futodamaは、日常を少し良くするプロダクトをつくるインディペンデント・プロダクトスタジオです。ARRVD、もじつなぎ、Celestial Oracleなど、毎日にそっと寄り添うアプリをつくっています。">
+  <title>futodama — ARRVD：大切な人の「着いた」がわかる安心を。</title>
+  <meta name="description" content="futodamaは、毎日を少し軽やかにするシンプルなアプリをつくるプロダクトスタジオです。旗艦プロダクトのARRVDは、家族で決めた場所への到着をお知らせする到着確認アプリ。居場所を地図で追い続けることはありません。Celestial Oracle、もじつなぎもご紹介します。">
   <link rel="canonical" href="https://futodama.app/ja/">
   <link rel="alternate" hreflang="en" href="https://futodama.app/">
   <link rel="alternate" hreflang="ja" href="https://futodama.app/ja/">
@@ -12,8 +12,8 @@
 
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="futodama">
-  <meta property="og:title" content="futodama — 毎日を、少し安心に。少し楽しく。少し軽やかに。">
-  <meta property="og:description" content="futodamaは、日常を少し良くするプロダクトをつくるインディペンデント・プロダクトスタジオです。ARRVD、もじつなぎ、Celestial Oracleなど、毎日にそっと寄り添うアプリをつくっています。">
+  <meta property="og:title" content="futodama — ARRVD：大切な人の「着いた」がわかる安心を。">
+  <meta property="og:description" content="futodamaは、毎日を少し軽やかにするシンプルなアプリをつくるプロダクトスタジオです。旗艦プロダクトのARRVDは、家族で決めた場所への到着をお知らせする到着確認アプリ。居場所を地図で追い続けることはありません。Celestial Oracle、もじつなぎもご紹介します。">
   <meta property="og:url" content="https://futodama.app/ja/">
   <meta property="og:locale" content="ja_JP">
   <meta property="og:locale:alternate" content="en_US">
@@ -24,14 +24,15 @@
   <meta property="og:image:alt" content="futodama brand card">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="futodama — 毎日を、少し安心に。少し楽しく。少し軽やかに。">
-  <meta name="twitter:description" content="futodamaは、日常を少し良くするプロダクトをつくるインディペンデント・プロダクトスタジオです。ARRVD、もじつなぎ、Celestial Oracleなど、毎日にそっと寄り添うアプリをつくっています。">
+  <meta name="twitter:title" content="futodama — ARRVD：大切な人の「着いた」がわかる安心を。">
+  <meta name="twitter:description" content="futodamaは、毎日を少し軽やかにするシンプルなアプリをつくるプロダクトスタジオです。旗艦プロダクトのARRVDは、家族で決めた場所への到着をお知らせする到着確認アプリ。居場所を地図で追い続けることはありません。Celestial Oracle、もじつなぎもご紹介します。">
   <meta name="twitter:image" content="https://futodama.app/assets/brand/og/futodama-og.png">
   <meta name="twitter:image:alt" content="futodama brand card">
 
   <link rel="icon" href="/favicon.ico" sizes="32x32">
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preload" as="image" href="../assets/brand/arrvd/screens/arrvd-home-ja-640.webp" imagesrcset="../assets/brand/arrvd/screens/arrvd-home-ja-320.webp 320w, ../assets/brand/arrvd/screens/arrvd-home-ja-640.webp 640w" imagesizes="(max-width: 900px) 240px, 280px" type="image/webp">
   <link rel="stylesheet" href="../style.css">
 
   <script type="application/ld+json">
@@ -44,12 +45,14 @@
   </script>
 </head>
 <body>
+  <a href="#main" class="skip-link">本文へ移動</a>
   <header class="site-header">
     <div class="container header-inner">
       <a href="/ja/" class="logo" aria-label="futodama ホーム">
         <img src="../assets/brand/logo/futodama-symbol.svg" alt="" width="26" height="26" class="logo-dot">futodama
       </a>
       <nav class="main-nav" aria-label="メインナビゲーション">
+        <a href="/ja/arrvd/" class="nav-arrvd">ARRVD</a>
         <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-menu" aria-label="メニューを開閉">
           <span class="hamburger"></span>
         </button>
@@ -67,112 +70,175 @@
     </div>
   </header>
 
-  <main data-home-phase="prelaunch">
-    <section class="hero">
+  <main id="main" data-home-phase="prelaunch">
+    <!-- Order of the home page and the ARRVD calls to action: docs/home-phases.md -->
+    <section id="arrvd" class="home-hero" aria-labelledby="home-hero-heading">
+      <div class="container home-hero-grid">
+        <div class="home-hero-text">
+          <p class="home-eyebrow">
+            <img src="../assets/brand/arrvd/app-icon/web/arrvd-app-icon-64.png" srcset="../assets/brand/arrvd/app-icon/web/arrvd-app-icon-32.png 32w, ../assets/brand/arrvd/app-icon/web/arrvd-app-icon-64.png 64w, ../assets/brand/arrvd/app-icon/web/arrvd-app-icon-128.png 128w" sizes="28px" alt="" class="home-eyebrow-icon" width="28" height="28">
+            <span><strong>ARRVD</strong> <span class="home-eyebrow-note">iPhone向け 家族の到着確認アプリ</span></span>
+          </p>
+          <h1 id="home-hero-heading"><span class="jp-nowrap">大切な人の</span><span class="jp-nowrap">『着いた』がわかる</span><span class="jp-nowrap">安心を。</span></h1>
+          <p class="home-hero-sub">ずっと居場所を追い続けることなく。</p>
+          <p class="home-hero-lead">
+            <span class="jp-nowrap">自宅や学校、習い事など、</span><span class="jp-nowrap">家族で登録した場所への</span><span class="jp-nowrap">到着をお知らせ。</span><span class="jp-nowrap">予定の時刻までに</span><span class="jp-nowrap">到着が確認できないときも</span><span class="jp-nowrap">知らせます。</span><span class="jp-nowrap">現在地の地図も、</span><span class="jp-nowrap">移動の履歴もありません。</span>
+          </p>
+          <div class="home-cta">
+            <!-- arrvd-cta:hero -->
+            <a href="/ja/arrvd/" class="btn btn-primary">ARRVDを詳しく見る</a>
+            <p class="arrvd-status"><span class="arrvd-status-dot" aria-hidden="true"></span>App Storeでのリリース準備中</p>
+            <!-- /arrvd-cta -->
+            <a href="#how-it-works" class="link-arrow home-cta-secondary">使い方を見る</a>
+          </div>
+        </div>
+        <figure class="home-hero-visual">
+          <div class="device">
+            <img src="../assets/brand/arrvd/screens/arrvd-home-ja-640.webp" srcset="../assets/brand/arrvd/screens/arrvd-home-ja-320.webp 320w, ../assets/brand/arrvd/screens/arrvd-home-ja-640.webp 640w" sizes="(max-width: 900px) 240px, 280px" width="640" height="1101" alt="ARRVDのホーム画面。ゆい：最後の記録 今日16:21、自宅に到着。そら：最後の記録 今日15:40、自宅を出発。" fetchpriority="high" decoding="async">
+          </div>
+          <figcaption>ARRVDのアプリ画面（名前は例です）</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="arrvd-values" class="home-values" aria-labelledby="home-values-heading">
+      <div class="container home-values-grid">
+        <figure class="home-values-visual">
+          <div class="device device--small">
+            <img src="../assets/brand/arrvd/screens/arrvd-activity-ja-640.webp" srcset="../assets/brand/arrvd/screens/arrvd-activity-ja-320.webp 320w, ../assets/brand/arrvd/screens/arrvd-activity-ja-640.webp 640w" sizes="240px" width="640" height="1024" alt="ARRVDのアクティビティ画面（直近7日間）。そら：18:05 自宅への到着がまだ確認できていません。ゆい：16:21 自宅に到着、15:52 学校を出発。そら：15:40 自宅を出発。ゆい：8:12 学校に到着。" loading="lazy" decoding="async">
+          </div>
+          <figcaption>アクティビティ：到着・出発・まだ確認できていない到着</figcaption>
+        </figure>
+        <div class="home-values-text">
+          <h2 id="home-values-heading">安心を、シンプルに。</h2>
+          <ul class="value-list">
+            <li class="value-row">
+              <h3>大切な場所への到着がわかる</h3>
+              <p>自宅、学校、習い事、職場など、家族で登録した場所に到着したことを確認できます。</p>
+            </li>
+            <li class="value-row">
+              <h3>必要なお知らせが届く</h3>
+              <p>到着したとき、そして予定の時刻までに到着が確認できないときに、オーガナイザーにお知らせが届きます。出発のお知らせは場所ごとにオンにできます。</p>
+            </li>
+            <li class="value-row">
+              <h3>追い続けない、プライバシーへの配慮</h3>
+              <p>現在地の地図も、移動の履歴もありません。家族に共有されるのは登録した場所への到着と出発だけで、その記録は7日で自動的に削除されます。</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="how-it-works" class="home-how" aria-labelledby="home-how-heading">
       <div class="container">
-        <h1>毎日を、<br class="jp-break-narrow">少し安心に。<br>少し楽しく。<br>少し軽やかに。</h1>
-        <p class="hero-sub">日常を少し良くする<span class="jp-nowrap">プロダクトをつくる</span><br><span class="jp-nowrap">インディペンデント</span>・<span class="jp-nowrap">プロダクトスタジオ。</span></p>
-        <p class="hero-body">
-          安心、楽しさ、気づき、便利さ。
-          <span class="jp-nowrap">人の気持ちに寄り添う</span><span class="jp-nowrap">シンプルなデジタル体験</span>を<span class="jp-nowrap">つくります。</span>
-        </p>
-        <div class="hero-cta-group">
-          <!-- arrvd-cta:hero -->
-          <a href="#products" class="btn btn-outline">ARRVDを見る</a>
+        <h2 id="home-how-heading" class="text-center">使い方</h2>
+        <ol class="home-steps">
+          <li class="home-step">
+            <span class="step-number" aria-hidden="true">1</span>
+            <h3>場所を登録</h3>
+            <p>オーガナイザーが自宅や学校などの場所を登録し、その場所でどのメンバーの到着を確認するかを選びます。</p>
+          </li>
+          <li class="home-step">
+            <span class="step-number" aria-hidden="true">2</span>
+            <h3>到着予定を設定</h3>
+            <p>その場所に到着する予定の曜日と時刻を設定します。</p>
+          </li>
+          <li class="home-step">
+            <span class="step-number" aria-hidden="true">3</span>
+            <h3>到着や未到着を確認</h3>
+            <p>メンバーのiPhoneが到着を検知すると、オーガナイザーに通知されます。予定の時刻までに確認できないときは「まだ確認できていません」とお知らせします。</p>
+          </li>
+        </ol>
+        <p class="home-how-note">家族は1回限りの招待リンクで参加し、共有するかどうかを本人が選びます。</p>
+      </div>
+    </section>
+
+    <section id="arrvd-privacy" class="home-trust" aria-labelledby="home-trust-heading">
+      <div class="container">
+        <h2 id="home-trust-heading" class="text-center">安心・プライバシー・同意</h2>
+        <div class="trust-grid">
+          <article class="trust-card">
+            <h3>位置情報の使い方</h3>
+            <p>ARRVDは位置情報を使います。メンバーのiPhoneで、iOSの位置情報サービスが登録した場所への到着と出発を検知します（位置情報の許可を「常に」にすると、アプリを開いていなくても検知します）。誰かの現在地を表示したり、移動の履歴を作ったりすることはありません。</p>
+          </article>
+          <article class="trust-card">
+            <h3>同意のうえで参加</h3>
+            <p>オーガナイザーは18歳以上、メンバーは13歳以上の方が利用でき、13歳未満の方は利用できません。13〜17歳のメンバーは、保護者とご本人の両方が同意するまで何も共有されません。メンバーはいつでも共有をやめられます。</p>
+          </article>
+          <article class="trust-card">
+            <h3>対象</h3>
+            <p>ARRVDはiPhone向けのアプリで、マレーシアと日本にお住まいの方を対象にしています。無料のプランがあります。</p>
+          </article>
+          <article class="trust-card">
+            <h3>できないことも、正直に</h3>
+            <p>検知はiOSやiPhoneの設定、電波の状況に左右されるため、到着の検知が遅れたり、検知できなかったりすることがあります。ARRVDは緊急サービスではありません。</p>
+          </article>
+        </div>
+        <nav class="trust-links" aria-label="ARRVDのプライバシー・利用規約・サポート">
+          <ul>
+            <li><a href="/ja/arrvd/privacy/">ARRVD プライバシーポリシー</a></li>
+            <li><a href="/ja/arrvd/terms/">利用規約</a></li>
+            <li><a href="/ja/arrvd/support/">サポート</a></li>
+            <li><a href="/ja/arrvd/guardians/">保護者の方へ</a></li>
+          </ul>
+        </nav>
+        <div class="home-closing">
+          <p class="home-closing-heading"><span class="jp-nowrap">到着の安心を。</span><span class="jp-nowrap">常時追跡なしで。</span></p>
+          <!-- arrvd-cta:closing -->
+          <a href="/ja/arrvd/" class="link-arrow">ARRVDを詳しく見る &rarr;</a>
+          <p class="arrvd-status"><span class="arrvd-status-dot" aria-hidden="true"></span>App Storeでのリリース準備中</p>
           <!-- /arrvd-cta -->
-          <a href="#other-products" class="link-arrow">プロダクト一覧</a>
         </div>
       </div>
     </section>
 
-    <!-- home-block:available-now — before ARRVD until the ARRVD launch, then after it (docs/home-phases.md) -->
-    <section class="available-now" aria-label="公開中のプロダクト">
+    <section id="products" class="home-products" aria-labelledby="home-products-heading">
       <div class="container">
-        <article class="today-card" aria-labelledby="today-card-heading">
-          <div class="today-card-inner">
-            <figure class="today-card-figure">
-              <img src="../assets/brand/celestial-oracle/cards/celestial-card-001-96.webp" srcset="../assets/brand/celestial-oracle/cards/celestial-card-001-96.webp 96w, ../assets/brand/celestial-oracle/cards/celestial-card-001-192.webp 192w" sizes="(max-width: 640px) 56px, 96px" alt="" width="96" height="144" decoding="async">
-              <figcaption>カードの一例</figcaption>
-            </figure>
-            <div class="today-card-head">
-              <span class="eyebrow">Celestial Oracle</span>
-              <h2 id="today-card-heading"><span class="jp-nowrap">今日の一枚を、</span><span class="jp-nowrap">どうぞ。</span></h2>
+        <h2 id="home-products-heading" class="text-center">futodamaのほかのプロダクト</h2>
+        <div class="home-product-grid">
+          <article class="today-card" aria-labelledby="today-card-heading">
+            <div class="today-card-inner">
+              <figure class="today-card-figure">
+                <img src="../assets/brand/celestial-oracle/cards/celestial-card-001-96.webp" srcset="../assets/brand/celestial-oracle/cards/celestial-card-001-96.webp 96w, ../assets/brand/celestial-oracle/cards/celestial-card-001-192.webp 192w" sizes="(max-width: 640px) 56px, 96px" alt="" width="96" height="144" loading="lazy" decoding="async">
+                <figcaption>カードの一例</figcaption>
+              </figure>
+              <div class="today-card-head">
+                <span class="eyebrow">Celestial Oracle</span>
+                <h3 id="today-card-heading"><span class="jp-nowrap">今日の一枚を、</span><span class="jp-nowrap">どうぞ。</span></h3>
+              </div>
+              <p class="today-card-body"><span class="jp-nowrap">一日一枚のカードと、</span><span class="jp-nowrap">ひとつの問い。</span><span class="jp-nowrap">占いではなく、</span><span class="jp-nowrap">自分を振り返るための</span><span class="jp-nowrap">小さなひと休みです。</span></p>
+              <div class="today-card-cta">
+                <a href="https://celestial.futodama.app/?src=futodama&amp;med=website&amp;cmp=a1_home_today_card&amp;cnt=home_today_card_ja" class="btn btn-primary">今日の一枚を引く</a>
+                <p class="product-status"><span class="jp-nowrap">Webですぐに使えます。</span><span class="jp-nowrap">ダウンロードは不要です。</span></p>
+              </div>
             </div>
-            <p class="today-card-body"><span class="jp-nowrap">一日一枚のカードと、</span><span class="jp-nowrap">ひとつの問い。</span><span class="jp-nowrap">占いではなく、</span><span class="jp-nowrap">自分を振り返るための</span><span class="jp-nowrap">小さなひと休みです。</span></p>
-            <div class="today-card-cta">
-              <a href="https://celestial.futodama.app/?src=futodama&amp;med=website&amp;cmp=a1_home_today_card&amp;cnt=home_today_card_ja" class="btn btn-primary">今日の一枚を引く</a>
-              <p class="product-status"><span class="jp-nowrap">Webですぐに使えます。</span><span class="jp-nowrap">ダウンロードは不要です。</span></p>
-            </div>
-          </div>
-        </article>
-        <p class="available-more">
-          <img src="../assets/brand/mojitsunagi/app-icon/web/mojitsunagi-app-icon-64.png" srcset="../assets/brand/mojitsunagi/app-icon/web/mojitsunagi-app-icon-32.png 32w, ../assets/brand/mojitsunagi/app-icon/web/mojitsunagi-app-icon-64.png 64w, ../assets/brand/mojitsunagi/app-icon/web/mojitsunagi-app-icon-128.png 128w" sizes="20px" alt="" class="product-app-icon" width="20" height="20">
-          <span class="available-more-text"><strong>もじつなぎ</strong> <span class="jp-nowrap">言葉を見つけて</span><span class="jp-nowrap">森を育てる言葉パズル。</span><span class="jp-nowrap">App Storeで配信中。</span> <a href="/ja/mojitsunagi/" class="link-arrow">詳しく見る &rarr;</a></span>
-        </p>
-      </div>
-    </section>
-    <!-- /home-block -->
-
-    <!-- home-block:arrvd -->
-    <section id="products" class="featured">
-      <div class="container">
-        <article class="featured-arrvd product-card--arrvd">
-          <div>
-            <span class="featured-label">注目</span>
-            <h3><img src="../assets/brand/arrvd/app-icon/web/arrvd-app-icon-64.png" srcset="../assets/brand/arrvd/app-icon/web/arrvd-app-icon-32.png 32w, ../assets/brand/arrvd/app-icon/web/arrvd-app-icon-64.png 64w, ../assets/brand/arrvd/app-icon/web/arrvd-app-icon-128.png 128w" sizes="20px" alt="" class="product-app-icon" width="20" height="20">ARRVD</h3>
-            <p class="product-copy"><span class="jp-nowrap">「到着した」という安心を。</span><br><span class="jp-nowrap">居場所は追い続けない。</span></p>
-            <p>必要なときだけ、必要な安心を届ける家族向け到着確認アプリ。</p>
-            <div class="card-cta-group">
-              <!-- arrvd-cta:featured -->
-              <span class="badge-coming-soon">近日公開</span>
-              <a href="/ja/arrvd/" class="link-arrow">ARRVDを詳しく見る &rarr;</a>
-              <!-- /arrvd-cta -->
-            </div>
-          </div>
-          <div class="featured-visual">
-            <img src="../assets/brand/arrvd/arrival-mark.svg" alt="" class="arrival-mark" width="260" height="260">
-          </div>
-        </article>
-      </div>
-    </section>
-    <!-- /home-block -->
-
-    <section id="other-products" class="products">
-      <div class="container">
-        <h2>その他のプロダクト</h2>
-        <div class="product-grid">
-          <article class="product-card product-card--mojitsunagi">
-            <h3>
-              <img src="../assets/brand/mojitsunagi/app-icon/web/mojitsunagi-app-icon-64.png" srcset="../assets/brand/mojitsunagi/app-icon/web/mojitsunagi-app-icon-32.png 32w, ../assets/brand/mojitsunagi/app-icon/web/mojitsunagi-app-icon-64.png 64w, ../assets/brand/mojitsunagi/app-icon/web/mojitsunagi-app-icon-128.png 128w" sizes="20px" alt="" class="product-app-icon" width="20" height="20">
-              もじつなぎ
-            </h3>
-            <p class="product-copy">言葉をつないで、森を育てる。</p>
-            <div class="card-cta-group">
-              <a href="https://apps.apple.com/jp/app/%E3%82%82%E3%81%98%E3%81%A4%E3%81%AA%E3%81%8E/id6801533488" class="app-store-badge-link" target="_blank" rel="noopener noreferrer" aria-label="もじつなぎをApp Storeでダウンロード"><img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/ja-jp?size=250x83" alt="App Storeからダウンロード" class="app-store-badge" width="150" height="63"></a>
-              <p class="product-status">配信中</p>
-            </div>
-            <a href="/ja/mojitsunagi/" class="btn btn-outline">詳しく見る</a>
           </article>
-
-          <article class="product-card product-card--celestial">
-            <h3>
-              <img src="../assets/brand/celestial-oracle/app-icon/web/celestial-oracle-app-icon-64.png" srcset="../assets/brand/celestial-oracle/app-icon/web/celestial-oracle-app-icon-32.png 32w, ../assets/brand/celestial-oracle/app-icon/web/celestial-oracle-app-icon-64.png 64w, ../assets/brand/celestial-oracle/app-icon/web/celestial-oracle-app-icon-128.png 128w" sizes="20px" alt="" class="product-app-icon" width="20" height="20">
-              Celestial Oracle
-            </h3>
-            <p class="product-copy">一日一枚のカードから、<br>自分自身と向き合う静かな時間を。</p>
-            <div class="card-cta-group">
-              <a href="https://celestial.futodama.app/?src=futodama&amp;med=website&amp;cmp=celestial_oracle_launch&amp;cnt=home_product_card" class="btn btn-primary">開く</a>
-              <p class="product-status">Webで利用可能</p>
+          <article class="mini-card mini-card--mojitsunagi" aria-labelledby="mojitsunagi-heading">
+            <div class="mini-card-head">
+              <img src="../assets/brand/mojitsunagi/app-icon/web/mojitsunagi-app-icon-64.png" srcset="../assets/brand/mojitsunagi/app-icon/web/mojitsunagi-app-icon-32.png 32w, ../assets/brand/mojitsunagi/app-icon/web/mojitsunagi-app-icon-64.png 64w, ../assets/brand/mojitsunagi/app-icon/web/mojitsunagi-app-icon-128.png 128w" sizes="40px" alt="" class="mini-card-icon" width="40" height="40" loading="lazy">
+              <div>
+                <span class="eyebrow">言葉あそび</span>
+                <h3 id="mojitsunagi-heading">もじつなぎ</h3>
+              </div>
             </div>
-            <a href="/ja/celestial-oracle/" class="btn btn-outline">詳しく見る</a>
+            <p><span class="jp-nowrap">文字をつないで</span><span class="jp-nowrap">言葉を見つけ、</span><span class="jp-nowrap">森を育てる言葉パズル。</span></p>
+            <div class="mini-card-cta">
+              <a href="https://apps.apple.com/jp/app/%E3%82%82%E3%81%98%E3%81%A4%E3%81%AA%E3%81%8E/id6801533488" class="app-store-badge-link" target="_blank" rel="noopener noreferrer" aria-label="もじつなぎをApp Storeでダウンロード"><img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/ja-jp?size=250x83" alt="App Storeからダウンロード" class="app-store-badge" width="150" height="50" loading="lazy"></a>
+              <p class="product-status">App Storeで配信中</p>
+            </div>
           </article>
         </div>
+        <ul class="home-product-links">
+          <li><a href="/ja/celestial-oracle/" class="link-arrow">Celestial Oracleについて &rarr;</a></li>
+          <li><a href="/ja/mojitsunagi/" class="link-arrow">もじつなぎについて &rarr;</a></li>
+        </ul>
       </div>
     </section>
 
-    <section class="beliefs">
+    <section id="about" class="home-beliefs" aria-labelledby="home-beliefs-heading">
       <div class="container">
-        <h2>futodamaが大切にすること</h2>
+        <h2 id="home-beliefs-heading" class="text-center">futodamaが大切にすること</h2>
+        <p class="home-beliefs-lead"><span class="jp-nowrap">futodamaは、毎日を少し軽やかにする</span><span class="jp-nowrap">シンプルなアプリをつくる</span><span class="jp-nowrap">インディペンデント</span>・<span class="jp-nowrap">プロダクトスタジオです。</span><span class="jp-nowrap">ARRVDは、この考え方を</span><span class="jp-nowrap">いちばんまっすぐに</span><span class="jp-nowrap">形にしたプロダクトです。</span></p>
         <div class="belief-grid">
           <div class="belief-card">
             <div class="belief-mark" aria-hidden="true"></div>
@@ -190,30 +256,10 @@
             <p>生活を重くするのではなく、少し軽くするための技術でありたい。</p>
           </div>
         </div>
-      </div>
-    </section>
-
-    <section id="about" class="about">
-      <div class="container">
-        <h2>futodamaについて</h2>
-        <p>
-          futodamaは、日常を少し良くする<span class="jp-nowrap">プロダクトをつくる</span><br class="about-break-desktop"><span class="jp-nowrap">インディペンデント</span>・<span class="jp-nowrap">プロダクトスタジオです。</span>
-        </p>
-        <p>
-          暮らしの中で見つけた小さな気づきを、人の気持ちに寄り添うデジタル体験へ変えていきます。
-        </p>
-        <a href="/ja/about/" class="btn btn-outline">futodamaについて</a>
-        <p class="tagline">All is well.</p>
-      </div>
-    </section>
-
-    <section class="cta-band">
-      <div class="container">
-        <h2 class="cta-band-heading">到着の安心を。<br>常時追跡なしで。</h2>
-        <!-- arrvd-cta:band -->
-        <span class="badge-coming-soon">近日公開</span>
-        <a href="/ja/arrvd/" class="link-arrow">ARRVDを詳しく見る &rarr;</a>
-        <!-- /arrvd-cta -->
+        <div class="home-about">
+          <a href="/ja/about/" class="btn btn-outline">futodamaについて</a>
+          <p class="tagline">All is well.</p>
+        </div>
       </div>
     </section>
   </main>

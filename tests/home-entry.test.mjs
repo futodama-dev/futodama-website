@@ -21,12 +21,17 @@ const section = (s) => {
   return found[0];
 };
 
-test("one entry per home page, in the Available now block, linking to the web app with a fixed campaign", () => {
+test("one entry per home page, in More from futodama after the ARRVD sections, linking to the web app with a fixed campaign", () => {
   for (const page of PAGES) {
     const s = html(page.path);
     const block = section(s);
-    const now = s.indexOf('<section class="available-now"');
-    assert.ok(now > s.indexOf('<section class="hero">') && now < s.indexOf('<article class="today-card"'), page.path);
+    // ARRVD comes first (docs/home-phases.md); the entry sits in the products section that follows it.
+    const products = s.indexOf('<section id="products"');
+    assert.ok(products > s.indexOf('<section id="arrvd-privacy"') && products < s.indexOf('<article class="today-card"'), page.path);
+    assert.ok(s.indexOf('<article class="today-card"') < s.indexOf('<section id="about"'), page.path);
+    // The Mojitsunagi product page stays linked from the home page (PDCA 2026-10-19-A3).
+    assert.match(s, new RegExp(`href="${page.lang === "ja" ? "/ja" : ""}/mojitsunagi/"`), `${page.path}: Mojitsunagi product page`);
+    assert.match(s, new RegExp(`href="${page.lang === "ja" ? "/ja" : ""}/celestial-oracle/"`), `${page.path}: Celestial Oracle product page`);
     const links = [...block.matchAll(/href="([^"]+)"/g)].map((m) => m[1].replace(/&amp;/g, "&"));
     assert.deepEqual(links, [`https://celestial.futodama.app/?src=futodama&med=website&cmp=a1_home_today_card&cnt=${page.cnt}`], page.path);
     assert.ok(!/target=|javascript:|on[a-z]+=/i.test(block), "same-tab link, no inline script");

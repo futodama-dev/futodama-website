@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>futodama — Small ideas. Better everyday moments.</title>
-  <meta name="description" content="futodama is an independent product studio making simple apps that make everyday life a little better, including ARRVD, Mojitsunagi and Celestial Oracle.">
+  <title>futodama — ARRVD: know they arrived, not everywhere they went</title>
+  <meta name="description" content="futodama makes simple apps for everyday life. Our flagship, ARRVD, lets a family know when someone arrives at the places that matter, without a live map or movement history. Also Celestial Oracle and Mojitsunagi.">
   <link rel="canonical" href="https://futodama.app/">
   <link rel="alternate" hreflang="en" href="https://futodama.app/">
   <link rel="alternate" hreflang="ja" href="https://futodama.app/ja/">
@@ -12,8 +12,8 @@
 
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="futodama">
-  <meta property="og:title" content="futodama — Small ideas. Better everyday moments.">
-  <meta property="og:description" content="futodama is an independent product studio making simple apps that make everyday life a little better, including ARRVD, Mojitsunagi and Celestial Oracle.">
+  <meta property="og:title" content="futodama — ARRVD: know they arrived, not everywhere they went">
+  <meta property="og:description" content="futodama makes simple apps for everyday life. Our flagship, ARRVD, lets a family know when someone arrives at the places that matter, without a live map or movement history. Also Celestial Oracle and Mojitsunagi.">
   <meta property="og:url" content="https://futodama.app/">
   <meta property="og:locale" content="en_US">
   <meta property="og:locale:alternate" content="ja_JP">
@@ -24,8 +24,8 @@
   <meta property="og:image:alt" content="futodama brand card">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="futodama — Small ideas. Better everyday moments.">
-  <meta name="twitter:description" content="futodama is an independent product studio making simple apps that make everyday life a little better, including ARRVD, Mojitsunagi and Celestial Oracle.">
+  <meta name="twitter:title" content="futodama — ARRVD: know they arrived, not everywhere they went">
+  <meta name="twitter:description" content="futodama makes simple apps for everyday life. Our flagship, ARRVD, lets a family know when someone arrives at the places that matter, without a live map or movement history. Also Celestial Oracle and Mojitsunagi.">
   <meta name="twitter:image" content="https://futodama.app/assets/brand/og/futodama-og.png">
   <meta name="twitter:image:alt" content="futodama brand card">
 
@@ -34,6 +34,7 @@
   <link rel="icon" href="/favicon.ico" sizes="32x32">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preload" as="image" href="assets/brand/arrvd/screens/arrvd-home-en-640.webp" imagesrcset="assets/brand/arrvd/screens/arrvd-home-en-320.webp 320w, assets/brand/arrvd/screens/arrvd-home-en-640.webp 640w" imagesizes="(max-width: 900px) 240px, 280px" type="image/webp">
   <link rel="stylesheet" href="style.css">
 
   <script type="application/ld+json">
@@ -46,12 +47,14 @@
   </script>
 </head>
 <body>
+  <a href="#main" class="skip-link">Skip to content</a>
   <header class="site-header">
     <div class="container header-inner">
       <a href="/" class="logo" aria-label="futodama home">
         <img src="assets/brand/logo/futodama-symbol.svg" alt="" width="26" height="26" class="logo-dot">futodama
       </a>
       <nav class="main-nav" aria-label="Main navigation">
+        <a href="/arrvd/" class="nav-arrvd">ARRVD</a>
         <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-menu" aria-label="Toggle menu">
           <span class="hamburger"></span>
         </button>
@@ -69,113 +72,176 @@
     </div>
   </header>
 
-  <main data-home-phase="prelaunch">
-    <section class="hero">
+  <main id="main" data-home-phase="prelaunch">
+    <!-- Order of the home page and the ARRVD calls to action: docs/home-phases.md -->
+    <section id="arrvd" class="home-hero" aria-labelledby="home-hero-heading">
+      <div class="container home-hero-grid">
+        <div class="home-hero-text">
+          <p class="home-eyebrow">
+            <img src="assets/brand/arrvd/app-icon/web/arrvd-app-icon-64.png" srcset="assets/brand/arrvd/app-icon/web/arrvd-app-icon-32.png 32w, assets/brand/arrvd/app-icon/web/arrvd-app-icon-64.png 64w, assets/brand/arrvd/app-icon/web/arrvd-app-icon-128.png 128w" sizes="28px" alt="" class="home-eyebrow-icon" width="28" height="28">
+            <span><strong>ARRVD</strong> <span class="home-eyebrow-note">Family arrival app for iPhone</span></span>
+          </p>
+          <h1 id="home-hero-heading">Know they arrived.<br>Not everywhere they went.</h1>
+          <p class="home-hero-lead">
+            ARRVD tells you when someone in your family arrives at the places that matter — home, school,
+            lessons — and lets you know if an arrival hasn’t been confirmed by the expected time.
+            No live map. No movement history.
+          </p>
+          <div class="home-cta">
+            <!-- arrvd-cta:hero -->
+            <a href="/arrvd/" class="btn btn-primary">Explore ARRVD</a>
+            <p class="arrvd-status"><span class="arrvd-status-dot" aria-hidden="true"></span>Preparing for release on the App Store</p>
+            <!-- /arrvd-cta -->
+            <a href="#how-it-works" class="link-arrow home-cta-secondary">How it works</a>
+          </div>
+        </div>
+        <figure class="home-hero-visual">
+          <div class="device">
+            <img src="assets/brand/arrvd/screens/arrvd-home-en-640.webp" srcset="assets/brand/arrvd/screens/arrvd-home-en-320.webp 320w, assets/brand/arrvd/screens/arrvd-home-en-640.webp 640w" sizes="(max-width: 900px) 240px, 280px" width="640" height="1101" alt="ARRVD home screen. Mia: last record today 4:21 PM, arrived at Home. Leo: last record today 3:40 PM, left Home." fetchpriority="high" decoding="async">
+          </div>
+          <figcaption>ARRVD app screen with example names</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="arrvd-values" class="home-values" aria-labelledby="home-values-heading">
+      <div class="container home-values-grid">
+        <figure class="home-values-visual">
+          <div class="device device--small">
+            <img src="assets/brand/arrvd/screens/arrvd-activity-en-640.webp" srcset="assets/brand/arrvd/screens/arrvd-activity-en-320.webp 320w, assets/brand/arrvd/screens/arrvd-activity-en-640.webp 640w" sizes="240px" width="640" height="989" alt="ARRVD Activity screen showing the last 7 days. Leo: arrival not yet confirmed at Home, 6:05 PM. Mia: arrived at Home 4:21 PM, left School 3:52 PM. Leo: left Home 3:40 PM. Mia: arrived at School 8:12 AM." loading="lazy" decoding="async">
+          </div>
+          <figcaption>Activity: arrivals, departures and arrivals not yet confirmed</figcaption>
+        </figure>
+        <div class="home-values-text">
+          <h2 id="home-values-heading">Reassurance, kept simple.</h2>
+          <ul class="value-list">
+            <li class="value-row">
+              <h3>Know they arrived</h3>
+              <p>See when a family member arrives at a place your family has registered — home, school, lessons or work.</p>
+            </li>
+            <li class="value-row">
+              <h3>Get the notices that matter</h3>
+              <p>Organizers are notified of arrivals, and of arrivals not yet confirmed by the expected time. Departure notices can be turned on for each place.</p>
+            </li>
+            <li class="value-row">
+              <h3>Privacy, without constant tracking</h3>
+              <p>No live map and no movement history. Your family sees arrivals at and departures from registered places — and those records are deleted after 7 days.</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="how-it-works" class="home-how" aria-labelledby="home-how-heading">
       <div class="container">
-        <h1>Small ideas.<br>Better everyday moments.</h1>
-        <p class="hero-sub">Independent product studio creating thoughtful apps for everyday life.</p>
-        <p class="hero-body">
-          We create simple, human-centered digital products designed around reassurance, joy,
-          reflection, and convenience.
-        </p>
-        <div class="hero-cta-group">
-          <!-- arrvd-cta:hero -->
-          <a href="#products" class="btn btn-outline">Explore ARRVD</a>
+        <h2 id="home-how-heading" class="text-center">How it works</h2>
+        <ol class="home-steps">
+          <li class="home-step">
+            <span class="step-number" aria-hidden="true">1</span>
+            <h3>Register places</h3>
+            <p>An Organizer adds the places that matter, such as home or school, and chooses which family members each place is for.</p>
+          </li>
+          <li class="home-step">
+            <span class="step-number" aria-hidden="true">2</span>
+            <h3>Set the expected arrival</h3>
+            <p>Set the days and time someone is expected to arrive at the place.</p>
+          </li>
+          <li class="home-step">
+            <span class="step-number" aria-hidden="true">3</span>
+            <h3>See arrivals — or a notice</h3>
+            <p>When the Member’s iPhone detects the arrival, the Organizer is notified. If it isn’t confirmed by the expected time, they get a “not yet confirmed” notice instead.</p>
+          </li>
+        </ol>
+        <p class="home-how-note">Family members join with a one-time invitation link and choose for themselves whether to share.</p>
+      </div>
+    </section>
+
+    <section id="arrvd-privacy" class="home-trust" aria-labelledby="home-trust-heading">
+      <div class="container">
+        <h2 id="home-trust-heading" class="text-center">Reassurance, privacy and consent</h2>
+        <div class="trust-grid">
+          <article class="trust-card">
+            <h3>How location is used</h3>
+            <p>ARRVD does use location. On the Member’s iPhone, iOS Location Services detect arrivals at and departures from registered places — even when the app isn’t open, if location access is set to Always. ARRVD doesn’t show anyone’s live location or create a movement history.</p>
+          </article>
+          <article class="trust-card">
+            <h3>Joining with consent</h3>
+            <p>Organizers are 18 or over and Members 13 or over; people under 13 can’t use ARRVD. A Member aged 13 to 17 shares nothing until a parent or guardian and the Member have both agreed. Members can stop sharing at any time.</p>
+          </article>
+          <article class="trust-card">
+            <h3>Who it’s for</h3>
+            <p>ARRVD is an iPhone app for people who live in Malaysia and Japan. It has a free plan.</p>
+          </article>
+          <article class="trust-card">
+            <h3>Honest about limits</h3>
+            <p>Detection depends on iOS, the iPhone’s settings and its signal, so an arrival may be detected late or not at all. ARRVD isn’t an emergency service.</p>
+          </article>
+        </div>
+        <nav class="trust-links" aria-label="ARRVD privacy, terms and support">
+          <ul>
+            <li><a href="/arrvd/privacy/">ARRVD Privacy Policy</a></li>
+            <li><a href="/arrvd/terms/">Terms of Use</a></li>
+            <li><a href="/arrvd/support/">Support</a></li>
+            <li><a href="/arrvd/guardians/">For guardians</a></li>
+          </ul>
+        </nav>
+        <div class="home-closing">
+          <p class="home-closing-heading">Arrival reassurance, without continuous tracking.</p>
+          <!-- arrvd-cta:closing -->
+          <a href="/arrvd/" class="link-arrow">Learn more about ARRVD &rarr;</a>
+          <p class="arrvd-status"><span class="arrvd-status-dot" aria-hidden="true"></span>Preparing for release on the App Store</p>
           <!-- /arrvd-cta -->
-          <a href="#other-products" class="link-arrow">See all products</a>
         </div>
       </div>
     </section>
 
-    <!-- home-block:available-now — before ARRVD until the ARRVD launch, then after it (docs/home-phases.md) -->
-    <section class="available-now" aria-label="Available now">
+    <section id="products" class="home-products" aria-labelledby="home-products-heading">
       <div class="container">
-        <article class="today-card" aria-labelledby="today-card-heading">
-          <div class="today-card-inner">
-            <figure class="today-card-figure">
-              <img src="assets/brand/celestial-oracle/cards/celestial-card-001-96.webp" srcset="assets/brand/celestial-oracle/cards/celestial-card-001-96.webp 96w, assets/brand/celestial-oracle/cards/celestial-card-001-192.webp 192w" sizes="(max-width: 640px) 56px, 96px" alt="" width="96" height="144" decoding="async">
-              <figcaption>Example card</figcaption>
-            </figure>
-            <div class="today-card-head">
-              <span class="eyebrow">Celestial Oracle</span>
-              <h2 id="today-card-heading">Today’s card is ready.</h2>
+        <h2 id="home-products-heading" class="text-center">More from futodama</h2>
+        <div class="home-product-grid">
+          <article class="today-card" aria-labelledby="today-card-heading">
+            <div class="today-card-inner">
+              <figure class="today-card-figure">
+                <img src="assets/brand/celestial-oracle/cards/celestial-card-001-96.webp" srcset="assets/brand/celestial-oracle/cards/celestial-card-001-96.webp 96w, assets/brand/celestial-oracle/cards/celestial-card-001-192.webp 192w" sizes="(max-width: 640px) 56px, 96px" alt="" width="96" height="144" loading="lazy" decoding="async">
+                <figcaption>Example card</figcaption>
+              </figure>
+              <div class="today-card-head">
+                <span class="eyebrow">Celestial Oracle</span>
+                <h3 id="today-card-heading">Today’s card is ready.</h3>
+              </div>
+              <p class="today-card-body">One card and one quiet question a day. A small pause to reflect, not a prediction.</p>
+              <div class="today-card-cta">
+                <a href="https://celestial.futodama.app/?src=futodama&amp;med=website&amp;cmp=a1_home_today_card&amp;cnt=home_today_card_en" class="btn btn-primary">Draw today’s card</a>
+                <p class="product-status">Available on the web — no download needed.</p>
+              </div>
             </div>
-            <p class="today-card-body">One card and one quiet question a day. A small pause to reflect, not a prediction.</p>
-            <div class="today-card-cta">
-              <a href="https://celestial.futodama.app/?src=futodama&amp;med=website&amp;cmp=a1_home_today_card&amp;cnt=home_today_card_en" class="btn btn-primary">Draw today’s card</a>
-              <p class="product-status">Available on the web — no download needed.</p>
-            </div>
-          </div>
-        </article>
-        <p class="available-more">
-          <img src="assets/brand/mojitsunagi/app-icon/web/mojitsunagi-app-icon-64.png" srcset="assets/brand/mojitsunagi/app-icon/web/mojitsunagi-app-icon-32.png 32w, assets/brand/mojitsunagi/app-icon/web/mojitsunagi-app-icon-64.png 64w, assets/brand/mojitsunagi/app-icon/web/mojitsunagi-app-icon-128.png 128w" sizes="20px" alt="" class="product-app-icon" width="20" height="20">
-          <span class="available-more-text"><strong>Mojitsunagi</strong> A Japanese word puzzle that grows a forest as you find words. On the App Store. <a href="/mojitsunagi/" class="link-arrow">Learn more &rarr;</a></span>
-        </p>
-      </div>
-    </section>
-    <!-- /home-block -->
-
-    <!-- home-block:arrvd -->
-    <section id="products" class="featured">
-      <div class="container">
-        <article class="featured-arrvd product-card--arrvd">
-          <div>
-            <span class="featured-label">Featured</span>
-            <h3><img src="assets/brand/arrvd/app-icon/web/arrvd-app-icon-64.png" srcset="assets/brand/arrvd/app-icon/web/arrvd-app-icon-32.png 32w, assets/brand/arrvd/app-icon/web/arrvd-app-icon-64.png 64w, assets/brand/arrvd/app-icon/web/arrvd-app-icon-128.png 128w" sizes="20px" alt="" class="product-app-icon" width="20" height="20">ARRVD</h3>
-            <p class="product-copy">Know they arrived.<br>Not everywhere they went.</p>
-            <p class="product-sub">Arrival reassurance without continuous location tracking.</p>
-            <p>A privacy-conscious family arrival app focused on confirming the moments that matter.</p>
-            <div class="card-cta-group">
-              <!-- arrvd-cta:featured -->
-              <span class="badge-coming-soon">Coming soon</span>
-              <a href="/arrvd/" class="link-arrow">Learn more about ARRVD &rarr;</a>
-              <!-- /arrvd-cta -->
-            </div>
-          </div>
-          <div class="featured-visual">
-            <img src="assets/brand/arrvd/arrival-mark.svg" alt="" class="arrival-mark" width="260" height="260">
-          </div>
-        </article>
-      </div>
-    </section>
-    <!-- /home-block -->
-
-    <section id="other-products" class="products">
-      <div class="container">
-        <h2>Other Products</h2>
-        <div class="product-grid">
-          <article class="product-card product-card--mojitsunagi">
-            <h3>
-              <img src="assets/brand/mojitsunagi/app-icon/web/mojitsunagi-app-icon-64.png" srcset="assets/brand/mojitsunagi/app-icon/web/mojitsunagi-app-icon-32.png 32w, assets/brand/mojitsunagi/app-icon/web/mojitsunagi-app-icon-64.png 64w, assets/brand/mojitsunagi/app-icon/web/mojitsunagi-app-icon-128.png 128w" sizes="20px" alt="" class="product-app-icon" width="20" height="20">
-              Mojitsunagi
-            </h3>
-            <p class="product-sub">Connect letters, discover words, and grow your forest.</p>
-            <div class="card-cta-group">
-              <a href="https://apps.apple.com/jp/app/%E3%82%82%E3%81%98%E3%81%A4%E3%81%AA%E3%81%8E/id6801533488" class="app-store-badge-link" target="_blank" rel="noopener noreferrer" aria-label="Download Mojitsunagi on the App Store"><img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" alt="Download on the App Store" class="app-store-badge" width="150" height="63"></a>
-              <p class="product-status">Available</p>
-            </div>
-            <a href="/mojitsunagi/" class="btn btn-outline">Learn more</a>
           </article>
-
-          <article class="product-card product-card--celestial">
-            <h3>
-              <img src="assets/brand/celestial-oracle/app-icon/web/celestial-oracle-app-icon-64.png" srcset="assets/brand/celestial-oracle/app-icon/web/celestial-oracle-app-icon-32.png 32w, assets/brand/celestial-oracle/app-icon/web/celestial-oracle-app-icon-64.png 64w, assets/brand/celestial-oracle/app-icon/web/celestial-oracle-app-icon-128.png 128w" sizes="20px" alt="" class="product-app-icon" width="20" height="20">
-              Celestial Oracle
-            </h3>
-            <p class="product-copy">A quiet moment for yourself, once a day.</p>
-            <div class="card-cta-group">
-              <a href="https://celestial.futodama.app/?src=futodama&amp;med=website&amp;cmp=celestial_oracle_launch&amp;cnt=home_product_card" class="btn btn-primary">Open</a>
-              <p class="product-status">Available on the web</p>
+          <article class="mini-card mini-card--mojitsunagi" aria-labelledby="mojitsunagi-heading">
+            <div class="mini-card-head">
+              <img src="assets/brand/mojitsunagi/app-icon/web/mojitsunagi-app-icon-64.png" srcset="assets/brand/mojitsunagi/app-icon/web/mojitsunagi-app-icon-32.png 32w, assets/brand/mojitsunagi/app-icon/web/mojitsunagi-app-icon-64.png 64w, assets/brand/mojitsunagi/app-icon/web/mojitsunagi-app-icon-128.png 128w" sizes="40px" alt="" class="mini-card-icon" width="40" height="40" loading="lazy">
+              <div>
+                <span class="eyebrow">Word play</span>
+                <h3 id="mojitsunagi-heading">Mojitsunagi</h3>
+              </div>
             </div>
-            <a href="/celestial-oracle/" class="btn btn-outline">Learn more</a>
+            <p>A Japanese word puzzle: connect letters, discover words, and grow your forest.</p>
+            <div class="mini-card-cta">
+              <a href="https://apps.apple.com/jp/app/%E3%82%82%E3%81%98%E3%81%A4%E3%81%AA%E3%81%8E/id6801533488" class="app-store-badge-link" target="_blank" rel="noopener noreferrer" aria-label="Download Mojitsunagi on the App Store"><img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" alt="Download on the App Store" class="app-store-badge" width="150" height="50" loading="lazy"></a>
+              <p class="product-status">Available on the App Store</p>
+            </div>
           </article>
         </div>
+        <ul class="home-product-links">
+          <li><a href="/celestial-oracle/" class="link-arrow">About Celestial Oracle &rarr;</a></li>
+          <li><a href="/mojitsunagi/" class="link-arrow">About Mojitsunagi &rarr;</a></li>
+        </ul>
       </div>
     </section>
 
-    <section class="beliefs">
+    <section id="about" class="home-beliefs" aria-labelledby="home-beliefs-heading">
       <div class="container">
-        <h2>What futodama believes</h2>
+        <h2 id="home-beliefs-heading" class="text-center">What futodama believes</h2>
+        <p class="home-beliefs-lead">futodama is an independent product studio making simple, thoughtful apps for everyday life. ARRVD is where these beliefs show most clearly.</p>
         <div class="belief-grid">
           <div class="belief-card">
             <div class="belief-mark" aria-hidden="true"></div>
@@ -193,32 +259,10 @@
             <p>Technology should make everyday life a little lighter, not heavier.</p>
           </div>
         </div>
-      </div>
-    </section>
-
-    <section id="about" class="about">
-      <div class="container">
-        <h2>About futodama</h2>
-        <p>
-          futodama is an independent product studio creating simple, thoughtful digital experiences for
-          everyday life.
-        </p>
-        <p>
-          We turn small everyday ideas into products built around reassurance, joy, reflection, and
-          convenience.
-        </p>
-        <a href="/about/" class="btn btn-outline">About futodama</a>
-        <p class="tagline">All is well.</p>
-      </div>
-    </section>
-
-    <section class="cta-band">
-      <div class="container">
-        <h2 class="cta-band-heading">Arrival reassurance.<br>Without continuous tracking.</h2>
-        <!-- arrvd-cta:band -->
-        <span class="badge-coming-soon">Coming soon</span>
-        <a href="/arrvd/" class="link-arrow">Learn more about ARRVD &rarr;</a>
-        <!-- /arrvd-cta -->
+        <div class="home-about">
+          <a href="/about/" class="btn btn-outline">About futodama</a>
+          <p class="tagline">All is well.</p>
+        </div>
       </div>
     </section>
   </main>

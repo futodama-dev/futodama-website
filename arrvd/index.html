@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ARRVD: Family arrival reassurance — futodama</title>
-  <meta name="description" content="ARRVD is a privacy-conscious family arrival app that confirms when someone arrives where they're expected, without continuous location tracking.">
+  <title>ARRVD — Know they arrived. Not everywhere they went. | futodama</title>
+  <meta name="description" content="ARRVD is a family arrival app for iPhone. Get notified when someone arrives at the places your family registers, or when an arrival isn’t confirmed by the expected time, without a live map or movement history.">
   <link rel="canonical" href="https://futodama.app/arrvd/">
   <link rel="alternate" hreflang="en" href="https://futodama.app/arrvd/">
   <link rel="alternate" hreflang="ja" href="https://futodama.app/ja/arrvd/">
@@ -12,8 +12,8 @@
 
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="futodama">
-  <meta property="og:title" content="ARRVD: Family arrival reassurance — futodama">
-  <meta property="og:description" content="ARRVD is a privacy-conscious family arrival app that confirms when someone arrives where they're expected, without continuous location tracking.">
+  <meta property="og:title" content="ARRVD — Know they arrived. Not everywhere they went. | futodama">
+  <meta property="og:description" content="ARRVD is a family arrival app for iPhone. Get notified when someone arrives at the places your family registers, or when an arrival isn’t confirmed by the expected time, without a live map or movement history.">
   <meta property="og:url" content="https://futodama.app/arrvd/">
   <meta property="og:locale" content="en_US">
   <meta property="og:locale:alternate" content="ja_JP">
@@ -24,17 +24,19 @@
   <meta property="og:image:alt" content="ARRVD product card">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="ARRVD: Family arrival reassurance — futodama">
-  <meta name="twitter:description" content="ARRVD is a privacy-conscious family arrival app that confirms when someone arrives where they're expected, without continuous location tracking.">
+  <meta name="twitter:title" content="ARRVD — Know they arrived. Not everywhere they went. | futodama">
+  <meta name="twitter:description" content="ARRVD is a family arrival app for iPhone. Get notified when someone arrives at the places your family registers, or when an arrival isn’t confirmed by the expected time, without a live map or movement history.">
   <meta name="twitter:image" content="https://futodama.app/assets/brand/og/arrvd-og.png">
   <meta name="twitter:image:alt" content="ARRVD product card">
 
   <link rel="icon" href="/favicon.ico" sizes="32x32">
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preload" as="image" href="../assets/brand/arrvd/screens/arrvd-home-en-640.webp" imagesrcset="../assets/brand/arrvd/screens/arrvd-home-en-320.webp 320w, ../assets/brand/arrvd/screens/arrvd-home-en-640.webp 640w" imagesizes="(max-width: 900px) 240px, 280px" type="image/webp">
   <link rel="stylesheet" href="../style.css">
 </head>
 <body>
+  <a href="#main" class="skip-link">Skip to content</a>
   <header class="site-header">
     <div class="container header-inner">
       <a href="/" class="logo" aria-label="futodama home">
@@ -58,22 +60,32 @@
     </div>
   </header>
 
-  <main>
+  <main id="main" data-arrvd-phase="prelaunch">
+    <!-- The ARRVD calls to action switch with the home page: docs/home-phases.md -->
     <section class="arrvd-hero">
       <div class="container hero-grid">
         <div class="hero-text">
-          <span class="eyebrow">Product</span>
-          <h1>ARRVD</h1>
+          <span class="eyebrow">Family arrival app for iPhone</span>
+          <h1><img src="../assets/brand/arrvd/app-icon/web/arrvd-app-icon-64.png" srcset="../assets/brand/arrvd/app-icon/web/arrvd-app-icon-32.png 32w, ../assets/brand/arrvd/app-icon/web/arrvd-app-icon-64.png 64w, ../assets/brand/arrvd/app-icon/web/arrvd-app-icon-128.png 128w" sizes="36px" alt="" class="product-title-icon" width="32" height="32">ARRVD</h1>
           <p class="product-copy">Know they arrived.<br>Not everywhere they went.</p>
           <p>
-            A privacy-conscious family arrival app designed to confirm important arrivals without
-            continuous location tracking.
+            ARRVD tells you when someone in your family arrives at the places that matter, and lets you
+            know if an arrival hasn’t been confirmed by the expected time — without a live map or a
+            movement history.
           </p>
-          <span class="status-badge">Coming soon</span>
+          <div class="arrvd-hero-cta">
+            <!-- arrvd-cta:lp-hero -->
+            <p class="arrvd-status"><span class="arrvd-status-dot" aria-hidden="true"></span>Preparing for release on the App Store</p>
+            <!-- /arrvd-cta -->
+            <a href="#how-it-works" class="link-arrow">How it works</a>
+          </div>
         </div>
-        <div class="hero-visual">
-          <img src="../assets/brand/arrvd/arrival-mark.svg" alt="" class="arrival-mark" width="220" height="220">
-        </div>
+        <figure class="hero-visual home-hero-visual">
+          <div class="device">
+            <img src="../assets/brand/arrvd/screens/arrvd-home-en-640.webp" srcset="../assets/brand/arrvd/screens/arrvd-home-en-320.webp 320w, ../assets/brand/arrvd/screens/arrvd-home-en-640.webp 640w" sizes="(max-width: 900px) 240px, 280px" width="640" height="1101" alt="ARRVD home screen. Mia: last record today 4:21 PM, arrived at Home. Leo: last record today 3:40 PM, left Home." fetchpriority="high" decoding="async">
+          </div>
+          <figcaption>ARRVD app screen with example names</figcaption>
+        </figure>
       </div>
     </section>
 
@@ -81,33 +93,34 @@
       <div class="container">
         <h2>Arrival reassurance without constant tracking.</h2>
         <p>
-          Families often want to know one simple thing: "Did they arrive?" ARRVD is designed around
-          that moment. Instead of centering the experience on continuous location tracking, it focuses
-          on confirming expected arrivals.
+          Families often want to know one simple thing: “Did they arrive?” ARRVD is designed around
+          that moment. Instead of showing where someone is all the time, it confirms arrivals at the
+          places your family registers — and tells you when an expected arrival hasn’t been confirmed.
         </p>
       </div>
     </section>
 
-    <section class="content-section section-wide">
+    <section class="content-section section-wide" id="how-it-works">
       <div class="container">
         <h2 class="text-center">How it works</h2>
         <div class="steps">
           <article class="step">
             <span class="step-number" aria-hidden="true">1</span>
-            <h3>Set a place</h3>
-            <p>Choose a place you'd like to confirm arrival at — school, an activity, work, and more.</p>
+            <h3>Register places</h3>
+            <p>An Organizer adds the places that matter, such as home or school, and chooses which family members each place is for.</p>
           </article>
           <article class="step">
             <span class="step-number" aria-hidden="true">2</span>
-            <h3>Set the expected time</h3>
-            <p>Set the day and time someone is expected to arrive.</p>
+            <h3>Set the expected arrival</h3>
+            <p>Set the days and time someone is expected to arrive at the place.</p>
           </article>
           <article class="step">
             <span class="step-number" aria-hidden="true">3</span>
-            <h3>Get reassurance</h3>
-            <p>Get confirmation on arrival — and a notice if they haven't arrived by the expected time.</p>
+            <h3>See arrivals — or a notice</h3>
+            <p>When the Member’s iPhone detects the arrival, the Organizer is notified. If it isn’t confirmed by the expected time, they get a “not yet confirmed” notice instead.</p>
           </article>
         </div>
+        <p class="home-how-note">Family members join with a one-time invitation link and choose for themselves whether to share. Departure notices can be turned on for each place.</p>
       </div>
     </section>
 
@@ -117,26 +130,34 @@
         <div class="feature-grid">
           <article class="feature-card">
             <h3>Arrival, not surveillance</h3>
-            <p>Focused on confirming arrival, not continuous location tracking.</p>
+            <p>Focused on arrivals at registered places — no live map and no movement history.</p>
           </article>
           <article class="feature-card">
             <h3>Privacy-conscious by design</h3>
-            <p>Designed with privacy in mind from the beginning.</p>
+            <p>Records of arrivals, departures and arrivals not yet confirmed are deleted automatically after 7 days.</p>
           </article>
           <article class="feature-card">
             <h3>Simple when it matters</h3>
-            <p>No extra features — just the information that matters, simply delivered.</p>
+            <p>No extra features — just the arrivals and notices that matter, simply delivered.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="content-section privacy-section">
+    <section class="content-section privacy-section" id="privacy">
       <div class="container">
         <h2>Privacy by design</h2>
         <p>
-          ARRVD is being designed to minimize unnecessary location exposure and to focus the user
-          experience on arrival confirmation rather than continuous movement tracking.
+          ARRVD does use location. On the Member’s iPhone, iOS Location Services (mainly region
+          monitoring) detect arrivals at and departures from the places assigned to that Member — even
+          when the app isn’t open, if location access is set to Always. The iPhone sends a record of the
+          arrival or departure, not its coordinates or a route, and ARRVD doesn’t show anyone’s live
+          location.
+        </p>
+        <p>
+          A Member shares only after choosing to in the app, and can stop at any time. Organizers are
+          18 or over and Members 13 or over; a Member aged 13 to 17 shares nothing until a parent or
+          guardian and the Member have both agreed (see <a href="/arrvd/guardians/">For guardians</a>).
         </p>
         <p class="disclaimer">
           What ARRVD processes, and what it doesn’t, is set out in the
@@ -152,8 +173,8 @@
         <div class="usecase-grid">
           <div class="usecase-item">School</div>
           <div class="usecase-item">Lessons &amp; activities</div>
-          <div class="usecase-item">Work</div>
-          <div class="usecase-item">Regular destinations</div>
+          <div class="usecase-item">Home</div>
+          <div class="usecase-item">Work &amp; regular destinations</div>
         </div>
       </div>
     </section>
@@ -164,19 +185,33 @@
         <div class="faq-list">
           <details class="faq-item">
             <summary>Does ARRVD continuously show live location?</summary>
-            <p>No. ARRVD is designed around confirming arrivals rather than displaying continuous, real-time movement.</p>
+            <p>No. ARRVD is designed around confirming arrivals rather than displaying continuous, real-time movement. It doesn’t create a movement history.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Does ARRVD use location at all?</summary>
+            <p>Yes. The Member’s iPhone uses iOS Location Services to detect arrivals at and departures from registered places, including in the background when location access is set to Always. Only the arrival or departure record is shared with the family.</p>
           </details>
           <details class="faq-item">
             <summary>Is ARRVD available yet?</summary>
-            <p>Not yet. ARRVD is currently in development and is not yet available to download.</p>
+            <!-- arrvd-cta:lp-faq -->
+            <p>Not yet. ARRVD is preparing for release on the App Store and isn’t available to download yet.</p>
+            <!-- /arrvd-cta -->
           </details>
           <details class="faq-item">
             <summary>Who is ARRVD designed for?</summary>
-            <p>Families who want reassurance that someone arrived somewhere expected, such as school, an activity, or work.</p>
+            <p>Families who want reassurance that someone arrived somewhere expected, such as school, an activity, or work. ARRVD serves people who live in Malaysia and Japan. Organizers are 18 or over and Members 13 or over.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Is ARRVD free?</summary>
+            <p>ARRVD has a free plan. ARRVD Plus, a paid plan, can be purchased in the app once it is offered; the current limits of each plan are shown in the app.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Will ARRVD detect every arrival?</summary>
+            <p>Not always. Detection depends on iOS, the iPhone’s settings and its signal, so an arrival may be detected late or not at all, and a “not yet confirmed” notice may come even though the person arrived. ARRVD isn’t an emergency service. See <a href="/arrvd/support/">Support</a> for the settings that help.</p>
           </details>
           <details class="faq-item">
             <summary>Will ARRVD support Android?</summary>
-            <p>Platform availability beyond the initial launch is planned but not yet announced.</p>
+            <p>ARRVD is an iPhone app. Platform availability beyond the initial launch is planned but not yet announced.</p>
           </details>
           <details class="faq-item">
             <summary>How is privacy considered?</summary>
@@ -188,9 +223,11 @@
 
     <section class="cta-section section-tint">
       <div class="container">
-        <h2>Coming soon</h2>
-        <p>ARRVD is currently in development and is not yet available to download.</p>
-        <span class="status-badge">Coming soon</span>
+        <!-- arrvd-cta:lp-closing -->
+        <h2>Preparing for release</h2>
+        <p>ARRVD is preparing for release on the App Store and isn’t available to download yet.</p>
+        <p class="arrvd-status arrvd-status--center"><span class="arrvd-status-dot" aria-hidden="true"></span>Preparing for release on the App Store</p>
+        <!-- /arrvd-cta -->
       </div>
     </section>
 
