@@ -80,6 +80,14 @@ test("the ARRVD calls to action match the phase", () => {
         assert.doesNotMatch(html, /arrvd-status|Preparing for release|リリース準備中/, `${lang} ${name}: no pre-launch wording`);
       }
       for (const name of ["closing", "lp-hero", "lp-closing"]) assert.match(all[name], /class="app-store-badge"/, `${lang} ${name}: badge`);
+      // ARRVD is sold only in Japan and Malaysia: the country-less URL (US storefront) is a 404, so each page
+      // links to a storefront that has the app — JP on the Japanese pages, MY on the English pages.
+      const storefront = lang === "ja" ? "jp" : "my";
+      for (const [name, html] of Object.entries(all)) {
+        for (const [href] of html.matchAll(/https:\/\/apps\.apple\.com\/[^"]*/g)) {
+          assert.equal(href, `https://apps.apple.com/${storefront}/app/arrvd/id${id}`, `${lang} ${name}`);
+        }
+      }
       // ARRVD App Store clicks must count for arrvd: the id is in the generated registry block of script.js.
       assert.match(SCRIPT, new RegExp(`"app_store:${id}":"arrvd"`), "register ARRVD's App Store app first (docs/home-phases.md, step 1)");
     }

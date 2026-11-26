@@ -1670,6 +1670,17 @@ html[lang="ja"] .home-hero h1 {
   width: 160px;
 }
 
+.arrvd-meta {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--charcoal);
+}
+
+.home-cta .arrvd-meta {
+  flex-basis: 100%;
+  order: 3;
+}
+
 .arrvd-status--center {
   justify-content: center;
 }
