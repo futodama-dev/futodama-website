@@ -38,8 +38,13 @@ No App Store id or URL is written anywhere before the App Store page is live.
 ## Switching to `arrvd-live`
 
 Do this only after the ARRVD App Store page is live: open it in the App Store (JP and MY storefronts) and copy
-its URL and app id from that page — never from an email, a draft or memory. Below, `APP_STORE_URL` is the
-page's URL (for example `https://apps.apple.com/app/arrvd/id<APP_ID>`).
+its URL and app id from that page — never from an email, a draft or memory.
+
+Use the storefront URLs, not the country-less one: ARRVD is sold only in Japan and Malaysia, and
+`https://apps.apple.com/app/arrvd/id<APP_ID>` (US storefront) returns 404 in a browser. `APP_STORE_URL` below is
+`https://apps.apple.com/jp/app/arrvd/id<APP_ID>` on the Japanese pages and
+`https://apps.apple.com/my/app/arrvd/id<APP_ID>` on the English pages (same app id; the iPhone App Store opens
+the visitor's own storefront either way). Confirmed live on 2026-11-26: id `6813303271` on both storefronts.
 
 1. **Measurement first (futodama-analytics, separate approval).** Add ARRVD's App Store platform to the
    product registry and regenerate the generated block in `script.js`
