@@ -51,7 +51,9 @@ Rules the tests check (`tests/home-phase.test.mjs`):
 
 ## Before this goes to production
 
-1. **Registry (futodama-analytics, production D1 — needs the owner's approval).** Dry run checked on 2026-11-26:
+1. **Registry (futodama-analytics, production D1).** Done on 2026-11-26 03:45 UTC with the owner's approval
+   (4 rows added: `product_platforms` arrvd:ios, `platform_sources` asc_sales and asc_analytics, `registry_audit`;
+   no existing row changed). Commands used:
 
    ```
    npm run registry -- link app_store 6813303271 --product arrvd --platform ios --release-date 2026-11-26 \
@@ -61,13 +63,16 @@ Rules the tests check (`tests/home-phase.test.mjs`):
    npm run registry -- check-site --site ../futodama-website             # must report 0 errors
    ```
 
-   It also starts the daily ARRVD download import from the App Store sales reports (first-time downloads and
-   redownloads by country). Rollback: `npm run registry -- set-status arrvd:ios retired`, then `site-config --write`.
+   It also makes ARRVD part of the daily App Store sales import (first-time downloads and redownloads by
+   country, Pacific-time report days D-1..D-3, planned on the first run after 03:00 MYT).
+   Rollback that keeps history: `npm run registry -- set-status arrvd:ios retired --apply` (stops new fetches,
+   keeps stored rows and the audit trail), then `site-config --write`. `paused` stops fetching but keeps the
+   site mapping. Deleting the rows instead would also drop fetched data — not equivalent, not recommended.
 2. Commit the regenerated `script.js` on this branch; `node --test tests/*.test.mjs` must pass with no failures.
 3. Check `/`, `/ja/`, `/arrvd/` and `/ja/arrvd/` at 1280 px, 375 px and 320 px, and that the App Store links open
    the ARRVD page.
 
-Until step 1 is done, `tests/home-phase.test.mjs` fails with "register ARRVD's App Store app first" — on purpose.
+Without step 1, `tests/home-phase.test.mjs` fails with "register ARRVD's App Store app first" — on purpose.
 
 ## Switching back to `prelaunch`
 
